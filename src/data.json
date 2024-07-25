@@ -1,9 +1,4 @@
 {
-    "navbar-links": [
-        {"name": "About Me", "url": "/"}, 
-        {"name": "My Projects", "url": "/"}, 
-        {"name": "Contact", "url": "/"}
-    ],
     "banner": {
         "image": "./avatar.jpeg",
         "introduction": "<p>I am a self-taught full-stack developer, having developed several projects both in teams and on my own.</p><p>Throughout my learning journey, I have always looked to expand my knowledge and to step out of my comfort zone, be it by seeking out new technologies, taking on complex problems, or studying an assortment of courses and books. This has equipped me with a solid understanding of both front and backend development, technologies and best practices.</p><p>My passion is in creating efficient, modern projects that are easy to use and attractive for the end user and have a clear and concise codebase that can be iterated upon.</p>"

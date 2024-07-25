@@ -2,7 +2,6 @@ import { ModeToggle } from "@/components/ui/mode-toggle"
 import {
     Menubar,
     MenubarMenu,
-    MenubarSeparator,
   } from "@/components/ui/menubar"
 import { Button } from "@/components/ui/button"
 import {
@@ -11,9 +10,8 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
+import { Mail, Menu } from "lucide-react"
 import { Link } from "react-router-dom"
-import { Menu } from "lucide-react"
-import data from '@/data.json'
 
 function Navbar() {
         return (
@@ -27,31 +25,39 @@ function Navbar() {
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                            {data["navbar-links"].map(link => (
-                                <DropdownMenuItem>
-                                    <Button className="uppercase w-full" asChild>
-                                        <Link to={link.url} role="link">
-                                            {link.name}
-                                        </Link>
-                                    </Button>
-                                    <MenubarSeparator />
-                                </DropdownMenuItem>
-                            ))}
+                           
                         </DropdownMenuContent>
                     </DropdownMenu>
                 </div>
-                <Menubar className="hidden md:flex border-none z-10 mx-6 my-2 justify-end  fixed top-0 right-0">
+                <Menubar className="hidden md:flex border-none z-10 mx-6 my-2 justify-end fixed top-0 right-0">
                     <MenubarMenu>
-                        {data["navbar-links"].map(link => (
-                            <>
-                                <Button className="uppercase" asChild>
-                                    <Link to={link.url} role="link">
-                                        {link.name}
-                                    </Link>
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button className="uppercase">
+                                    Contact
                                 </Button>
-                                <MenubarSeparator />
-                            </>
-                        ))}
+                                </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                <a href="mailto:gomisroca@gmail.com">
+                                    <DropdownMenuItem className="flex gap-2 w-full justify-between p-4 cursor-pointer">
+                                        <Mail/>
+                                        <span>gomisroca@gmail.com</span>
+                                    </DropdownMenuItem>
+                                </a>
+                                <Link to="https://github.com/gomisroca/">
+                                    <DropdownMenuItem className="flex gap-2 w-full justify-between p-4 cursor-pointer">
+                                        <img src="./github-mark.svg" className="invert-0 dark:invert h-[20px]" />
+                                        <span>gomisroca</span>
+                                    </DropdownMenuItem>
+                                </Link>
+                                <Link to="https://discord.com/users/548153072090742784">
+                                    <DropdownMenuItem className="flex gap-2 w-full justify-between p-4 cursor-pointer">
+                                        <img src="./discord-mark-black.svg" className="invert-0 dark:invert h-[20px]" />
+                                        <span>jasar.</span>
+                                    </DropdownMenuItem>
+                                </Link>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
                         <ModeToggle />
                     </MenubarMenu>
                 </Menubar>
