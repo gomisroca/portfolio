@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/components/ui/theme-provider"
 import Navbar from "@/components/ui/navbar"
 import Banner from "@/components/banner"
+import Footer from "@/components/ui/footer"
 import SkillsPanel from "@/components/skills-panel"
 import ProjectsPanel from "@/components/projects-panel"
 import StudiesPanel from "@/components/studies-panel"
@@ -26,10 +27,11 @@ function App() {
                     <div data-aos="fade-up">
                         <ProjectsPanel />
                     </div> 
-                    <div data-aos="fade-up">
+                    <div data-aos="fade-up" className="mb-10">
                         <StudiesPanel />
                     </div>
                 </div>
+                <Footer />
             </div>
         </ThemeProvider>
     )
