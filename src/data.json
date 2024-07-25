@@ -1,0 +1,190 @@
+{
+    "navbar-links": [
+        {"name": "About Me", "url": "/"}, 
+        {"name": "My Projects", "url": "/"}, 
+        {"name": "Contact", "url": "/"}
+    ],
+    "banner": {
+        "image": "./avatar.jpeg",
+        "introduction": "<p>I am a self-taught full-stack developer, having developed several projects both in teams and on my own.</p><p>Throughout my learning journey, I have always looked to expand my knowledge and to step out of my comfort zone, be it by seeking out new technologies, taking on complex problems, or studying an assortment of courses and books. This has equipped me with a solid understanding of both front and backend development, technologies and best practices.</p><p>My passion is in creating efficient, modern projects that are easy to use and attractive for the end user and have a clear and concise codebase that can be iterated upon.</p>"
+    },
+    "skills": [
+        {
+            "name": "frameworks",
+            "content": [
+                {"name": "React", "badge": "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB", "specialized": true},
+                {"name": "VueJS", "badge": "https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)"},
+                {"name": "Angular", "badge": "https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"}, 
+                {"name": "Express.js", "badge": "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB", "specialized": true},
+                {"name": "Next", "badge": "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)", "specialized": true}, 
+                {"name": "Nuxt", "badge": "https://img.shields.io/badge/Nuxt-002E3B?style=for-the-badge&logo=nuxtdotjs&logoColor=#00DC82"}, 
+                {"name": "Django", "badge": "https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white"}, 
+                {"name": "Flask", "badge": "https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white"} 
+            ]
+        },
+        {
+            "name": "libraries",
+            "content": [
+                {"name": "Bootstrap", "badge": "https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white"},
+                {"name": "TailwindCSS", "badge": "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"},
+                {"name": "Zod", "badge": "https://img.shields.io/badge/zod-%233068b7.svg?style=for-the-badge&logo=zod&logoColor=white"},
+                {"name": "Prisma", "badge": "https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white", "specialized": true},
+                {"name": "Jest", "badge": "https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white"},
+                {"name": "JWT", "badge": "https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)", "specialized": true}
+            ]
+        },
+        {
+            "name": "databases",
+            "content": [
+                {"name": "MySQL", "badge": "https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white"},
+                {"name": "SQLite", "badge": "https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white"},
+                {"name": "Postgres", "badge": "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white", "specialized": true},
+                {"name": "MongoDB", "badge": "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white"},
+                {"name": "Redis", "badge": "https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white"}
+            ]
+        },
+        {
+            "name": "technologies",
+            "content": [
+                {"name": "Github Actions", "badge": "https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white"},
+                {"name": "Gitlab CI", "badge": "https://img.shields.io/badge/gitlab%20ci-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white"},
+                {"name": "SonarQube", "badge": "https://img.shields.io/badge/SonarQube-black?style=for-the-badge&logo=sonarqube&logoColor=4E9BCD"},
+                {"name": "Docker", "badge": "https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white", "specialized": true},
+                {"name": "Kubernetes", "badge": "https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white"},
+                {"name": "Ansible", "badge": "https://img.shields.io/badge/ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white"},
+                {"name": "Nginx", "badge": "https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white"}
+            ]
+        }
+    ],
+    "studies": [
+        {
+            "name": "Python Programming MOOC",
+            "description": "",
+            "date": "2022-2023",
+            "url": "https://programming-24.mooc.fi/"
+        },
+        {
+            "name": "Full Stack Open",
+            "date": "2023-2023",
+            "url": "https://fullstackopen.com/en/"
+        },
+        {
+            "name": "CS50's Introduction to Computer Science",
+            "date": "2023-2024",
+            "url": "https://cs50.harvard.edu/x/2024/"
+        },
+        {
+            "name": "CS50's Introduction to Programming with Python",
+            "date": "2023-2024",
+            "url": "https://cs50.harvard.edu/python/2022/"
+        },
+        {
+            "name": "DevOps with Docker",
+            "date": "2023-2024",
+            "url": "https://devopswithdocker.com/"
+        },
+        {
+            "name": "DevOps with Kubernetes",
+            "date": "2023-2024",
+            "url": "https://devopswithkubernetes.com/"
+        },
+        {
+            "name": "Cyber Security Base",
+            "date": "2024-2024",
+            "url": "https://cybersecuritybase.mooc.fi/"
+        }
+
+    ],
+    "projects": [
+        {
+            "name": "SleepingDragons",
+            "gitUrl": "https://github.com/Arrbit/New-Sleeping-Dragons",
+            "liveUrl": "",
+            "image": "./sds.png",
+            "description": "SleepingDragons was a community website dedicated to the game Final Fantasy XIV. As of early 2024 the website went offline as the community restructured.",
+            "date": 2021,
+            "tasks": ["Basic PHP Function Writing", "Frontend Design and Styling", "Basic CI/CD"],
+            "learned": ["PHP", "Bootstrap", "Git", "CI/CD"]
+        },
+        {
+            "name": "HealCo",
+            "gitUrl": "https://github.com/Arrbit/healco.de",
+            "liveUrl": "https://healco.de/",
+            "image": "./healco.png",
+            "description": "HealCo is a company bringing a healthy lifestyle to office environments.",
+            "date": 2021,
+            "tasks": ["Frontend Construction using VueJS", "Component Creation using Vuetify", "Form Handling"],
+            "learned": ["VueJS", "Project Management in a Team", "Design Principles"]
+        },
+        {
+            "name": "XIVDB",
+            "gitUrl": "https://github.com/gomisroca/XIVDB",
+            "liveUrl": "",
+            "image": "./healco.png",
+            "description": "HealCo is a company bringing a healthy lifestyle to office environments.",
+            "date": 2022,
+            "tasks": ["Frontend Construction using VueJS", "Component Creation using Vuetify", "Form Handling"],
+            "learned": ["VueJS", "Project Management in a Team", "Design Principles"]
+        },
+        {
+            "name": "XIV Dungeoneer",
+            "gitUrl": "https://github.com/gomisroca/xiv-dungeoneer",
+            "liveUrl": "",
+            "image": "./healco.png",
+            "description": "Check what items a character is missing from a dungeon or raid using FFXIVCollect API.",
+            "date": 2022,
+            "tasks": ["Frontend Construction using VueJS", "Component Creation using Vuetify", "Form Handling"],
+            "learned": ["VueJS", "Project Management in a Team", "Design Principles"]
+        },
+        {
+            "name": "OURA",
+            "gitUrl": "https://github.com/gomisroca/oura",
+            "liveUrl": "https://oura-1.vercel.app/",
+            "image": "./oura.png",
+            "description": "OURA is a highly customizable storefront.",
+            "date": 2023,
+            "tasks": ["Basic PHP Function Writing", "Frontend Design and Styling", "Basic CI/CD"],
+            "learned": ["PHP", "Bootstrap", "Git", "CI/CD"]
+        },
+        {
+            "name": "ESIA Gallery",
+            "gitUrl": "https://github.com/gomisroca/esia-gallery",
+            "liveUrl": "",
+            "image": "./oura.png",
+            "description": "OURA is a highly customizable storefront.",
+            "date": 2023,
+            "tasks": ["Basic PHP Function Writing", "Frontend Design and Styling", "Basic CI/CD"],
+            "learned": ["PHP", "Bootstrap", "Git", "CI/CD"]
+        },
+        {
+            "name": "Trekking Trails",
+            "gitUrl": "https://github.com/gomisroca/trekking-trails",
+            "liveUrl": "",
+            "image": "./oura.png",
+            "description": "OURA is a highly customizable storefront.",
+            "date": 2023,
+            "tasks": ["Basic PHP Function Writing", "Frontend Design and Styling", "Basic CI/CD"],
+            "learned": ["PHP", "Bootstrap", "Git", "CI/CD"]
+        },
+        {
+            "name": "Catalyst",
+            "gitUrl": "https://github.com/gomisroca/catalyst",
+            "liveUrl": "",
+            "image": "./oura.png",
+            "description": "OURA is a highly customizable storefront.",
+            "date": 2024,
+            "tasks": ["Basic PHP Function Writing", "Frontend Design and Styling", "Basic CI/CD"],
+            "learned": ["PHP", "Bootstrap", "Git", "CI/CD"]
+        },
+        {
+            "name": "Doran's Dice",
+            "gitUrl": "https://github.com/gomisroca/gacha",
+            "liveUrl": "",
+            "image": "./oura.png",
+            "description": "OURA is a highly customizable storefront.",
+            "date": 2024,
+            "tasks": ["Basic PHP Function Writing", "Frontend Design and Styling", "Basic CI/CD"],
+            "learned": ["PHP", "Bootstrap", "Git", "CI/CD"]
+        }
+    ]
+}
