@@ -20,4 +20,4 @@ Low Priority:
 
 - [ ] Language Selector (like Theme Selector, also goes in Navbar, CAT ES ENG DE options)
 - [X] Style Fonts
-- [ ] Fancy Background (Small animation)
+- [ ] Fancy Background (Small animation) 
