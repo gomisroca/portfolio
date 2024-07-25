@@ -7,13 +7,17 @@ A static site deployed on Github Pages with the purpose of showcasing my portfol
 - [X] Navbar Component (Links + Theme Toggler)
 - [X] Banner Component (picture, name, basic info)
 - [X] Create data.json, put data there and fetch from the components instead of putting data directly in them.
-- [ ] Main Projects Panel
-- [ ] Main Experience Panel
-- [ ] Single Project Panel (Individual panel inside of the main panel, Link to Github, Link to Demo/Live if available)
-- [ ] Single Experience Panel (Individual panel inside of the main panel, Link to website)
-- [ ] Skills Panel
+- [X] Main Projects Panel
+- [X] Main Studies Panel
+- [X] Single Project Panel (Individual panel inside of the main panel, Link to Github, Link to Demo/Live if available)
+- [X] Single Studies Panel (Individual panel inside of the main panel, Link to website)
+- [X] Skills Panel
 - [ ] About Me Page
-- [ ] Navbar Links
+- [X] Navbar Links  
+- [ ] Fill Data 
+<hr />  
+Low Priority:
+
 - [ ] Language Selector (like Theme Selector, also goes in Navbar, CAT ES ENG DE options)
-- [ ] Style Fonts
+- [X] Style Fonts
 - [ ] Fancy Background (Small animation)
