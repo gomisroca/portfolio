@@ -1,4 +1,4 @@
-import {ThemeProvider} from '@/lib/theme-provider'
+import {ThemeProvider} from '@/providers/theme-provider'
 import Navbar from '@/components/Navbar'
 import Banner from '@/components/Banner'
 import Footer from '@/components/Footer'
