@@ -18,6 +18,7 @@ A static site deployed on Github Pages with the purpose of showcasing my portfol
 <hr />  
 Low Priority:
 
+- [ ] Turn Project Images into Carousels  
 - [ ] Language Selector (like Theme Selector, also goes in Navbar, CAT ES ENG DE options)
 - [X] Style Fonts
 - [ ] Fancy Background (Small animation) 
