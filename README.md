@@ -20,4 +20,5 @@ Low Priority:
 
 - [ ] Language Selector (like Theme Selector, also goes in Navbar, CAT ES ENG DE options)
 - [X] Style Fonts
+- [ ] Add components from [Aceternity UI](https://ui.aceternity.com) (Card Hover, Flip Words, Link Preview, Hero Highlights, Hero Parallax/Beams/ShootingStars as BG, Tracing Beam, Text Generate)
 - [ ] Fancy Background (Small animation) 
