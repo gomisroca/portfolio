@@ -1,24 +1,16 @@
 import Banner from '@/components/Banner'
 import '@testing-library/jest-dom'
-import { cleanup, render, screen } from '@testing-library/react'
-import { afterEach, describe, it, expect } from 'vitest'
+import { render, screen } from '@testing-library/react'
 
-describe('Banner', () => {
-  afterEach(cleanup)
+describe('<Banner />', () => {
 
-  it('should render component', () => {
+  test('renders the component with the correct title', () => {
     render(<Banner />)
+    screen.getByText('Adrià Gomis')
   })
 
-  it('should render my name', () => {
+  test('renders the avatar placeholder', () => {
     render(<Banner />)
-    const name = screen.getByText('Adrià Gomis')
-    expect(name).toBeInTheDocument()
-  })
-
-  it('should render the avatar placeholder', () => {
-    render(<Banner />)
-    const avatar_ph = screen.getByText('AG')
-    expect(avatar_ph).toBeInTheDocument()
+    screen.getByText('AG')
   })
 })
