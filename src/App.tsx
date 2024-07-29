@@ -15,7 +15,7 @@ function App() {
   }, [])
   return (
     <ThemeProvider defaultTheme="dark" storageKey="portfolio-ui-theme">
-      <div className="font-bitter">
+      <div className="font-bitter bg-gradient-to-br from-neutral-200 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800">
         <Navbar />
         <div className="flex flex-col gap-y-4">
             <Banner />
