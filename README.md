@@ -12,9 +12,11 @@ A static site deployed on Github Pages with the purpose of showcasing my portfol
 - [X] Single Project Panel (Individual panel inside of the main panel, Link to Github, Link to Demo/Live if available)
 - [X] Single Studies Panel (Individual panel inside of the main panel, Link to website)
 - [X] Skills Panel
+- [X] Add Certificate Link to Studies
+- [X] Check for responsive design
 - [ ] About Me Page
 - [X] Navbar Links  
-- [ ] Fill Data 
+- [ ] Fill Proper Data 
 <hr />  
 Low Priority:
 
