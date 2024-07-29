@@ -15,7 +15,7 @@ function Banner() {
         <AvatarImage src={data.banner.image} alt="avatar" />
         <AvatarFallback data-testid="avatar-fallback">AG</AvatarFallback>
       </Avatar>
-      <Card className="border-none m-auto">
+      <Card className="border-none m-auto shadow-none">
         <CardHeader className="px-4 py-2 text-center w-full md:w-3/4  m-auto">
           <CardTitle className="font-mw">Adrià Gomis</CardTitle>
           <CardDescription>Full-stack Developer</CardDescription>
