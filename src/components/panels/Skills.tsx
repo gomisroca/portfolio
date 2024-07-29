@@ -15,11 +15,11 @@ type SkillType = {
 
 function Skills() {
   return (
-    <Card className="border-2  md:hover:border-emerald-300 md:dark:hover:border-emerald-600 transition duration-200 m-auto w-[90%] md:w-1/2">
+    <Card className="border-2 md:hover:border-emerald-300 md:dark:hover:border-emerald-600 transition duration-200 my-auto mx-2 md:mx-auto w-auto md:w-3/4 xl:w-5/6">
       <CardHeader className="text-center w-full m-auto">
         <CardTitle className="capitalize font-mw">Skills</CardTitle>
       </CardHeader>
-      <CardContent className="w-full m-auto grid grid-cols-2 gap-y-4 md:gap-0 md:grid-cols-4 justify-evenly">
+      <CardContent className="w-full m-auto grid grid-cols-2 gap-y-4 xl:gap-0 xl:grid-cols-4">
         {data.skills.map((skill: SkillType) => (
           <Skill skill={skill} />
         ))}

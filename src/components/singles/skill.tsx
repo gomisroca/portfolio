@@ -19,10 +19,11 @@ type Skill = {
 
 function Skill({ skill }: {skill: Skill}) {
   return (
-    <div className="flex-col justify-center">
+    <div className="items-center justify-center mx-auto">
       <CardTitle className="capitalize mb-2">{skill.name}</CardTitle>
+      <div className="items-start">
       {skill.content.map(content => (
-        <div className="flex items-center md:gap-2">
+        <div className="flex md:gap-2">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger className="cursor-default">
@@ -49,6 +50,7 @@ function Skill({ skill }: {skill: Skill}) {
           )}
         </div>
       ))}
+      </div>
     </div>
   )
 }

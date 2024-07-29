@@ -11,7 +11,7 @@ function Studies() {
   }, [])
 
   return (
-    <Card className="border-2 has-[.aos-init:hover]:border-neutral-200 dark:has-[.aos-init:hover]:border-neutral-800 md:hover:border-emerald-300 md:dark:hover:border-emerald-600 transition duration-200 m-auto w-[90%] md:w-1/2">
+    <Card className="border-2 has-[.aos-init:hover]:border-neutral-200 dark:has-[.aos-init:hover]:border-neutral-800 md:hover:border-emerald-300 md:dark:hover:border-emerald-600 transition duration-200 my-auto mx-2 md:mx-auto w-auto md:w-3/4 xl:w-5/6">
       <CardHeader className="text-center w-full m-auto">
         <CardTitle className="capitalize font-mw">Education</CardTitle>
       </CardHeader>

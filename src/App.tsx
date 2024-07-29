@@ -17,17 +17,15 @@ function App() {
     <ThemeProvider defaultTheme="dark" storageKey="portfolio-ui-theme">
       <div className="font-bitter">
         <Navbar />
-        <div className="mx-6 my-2">
-          <Banner />
-        </div>
         <div className="flex flex-col gap-y-4">
+            <Banner />
           <div data-aos="fade-up">
             <Skills />
           </div>
           <div data-aos="fade-up">
             <Projects />
           </div>
-          <div data-aos="fade-up" className="mb-10">
+          <div data-aos="fade-up" className="mb-5 md:mb-10">
             <Studies />
           </div>
         </div>
