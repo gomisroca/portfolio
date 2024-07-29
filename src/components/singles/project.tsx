@@ -30,14 +30,14 @@ type Project = {
 
 function Project({ project }: {project: Project}) {
   return (
-    <Card className="group flex flex-col justify-center border-2 md:hover:border-emerald-300 md:dark:hover:border-emerald-600 transition duration-200">
+    <Card className="mx-2 md:mx-0 group flex flex-col justify-center border-2 md:hover:border-neutral-800 md:dark:hover:border-neutral-200 transition duration-200 bg-white/40 dark:bg-black/40">
       <img
         src={project.image}
         className="rounded-t-md group-hover:contrast-[1.1] transition duration-200"
       />
       <CardHeader className="my-2 mx-auto pt-2 pb-0 text-center">
-        <CardTitle className="capitalize">{project.name}</CardTitle>
-        <CardDescription>- {project.date} -</CardDescription>
+        <CardTitle className=" uppercase text-xl text-center">{project.name}</CardTitle>
+        <CardDescription>{project.date}</CardDescription>
       </CardHeader>
       <Separator />
       <CardContent className="flex flex-col items-center md:gap-2 my-2 pb-2">
@@ -74,6 +74,7 @@ function Project({ project }: {project: Project}) {
                     target="_blank"
                     rel="noopener noreferrer">
                     <img
+                      alt="Github logo"
                       src="./github-mark.svg"
                       className="p-1 invert dark:invert-0"
                     />

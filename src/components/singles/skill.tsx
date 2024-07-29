@@ -20,25 +20,11 @@ type Skill = {
 function Skill({ skill }: {skill: Skill}) {
   return (
     <div className="items-center justify-center mx-auto">
-      <CardTitle className="capitalize mb-2">{skill.name}</CardTitle>
+      <CardTitle className="uppercase mb-2 text-xl text-center">{skill.name}</CardTitle>
       <div className="items-start">
       {skill.content.map(content => (
-        <div className="flex md:gap-2" key={content.name}>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger className="cursor-default">
-                <img
-                  src={content.badge}
-                  alt={content.name}
-                  className="hover:contrast-[1.1] transition duration-200"
-                />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{content.name}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-          {content.specialized && (
+        <div className="flex md:gap-2 justify-end" key={content.name}>
+           {content.specialized && (
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger className="cursor-default">🔥</TooltipTrigger>
@@ -48,6 +34,21 @@ function Skill({ skill }: {skill: Skill}) {
               </Tooltip>
             </TooltipProvider>
           )}
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger className="cursor-default">
+                <div className="flex items-center">
+                  <img
+                    src={content.badge}
+                    alt={content.name}
+                  />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{content.name}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       ))}
       </div>
