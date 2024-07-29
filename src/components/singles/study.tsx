@@ -29,7 +29,7 @@ function Study({ study }: {study: Study}) {
               </CardTitle>
               <CardDescription>
                 <div>{study.date} | {study.school}</div>
-                {study.certificate && <a href={study.certificate} target="_blank" rel="noopener noreferrer" className='text-neutral-200'>Certificate</a>}
+                {study.certificate && <a href={study.certificate} target="_blank" rel="noopener noreferrer" className='text-neutral-200 hover:text-emerald-300 transition-color duration-200'>Certificate</a>}
               </CardDescription>
             </Card>
           </Link>
