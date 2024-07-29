@@ -70,7 +70,8 @@
         },
         {
           "name": "Vitest",
-          "badge": "https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=fff&style=for-the-badge"
+          "badge": "https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=fff&style=for-the-badge",
+          "specialized": true
         },
         {
           "name": "JWT",
@@ -97,7 +98,8 @@
         },
         {
           "name": "MongoDB",
-          "badge": "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white"
+          "badge": "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white",
+          "specialized": true
         },
         {
           "name": "Redis",
