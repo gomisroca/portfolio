@@ -221,82 +221,42 @@
       "learned": ["VueJS", "Project Management in a Team", "Design Principles"]
     },
     {
-      "name": "XIVDB",
-      "gitUrl": "https://github.com/gomisroca/XIVDB",
-      "liveUrl": "",
-      "image": "./xivdb.png",
-      "description": "HealCo is a company bringing a healthy lifestyle to office environments.",
-      "date": 2022,
-      "tasks": [
-        "Frontend Construction using VueJS",
-        "Component Creation using Vuetify",
-        "Form Handling"
-      ],
-      "learned": ["VueJS", "Project Management in a Team", "Design Principles"]
-    },
-    {
-      "name": "XIV Dungeoneer",
-      "gitUrl": "https://github.com/gomisroca/xiv-dungeoneer",
-      "liveUrl": "",
-      "image": "./healco.png",
-      "description": "Check what items a character is missing from a dungeon or raid using FFXIVCollect API.",
-      "date": 2022,
-      "tasks": [
-        "Frontend Construction using VueJS",
-        "Component Creation using Vuetify",
-        "Form Handling"
-      ],
-      "learned": ["VueJS", "Project Management in a Team", "Design Principles"]
-    },
-    {
       "name": "OURA",
-      "gitUrl": "https://github.com/gomisroca/oura",
+      "gitUrl": "https://github.com/gomisroca/oura/tree/vercel",
       "liveUrl": "https://oura-1.vercel.app/",
       "image": "./oura.png",
       "description": "OURA is a highly customizable storefront.",
       "date": 2023,
       "tasks": [
-        "Basic PHP Function Writing",
-        "Frontend Design and Styling",
-        "Basic CI/CD"
+        "Migration from React+Express to NextJS",
+        "Fullstack Design with NextJS",
+        "Allow Product Upload and Management",
+        "User Management and Authentication",
+        "Deployment"
       ],
-      "learned": ["PHP", "Bootstrap", "Git", "CI/CD"]
+      "learned": ["Codebase Migration", "NextJS", "Prisma", "Postgres", "Deployment Troubleshooting"]
     },
     {
       "name": "ESIA Gallery",
       "gitUrl": "https://github.com/gomisroca/esia-gallery",
       "liveUrl": "",
       "image": "./esia.png",
-      "description": "OURA is a highly customizable storefront.",
+      "description": "Art Gallery looking to sell prints of their artwork.",
       "date": 2023,
       "tasks": [
-        "Basic PHP Function Writing",
-        "Frontend Design and Styling",
-        "Basic CI/CD"
+        "Acquire and Clean data",
+        "Frontend Design using Angular",
+        "Handle Purchase Flow (Forms, Data Validation and Database Updates)"
       ],
-      "learned": ["PHP", "Bootstrap", "Git", "CI/CD"]
+      "learned": ["Data Cleanup", "Component Libraries Usage", "Error Handling", "Form and Data Validation"]
     },
     {
       "name": "Trekking Trails",
       "gitUrl": "https://github.com/gomisroca/trekking-trails",
       "liveUrl": "",
       "image": "./tt.png",
-      "description": "OURA is a highly customizable storefront.",
+      "description": "Highly-stylized traveling blog.",
       "date": 2023,
-      "tasks": [
-        "Basic PHP Function Writing",
-        "Frontend Design and Styling",
-        "Basic CI/CD"
-      ],
-      "learned": ["PHP", "Bootstrap", "Git", "CI/CD"]
-    },
-    {
-      "name": "Doran's Dice",
-      "gitUrl": "https://github.com/gomisroca/dorans-dice",
-      "liveUrl": "",
-      "image": "./dorans.png",
-      "description": "OURA is a highly customizable storefront.",
-      "date": 2024,
       "tasks": [
         "Basic PHP Function Writing",
         "Frontend Design and Styling",
@@ -309,6 +269,18 @@
       "gitUrl": "https://github.com/gomisroca/catalyst",
       "liveUrl": "",
       "image": "./catalyst.png",
+      "description": "Share projects of any kind, collaborate with others and keep up with what they are working on.",
+      "date": 2024,
+      "tasks": [
+        "Allow users to login with multiple OAuth2 providers or email and password"
+      ],
+      "learned": ["Handle Multiple OAuth2 Providers", "Rate Limiting", "End to End Testing", "Proxy Routing"]
+    },
+    {
+      "name": "Doran's Dice",
+      "gitUrl": "https://github.com/gomisroca/dorans-dice",
+      "liveUrl": "",
+      "image": "./dorans.png",
       "description": "OURA is a highly customizable storefront.",
       "date": 2024,
       "tasks": [
