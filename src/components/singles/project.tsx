@@ -16,6 +16,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { useRef } from 'react'
+import { useIsVisible } from '@/hooks/useIsVisible'
 
 type Project = {
   name: string;
@@ -29,8 +31,11 @@ type Project = {
 };
 
 function Project({ project }: {project: Project}) {
+  const ref = useRef(null);
+  const isVisible = useIsVisible(ref);
+
   return (
-    <Card className="mx-2 md:mx-0 group flex flex-col justify-center border-2 md:hover:border-neutral-800 md:dark:hover:border-neutral-200 transition duration-200 bg-white/40 dark:bg-black/40">
+    <Card ref={ref} className={`mx-2 md:mx-0 group flex flex-col justify-center border-2 md:hover:border-neutral-800 md:dark:hover:border-neutral-200 bg-white/40 dark:bg-black/40 transition-opacity ease-in duration-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
       <img
         src={project.image}
         className="rounded-t-md group-hover:contrast-[1.1] transition duration-200"

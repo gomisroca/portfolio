@@ -7,8 +7,12 @@ import {
 import { Highlight } from '@/components/ui/highlight'
 import data from '@/data.json'
 import { FlipWords } from './ui/flip-words'
+import { useIsVisible } from '@/hooks/useIsVisible'
+import { useRef } from 'react'
 
 function Banner() {
+  const ref = useRef(null);
+  const isVisible = useIsVisible(ref);
   return (
     <div className='md:mx-5 mt-4'>
       <Avatar className="h-1/2 md:h-1/6 w-1/2 md:w-1/3 xl:w-1/6 m-auto">
@@ -25,7 +29,7 @@ function Banner() {
               specializing in <FlipWords className='px-0' words={['React', 'Express', 'Next.js', 'Postgres', 'MongoDB']} duration={2000} />
           </CardContent>
         </div>
-        <div className='flex flex-col items-center text-center'>
+        <div ref={ref} className={`flex flex-col items-center text-center transition-opacity ease-in duration-700 ${isVisible ? "opacity-100" : "opacity-0"}`}>
           <CardHeader className='pb-2'>
             <CardTitle className='uppercase'>About Me</CardTitle>
           </CardHeader>
