@@ -5,6 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { LucideLink } from 'lucide-react';
 import { Link } from 'react-router-dom'
 
 type Study = {
@@ -22,17 +23,25 @@ function Study({ study }: {study: Study}) {
         <TooltipTrigger
           className="cursor-default text-left group items-center justify-start mx-auto w-full"
           data-aos="fade-up">
-          <Link to={study.url} target="_blank" rel="noopener noreferrer">
             <Card className="flex flex-col justify-center py-2 px-4 border-transparent dark:border-transparent group-hover:border-emerald-300 dark:group-hover:border-emerald-600 transition duration-200">
-              <CardTitle className="text-1xl xl:text-2xl capitalize group-hover:text-emerald-300 transition duration-200">
-                {study.name}
-              </CardTitle>
-              <CardDescription>
-                <div>{study.date} | {study.school}</div>
-                {study.certificate && <a href={study.certificate} target="_blank" rel="noopener noreferrer" className='text-neutral-200 hover:text-emerald-300 transition-color duration-200'>Certificate</a>}
+              <Link to={study.url} target="_blank" rel="noopener noreferrer">
+                <CardTitle className="text-1xl xl:text-2xl capitalize hover:text-emerald-300 transition duration-200">
+                  {study.name}
+                </CardTitle>
+              </Link>
+              <CardDescription className='flex flex-col'>
+                <span>{study.date} | {study.school}</span>
+                {study.certificate && 
+                  <a 
+                  href={study.certificate} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className='flex items-center text-neutral-600 dark:text-neutral-200 hover:text-emerald-300 transition-color duration-200'>
+                    <LucideLink className='h-3' />
+                    Certificate
+                  </a>}
               </CardDescription>
             </Card>
-          </Link>
         </TooltipTrigger>
         <TooltipContent>
           <p>Visit Website</p>

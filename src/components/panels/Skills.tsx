@@ -21,7 +21,7 @@ function Skills() {
       </CardHeader>
       <CardContent className="w-full m-auto grid grid-cols-2 gap-y-4 xl:gap-0 xl:grid-cols-4">
         {data.skills.map((skill: SkillType) => (
-          <Skill skill={skill} />
+          <Skill skill={skill} key={skill.name} />
         ))}
       </CardContent>
     </Card>

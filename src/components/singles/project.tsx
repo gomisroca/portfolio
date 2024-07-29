@@ -48,7 +48,7 @@ function Project({ project }: {project: Project}) {
             <span className="font-semibold">Responsabilities</span>
             <ul className="px-6 list-disc">
               {project.tasks.map(task => (
-                <li>{task}</li>
+                <li key={task}>{task}</li>
               ))}
             </ul>
           </div>
@@ -56,7 +56,7 @@ function Project({ project }: {project: Project}) {
             <span className="font-semibold">Skills Acquired</span>
             <ul className="px-6 list-disc">
               {project.learned.map(skill => (
-                <li>{skill}</li>
+                <li key={skill}>{skill}</li>
               ))}
             </ul>
           </div>
@@ -67,7 +67,7 @@ function Project({ project }: {project: Project}) {
         {project.gitUrl && (
           <TooltipProvider>
             <Tooltip>
-              <TooltipTrigger className="cursor-default h-[40px] w-[40px]">
+              <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
                 <Button size="icon" className="h-[40px] w-[40px]">
                   <Link
                     to={project.gitUrl}
@@ -89,7 +89,7 @@ function Project({ project }: {project: Project}) {
         {project.liveUrl && (
           <TooltipProvider>
             <Tooltip>
-              <TooltipTrigger className="cursor-default h-[40px] w-[40px]">
+              <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
                 <Button size="icon">
                   <Link
                     to={project.liveUrl}

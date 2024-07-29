@@ -19,7 +19,7 @@ function Projects() {
         {data.projects
           .sort((a, b) => b.date - a.date)
           .map(project => (
-            <div data-aos="fade-up">
+            <div key={project.name} data-aos="fade-up">
               <Project project={project} />
             </div>
           ))}

@@ -17,7 +17,7 @@ function Studies() {
       </CardHeader>
       <CardContent className="w-full m-auto grid grid-cols-2 gap-y-4 md:gap-2 md:grid-cols-2 justify-evenly">
         {data.studies.map(study => (
-          <Study study={study} />
+          <Study key={study.name} study={study} />
         ))}
       </CardContent>
     </Card>

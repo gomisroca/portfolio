@@ -23,7 +23,7 @@ function Skill({ skill }: {skill: Skill}) {
       <CardTitle className="capitalize mb-2">{skill.name}</CardTitle>
       <div className="items-start">
       {skill.content.map(content => (
-        <div className="flex md:gap-2">
+        <div className="flex md:gap-2" key={content.name}>
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger className="cursor-default">
