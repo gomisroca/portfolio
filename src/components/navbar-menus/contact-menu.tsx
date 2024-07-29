@@ -12,21 +12,22 @@ function ContactMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button data-testid="contact-button" className="px-1 md:px-2 flex align-center">
+        <Button data-testid="contact-button" className="px-1 md:px-2 flex align-center" variant="ghost">
           <Mail />
           <span className="sr-only">Contact</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent data-testid="contact-menu" align="end">
         <a href="mailto:gomisroca@gmail.com">
-          <DropdownMenuItem className="flex gap-2 w-full justify-between p-4 cursor-pointer">
+          <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
             <Mail />
             <span>gomisroca@gmail.com</span>
           </DropdownMenuItem>
         </a>
         <Link data-testid="github-link" to="https://github.com/gomisroca/">
-          <DropdownMenuItem className="flex gap-2 w-full justify-between p-4 cursor-pointer">
+          <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
             <img
+              alt="Github logo"
               src="./github-mark.svg"
               className="invert-0 dark:invert h-[20px]"
             />
@@ -34,7 +35,7 @@ function ContactMenu() {
           </DropdownMenuItem>
         </Link>
         <Link to="https://discord.com/users/548153072090742784">
-          <DropdownMenuItem className="flex gap-2 w-full justify-between p-4 cursor-pointer">
+          <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
             <img
               src="./discord-mark-black.svg"
               className="invert-0 dark:invert h-[20px]"
