@@ -8,7 +8,7 @@ import Studies from '@/components/panels/Studies'
 function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="portfolio-ui-theme">
-      <div style={{ backgroundImage: `url('bg.jpg')` }} className='bg-cover bg-center bg-no-repeat bg-fixed'>
+      <div style={{ backgroundImage: `url('bg.jpg')` }} className='bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed'>
         <div className="bg-gradient-to-br from-neutral-50 to-neutral-100/50 dark:from-neutral-950 dark:via-from-neutral-950 dark:to-neutral-900/70">
           <Navbar />
           <div className="flex flex-col gap-y-4">
