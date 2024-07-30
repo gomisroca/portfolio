@@ -2,22 +2,17 @@ import Navbar from '@/components/Navbar'
 import '@testing-library/jest-dom'
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import {MemoryRouter} from 'react-router-dom'
 
 describe('Navbar', () => {
   test('renders component', () => {
     render(
-      <MemoryRouter>
-        <Navbar />
-      </MemoryRouter>
+      <Navbar />
     )
   })
 
   test('has two buttons', () => {
     render(
-      <MemoryRouter>
-        <Navbar />
-      </MemoryRouter>
+      <Navbar />
     )
     const buttons = screen.getAllByRole('button')
     expect(buttons).toHaveLength(2)
@@ -26,9 +21,7 @@ describe('Navbar', () => {
   describe('Contact Menu', () => {
     test('clicking on contact button opens contact menu', async () => {
       render(
-        <MemoryRouter>
-          <Navbar />
-        </MemoryRouter>
+        <Navbar />
       )
 
       const user = userEvent.setup()
@@ -43,9 +36,7 @@ describe('Navbar', () => {
 
     test('contact links have hrefs', async () => {
       render(
-        <MemoryRouter>
-          <Navbar />
-        </MemoryRouter>
+        <Navbar />
       )
       const user = userEvent.setup()
 
@@ -62,9 +53,7 @@ describe('Navbar', () => {
   describe('Theme Menu', () => {
     test('clicking on theme button opens theme menu', async () => {
       render(
-        <MemoryRouter>
-          <Navbar />
-        </MemoryRouter>
+        <Navbar />
       )
 
       const user = userEvent.setup()
