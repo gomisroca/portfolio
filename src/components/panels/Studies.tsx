@@ -8,7 +8,7 @@ function Studies() {
       <CardHeader className="text-center w-full m-auto">
         <CardTitle className="uppercase">Education</CardTitle>
       </CardHeader>
-      <CardContent className="w-full m-auto grid grid-cols-2 gap-2 md:gap-2 md:grid-cols-2 justify-evenly">
+      <CardContent className="w-full m-auto grid grid-cols-2 gap-1 md:gap-2 md:grid-cols-2 justify-evenly px-2 md:px-0">
         {data.studies.map(study => (
           <Study key={study.name} study={study} />
         ))}
