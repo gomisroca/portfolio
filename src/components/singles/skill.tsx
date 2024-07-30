@@ -6,50 +6,38 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 
-type Content = {
-  name: string;
-  badge: string;
-  specialized?: boolean;
-};
-
 type Skill = {
   name: string;
-  content: Content[];
+  badge: string;
 };
 
-function Skill({ skill }: {skill: Skill}) {
+const Badge = ({ name, badge }: {name: string, badge: string}) => (
+  <div className="flex md:gap-2 justify-end">
+    <TooltipProvider>
+      <Tooltip>
+        <TooltipTrigger className="cursor-default">
+          <img
+            className='rounded-md dark:invert hover:brightness-150 transition duration-200'
+            loading="lazy"
+            src={badge}
+            alt={name}
+          />
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>{name}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+  </div>
+);
+
+function Skill({ category, items }: {category: string, items: Skill[]}) {
   return (
     <div className="items-center justify-center mx-auto">
-      <CardTitle className="uppercase mb-2 text-xl text-center">{skill.name}</CardTitle>
-      <div className="items-start">
-      {skill.content.map(content => (
-        <div className="flex md:gap-2 justify-end" key={content.name}>
-           {content.specialized && (
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger className="cursor-default">🔥</TooltipTrigger>
-                <TooltipContent>
-                  <p>High Proficiency</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          )}
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger className="cursor-default">
-                <div className="flex items-center">
-                  <img
-                    src={content.badge}
-                    alt={content.name}
-                  />
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{content.name}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </div>
+      <CardTitle className="uppercase mb-2 text-center text-md md:text-lg xl:text-xl">{category}</CardTitle>
+      <div className="flex flex-col gap-y-1 items-center">
+      {items.map((item, index) => (
+        <Badge key={index} name={item.name} badge={item.badge} />
       ))}
       </div>
     </div>

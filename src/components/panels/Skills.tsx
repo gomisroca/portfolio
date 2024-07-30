@@ -1,29 +1,60 @@
-import { CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardTitle } from '@/components/ui/card'
 import data from '@/data.json'
-import Skill from '@/components/singles/Skill'
+import Skill from '@/components/singles/Skill';
+import { Carousel, CarouselContent, CarouselItem,  } from '@/components/ui/carousel'
+import Autoplay from "embla-carousel-autoplay"
 
-type Content = {
+interface skill {
   name: string;
   badge: string;
-  specialized?: boolean;
-};
+}
 
-type SkillType = {
-  name: string;
-  content: Content[];
-};
+const SkillCategory = ({ category, items }: {category: string, items: skill[]}) => (
+  <Card className='
+    p-4
+    mx-2 md:mx-0
+    flex flex-col
+    border-2 md:hover:border-neutral-300 md:dark:hover:border-neutral-700 
+    bg-white/40 dark:bg-black/40
+    transition ease-in duration-200 w-full'>
+    <CardTitle className="uppercase text-center mx-auto mt-0 mb-4">{category}</CardTitle>
+    <div className='grid grid-cols-2 lg:flex justify-evenly w-full gap-y-4 odd:before:border-2'>
+      {Object.keys(items).map((category: string, index: number) => (
+        // @ts-ignore: index signature for dynamic access
+        <Skill key={index} category={category} items={items[category]} />
+      ))}
+    </div>
+  </Card>
+);
 
 function Skills() {
   return (
     <div className="w-full md:w-3/5 2xl:w-2/5 mx-auto lg:mb-4">
-      <CardHeader className="text-center w-full m-auto py-2">
-        <CardTitle className="uppercase">Skills</CardTitle>
-      </CardHeader>
-      <CardContent className="w-full m-auto grid grid-cols-2 gap-y-4 xl:gap-0 xl:grid-cols-4 py-2">
-        {data.skills.map((skill: SkillType) => (
-          <Skill skill={skill} key={skill.name} />
-        ))}
-      </CardContent>
+      <Carousel 
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+      plugins={[
+        Autoplay({
+          delay: 5000,
+          stopOnInteraction: false,
+          stopOnMouseEnter: true,
+        }),
+      ]}
+      >
+        <CarouselContent>
+          {Object.keys(data.skills).map((category: string, index: number) => (
+            <CarouselItem
+            key={index} 
+            className="w-full flex"
+            >
+              {/* @ts-ignore: index signature for dynamic access */}
+              <SkillCategory category={category} items={data.skills[category]} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </div>
   )
 }
