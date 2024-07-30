@@ -31,15 +31,15 @@ function Project({ project }: {project: Project}) {
     <Card className='
     group
     mx-2 md:mx-0
-    group flex flex-col xl:flex-row
+    group flex flex-col
     border-2 md:hover:border-neutral-300 md:dark:hover:border-neutral-700 
     bg-white/40 dark:bg-black/40
-    transition ease-in duration-200 xl:h-64 w-full'>
+    transition ease-in duration-200 w-full'>
       <img
         alt={project.name}
         loading="lazy"
         src={project.image}
-        className="rounded-t-md xl:rounded-tr-none xl:rounded-l-md group-hover:contrast-[1.1] transition duration-200"
+        className="rounded-t-md group-hover:contrast-[1.1] transition duration-200"
       />
       <div className='flex-1 flex flex-col justify-between'>
         <CardHeader className="my-2 mx-auto pt-2 pb-0 text-center">
