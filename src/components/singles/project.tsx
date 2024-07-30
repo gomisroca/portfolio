@@ -9,7 +9,6 @@ import {
 import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 import { LucideLink } from 'lucide-react'
-import { Separator } from '@/components/ui/separator'
 import {
   Tooltip,
   TooltipContent,
@@ -24,91 +23,76 @@ type Project = {
   image: string;
   description: string;
   date: number;
-  tasks: string[];
-  learned: string[];
+  comment: string;
 };
 
 function Project({ project }: {project: Project}) {
   return (
-    <Card className='mx-2 md:mx-0 group flex flex-col justify-center border-2 md:hover:border-neutral-800 md:dark:hover:border-neutral-200 bg-white/40 dark:bg-black/40 transition ease-in duration-200'>
-      {/* Make image small and to the left, short info on the right, maybe we can fit two cards per row 
-      Change position of image depending on odd even child, can just use flex reverse */}
+    <Card className='
+    group
+    mx-2 md:mx-0
+    group flex flex-col xl:flex-row
+    border-2 md:hover:border-neutral-300 md:dark:hover:border-neutral-700 
+    bg-white/40 dark:bg-black/40
+    transition ease-in duration-200 xl:h-64 w-full'>
       <img
+        alt={project.name}
+        loading="lazy"
         src={project.image}
-        className="rounded-t-md group-hover:contrast-[1.1] transition duration-200"
+        className="rounded-t-md xl:rounded-tr-none xl:rounded-l-md group-hover:contrast-[1.1] transition duration-200"
       />
-      <CardHeader className="my-2 mx-auto pt-2 pb-0 text-center">
-        <CardTitle className=" uppercase text-xl text-center">{project.name}</CardTitle>
-        <CardDescription>{project.date}</CardDescription>
-      </CardHeader>
-      <Separator />
-      <CardContent className="flex flex-col items-center md:gap-2 my-2 pb-2">
-        <div className="py-2">{project.description}</div>
-        <Separator />
-        <div className="flex flex-col md:flex-row md:justify-around gap-y-2 md:gap-y-0 w-full">
-          <div>
-            <span className="font-semibold">Responsabilities</span>
-            <ul className="px-6 list-disc">
-              {project.tasks.map(task => (
-                <li key={task}>{task}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <span className="font-semibold">Skills Acquired</span>
-            <ul className="px-6 list-disc">
-              {project.learned.map(skill => (
-                <li key={skill}>{skill}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <Separator />
-      </CardContent>
-      <CardFooter className="m-auto pb-4 items-center flex gap-x-2">
-        {project.gitUrl && (
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
-                <Button size="icon" className="h-[40px] w-[40px]">
-                  <Link
-                    to={project.gitUrl}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <img
-                      alt="Github logo"
-                      src="./github-mark.svg"
-                      className="p-1 invert dark:invert-0"
-                    />
-                  </Link>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Github Repository</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        )}
-        {project.liveUrl && (
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
-                <Button size="icon">
-                  <Link
-                    to={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <LucideLink />
-                  </Link>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Live Website</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        )}
-      </CardFooter>
+      <div className='flex-1 flex flex-col justify-between'>
+        <CardHeader className="my-2 mx-auto pt-2 pb-0 text-center">
+          <CardTitle className=" uppercase text-xl text-center group-hover:text-rose-500 dark:group-hover:text-rose-600 transition duration-200">{project.name}</CardTitle>
+          <CardDescription>{project.date}</CardDescription>
+        </CardHeader>
+        <CardContent className="italic text-neutral-700 dark:text-neutral-300 text-center text-ellipsis pb-2" dangerouslySetInnerHTML={{__html: project.comment}} />
+        <CardFooter className="m-auto mb-0 pb-4 items-center flex gap-x-2">
+          {project.gitUrl && (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
+                  <Button size="icon" className="h-[40px] w-[40px]">
+                    <Link
+                      to={project.gitUrl}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <img
+                        loading="lazy"
+                        alt="Github logo"
+                        src="./github-mark.svg"
+                        className="p-1 invert dark:invert-0"
+                      />
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Github Repository</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          )}
+          {project.liveUrl && (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
+                  <Button size="icon">
+                    <Link
+                      to={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <LucideLink />
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Live Website</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          )}
+        </CardFooter>
+      </div>
     </Card>
   )
 }
