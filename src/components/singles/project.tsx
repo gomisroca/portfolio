@@ -15,6 +15,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import { useState } from 'react'
+import { Skeleton } from '@/components/ui/skeleton'
 
 type Project = {
   name: string;
@@ -27,6 +29,11 @@ type Project = {
 };
 
 function Project({ project }: {project: Project}) {
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const handleImageLoaded = () => {
+    setImageLoaded(true)
+  }
+
   return (
     <Card className='
     group
@@ -35,11 +42,13 @@ function Project({ project }: {project: Project}) {
     border-2 md:hover:border-neutral-300 md:dark:hover:border-neutral-700 
     bg-white/40 dark:bg-black/40
     transition ease-in duration-200 w-full'>
+      {!imageLoaded && <Skeleton className='h-48 md:h-80 lg:h-80 xl:h-[26rem] w-full' /> }
       <img
         alt={project.name}
         loading="lazy"
         src={project.image}
         className="rounded-t-md group-hover:contrast-[1.1] transition duration-200"
+        onLoad={() => handleImageLoaded()}
       />
       <div className='flex-1 flex flex-col justify-between'>
         <CardHeader className="my-2 mx-auto pt-2 pb-0 text-center">

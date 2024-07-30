@@ -6,13 +6,23 @@ import {
 } from '@/components/ui/card'
 import { Highlight } from '@/components/ui/highlight'
 import data from '@/data.json'
-import { FlipWords } from './ui/flip-words'
+import { FlipWords } from '@/components/ui/flip-words'
+import { useState } from 'react'
+import { Skeleton } from '@/components/ui/skeleton'
 
 function Banner() {
+  const [imageLoaded, setImageLoaded] = useState(false)
+  const handleImageLoaded = () => {
+    setImageLoaded(true)
+  }
   return (
     <div className='md:mx-5 mt-4'>
       <Avatar className="h-1/2 md:h-1/6 w-1/2 md:w-1/3 xl:w-1/6 m-auto">
-        <AvatarImage src={data.banner.image} alt="avatar" />
+        {!imageLoaded && <Skeleton className='h-48 md:h-60 lg:h-80 xl:h-52 2xl:h-[19rem] w-full rounded-full' /> }
+        <AvatarImage 
+        src={data.banner.image} 
+        alt="avatar" 
+        onLoad={() => handleImageLoaded()} />
         <AvatarFallback data-testid="avatar-fallback">AG</AvatarFallback>
       </Avatar>
       <div className='w-full md:w-3/5 2xl:w-2/5 mx-auto lg:mb-4'>
