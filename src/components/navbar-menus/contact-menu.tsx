@@ -6,7 +6,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import {Mail} from 'lucide-react'
-import {Link} from 'react-router-dom'
 
 function ContactMenu() {
   return (
@@ -24,7 +23,7 @@ function ContactMenu() {
             <span>gomisroca@gmail.com</span>
           </DropdownMenuItem>
         </a>
-        <Link data-testid="github-link" to="https://github.com/gomisroca/">
+        <a data-testid="github-link" href="https://github.com/gomisroca/" target="_blank" rel="noopener noreferrer">
           <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
             <img
               loading="lazy"
@@ -34,8 +33,8 @@ function ContactMenu() {
             />
             <span>gomisroca</span>
           </DropdownMenuItem>
-        </Link>
-        <Link to="https://discord.com/users/548153072090742784">
+        </a>
+        <a href="https://discord.com/users/548153072090742784" target="_blank" rel="noopener noreferrer">
           <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
             <img
               loading="lazy"
@@ -45,7 +44,7 @@ function ContactMenu() {
             />
             <span>jasar.</span>
           </DropdownMenuItem>
-        </Link>
+        </a>
       </DropdownMenuContent>
     </DropdownMenu>
   )

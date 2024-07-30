@@ -7,7 +7,6 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Link } from 'react-router-dom'
 import { LucideLink } from 'lucide-react'
 import {
   Tooltip,
@@ -62,17 +61,17 @@ function Project({ project }: {project: Project}) {
               <Tooltip>
                 <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
                   <Button size="icon" className="h-[40px] w-[40px]">
-                    <Link
-                      to={project.gitUrl}
-                      target="_blank"
-                      rel="noopener noreferrer">
+                    <a
+                      href={project.gitUrl}
+                      target="_blank" 
+                      rel="noopenernoreferrer">
                       <img
                         loading="lazy"
                         alt="Github logo"
                         src="./github-mark.svg"
                         className="p-1 invert dark:invert-0"
                       />
-                    </Link>
+                    </a>
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -86,12 +85,12 @@ function Project({ project }: {project: Project}) {
               <Tooltip>
                 <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
                   <Button size="icon">
-                    <Link
-                      to={project.liveUrl}
+                    <a
+                      href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer">
                       <LucideLink />
-                    </Link>
+                    </a>
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>

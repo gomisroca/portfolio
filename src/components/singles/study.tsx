@@ -6,7 +6,6 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { LucideLink } from 'lucide-react';
-import { Link } from 'react-router-dom'
 
 type Study = {
   name: string;
@@ -23,11 +22,11 @@ function Study({ study }: {study: Study}) {
         <TooltipTrigger
           className="cursor-default text-left group items-center justify-start mx-auto w-full bg-white/40 dark:bg-black/40 rounded-md border-2 md:hover:border-neutral-300 md:dark:hover:border-neutral-700 transition duration-200">
             <div className="flex flex-col justify-center py-2 px-4">
-              <Link to={study.url} target="_blank" rel="noopener noreferrer" className='w-fit'>
+              <a href={study.url} target="_blank" rel="noopener noreferrer" className='w-fit'>
                 <CardTitle className="text-md md:text-xl uppercase hover:text-rose-500 dark:hover:text-rose-600 transition duration-200">
                   {study.name}
                 </CardTitle>
-              </Link>
+              </a>
               <CardDescription className='flex flex-col text-xs md:text-sm'>
                 <span>{study.date} | {study.school}</span>
                 {study.certificate && 
