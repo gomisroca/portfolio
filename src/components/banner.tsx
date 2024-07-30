@@ -20,9 +20,9 @@ function Banner() {
           <CardHeader className="px-4 py-2">
             <CardTitle className='text-5xl md:text-6xl uppercase'>Adrià Gomis</CardTitle>
           </CardHeader>
-          <CardContent className="px-4 py-2 md:px-0 md:py-0 text-center text-lg">
-              <Highlight className='font-semibold mx-1 px-2 py-2'>Full-stack Developer</Highlight>
-              specializing in <FlipWords className='px-0' words={['React', 'Express', 'Next.js', 'Postgres', 'MongoDB']} duration={2000} />
+          <CardContent className="px-4 py-2 md:px-0 md:py-0 text-center md:text-start text-lgtext-nowrap w-auto md:w-[375px] h-[70px]">
+              <Highlight className='font-semibold mx-1 p-2'>Full-stack Developer</Highlight>
+              specializing in <FlipWords className='px-0 font-semibold' words={['React', 'Express', 'Next.js', 'PostgreSQL', 'MongoDB']} duration={2000} />
           </CardContent>
         </div>
         <div className="flex flex-col items-center text-center">
