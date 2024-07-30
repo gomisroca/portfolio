@@ -6,6 +6,7 @@ function Footer() {
       <span>Updated July 2024</span>
       <Link to="https://github.com/gomisroca/portfolio">
         <img
+          loading="lazy"
           alt="Github logo"
           src="./github-mark.svg"
           className="invert-0 dark:invert h-[20px]"

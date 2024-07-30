@@ -27,6 +27,7 @@ function ContactMenu() {
         <Link data-testid="github-link" to="https://github.com/gomisroca/">
           <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
             <img
+              loading="lazy"
               alt="Github logo"
               src="./github-mark.svg"
               className="invert-0 dark:invert h-[20px]"
@@ -37,6 +38,8 @@ function ContactMenu() {
         <Link to="https://discord.com/users/548153072090742784">
           <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
             <img
+              loading="lazy"
+              alt="Discord logo"
               src="./discord-mark-black.svg"
               className="invert-0 dark:invert h-[20px]"
             />
