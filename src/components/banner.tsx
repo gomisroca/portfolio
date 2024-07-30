@@ -25,8 +25,8 @@ function Banner() {
               specializing in <FlipWords className='px-0 font-semibold' words={['React', 'Express', 'Next.js', 'PostgreSQL', 'MongoDB']} duration={2000} />
           </CardContent>
         </div>
-        <div className="flex flex-col items-center text-center">
-          <CardHeader className='pb-2'>
+        <div className="flex flex-col items-center text-center pb-2">
+          <CardHeader className='pb-2 pt-0'>
             <CardTitle className='uppercase'>About Me</CardTitle>
           </CardHeader>
           <CardContent className="px-4 py-2 md:px-0 md:py-0 text-center gap-y-2 flex flex-col">
