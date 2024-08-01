@@ -7,11 +7,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { useTheme } from '@/providers/theme-provider'
- 
+import { useSetAtom } from 'jotai';
+import themeAtom from "@/atoms/theme-atom";
+
+type Theme = 'dark' | 'light' | 'system';
+
 function ModeMenu() {
-  const { setTheme } = useTheme()
- 
+  const setTheme = useSetAtom(themeAtom);
+
+  const handleClick = (theme: Theme) => setTheme(theme);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -22,13 +27,13 @@ function ModeMenu() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent data-testid="theme-menu" align="end">
-        <DropdownMenuItem className="cursor-pointer" onClick={() => setTheme('light')}>
+        <DropdownMenuItem className="cursor-pointer" onClick={() => handleClick('light')}>
           Light
         </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer" onClick={() => setTheme('dark')}>
+        <DropdownMenuItem className="cursor-pointer" onClick={() => handleClick('dark')}>
           Dark
         </DropdownMenuItem>
-        <DropdownMenuItem className="cursor-pointer" onClick={() => setTheme('system')}>
+        <DropdownMenuItem className="cursor-pointer" onClick={() => handleClick('system')}>
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
