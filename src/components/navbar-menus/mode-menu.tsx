@@ -7,15 +7,15 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { useSetAtom } from 'jotai';
+import { useStore } from 'jotai';
 import themeAtom from "@/atoms/theme-atom";
 
 type Theme = 'dark' | 'light' | 'system';
 
 function ModeMenu() {
-  const setTheme = useSetAtom(themeAtom);
+  const themeStore = useStore();
 
-  const handleClick = (theme: Theme) => setTheme(theme);
+  const handleClick = (theme: Theme) => themeStore.set(themeAtom, theme);
 
   return (
     <DropdownMenu>
