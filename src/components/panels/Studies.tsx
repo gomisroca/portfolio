@@ -4,11 +4,11 @@ import Study from '../singles/Study';
 
 function Studies() {
   return (
-    <div className="w-full md:w-3/5 2xl:w-2/5 mx-auto xl:mb-4">
-      <CardHeader className="text-center w-full m-auto py-2">
+    <div className="mx-auto w-full md:w-3/5 xl:mb-4 2xl:w-2/5">
+      <CardHeader className="m-auto w-full py-2 text-center">
         <CardTitle className="uppercase">Education</CardTitle>
       </CardHeader>
-      <CardContent className="w-full m-auto grid grid-cols-2 gap-1 md:gap-2 md:grid-cols-2 justify-evenly px-2 md:px-0">
+      <CardContent className="m-auto grid w-full grid-cols-2 justify-evenly gap-1 px-2 md:grid-cols-2 md:gap-2 md:px-0">
         {data.studies.map((study) => (
           <Study key={study.name} study={study} />
         ))}

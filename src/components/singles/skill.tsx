@@ -7,12 +7,12 @@ type Skill = {
 };
 
 const Badge = ({ name, badge }: { name: string; badge: string }) => (
-  <div className="flex md:gap-2 justify-end">
+  <div className="flex justify-end md:gap-2">
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger className="cursor-default">
           <img
-            className="rounded-md dark:invert hover:brightness-150 transition duration-200"
+            className="rounded-md transition duration-200 hover:brightness-150 dark:invert"
             loading="lazy"
             src={badge}
             alt={name}
@@ -28,9 +28,9 @@ const Badge = ({ name, badge }: { name: string; badge: string }) => (
 
 function Skill({ category, items }: { category: string; items: Skill[] }) {
   return (
-    <div className="items-center justify-center mx-auto">
-      <CardTitle className="uppercase mb-2 text-center text-md md:text-lg xl:text-xl">{category}</CardTitle>
-      <div className="flex flex-col gap-y-1 items-center">
+    <div className="mx-auto items-center justify-center">
+      <CardTitle className="mb-2 text-center text-base uppercase md:text-lg xl:text-xl">{category}</CardTitle>
+      <div className="flex flex-col items-center gap-y-1">
         {items.map((item, index) => (
           <Badge key={index} name={item.name} badge={item.badge} />
         ))}

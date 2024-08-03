@@ -5,7 +5,7 @@ import { Menubar, MenubarMenu } from '@/components/ui/menubar';
 function Navbar() {
   return (
     <div>
-      <Menubar className="backdrop-blur-sm flex border-none z-10 md:mx-1 lg:mx-2 my-1 md:my-2 justify-end fixed top-0 right-0">
+      <Menubar className="fixed right-0 top-0 z-10 my-1 flex justify-end border-none backdrop-blur-sm md:mx-1 md:my-2 lg:mx-2">
         <MenubarMenu>
           <ContactMenu />
           <ModeMenu />

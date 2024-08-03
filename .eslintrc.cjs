@@ -7,6 +7,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     'plugin:vitest-globals/recommended',
+    'plugin:tailwindcss/recommended',
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",  
@@ -15,7 +16,7 @@ module.exports = {
       "jsx": true
     }
   },
-  plugins: ["react", "react-refresh", "prettier"],
+  plugins: ["react", "react-refresh", "prettier", "tailwindcss"],
   rules: {
     "prettier/prettier": "error",
     "eqeqeq": "error",

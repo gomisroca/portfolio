@@ -5,8 +5,8 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 function Projects() {
   return (
-    <div className="w-full md:w-3/5 2xl:w-2/5 mx-auto lg:mb-4">
-      <CardHeader className="text-center w-full m-auto py-2">
+    <div className="mx-auto w-full md:w-3/5 lg:mb-4 2xl:w-2/5">
+      <CardHeader className="m-auto w-full py-2 text-center">
         <CardTitle className="uppercase">Projects</CardTitle>
       </CardHeader>
       <Carousel
@@ -18,7 +18,7 @@ function Projects() {
           {data.projects
             .sort((a, b) => b.date - a.date)
             .map((project) => (
-              <CarouselItem key={project.name} className="w-full flex">
+              <CarouselItem key={project.name} className="flex w-full">
                 <Project project={project} />
               </CarouselItem>
             ))}

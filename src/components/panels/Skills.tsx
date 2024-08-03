@@ -12,14 +12,14 @@ interface skill {
 const SkillCategory = ({ category, items }: { category: string; items: skill[] }) => (
   <Card
     className="
-    p-4
-    mx-2 md:mx-0
-    flex flex-col
-    border-2 md:hover:border-neutral-300 md:dark:hover:border-neutral-700 
-    bg-white/40 dark:bg-black/40
-    transition ease-in duration-200 w-full">
-    <CardTitle className="uppercase text-center mx-auto mt-0 mb-4">{category}</CardTitle>
-    <div className="grid grid-cols-2 lg:flex justify-evenly w-full gap-y-4 odd:before:border-2">
+    mx-2
+    flex w-full
+    flex-col border-2
+    bg-white/40 p-4 transition 
+    duration-200 ease-in
+    dark:bg-black/40 md:mx-0 md:hover:border-neutral-300 md:dark:hover:border-neutral-700">
+    <CardTitle className="mx-auto mb-4 mt-0 text-center uppercase">{category}</CardTitle>
+    <div className="grid w-full grid-cols-2 justify-evenly gap-y-4 odd:before:border-2 lg:flex">
       {Object.keys(items).map((category: string, index: number) => (
         // @ts-expect-error: index signature for dynamic access
         <Skill key={index} category={category} items={items[category]} />
@@ -30,7 +30,7 @@ const SkillCategory = ({ category, items }: { category: string; items: skill[] }
 
 function Skills() {
   return (
-    <div className="w-full md:w-3/5 2xl:w-2/5 mx-auto lg:mb-4">
+    <div className="mx-auto w-full md:w-3/5 lg:mb-4 2xl:w-2/5">
       <Carousel
         opts={{
           align: 'start',
@@ -45,7 +45,7 @@ function Skills() {
         ]}>
         <CarouselContent>
           {Object.keys(data.skills).map((category: string, index: number) => (
-            <CarouselItem key={index} className="w-full flex">
+            <CarouselItem key={index} className="flex w-full">
               {/* @ts-expect-error: index signature for dynamic access */}
               <SkillCategory category={category} items={data.skills[category]} />
             </CarouselItem>

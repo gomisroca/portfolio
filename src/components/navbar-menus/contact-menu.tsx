@@ -11,31 +11,31 @@ function ContactMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button data-testid="contact-button" className="px-1 md:px-2 flex align-center" variant="ghost">
+        <Button data-testid="contact-button" className="flex self-center px-1 md:px-2" variant="ghost">
           <Mail />
           <span className="sr-only">Contact</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent data-testid="contact-menu" align="end">
         <a href="mailto:gomisroca@gmail.com">
-          <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
+          <DropdownMenuItem className="flex w-full cursor-pointer justify-between gap-2 p-4 font-semibold">
             <Mail />
             <span>gomisroca@gmail.com</span>
           </DropdownMenuItem>
         </a>
         <a data-testid="github-link" href="https://github.com/gomisroca/" target="_blank" rel="noopener noreferrer">
-          <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
-            <img loading="lazy" alt="Github logo" src="./github-mark.svg" className="invert-0 dark:invert h-[20px]" />
+          <DropdownMenuItem className="flex w-full cursor-pointer justify-between gap-2 p-4 font-semibold">
+            <img loading="lazy" alt="Github logo" src="./github-mark.svg" className="h-[20px] invert-0 dark:invert" />
             <span>gomisroca</span>
           </DropdownMenuItem>
         </a>
         <a href="https://discord.com/users/548153072090742784" target="_blank" rel="noopener noreferrer">
-          <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
+          <DropdownMenuItem className="flex w-full cursor-pointer justify-between gap-2 p-4 font-semibold">
             <img
               loading="lazy"
               alt="Discord logo"
               src="./discord-mark-black.svg"
-              className="invert-0 dark:invert h-[20px]"
+              className="h-[20px] invert-0 dark:invert"
             />
             <span>jasar.</span>
           </DropdownMenuItem>

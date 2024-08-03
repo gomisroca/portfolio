@@ -14,10 +14,10 @@ function Study({ study }: { study: Study }) {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger className="cursor-default text-left group items-center justify-start mx-auto w-full bg-white/40 dark:bg-black/40 rounded-md border-2 md:hover:border-neutral-300 md:dark:hover:border-neutral-700 transition duration-200">
-          <div className="flex flex-col justify-center py-2 px-4">
+        <TooltipTrigger className="group mx-auto w-full cursor-default items-center justify-start rounded-md border-2 bg-white/40 text-left transition duration-200 dark:bg-black/40 md:hover:border-neutral-300 md:dark:hover:border-neutral-700">
+          <div className="flex flex-col justify-center px-4 py-2">
             <a href={study.url} target="_blank" rel="noopener noreferrer" className="w-fit">
-              <CardTitle className="text-md md:text-xl uppercase hover:text-rose-500 dark:hover:text-rose-600 transition duration-200">
+              <CardTitle className="text-base uppercase transition duration-200 hover:text-rose-500 dark:hover:text-rose-600 md:text-xl">
                 {study.name}
               </CardTitle>
             </a>
@@ -30,7 +30,7 @@ function Study({ study }: { study: Study }) {
                   href={study.certificate}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-fit flex items-center text-neutral-600 dark:text-neutral-200 hover:text-rose-500 dark:hover:text-rose-600 transition-color duration-200 font-semibold">
+                  className="flex w-fit items-center font-semibold text-neutral-600 transition-colors duration-200 hover:text-rose-500 dark:text-neutral-200 dark:hover:text-rose-600">
                   <LucideLink className="h-3" />
                   Certificate
                 </a>
