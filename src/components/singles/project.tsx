@@ -1,21 +1,9 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { LucideLink } from 'lucide-react'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
-import { useState } from 'react'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { LucideLink } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { useState } from 'react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 type Project = {
   name: string;
@@ -27,21 +15,22 @@ type Project = {
   comment: string;
 };
 
-function Project({ project }: {project: Project}) {
-  const [imageLoaded, setImageLoaded] = useState(false)
+function Project({ project }: { project: Project }) {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const handleImageLoaded = () => {
-    setImageLoaded(true)
-  }
+    setImageLoaded(true);
+  };
 
   return (
-    <Card className='
+    <Card
+      className="
     group
     mx-2 md:mx-0
     group flex flex-col
     border-2 md:hover:border-neutral-300 md:dark:hover:border-neutral-700 
     bg-white/40 dark:bg-black/40
-    transition ease-in duration-200 w-full'>
-      {!imageLoaded && <Skeleton className='h-48 md:h-80 lg:h-80 xl:h-[26rem] w-full' /> }
+    transition ease-in duration-200 w-full">
+      {!imageLoaded && <Skeleton className="h-48 md:h-80 lg:h-80 xl:h-[26rem] w-full" />}
       <img
         alt={project.name}
         loading="lazy"
@@ -49,22 +38,24 @@ function Project({ project }: {project: Project}) {
         className="rounded-t-md group-hover:contrast-[1.1] transition duration-200"
         onLoad={() => handleImageLoaded()}
       />
-      <div className='flex-1 flex flex-col justify-between'>
+      <div className="flex-1 flex flex-col justify-between">
         <CardHeader className="my-2 mx-auto pt-2 pb-0 text-center">
-          <CardTitle className=" uppercase text-xl text-center group-hover:text-rose-500 dark:group-hover:text-rose-600 transition duration-200">{project.name}</CardTitle>
+          <CardTitle className=" uppercase text-xl text-center group-hover:text-rose-500 dark:group-hover:text-rose-600 transition duration-200">
+            {project.name}
+          </CardTitle>
           <CardDescription>{project.date}</CardDescription>
         </CardHeader>
-        <CardContent className="italic text-neutral-700 dark:text-neutral-300 text-center text-ellipsis pb-2" dangerouslySetInnerHTML={{__html: project.comment}} />
+        <CardContent
+          className="italic text-neutral-700 dark:text-neutral-300 text-center text-ellipsis pb-2"
+          dangerouslySetInnerHTML={{ __html: project.comment }}
+        />
         <CardFooter className="m-auto mb-0 pb-4 items-center flex gap-x-2">
           {project.gitUrl && (
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
                   <Button size="icon" className="h-[40px] w-[40px]">
-                    <a
-                      href={project.gitUrl}
-                      target="_blank" 
-                      rel="noopenernoreferrer">
+                    <a href={project.gitUrl} target="_blank" rel="noopener noreferrer">
                       <img
                         loading="lazy"
                         alt="Github logo"
@@ -85,10 +76,7 @@ function Project({ project }: {project: Project}) {
               <Tooltip>
                 <TooltipTrigger className="cursor-default h-[40px] w-[40px]" asChild>
                   <Button size="icon">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer">
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <LucideLink />
                     </a>
                   </Button>
@@ -102,7 +90,7 @@ function Project({ project }: {project: Project}) {
         </CardFooter>
       </div>
     </Card>
-  )
+  );
 }
 
-export default Project
+export default Project;

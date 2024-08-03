@@ -1,11 +1,11 @@
-import {Button} from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import {Mail} from 'lucide-react'
+} from '@/components/ui/dropdown-menu';
+import { Mail } from 'lucide-react';
 
 function ContactMenu() {
   return (
@@ -25,12 +25,7 @@ function ContactMenu() {
         </a>
         <a data-testid="github-link" href="https://github.com/gomisroca/" target="_blank" rel="noopener noreferrer">
           <DropdownMenuItem className="font-semibold flex gap-2 w-full justify-between p-4 cursor-pointer">
-            <img
-              loading="lazy"
-              alt="Github logo"
-              src="./github-mark.svg"
-              className="invert-0 dark:invert h-[20px]"
-            />
+            <img loading="lazy" alt="Github logo" src="./github-mark.svg" className="invert-0 dark:invert h-[20px]" />
             <span>gomisroca</span>
           </DropdownMenuItem>
         </a>
@@ -47,7 +42,7 @@ function ContactMenu() {
         </a>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
 
-export default ContactMenu
+export default ContactMenu;

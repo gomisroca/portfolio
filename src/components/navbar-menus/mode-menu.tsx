@@ -1,14 +1,14 @@
-import { Moon, Sun } from 'lucide-react'
- 
-import { Button } from '@/components/ui/button'
+import { Moon, Sun } from 'lucide-react';
+
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/components/ui/dropdown-menu';
 import { useStore } from 'jotai';
-import themeAtom from "@/atoms/theme-atom";
+import themeAtom from '@/atoms/theme-atom';
 
 type Theme = 'dark' | 'light' | 'system';
 
@@ -38,6 +38,6 @@ function ModeMenu() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
-export default ModeMenu
+export default ModeMenu;

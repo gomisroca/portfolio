@@ -1,13 +1,10 @@
-import { atom } from "jotai";
+import { atom } from 'jotai';
 
 const setRootTheme = (newTheme: string) => {
   const root = window.document.documentElement;
-  root.classList.remove("light", "dark");
-  if (newTheme === "system") {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
-      ? "dark"
-      : "light";
+  root.classList.remove('light', 'dark');
+  if (newTheme === 'system') {
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
     root.classList.add(systemTheme);
     return;
@@ -15,14 +12,14 @@ const setRootTheme = (newTheme: string) => {
   root.classList.add(newTheme);
 };
 
-const themeAtom = atom(localStorage.getItem("portfolio-ui-theme") ?? "system");
+const themeAtom = atom(localStorage.getItem('portfolio-ui-theme') ?? 'system');
 
 const themeAtomWithPersistence = atom(
   (get) => get(themeAtom),
   (_get, set, newTheme: string) => {
     set(themeAtom, newTheme);
     setRootTheme(newTheme);
-    localStorage.setItem("portfolio-ui-theme", newTheme);
+    localStorage.setItem('portfolio-ui-theme', newTheme);
   }
 );
 export default themeAtomWithPersistence;

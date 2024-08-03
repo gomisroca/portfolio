@@ -1,7 +1,7 @@
-"use client";
-import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+'use client';
+import { useCallback, useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 export const FlipWords = ({
   words,
@@ -33,8 +33,7 @@ export const FlipWords = ({
     <AnimatePresence
       onExitComplete={() => {
         setIsAnimating(false);
-      }}
-    >
+      }}>
       <motion.div
         initial={{
           opacity: 0,
@@ -45,27 +44,22 @@ export const FlipWords = ({
           y: 0,
         }}
         transition={{
-          type: "spring",
+          type: 'spring',
           stiffness: 100,
           damping: 10,
         }}
-        className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
-          className
-        )}
-        key={currentWord}
-      >
-        {currentWord.split("").map((letter, index) => (
+        className={cn('z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2', className)}
+        key={currentWord}>
+        {currentWord.split('').map((letter, index) => (
           <motion.span
             key={currentWord + index}
-            initial={{ opacity: 0, y: 0, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 0, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{
               delay: index * 0.08,
               duration: 0.4,
             }}
-            className="inline-block"
-          >
+            className="inline-block">
             {letter}
           </motion.span>
         ))}

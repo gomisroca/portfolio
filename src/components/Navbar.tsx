@@ -1,6 +1,6 @@
-import ModeMenu from '@/components/navbar-menus/mode-menu'
-import ContactMenu from '@/components/navbar-menus/contact-menu'
-import {Menubar, MenubarMenu} from '@/components/ui/menubar'
+import ModeMenu from '@/components/navbar-menus/mode-menu';
+import ContactMenu from '@/components/navbar-menus/contact-menu';
+import { Menubar, MenubarMenu } from '@/components/ui/menubar';
 
 function Navbar() {
   return (
@@ -12,7 +12,7 @@ function Navbar() {
         </MenubarMenu>
       </Menubar>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

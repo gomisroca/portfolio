@@ -1,6 +1,6 @@
-import {CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import data from '@/data.json'
-import Study from '../singles/Study'
+import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import data from '@/data.json';
+import Study from '../singles/Study';
 
 function Studies() {
   return (
@@ -9,12 +9,12 @@ function Studies() {
         <CardTitle className="uppercase">Education</CardTitle>
       </CardHeader>
       <CardContent className="w-full m-auto grid grid-cols-2 gap-1 md:gap-2 md:grid-cols-2 justify-evenly px-2 md:px-0">
-        {data.studies.map(study => (
+        {data.studies.map((study) => (
           <Study key={study.name} study={study} />
         ))}
       </CardContent>
     </div>
-  )
+  );
 }
 
-export default Studies
+export default Studies;
