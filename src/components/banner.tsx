@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Highlight } from '@/components/ui/highlight';
 import data from '@/data.json';
@@ -14,7 +14,12 @@ function Banner() {
   return (
     <div className="mt-4 md:mx-5">
       <Avatar className="m-auto size-1/2 md:h-1/6 md:w-1/3 xl:w-1/6">
-        {!imageLoaded && <Skeleton data-testid="avatar-fallback" className="h-48 w-full rounded-full md:h-60 lg:h-80 xl:h-52 2xl:h-[19rem]" />}
+        {!imageLoaded && (
+          <Skeleton
+            data-testid="avatar-fallback"
+            className="h-48 w-full rounded-full md:h-60 lg:h-80 xl:h-52 2xl:h-[19rem]"
+          />
+        )}
         <AvatarImage src={data.banner.image} alt="avatar" onLoad={() => handleImageLoaded()} />
       </Avatar>
       <div className="mx-auto w-full md:w-3/5 lg:mb-4 2xl:w-2/5">
