@@ -1,4 +1,4 @@
-import Banner from '@/components/Banner';
+import Banner from './Banner';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
