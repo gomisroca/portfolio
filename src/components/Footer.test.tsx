@@ -1,4 +1,4 @@
-import Footer from './Footer';
+import Footer from './Footer.tsx';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 
