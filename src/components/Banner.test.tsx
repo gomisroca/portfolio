@@ -1,6 +1,6 @@
-import Banner from './Banner.tsx';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
+import Banner from './Banner';
 
 describe('<Banner />', () => {
   test('renders the component with the correct title', () => {
