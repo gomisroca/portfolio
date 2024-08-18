@@ -1,5 +1,5 @@
 import { createStore } from 'jotai';
-import themeAtom from './theme-atom';
+import themeAtom from '@/atoms/theme-atom';
 
 const themeStore = createStore();
 

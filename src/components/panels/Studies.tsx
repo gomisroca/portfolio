@@ -1,5 +1,5 @@
-import { CardContent, CardHeader, CardTitle } from '../ui/card';
-import data from '../../data.json';
+import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import data from '@/data.json';
 import Study from '../singles/Study';
 
 function Studies() {

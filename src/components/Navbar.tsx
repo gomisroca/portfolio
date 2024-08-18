@@ -1,6 +1,6 @@
-import ModeMenu from './navbar-menus/mode-menu';
-import ContactMenu from './navbar-menus/contact-menu';
-import { Menubar, MenubarMenu } from './ui/menubar';
+import ModeMenu from '@/components/navbar-menus/mode-menu';
+import ContactMenu from '@/components/navbar-menus/contact-menu';
+import { Menubar, MenubarMenu } from '@/components/ui/menubar';
 
 function Navbar() {
   return (

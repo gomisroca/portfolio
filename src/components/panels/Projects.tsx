@@ -1,7 +1,7 @@
-import { CardHeader, CardTitle } from '../ui/card';
-import data from '../../data.json';
-import Project from '../singles/Project';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../ui/carousel';
+import { CardHeader, CardTitle } from '@/components/ui/card';
+import data from '@/data.json';
+import Project from '@/components/singles/Project';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 function Projects() {
   return (

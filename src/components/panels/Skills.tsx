@@ -1,7 +1,7 @@
-import { Card, CardTitle } from '../ui/card';
-import data from '../../data.json';
-import Skill from '../singles/Skill';
-import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
+import { Card, CardTitle } from '@/components/ui/card';
+import data from '@/data.json';
+import Skill from '@/components/singles/Skill';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 
 interface skill {

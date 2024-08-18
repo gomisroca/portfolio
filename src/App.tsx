@@ -1,11 +1,11 @@
-import Navbar from './components/Navbar';
-import Banner from './components/Banner';
-import Footer from './components/Footer';
-import Skills from './components/panels/Skills';
-import Projects from './components/panels/Projects';
-import Studies from './components/panels/Studies';
+import Navbar from '@/components/Navbar';
+import Banner from '@/components/Banner';
+import Footer from '@/components/Footer';
+import Skills from '@/components/panels/Skills';
+import Projects from '@/components/panels/Projects';
+import Studies from '@/components/panels/Studies';
 import { Provider } from 'jotai';
-import themeStore from './atoms/theme-store';
+import themeStore from '@/atoms/theme-store';
 
 function App() {
   return (
