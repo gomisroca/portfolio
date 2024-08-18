@@ -1,6 +1,6 @@
 import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import data from '@/data.json';
-import Study from '../singles/Study';
+import Study from '@/components/singles/study';
 
 function Studies() {
   return (
