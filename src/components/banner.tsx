@@ -1,10 +1,10 @@
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Highlight } from '@/components/ui/highlight';
-import data from '@/data.json';
-import { FlipWords } from '@/components/ui/flip-words';
+import { Avatar, AvatarImage } from './ui/avatar';
+import { CardContent, CardHeader, CardTitle } from './ui/card';
+import { Highlight } from './ui/highlight';
+import data from '../data.json';
+import { FlipWords } from './ui/flip-words';
 import { useState } from 'react';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Skeleton } from './ui/skeleton';
 
 function Banner() {
   const [imageLoaded, setImageLoaded] = useState(false);

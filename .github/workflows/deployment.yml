@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,6 +25,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Clean build
+        run: rm -rf dist
 
       - name: Build
         run: npm run build
