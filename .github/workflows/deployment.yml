@@ -15,7 +15,7 @@ permissions:
   contents: write
   
 jobs:
-  checks:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,42 +32,24 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Test
-        run: npm run test
-      
-  deploy:
-    if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message),'#skip') }}
-    needs: [checks]
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      
-      - name: Install dependencies
-        run: npm ci
-
       - name: Clean build
         run: rm -rf dist
 
       - name: Build
         run: npm run build
 
-      - uses: actions/checkout@v4
+      - name: Test
+        run: npm run test
+
       - name: Deploy
+        if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message),'#skip') }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
 
   tag_release:
     if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message),'#skip') }}
-    needs: [deploy]
+    needs: [build]
     permissions:
       contents: write
     runs-on: ubuntu-20.04
