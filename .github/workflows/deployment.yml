@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
+  
+  pull_request:    
+    branches: [main]    
+    types: [opened, synchronize]
 
 permissions:
   contents: write
@@ -36,6 +42,23 @@ jobs:
         run: npm run test
 
       - name: Deploy
+        if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message),'#skip') }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
+
+  tag_release:
+    if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message),'#skip') }}
+    needs: [build]
+    permissions:
+      contents: write
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.64.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
+          DEFAULT_BUMP: patch
+    
