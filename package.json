@@ -14,7 +14,13 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "precommit": "npm run lint && npm run test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
   },
   "dependencies": {
     "@floating-ui/react-dom": "^2.1.1",
@@ -63,6 +69,7 @@
     "eslint-plugin-tailwindcss": "^3.17.4",
     "eslint-plugin-vitest-globals": "^1.5.0",
     "gh-pages": "^6.1.1",
+    "husky": "^9.1.5",
     "jsdom": "^24.1.1",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6",
