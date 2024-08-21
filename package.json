@@ -15,12 +15,7 @@
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
-    "precommit": "npm run lint && npm run test"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo \"[Husky] pre-commit\""
-    }
+    "prepare": "husky"
   },
   "dependencies": {
     "@floating-ui/react-dom": "^2.1.1",
