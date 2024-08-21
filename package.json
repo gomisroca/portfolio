@@ -15,6 +15,7 @@
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
+    "test:run": "vitest run",
     "prepare": "husky"
   },
   "dependencies": {
