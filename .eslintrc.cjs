@@ -1,12 +1,18 @@
 module.exports = {
   root: true,
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   env: { browser: true, es2020: true },
   extends: [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
     'plugin:vitest-globals/recommended',
     'plugin:tailwindcss/recommended',
   ],
@@ -30,7 +36,5 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unused-vars": "warn",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-uses-react": "off",
   },
 };
