@@ -45,7 +45,7 @@
           "badge": "https://img.shields.io/badge/nuxt.js-f5f5f5?style=for-the-badge&logo=nuxtdotjs&logoColor=f5f5f5&color=171717"
         }
       ],
-      "Testing": [        
+      "Testing": [
         {
           "name": "Jest",
           "badge": "https://img.shields.io/badge/jest-f5f5f5?style=for-the-badge&logo=jest&logoColor=f5f5f5&color=171717"
@@ -59,11 +59,11 @@
           "badge": "https://img.shields.io/badge/testing_library-f5f5f5?style=for-the-badge&logo=testinglibrary&logoColor=f5f5f5&color=171717"
         }
       ],
-      "Style": [   
+      "Style": [
         {
           "name": "Bootstrap",
           "badge": "https://img.shields.io/badge/bootstrap-f5f5f5?style=for-the-badge&logo=bootstrap&logoColor=f5f5f5&color=171717"
-        },   
+        },
         {
           "name": "Tailwind CSS",
           "badge": "https://img.shields.io/badge/tailwindcss-f5f5f5?style=for-the-badge&logo=tailwindcss&logoColor=f5f5f5&color=171717"
@@ -290,7 +290,7 @@
       "image": "./esia.jpg",
       "description": "Art Gallery looking to sell prints of their artwork.",
       "date": 2023,
-      "comment"	: "<p>Designed using Angular.</p><p>Worked on purchase flow, forms validation and database updates.</p>"
+      "comment": "<p>Designed using Angular.</p><p>Worked on purchase flow, forms validation and database updates.</p>"
     },
     {
       "name": "Trekking Trails",
@@ -299,7 +299,7 @@
       "image": "./tt.jpg",
       "description": "Highly-stylized traveling blog.",
       "date": 2023,
-      "comment": "Designed using NuxtJS."	
+      "comment": "Designed using NuxtJS."
     },
     {
       "name": "Catalyst",
