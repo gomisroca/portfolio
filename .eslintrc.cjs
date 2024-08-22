@@ -13,8 +13,7 @@ module.exports = {
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
-    'plugin:vitest-globals/recommended',
-    'plugin:tailwindcss/recommended',
+    'plugin:vitest-globals/recommended'
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",  
@@ -23,12 +22,10 @@ module.exports = {
       "jsx": true
     }
   },
-  plugins: ["react", "react-refresh", "prettier", "tailwindcss"],
+  plugins: ["react", "react-refresh", "prettier"],
   rules: {
     "prettier/prettier": "error",
     "eqeqeq": "error",
-    "indent": ["error", 2],
-    "semi": ["error", "always"],
     "no-console": "warn",
     "no-undef": "off",
     "no-unused-vars": "off",
