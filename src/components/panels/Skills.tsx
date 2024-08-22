@@ -10,14 +10,7 @@ interface skill {
 }
 
 const SkillCategory = ({ category, items }: { category: string; items: skill[] }) => (
-  <Card
-    className="
-    mx-2
-    flex w-full
-    flex-col border-2
-    bg-white/40 p-4 transition 
-    duration-200 ease-in
-    dark:bg-black/40 md:mx-0 md:hover:border-neutral-300 md:dark:hover:border-neutral-700">
+  <Card className="mx-2 flex w-full flex-col border-2 bg-white/40 p-4 transition duration-200 ease-in dark:bg-black/40 md:mx-0 md:hover:border-neutral-300 md:dark:hover:border-neutral-700">
     <CardTitle className="mx-auto mb-4 mt-0 text-center uppercase">{category}</CardTitle>
     <div className="grid w-full grid-cols-2 justify-evenly gap-y-4 odd:before:border-2 lg:flex">
       {Object.keys(items).map((category: string, index: number) => (

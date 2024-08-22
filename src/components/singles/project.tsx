@@ -20,15 +20,8 @@ function Project({ project }: { project: Project }) {
   const handleImageLoaded = () => {
     setImageLoaded(true);
   };
-
   return (
-    <Card
-      className="
-    group mx-2
-    flex w-full flex-col
-    border-2 bg-white/40 transition 
-    duration-200 ease-in
-    dark:bg-black/40 md:mx-0 md:hover:border-neutral-300 md:dark:hover:border-neutral-700">
+    <Card className="group mx-2 flex w-full flex-col border-2 bg-white/40 transition duration-200 ease-in dark:bg-black/40 md:mx-0 md:hover:border-neutral-300 md:hover:shadow-md md:dark:hover:border-neutral-700">
       {!imageLoaded && <Skeleton className="h-48 w-full md:h-80 lg:h-80 xl:h-[26rem]" />}
       <img
         alt={project.name}
@@ -39,7 +32,7 @@ function Project({ project }: { project: Project }) {
       />
       <div className="flex flex-1 flex-col justify-between">
         <CardHeader className="mx-auto my-2 pb-0 pt-2 text-center">
-          <CardTitle className=" text-center text-xl uppercase transition duration-200 group-hover:text-rose-500 dark:group-hover:text-rose-600">
+          <CardTitle className="text-center text-xl uppercase transition duration-200 group-hover:text-rose-500 dark:group-hover:text-rose-600">
             {project.name}
           </CardTitle>
           <CardDescription>{project.date}</CardDescription>
