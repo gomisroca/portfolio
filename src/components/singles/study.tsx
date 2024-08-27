@@ -7,7 +7,7 @@ type Study = {
   date: string;
   url: string;
   school: string;
-  certificate: string;
+  certificates: string[];
 };
 
 function Study({ study }: { study: Study }) {
@@ -25,16 +25,32 @@ function Study({ study }: { study: Study }) {
               <span>
                 {study.date} | {study.school}
               </span>
-              {study.certificate && (
+              {study.certificates && study.certificates.length === 1 ? (
                 <a
-                  href={study.certificate}
+                  key={study.certificates[0]}
+                  href={study.certificates[0]}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex w-fit items-center font-semibold text-neutral-600 transition-colors duration-200 hover:text-rose-500 dark:text-neutral-200 dark:hover:text-rose-600">
                   <LucideLink className="h-3" />
                   Certificate
                 </a>
-              )}
+              ) : study.certificates && study.certificates.length > 1 ? (
+                <div className="flex flex-wrap gap-x-2">
+                  Certificates
+                  {study.certificates.map((certificate, index) => (
+                    <a
+                      key={certificate}
+                      href={certificate}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex w-fit items-center font-semibold text-neutral-600 transition-colors duration-200 hover:text-rose-500 dark:text-neutral-200 dark:hover:text-rose-600">
+                      <LucideLink className="h-3" />
+                      {index + 1}
+                    </a>
+                  ))}
+                </div>
+              ) : null}
             </CardDescription>
           </div>
         </TooltipTrigger>
