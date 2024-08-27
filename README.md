@@ -5,6 +5,7 @@ A static site deployed on Github Pages with the purpose of showcasing my portfol
 <hr />
 
 ### To Do: 
-- [ ] Fill Missing Data 
-- [ ] Add Missing Skeletons
-- [ ] Turn Project Images into Carousels  
+- Fill Missing Data 
+- Improve Project Image Skeletons 
+- Turn Project Images into Carousels 
+- Improve README.md 
