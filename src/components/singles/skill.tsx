@@ -1,30 +1,38 @@
 import { CardTitle } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { useState } from 'react';
+import { Skeleton } from '../ui/skeleton';
 
 type Skill = {
   name: string;
   badge: string;
 };
 
-const Badge = ({ name, badge }: { name: string; badge: string }) => (
-  <div className="flex justify-end md:gap-2">
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger className="cursor-default">
-          <img
-            className="rounded-md transition duration-200 hover:brightness-150 dark:invert"
-            loading="lazy"
-            src={badge}
-            alt={name}
-          />
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{name}</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  </div>
-);
+function Badge({ name, badge }: { name: string; badge: string }) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <div className="flex justify-end md:gap-2">
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger className="cursor-default">
+            {!imageLoaded && <Skeleton className="h-6 w-32 md:h-8 lg:h-10" />}
+            <img
+              className="rounded-md transition duration-200 hover:brightness-150 dark:invert"
+              loading="lazy"
+              onLoad={() => setImageLoaded(true)}
+              src={badge}
+              alt={name}
+            />
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{name}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    </div>
+  );
+}
 
 function Skill({ category, items }: { category: string; items: Skill[] }) {
   return (
