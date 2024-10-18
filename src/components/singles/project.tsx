@@ -12,7 +12,6 @@ type Project = {
   image: string;
   description: string;
   date: number;
-  comment: string;
 };
 
 function Project({ project }: { project: Project }) {

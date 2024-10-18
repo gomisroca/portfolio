@@ -270,8 +270,7 @@
       "liveUrl": "",
       "image": "./sds.jpg",
       "description": "Community website dedicated to the game Final Fantasy XIV.",
-      "date": 2021,
-      "comment": "<p>Designed the UI using Bootstrap.</p><p>Worked on basic PHP scripting and CI/CD using Gitlab CI.</p>"
+      "date": 2021
     },
     {
       "name": "HealCo",
