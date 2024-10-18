@@ -4,12 +4,14 @@ import { LucideLink } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useState } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 type Project = {
   name: string;
   gitUrl: string;
   liveUrl: string;
-  image: string;
+  images: string[];
   description: string;
   date: number;
 };
@@ -22,13 +24,42 @@ function Project({ project }: { project: Project }) {
   return (
     <Card className="group mx-2 flex w-full flex-col border-2 bg-white/40 transition duration-200 ease-in dark:bg-black/40 md:mx-0 md:hover:border-neutral-300 md:hover:shadow-md md:dark:hover:border-neutral-700">
       {!imageLoaded && <Skeleton className="h-48 w-full md:h-80 lg:h-80 xl:h-[26rem]" />}
-      <img
-        alt={project.name}
-        loading="lazy"
-        src={project.image}
-        className="rounded-t-md transition duration-200 group-hover:contrast-[1.1]"
-        onLoad={() => handleImageLoaded()}
-      />
+      {project.images.length === 1 ? (
+        <img
+          alt={project.name}
+          loading="lazy"
+          src={project.images[0]}
+          className="rounded-t-md transition duration-200 group-hover:contrast-[1.1]"
+          onLoad={() => handleImageLoaded()}
+        />
+      ) : (
+        <Carousel
+          opts={{
+            align: 'start',
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 2500,
+              stopOnInteraction: false,
+              stopOnMouseEnter: true,
+            }),
+          ]}>
+          <CarouselContent>
+            {project.images.map((image, index) => (
+              <CarouselItem key={index} className="flex w-full">
+                <img
+                  alt={`${project.name} image ${index + 1}`}
+                  loading="lazy"
+                  src={image}
+                  className="rounded-t-md transition duration-200 group-hover:contrast-[1.1]"
+                  onLoad={() => handleImageLoaded()}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      )}
       <div className="flex flex-1 flex-col justify-between">
         <CardHeader className="mx-auto my-2 pb-0 pt-2 text-center">
           <CardTitle className="text-center text-xl uppercase transition duration-200 group-hover:text-rose-500 dark:group-hover:text-rose-600">
