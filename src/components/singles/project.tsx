@@ -37,10 +37,9 @@ function Project({ project }: { project: Project }) {
           </CardTitle>
           <CardDescription>{project.date}</CardDescription>
         </CardHeader>
-        <CardContent
-          className="text-ellipsis pb-2 text-center italic text-neutral-700 dark:text-neutral-300"
-          dangerouslySetInnerHTML={{ __html: project.comment }}
-        />
+        <CardContent className="text-ellipsis pb-2 text-center italic text-neutral-700 dark:text-neutral-300">
+          {project.description}
+        </CardContent>
         <CardFooter className="m-auto mb-0 flex items-center gap-x-2 pb-4">
           {project.gitUrl && (
             <TooltipProvider>
