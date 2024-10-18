@@ -269,45 +269,40 @@
       "gitUrl": "https://github.com/Arrbit/New-Sleeping-Dragons",
       "liveUrl": "",
       "image": "./sds.jpg",
-      "description": "SleepingDragons was a community website dedicated to the game Final Fantasy XIV. As of early 2024 the website went offline as the community restructured.",
-      "date": 2021,
-      "comment": "<p>Designed the UI using Bootstrap.</p><p>Worked on basic PHP scripting and CI/CD using Gitlab CI.</p>"
+      "description": "Community website dedicated to the game Final Fantasy XIV.",
+      "date": 2021
     },
     {
       "name": "HealCo",
       "gitUrl": "https://github.com/Arrbit/healco.de",
       "liveUrl": "https://healco.de/",
       "image": "./healco.jpg",
-      "description": "HealCo is a company bringing a healthy lifestyle to office environments.",
-      "date": 2021,
-      "comment": "Designed the UI and components using VueJS and Vuetify."
+      "description": "Bringing a healthy lifestyle to office environments.",
+      "date": 2021
     },
     {
       "name": "OURA",
-      "gitUrl": "https://github.com/gomisroca/oura/tree/vercel",
-      "liveUrl": "https://oura-1.vercel.app/",
+      "gitUrl": "https://github.com/gomisroca/oura",
+      "liveUrl": "https://oura-clothing.vercel.app/",
       "image": "./oura.jpg",
-      "description": "OURA is a highly customizable storefront.",
-      "date": 2023,
-      "comment": "Amongst other tasks, handled migration from React+Express to NextJS and deployment."
+      "description": "Sports clothing storefront.",
+      "date": 2024
     },
     {
       "name": "ESIA Gallery",
-      "gitUrl": "https://github.com/gomisroca/esia-gallery",
-      "liveUrl": "",
+      "gitUrl": "https://github.com/gomisroca/esia",
+      "liveUrl": "https://esia.vercel.app",
       "image": "./esia.jpg",
-      "description": "Art Gallery looking to sell prints of their artwork.",
-      "date": 2023,
-      "comment": "<p>Designed using Angular.</p><p>Worked on purchase flow, forms validation and database updates.</p>"
+      "description": "Art gallery allowing 'virtual visits' and bringing information about upcoming events.",
+      "date": 2024
     },
     {
       "name": "Trekking Trails",
       "gitUrl": "https://github.com/gomisroca/trekking-trails",
       "liveUrl": "",
       "image": "./tt.jpg",
-      "description": "Highly-stylized traveling blog.",
-      "date": 2023,
-      "comment": "Designed using NuxtJS."
+      "description": "Traveling blog. Share your experiences and comments, or simply explore the journey.",
+      "date": 2023
     },
     {
       "name": "Catalyst",
@@ -315,17 +310,15 @@
       "liveUrl": "",
       "image": "./catalyst.jpg",
       "description": "Share projects of any kind, collaborate with others and keep up with what they are working on.",
-      "date": 2024,
-      "comment": "<p>Designed with React + Express.</p><p>Handled post creation, user authentication, site interactivity and proxy routing.</p>"
+      "date": 2024
     },
     {
       "name": "Doran's Dice",
       "gitUrl": "https://github.com/gomisroca/dorans-dice",
       "liveUrl": "",
       "image": "./dorans.jpg",
-      "description": "OURA is a highly customizable storefront.",
-      "date": 2024,
-      "comment": "Designed using Django as backend and React as frontend."
+      "description": "Collect and fight with characters from League of Legends.",
+      "date": 2024
     }
   ]
 }

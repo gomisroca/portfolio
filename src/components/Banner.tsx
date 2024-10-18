@@ -27,7 +27,7 @@ function Banner() {
           <CardHeader className="px-4 py-2">
             <CardTitle className="text-5xl uppercase md:text-6xl">Adrià Gomis</CardTitle>
           </CardHeader>
-          <CardContent className="h-[70px] w-auto text-nowrap px-4 py-2 text-center text-lg md:w-[375px] md:p-0 md:text-start">
+          <CardContent className="h-[70px] w-auto text-nowrap px-4 py-2 text-center text-sm md:w-[375px] md:p-0 md:text-start md:text-lg">
             <Highlight className="mx-1 p-2 font-semibold">Full-stack Developer</Highlight>
             specializing in{' '}
             <FlipWords

@@ -36,19 +36,21 @@ function Study({ study }: { study: Study }) {
                   Certificate
                 </a>
               ) : study.certificates && study.certificates.length > 1 ? (
-                <div className="flex flex-wrap gap-x-2">
+                <div className="flex flex-col">
                   Certificates
-                  {study.certificates.map((certificate, index) => (
-                    <a
-                      key={certificate}
-                      href={certificate}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex w-fit items-center font-semibold text-neutral-600 transition-colors duration-200 hover:text-rose-500 dark:text-neutral-200 dark:hover:text-rose-600">
-                      <LucideLink className="h-3" />
-                      {index + 1}
-                    </a>
-                  ))}
+                  <div className="flex flex-wrap gap-x-2">
+                    {study.certificates.map((certificate, index) => (
+                      <a
+                        key={certificate}
+                        href={certificate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex w-fit items-center font-semibold text-neutral-600 transition-colors duration-200 hover:text-rose-500 dark:text-neutral-200 dark:hover:text-rose-600">
+                        <LucideLink className="h-3" />
+                        {index + 1}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               ) : null}
             </CardDescription>
