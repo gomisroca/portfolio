@@ -1,6 +1,6 @@
 {
   "banner": {
-    "image": "./avatar.jpeg",
+    "image": "./avatar.jpg",
     "introduction": "<p>I am a self-taught full-stack developer, having developed several projects both in teams and on my own.</p><p>Throughout my learning journey, I have always looked to expand my knowledge and to step out of my comfort zone, be it by seeking out new technologies, taking on complex problems, or studying an assortment of courses and books. This has equipped me with a solid understanding of both front and backend development, technologies and best practices.</p><p>My passion is in creating efficient, modern projects that are easy to use and attractive for the end user and have a clear and concise codebase that can be iterated upon.</p>"
   },
   "skills": {
@@ -265,14 +265,6 @@
   ],
   "projects": [
     {
-      "name": "Sleeping Dragons",
-      "gitUrl": "https://github.com/Arrbit/New-Sleeping-Dragons",
-      "liveUrl": "",
-      "images": ["./sds.jpg"],
-      "description": "Community website dedicated to the game Final Fantasy XIV.",
-      "date": 2021
-    },
-    {
       "name": "HealCo",
       "gitUrl": "https://github.com/Arrbit/healco.de",
       "liveUrl": "https://healco.de/",
@@ -297,27 +289,11 @@
       "date": 2024
     },
     {
-      "name": "Trekking Trails",
-      "gitUrl": "https://github.com/gomisroca/trekking-trails",
-      "liveUrl": "",
-      "images": ["./tt.jpg"],
-      "description": "Traveling blog. Share your experiences and comments, or simply explore the journey.",
-      "date": 2023
-    },
-    {
-      "name": "Catalyst",
-      "gitUrl": "https://github.com/gomisroca/catalyst",
-      "liveUrl": "",
-      "images": ["./catalyst.jpg"],
-      "description": "Share projects of any kind, collaborate with others and keep up with what they are working on.",
-      "date": 2024
-    },
-    {
-      "name": "Doran's Dice",
-      "gitUrl": "https://github.com/gomisroca/dorans-dice",
-      "liveUrl": "",
-      "images": ["./dorans.jpg"],
-      "description": "Collect and fight with characters from League of Legends.",
+      "name": "Dungeoneer",
+      "gitUrl": "https://github.com/gomisroca/dungeoneer-v2",
+      "liveUrl": "https://xiv-dungeoneer.vercel.app",
+      "images": ["./dungeoneer.jpg", "./dungeoneer-mobile.png"],
+      "description": "Keep track of what collectibles you are missing from dungeons, raids or trials in the game Final Fantasy XIV.",
       "date": 2024
     }
   ]
