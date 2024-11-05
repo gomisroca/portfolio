@@ -289,6 +289,14 @@
       "date": 2024
     },
     {
+      "name": "Trekking Trails",
+      "gitUrl": "https://github.com/gomisroca/trekking-trails",
+      "liveUrl": "https://trekking-trails.nuxt.dev",
+      "images": ["./tt.jpg", "./tt-mobile.png"],
+      "description": "Traveling blog. Share your experiences and comments, or simply explore the journey.",
+      "date": 2023
+    },
+    {
       "name": "Dungeoneer",
       "gitUrl": "https://github.com/gomisroca/dungeoneer-v2",
       "liveUrl": "https://xiv-dungeoneer.vercel.app",
