@@ -24,7 +24,7 @@ function Banner() {
           src={data.banner.image}
           alt="avatar"
           onLoad={() => handleImageLoaded()}
-          className="rounded-3xl object-cover"
+          className="rounded-3xl object-cover dark:brightness-75"
         />
       </Avatar>
       <div className="mx-auto w-full md:w-3/5 lg:mb-4 2xl:w-2/5">
