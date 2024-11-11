@@ -43,6 +43,11 @@
         {
           "name": "Nuxt.js",
           "badge": "https://img.shields.io/badge/nuxt.js-f5f5f5?style=for-the-badge&logo=nuxtdotjs&logoColor=f5f5f5&color=171717"
+        },
+
+        {
+          "name": "Astro",
+          "badge": "https://img.shields.io/badge/astro-f5f5f5?style=for-the-badge&logo=astro&logoColor=f5f5f5&color=171717"
         }
       ],
       "Testing": [
@@ -273,12 +278,20 @@
       "date": 2021
     },
     {
+      "name": "Dungeoneer",
+      "gitUrl": "https://github.com/gomisroca/dungeoneer-v2",
+      "liveUrl": "https://xiv-dungeoneer.vercel.app",
+      "images": ["./dungeoneer.jpg", "./dungeoneer-mobile.png"],
+      "description": "Keep track of what collectibles you are missing from dungeons, raids or trials in the game Final Fantasy XIV.",
+      "date": 2022
+    },
+    {
       "name": "OURA",
       "gitUrl": "https://github.com/gomisroca/oura",
       "liveUrl": "https://oura-clothing.vercel.app/",
       "images": ["./oura.jpg", "./oura-mobile.png"],
       "description": "Sports clothing storefront.",
-      "date": 2024
+      "date": 2023
     },
     {
       "name": "ESIA Gallery",
@@ -289,19 +302,11 @@
       "date": 2024
     },
     {
-      "name": "Trekking Trails",
-      "gitUrl": "https://github.com/gomisroca/trekking-trails",
-      "liveUrl": "https://trekking-trails.nuxt.dev",
-      "images": ["./tt.jpg", "./tt-mobile.png"],
-      "description": "Traveling blog. Share your experiences and comments, or simply explore the journey.",
-      "date": 2023
-    },
-    {
-      "name": "Dungeoneer",
-      "gitUrl": "https://github.com/gomisroca/dungeoneer-v2",
-      "liveUrl": "https://xiv-dungeoneer.vercel.app",
-      "images": ["./dungeoneer.jpg", "./dungeoneer-mobile.png"],
-      "description": "Keep track of what collectibles you are missing from dungeons, raids or trials in the game Final Fantasy XIV.",
+      "name": "ECHOES",
+      "gitUrl": "https://github.com/gomisroca/echoes",
+      "liveUrl": "https://echoes-writing.vercel.app",
+      "images": ["./echoes.jpg", "./echoes-mobile.png"],
+      "description": "Writing blog. Explore full-fledged series or one-shots.",
       "date": 2024
     }
   ]
