@@ -5,15 +5,17 @@ on:
     branches:
       - main
     paths-ignore:
-      - 'README.md'
-  
-  pull_request:    
-    branches: [main]    
+      - "README.md"
+
+  pull_request:
+    branches: [main]
     types: [opened, synchronize]
 
 permissions:
-  contents: write
-  
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,7 +27,7 @@ jobs:
 
   tag_release:
     if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message),'#skip') }}
-    needs: [build]
+    needs: build
     permissions:
       contents: write
     runs-on: ubuntu-20.04
@@ -49,4 +51,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-    
