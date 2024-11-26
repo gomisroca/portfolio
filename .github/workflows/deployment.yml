@@ -18,34 +18,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout your repository using git
         uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Clean build
-        run: rm -rf dist
-
-      - name: Build
-        run: npm run build
-
-      - name: Test
-        run: npm run test
-
-      - name: Deploy
-        if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message),'#skip') }}
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
 
   tag_release:
     if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message),'#skip') }}
@@ -61,4 +37,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: patch
+
+  deploy:
+    if: ${{ github.event_name == 'push' && !contains(toJson(github.event.commits.*.message),'#skip') }}
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
     

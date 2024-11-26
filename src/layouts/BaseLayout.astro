@@ -1,0 +1,35 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { getLangFromUrl } from "@/i18n/utils";
+import BaseHead from "@/components/BaseHead.astro";
+import ThemePicker from "@/components/ThemePicker.astro";
+import Nav from "@/components/Nav.astro";
+import LanguagePicker from "@/components/LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <BaseHead title="Adria Gomis | Portfolio" description="A portfolio of my projects, work, and other things" />
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
+    <Nav transition:animate="none" />
+    <main
+      transition:animate="fade"
+      class="container mx-auto flex flex-1 flex-col items-center justify-start p-4 font-body lg:p-8"
+    >
+      <slot />
+    </main>
+    <footer
+      transition:animate="none"
+      class="flex w-full items-center justify-start gap-2 p-4"
+    >
+      <ThemePicker />
+      <LanguagePicker />
+    </footer>
+    <slot name="scripts" />
+  </body>
+</html>
