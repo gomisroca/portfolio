@@ -10,19 +10,15 @@ import themeStore from '@/atoms/theme-store';
 function App() {
   return (
     <Provider store={themeStore}>
-      <div
-        style={{ backgroundImage: "url('bg.jpg')" }}
-        className="bg-cover bg-scroll bg-center bg-no-repeat md:bg-fixed">
-        <div className="bg-gradient-to-br from-neutral-50 to-neutral-100/50 dark:from-neutral-950 dark:to-neutral-900/70">
-          <Navbar />
-          <div className="flex flex-col gap-y-4">
-            <Banner />
-            <Skills />
-            <Projects />
-            <Studies />
-          </div>
-          <Footer />
+      <div className="bg-zinc-50 font-body dark:bg-zinc-950">
+        <Navbar />
+        <div className="flex flex-col gap-y-4">
+          <Banner />
+          <Skills />
+          <Projects />
+          <Studies />
         </div>
+        <Footer />
       </div>
     </Provider>
   );

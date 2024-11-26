@@ -1,6 +1,5 @@
-'use client';
 import { useCallback, useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 
 export const FlipWords = ({
@@ -15,7 +14,6 @@ export const FlipWords = ({
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
@@ -48,7 +46,7 @@ export const FlipWords = ({
           stiffness: 100,
           damping: 10,
         }}
-        className={cn('z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2', className)}
+        className={cn('z-10 inline-block relative text-left text-zinc-900 dark:text-zinc-100 px-2', className)}
         key={currentWord}>
         {currentWord.split('').map((letter, index) => (
           <motion.span
