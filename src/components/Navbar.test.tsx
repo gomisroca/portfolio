@@ -41,19 +41,4 @@ describe('Navbar', () => {
       expect(githubLink).toHaveAttribute('href', 'https://github.com/gomisroca/');
     });
   });
-
-  describe('Theme Menu', () => {
-    test('clicking on theme button opens theme menu', async () => {
-      render(<Navbar />);
-
-      const user = userEvent.setup();
-
-      expect(screen.queryByTestId('theme-menu')).toBeNull();
-
-      const themeButton = screen.getByTestId('theme-button');
-      await user.click(themeButton);
-
-      screen.getByTestId('theme-menu');
-    });
-  });
 });

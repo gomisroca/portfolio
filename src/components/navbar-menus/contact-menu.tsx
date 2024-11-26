@@ -18,26 +18,26 @@ function ContactMenu() {
       </DropdownMenuTrigger>
       <DropdownMenuContent data-testid="contact-menu" align="end">
         <a href="mailto:gomisroca@gmail.com">
-          <DropdownMenuItem className="flex w-full cursor-pointer justify-between gap-2 p-4 font-semibold">
+          <DropdownMenuItem className="flex w-full cursor-pointer justify-between gap-2 p-4 font-body font-semibold">
             <Mail />
             <span>gomisroca@gmail.com</span>
           </DropdownMenuItem>
         </a>
         <a data-testid="github-link" href="https://github.com/gomisroca/" target="_blank" rel="noopener noreferrer">
-          <DropdownMenuItem className="flex w-full cursor-pointer justify-between gap-2 p-4 font-semibold">
+          <DropdownMenuItem className="flex w-full cursor-pointer justify-between gap-2 p-4 font-body font-semibold">
             <img loading="lazy" alt="Github logo" src="./github-mark.svg" className="h-[20px] invert-0 dark:invert" />
             <span>gomisroca</span>
           </DropdownMenuItem>
         </a>
-        <a href="https://discord.com/users/548153072090742784" target="_blank" rel="noopener noreferrer">
-          <DropdownMenuItem className="flex w-full cursor-pointer justify-between gap-2 p-4 font-semibold">
+        <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+          <DropdownMenuItem className="flex w-full cursor-pointer justify-between gap-2 p-4 font-body font-semibold">
             <img
               loading="lazy"
               alt="Discord logo"
               src="./discord-mark-black.svg"
               className="h-[20px] invert-0 dark:invert"
             />
-            <span>jasar.</span>
+            <span>gomisroca</span>
           </DropdownMenuItem>
         </a>
       </DropdownMenuContent>

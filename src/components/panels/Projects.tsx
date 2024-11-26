@@ -7,7 +7,7 @@ function Projects() {
   return (
     <div className="mx-auto w-full md:w-3/5 lg:mb-4 2xl:w-2/5">
       <CardHeader className="m-auto w-full py-2 text-center">
-        <CardTitle className="uppercase">Projects</CardTitle>
+        <CardTitle className="font-display uppercase">Projects</CardTitle>
       </CardHeader>
       <Carousel
         opts={{
