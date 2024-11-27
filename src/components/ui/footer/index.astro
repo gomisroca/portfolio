@@ -1,0 +1,16 @@
+---
+import LanguagePicker from '@/components/ui/footer/LanguagePicker.astro';
+import ThemePicker from '@/components/ui/footer/ThemePicker.astro';
+import { getLangFromUrl } from '@/i18n/utils';
+
+const activeLang = getLangFromUrl(Astro.url);
+---
+<footer
+transition:animate="none"
+class="flex w-full items-center"
+>
+<div class="bg-neutral-700 dark:bg-neutral-300 w-fit mx-auto my-2 md:my-4 rounded-xl flex space-x-4">
+  <LanguagePicker lang={activeLang} />
+  <ThemePicker lang={activeLang}  />
+</div>
+</footer>

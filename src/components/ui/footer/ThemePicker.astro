@@ -1,14 +1,20 @@
 ---
 import { Icon } from "astro-icon/components";
+import Button from "@/components/ui/button";
+import { useTranslations } from "@/i18n/utils";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
-<button
+<Button
+  client:load
   id="themeToggle"
-  class="btn btn-primary"
+  tooltip={t("footer.theme")}
 >
   <span class="sr-only">Toggle Theme</span>
   <Icon name="mdi:sun-moon-stars" class="h-6 w-6" />
-</button>
+</Button>
 
 <script is:inline>
   // Initialize theme function
