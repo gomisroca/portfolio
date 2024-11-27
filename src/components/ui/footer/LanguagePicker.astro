@@ -11,9 +11,9 @@ const { lang: activeLang } = Astro.props;
       client:load 
       href={lang} 
       lang={activeLang} 
-      className={`${lang === activeLang && 'underline underline-offset-2 decoration-4 decoration-accent-400 dark:decoration-accent-600'}`} 
+      className={`${lang === activeLang && 'underline underline-offset-2 decoration-4 decoration-accent-400 dark:decoration-accent-600 dark:hover:decoration-accent-500 hover:decoration-accent-500'}`} 
       label={lang.toUpperCase()}
-      tooltip={`footer.${lang}` as Label}
+      tooltip={`footer.${lang}` as "footer.en" | "footer.es" | "footer.cat" | "footer.de"}
       />
     </li>
   ))}

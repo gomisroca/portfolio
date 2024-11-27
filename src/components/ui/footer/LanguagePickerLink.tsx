@@ -15,10 +15,10 @@ function LanguagePickerLink({
   tooltip,
   className,
 }: {
-  lang: Language;
+  lang: "en" | "de" | "es" | "cat";
   href: string;
   label: string;
-  tooltip: Label;
+  tooltip: "footer.en" | "footer.es" | "footer.cat" | "footer.de";
   className: string;
 }) {
   const t = useTranslations(lang);
