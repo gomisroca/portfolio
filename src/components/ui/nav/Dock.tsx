@@ -20,17 +20,18 @@ function DockItem({ icon, label, href, important = false }: DockItemProps) {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <a href={href}>
+          <a href={href} className="cursor-pointer group">
             <p className="sr-only">{label}</p>
             <motion.div
-              className={`flex items-center justify-center w-12 h-8 md:h-12 rounded-xl transition-colors duration-200 hover:bg-neutral-100 dark:hover:bg-neutral-900
+              className={`relative flex items-center justify-center w-12 h-8 md:h-12 rounded-xl transition-colors duration-200 group-hover:bg-neutral-100 dark:group-hover:bg-neutral-900
                 ${
                   important
-                    ? "text-accent-400 dark:text-accent-600 dark:hover:text-accent-500 hover:text-accent-500"
-                    : "text-neutral-100 dark:text-neutral-900 dark:hover:text-primary-700 hover:text-primary-700"
+                    ? "text-accent-400 dark:text-accent-600 dark:group-hover:text-accent-500 group-hover:text-accent-500"
+                    : "text-neutral-100 dark:text-neutral-900 dark:group-hover:text-primary-700 group-hover:text-primary-700"
                 }`}
               whileHover={{
                 scale: 1.5,
+                rotate: 0,
                 transition: {
                   duration: 0.2,
                   type: "spring",
@@ -41,11 +42,12 @@ function DockItem({ icon, label, href, important = false }: DockItemProps) {
               whileTap={{
                 scale: 1.75,
                 zIndex: 10,
+                rotate: 0,
                 transition: {
                   duration: 0.2,
                   type: "spring",
-                  stiffness: 400,
-                  damping: 15,
+                  stiffness: 100,
+                  damping: 10,
                 },
               }}
               transition={{
@@ -54,6 +56,28 @@ function DockItem({ icon, label, href, important = false }: DockItemProps) {
                 damping: 15,
                 duration: 0.2,
               }}
+              animate={
+                important && {
+                  scale: 1.2,
+                  rotate: -5,
+                  transition: {
+                    scale: {
+                      duration: 1.5,
+                      repeat: Infinity,
+                      repeatType: "mirror",
+                      ease: "easeInOut",
+                    },
+                    rotate: {
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 10,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                    },
+                  },
+                }
+              }
             >
               {icon}
             </motion.div>
