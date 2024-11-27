@@ -2,9 +2,8 @@
 import { ViewTransitions } from "astro:transitions";
 import { getLangFromUrl } from "@/i18n/utils";
 import BaseHead from "@/components/BaseHead.astro";
-import ThemePicker from "@/components/ThemePicker.astro";
-import Nav from "@/components/Nav.astro";
-import LanguagePicker from "@/components/LanguagePicker.astro";
+import Nav from "@/components/ui/nav/index.astro";
+import Footer from "@/components/ui/footer/index.astro";
 
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -15,7 +14,7 @@ const lang = getLangFromUrl(Astro.url);
     <BaseHead title="Adria Gomis | Portfolio" description="A portfolio of my projects, work, and other things" />
     <ViewTransitions />
   </head>
-  <body class="min-h-screen bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200">
+  <body class="min-h-screen bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200 overflow-x-hidden flex flex-col">
     <Nav transition:animate="none" />
     <main
       transition:animate="fade"
@@ -23,13 +22,7 @@ const lang = getLangFromUrl(Astro.url);
     >
       <slot />
     </main>
-    <footer
-      transition:animate="none"
-      class="flex w-full items-center justify-start gap-2 p-4"
-    >
-      <ThemePicker />
-      <LanguagePicker />
-    </footer>
+    <Footer />
     <slot name="scripts" />
   </body>
 </html>
