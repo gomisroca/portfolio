@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import '@/styles/globals.css'
-import { getLangFromUrl, useTranslations } from '@/i18n/utils';
-import MovingEmoji from '@/components/MovingEmoji';
+import { getLangFromUrl } from '@/i18n/utils';
+import Landing from '@/components/ui/landing';
 
 export function getStaticPaths() {
   const paths = [
@@ -13,12 +13,8 @@ export function getStaticPaths() {
   return paths;
 }
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <BaseLayout>
-	<div class="flex flex-row space-x-2 scale-150">
-		<span>{t("landing.welcome")}</span>
-		<MovingEmoji client:load>👋</MovingEmoji>
-	</div>
+	<Landing client:load lang={lang} />
 </BaseLayout>

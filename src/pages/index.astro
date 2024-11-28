@@ -1,15 +1,9 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import '@/styles/globals.css'
-import { useTranslations } from '@/i18n/utils';
-import MovingEmoji from '@/components/MovingEmoji';
-
-const t = useTranslations('en');
+import Landing from '@/components/ui/landing';
 ---
 
 <BaseLayout>
-	<div class="flex flex-row space-x-2 scale-150">
-		<span>{t("landing.welcome")}</span>
-		<MovingEmoji client:load>👋</MovingEmoji>
-	</div>
+	<Landing client:load />
 </BaseLayout>
