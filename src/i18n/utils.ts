@@ -16,7 +16,19 @@ export function getLangFromUrl(url: URL) {
 }
 
 export function useTranslations(lang: keyof typeof ui) {
-  return function t(key: keyof (typeof ui)[typeof defaultLang]) {
-    return ui[lang][key] || ui[defaultLang][key];
+  return function t(key: string) {
+    const [namespace, subKey] = key.split(".");
+
+    // Type-safe nested translation lookup
+    const languageTranslations = ui[lang];
+    const defaultTranslations = ui[defaultLang];
+
+    return (
+      // @ts-ignore
+      languageTranslations[namespace]?.[subKey] ||
+      // @ts-ignore
+      defaultTranslations[namespace]?.[subKey] ||
+      key
+    ); // Fallback to the original key if translation not found
   };
 }

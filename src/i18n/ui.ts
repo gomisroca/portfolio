@@ -10,55 +10,59 @@ export const showDefaultLang = false;
 
 export const ui = {
   en: {
-    "nav.home": "Home",
-    "nav.about": "About",
-    "nav.contact": "Contact",
-
-    "footer.theme": "Theme",
-    "footer.en": "English",
-    "footer.es": "Spanish",
-    "footer.cat": "Catalan",
-    "footer.de": "German",
-
-    "landing.welcome": "Welcome to my portfolio",
+    landing: {
+      welcome: [
+        `<h1 class="text-4xl font-bold">Hi, I'm Adrià 👋</h1>`,
+        `<h3 class="text-2xl font-semibold">Full-stack web developer</h3>`,
+        `<p>Specialized in the React ecosystem, with a focus on building web applications that are <span class="font-semibold">powerful</span>, <span class="font-semibold">user-friendly</span>, and <span class="font-semibold">highly performant</span>.</p>`,
+      ],
+    },
+    nav: {
+      home: "Home",
+      about: "About",
+      contact: "Contact",
+    },
   },
   es: {
-    "nav.home": "Inicio",
-    "nav.about": "Sobre Mi",
-    "nav.contact": "Contacto",
-
-    "footer.theme": "Tema",
-    "footer.en": "Inglés",
-    "footer.es": "Español",
-    "footer.cat": "Catalán",
-    "footer.de": "Alemán",
-
-    "landing.welcome": "Bienvenido a mi portafolio",
+    landing: {
+      welcome: [
+        "Hola, soy Adrià 👋.",
+        "Soy un desarrollador web full-stack.",
+        "Aplicaciones web limpias, potentes y eficientes son mi pasión.",
+      ],
+    },
+    nav: {
+      home: "Inicio",
+      about: "Sobre Mi",
+      contact: "Contacto",
+    },
   },
   cat: {
-    "nav.home": "Inici",
-    "nav.about": "Sobre Mi",
-    "nav.contact": "Contacte",
-
-    "footer.theme": "Tema",
-    "footer.en": "Anglès",
-    "footer.es": "Espanyol",
-    "footer.cat": "Català",
-    "footer.de": "Alemany",
-
-    "landing.welcome": "Benvingut al meu portafolis",
+    landing: {
+      welcome: [
+        "Hola, soy Adrià 👋.",
+        "Soy un desarrollador web full-stack.",
+        "Aplicaciones web limpias, potentes y eficientes son mi pasión.",
+      ],
+    },
+    nav: {
+      home: "Inici",
+      about: "Sobre Mi",
+      contact: "Contacte",
+    },
   },
   de: {
-    "nav.home": "Anfang",
-    "nav.about": "Über Mich",
-    "nav.contact": "Kontakt",
-
-    "footer.theme": "Thema",
-    "footer.en": "Englisch",
-    "footer.es": "Spanisch",
-    "footer.cat": "Katalanisch",
-    "footer.de": "Deutsch",
-
-    "landing.welcome": "Willkommen auf mein Portfolio",
+    landing: {
+      welcome: [
+        "Hola, soy Adrià 👋.",
+        "Soy un desarrollador web full-stack.",
+        "Aplicaciones web limpias, potentes y eficientes son mi pasión.",
+      ],
+    },
+    nav: {
+      home: "Anfang",
+      about: "Über Mich",
+      contact: "Kontakt",
+    },
   },
 } as const;
