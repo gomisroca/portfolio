@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
 function FadeInText({
@@ -9,12 +10,25 @@ function FadeInText({
   className?: string;
   speed?: number;
 }) {
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: speed,
+        ease: "easeInOut",
+        staggerChildren: 0.5,
+      },
+    },
+  };
   return (
     <motion.div
-      className={className}
-      initial={{ y: 20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: speed, ease: "easeInOut" }}
+      className={cn(className)}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={textVariants}
     >
       {children}
     </motion.div>
