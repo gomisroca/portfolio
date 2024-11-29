@@ -6,7 +6,7 @@ const activeLang = getLangFromUrl(Astro.url);
 ---
 <footer
 transition:animate="none"
-class="flex w-full items-center"
+class="flex w-full items-center z-[999]"
 >
   <FooterDock client:load activeLang={activeLang} />
 </footer>

@@ -4,6 +4,6 @@ import Dock from '@/components/ui/nav/Dock';
 
 const lang = getLangFromUrl(Astro.url);
 ---
-<div class="w-full my-2 md:my-4 h-10">
+<div class="absolute h-10 my-4 left-0 right-0 z-[999]">
   <Dock client:load lang={lang} />
 </div>
