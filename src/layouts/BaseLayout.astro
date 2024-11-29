@@ -14,11 +14,11 @@ const lang = getLangFromUrl(Astro.url);
     <BaseHead title="Adria Gomis | Portfolio" description="A portfolio of my projects, work, and other things" />
     <ViewTransitions />
   </head>
-  <body class="min-h-screen bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-200 overflow-x-hidden flex flex-col">
+  <body class="min-h-screen bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-200 flex flex-col">
     <Nav transition:animate="none" />
     <main
       transition:animate="fade"
-      class="container mx-auto flex flex-1 flex-col items-center justify-start p-4 font-body lg:p-8"
+      class="w-screen pt-10 flex overflow-hidden flex-1 flex-col items-center justify-start p-4 font-body lg:p-8"
     >
       <slot />
     </main>
