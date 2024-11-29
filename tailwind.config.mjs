@@ -3,6 +3,11 @@ export default {
   darkMode: ["class"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    screens: {
+      tablet: "640px",
+      laptop: "1024px",
+      desktop: "1280px",
+    },
     extend: {
       borderRadius: {
         lg: "var(--radius)",
@@ -51,6 +56,21 @@ export default {
           800: "#9d174d",
           900: "#831843",
           950: "#500724",
+        },
+      },
+      animation: {
+        orbit: "orbit calc(var(--duration)*1s) linear infinite",
+      },
+      keyframes: {
+        orbit: {
+          "0%": {
+            transform:
+              "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
+          },
+          "100%": {
+            transform:
+              "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
+          },
         },
       },
     },
