@@ -1,4 +1,4 @@
-import { ui, defaultLang, showDefaultLang } from "./ui";
+import ui, { defaultLang, showDefaultLang, languages } from "./ui";
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   const basePath = "/portfolio";
@@ -11,7 +11,7 @@ export function useTranslatedPath(lang: keyof typeof ui) {
 
 export function getLangFromUrl(url: URL) {
   const [, , lang] = url.pathname.split("/");
-  if (lang in ui) return lang as keyof typeof ui;
+  if (lang in languages) return lang as keyof typeof languages;
   return defaultLang;
 }
 
