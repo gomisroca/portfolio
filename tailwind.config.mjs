@@ -7,6 +7,7 @@ export default {
       tablet: "640px",
       laptop: "1024px",
       desktop: "1280px",
+      "4k": "2160px",
     },
     extend: {
       borderRadius: {
@@ -65,15 +66,15 @@ export default {
         orbit: {
           "0%": {
             transform:
-              "rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)",
+              "rotate(calc(var(--angle)*1deg)) translateY(calc(var(--radius) * 1px))",
           },
           "100%": {
             transform:
-              "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
+              "rotate(calc((var(--angle) + 360)*1deg)) translateY(calc(var(--radius) * 1px))",
           },
         },
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
 };
