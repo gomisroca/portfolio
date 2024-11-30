@@ -9,6 +9,10 @@ import icon from "astro-icon";
 export default defineConfig({
   site: "https://gomisroca.github.io",
   base: "portfolio",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "es", "cat", "de"],
+  },
   integrations: [
     react(),
     tailwind({
