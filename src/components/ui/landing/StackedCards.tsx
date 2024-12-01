@@ -75,17 +75,15 @@ function StackedCards() {
   return (
     <div
       className="
-        relative z-10
-        flex flex-col items-center justify-start 
-        w-screen h-[500px]
-        portrait:-left-[18.5rem]
-        portrait:tablet:-left-40 portrait:tablet:top-64
-        portrait:laptop:top-40
-        landscape:-left-20 landscape:scale-75 landscape:-top-4
-        landscape:tablet:-left-40 landscape:tablet:scale-100
-        landscape:laptop:-left-40 landscape:laptop:top-20
-        landscape:desktop:top-40 landscape:desktop:-left-[35rem]
-        landscape:4k:-left-[60rem]"
+        absolute z-10
+        w-[500px] h-[500px]
+        portrait:-left-[12.5rem] portrait:top-[15rem]
+        portrait:tablet:left-[7rem] portrait:tablet:top-[30rem]
+        portrait:laptop:left-[10rem] portrait:laptop:top-[25rem]
+        landscape:tablet:left-40 landscape:tablet:top-[14rem]
+        landscape:laptop:left-40 landscape:laptop:top-[20rem]
+        landscape:desktop:left-[15rem] landscape:desktop:top-[25rem]
+        landscape:4k:left-[50rem]"
     >
       {Projects.map((project) => (
         <Card
