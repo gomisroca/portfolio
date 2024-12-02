@@ -18,8 +18,8 @@ export default function LanguageLink({
     <a href={translatePath("/", href)}>
       <motion.div
         className={cn(
-          "font-semibold text-neutral-500 hover:text-primary-500 w-fit rounded-md px-1 text-sm",
-          className
+          "w-fit rounded-md px-1 text-sm font-semibold text-neutral-500 hover:text-primary-500",
+          className,
         )}
         whileHover={{
           scale: 1.25,

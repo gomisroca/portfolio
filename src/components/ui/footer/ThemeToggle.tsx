@@ -56,7 +56,7 @@ export default function ThemeToggle() {
   return (
     <motion.button
       id="themeToggle"
-      className="font-semibold text-neutral-500 hover:text-primary-500 w-fit rounded-md px-2"
+      className="w-fit rounded-md px-2 font-semibold text-neutral-500 hover:text-primary-500"
       onClick={toggleTheme}
       whileHover={{
         scale: 1.25,

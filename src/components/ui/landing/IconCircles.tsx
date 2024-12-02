@@ -93,13 +93,13 @@ const OrbitingIcon = memo(
         className={cn(
           "absolute size-full transform-gpu animate-orbit items-center justify-center rounded-full border bg-zinc-700/10 dark:bg-zinc-300/10",
           { "[animation-direction:reverse]": reverse },
-          className
+          className,
         )}
       >
         <div className="absolute rotate-0">{children}</div>
       </div>
     );
-  }
+  },
 );
 
 const OrbitingCircles = memo(
@@ -164,7 +164,7 @@ const OrbitingCircles = memo(
         ))}
       </motion.div>
     );
-  }
+  },
 );
 
 export function IconCircles() {
@@ -182,19 +182,7 @@ export function IconCircles() {
     },
   };
   return (
-    <div
-      className="
-        absolute opacity-50
-        pointer-events-none
-        h-[800px] w-[800px] 
-        portrait:top-0
-        portrait:-right-[25rem]
-        portrait:tablet:-right-40 portrait:tablet:top-20
-        landscape:tablet:-top-[30rem] landscape:tablet:-right-[30rem] 
-        landscape:laptop:top-4 landscape:laptop:-right-40
-        landscape:desktop:top-28 landscape:desktop:right-0
-        landscape:4k:top-20 landscape:4k:right-60"
-    >
+    <div className="pointer-events-none absolute h-[800px] w-[800px] opacity-50 portrait:-right-[25rem] portrait:top-0 portrait:tablet:-right-40 portrait:tablet:top-20 landscape:tablet:-right-[30rem] landscape:tablet:-top-[30rem] landscape:laptop:-right-40 landscape:laptop:top-4 landscape:desktop:right-0 landscape:desktop:top-28 landscape:4k:right-60 landscape:4k:top-20">
       <motion.div
         style={{ willChange: "transform, opacity" }}
         className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg"
@@ -206,101 +194,101 @@ export function IconCircles() {
       >
         {/* Infrastructure - Medium (Size 7) */}
         <OrbitingCircles
-          className="size-7 border-none bg-transparent dark:bg-transparent z-10"
+          className="z-10 size-7 border-none bg-transparent dark:bg-transparent"
           duration={60}
           radius={330}
         >
-          <SiSonar className="w-7 h-7" />
-          <SiGitlab className="w-7 h-7 text-orange-500" />
-          <SiGithubactions className="w-7 h-7" />
-          <SiDocker className="w-7 h-7 text-blue-500" />
-          <SiKubernetes className="w-7 h-7 text-blue-500" />
-          <SiAnsible className="w-7 h-7" />
-          <SiNginx className="w-7 h-7 text-lime-500" />
-          <SiGit className="w-7 h-7" />
-          <SiNodedotjs className="w-7 h-7 text-green-500" />
-          <SiGraphql className="w-7 h-7 text-purple-500" />
+          <SiSonar className="h-7 w-7" />
+          <SiGitlab className="h-7 w-7 text-orange-500" />
+          <SiGithubactions className="h-7 w-7" />
+          <SiDocker className="h-7 w-7 text-blue-500" />
+          <SiKubernetes className="h-7 w-7 text-blue-500" />
+          <SiAnsible className="h-7 w-7" />
+          <SiNginx className="h-7 w-7 text-lime-500" />
+          <SiGit className="h-7 w-7" />
+          <SiNodedotjs className="h-7 w-7 text-green-500" />
+          <SiGraphql className="h-7 w-7 text-purple-500" />
         </OrbitingCircles>
 
         {/* Outer Circles - Frontend */}
         {/* Testing - Small (Size 5)*/}
         <OrbitingCircles
-          className="size-5 border-none bg-transparent dark:bg-transparent z-10"
+          className="z-10 size-5 border-none bg-transparent dark:bg-transparent"
           duration={45}
           radius={270}
           reverse
         >
-          <SiJest className="w-5 h-5 text-rose-800" />
-          <SiVitest className="w-5 h-5 text-lime-500" />
-          <SiTestinglibrary className="w-5 h-5 text-red-500" />
+          <SiJest className="h-5 w-5 text-rose-800" />
+          <SiVitest className="h-5 w-5 text-lime-500" />
+          <SiTestinglibrary className="h-5 w-5 text-red-500" />
         </OrbitingCircles>
         {/* Style - Small (Size 5) */}
         <OrbitingCircles
-          className="size-5 border-none bg-transparent dark:bg-transparent z-10"
+          className="z-10 size-5 border-none bg-transparent dark:bg-transparent"
           duration={30}
           radius={240}
           reverse
         >
-          <SiTailwindcss className="w-5 h-5 text-sky-500" />
-          <SiBootstrap className="w-5 h-5 text-purple-500" />
-          <SiShadcnui className="w-5 h-5 text-purple-500" />
+          <SiTailwindcss className="h-5 w-5 text-sky-500" />
+          <SiBootstrap className="h-5 w-5 text-purple-500" />
+          <SiShadcnui className="h-5 w-5 text-purple-500" />
         </OrbitingCircles>
         {/* Frameworks - Large (Size 10) */}
         <OrbitingCircles
-          className="size-10 border-none bg-transparent dark:bg-transparent z-10"
+          className="z-10 size-10 border-none bg-transparent dark:bg-transparent"
           duration={80}
           radius={210}
         >
-          <SiAstro className="w-10 h-10" />
-          <SiAngular className="w-10 h-10 text-red-500" />
-          <SiVuedotjs className="w-10 h-10 text-green-500" />
-          <SiNextdotjs className="w-10 h-10" />
-          <SiReact className="w-10 h-10 text-cyan-500" />
+          <SiAstro className="h-10 w-10" />
+          <SiAngular className="h-10 w-10 text-red-500" />
+          <SiVuedotjs className="h-10 w-10 text-green-500" />
+          <SiNextdotjs className="h-10 w-10" />
+          <SiReact className="h-10 w-10 text-cyan-500" />
         </OrbitingCircles>
 
         {/* Inner Circles - Backend */}
         {/* Auth - Small (Size 5) */}
         <OrbitingCircles
-          className="size-5 border-none bg-transparent dark:bg-transparent z-10"
+          className="z-10 size-5 border-none bg-transparent dark:bg-transparent"
           duration={15}
           radius={150}
           reverse
         >
-          <SiAuth0 className="w-5 h-5 text-red-500" />
-          <SiPassport className="w-5 h-5 text-cyan-500" />
-          <SiJsonwebtokens className="w-5 h-5" />
+          <SiAuth0 className="h-5 w-5 text-red-500" />
+          <SiPassport className="h-5 w-5 text-cyan-500" />
+          <SiJsonwebtokens className="h-5 w-5" />
         </OrbitingCircles>
         {/* Frameworks - Large (Size 10) */}
         <OrbitingCircles
-          className="size-10 border-none bg-transparent dark:bg-transparent z-10"
+          className="z-10 size-10 border-none bg-transparent dark:bg-transparent"
           duration={100}
           radius={120}
         >
-          <SiExpress className="w-10 h-10" />
-          <SiDjango className="w-10 h-10" />
-          <SiFlask className="w-10 h-10" />
-          <SiFastapi className="w-10 h-10 text-emerald-500" />
+          <SiExpress className="h-10 w-10" />
+          <SiDjango className="h-10 w-10" />
+          <SiFlask className="h-10 w-10" />
+          <SiFastapi className="h-10 w-10 text-emerald-500" />
         </OrbitingCircles>
         {/* ORMs - Small (Size 5) */}
         <OrbitingCircles
-          className="size-5 border-none bg-transparent dark:bg-transparent z-10"
+          className="z-10 size-5 border-none bg-transparent dark:bg-transparent"
           duration={9}
           radius={70}
         >
-          <SiPrisma className="w-5 h-5" />
-          <SiMongoose className="w-5 h-5" />
-          <SiDrizzle className="w-5 h-5 text-lime-500" />
+          <SiPrisma className="h-5 w-5" />
+          <SiMongoose className="h-5 w-5" />
+          <SiDrizzle className="h-5 w-5 text-lime-500" />
         </OrbitingCircles>
         {/* Databases - Large (Size 10) */}
         <OrbitingCircles
-          className="size-9 border-none bg-transparent dark:bg-transparent z-10"
+          className="z-10 size-9 border-none bg-transparent dark:bg-transparent"
           duration={120}
           radius={40}
         >
-          <SiRedis className="w-9 h-9 text-red-500" />
-          <SiMongodb className="w-11 h-11 text-green-500" />
-          <SiPostgresql className="w-10 h-10 text-sky-500" />
-          <SiSqlite className="w-10 h-10" />
+          <SiRedis className="h-9 w-9 text-red-500" />
+          <SiMongodb className="h-11 w-11 text-green-500" />
+          <SiPostgresql className="h-10 w-10 text-sky-500" />
+          <SiSqlite className="h-10 w-10" />
         </OrbitingCircles>
       </motion.div>
     </div>

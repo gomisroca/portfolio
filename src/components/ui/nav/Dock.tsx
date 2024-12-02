@@ -92,7 +92,7 @@ function DockItem({
     <motion.a
       layout
       href={href}
-      className="cursor-pointer group"
+      className="group cursor-pointer"
       onMouseEnter={handleHoverStart}
       onMouseLeave={handleHoverEnd}
       onMouseDown={handleTapStart}
@@ -121,12 +121,11 @@ function DockItem({
             ease: "easeInOut",
           },
         }}
-        className={`relative flex flex-col items-center justify-center w-16 rounded-md transition-colors duration-200
-          ${
-            important
-              ? "text-accent-500/70 group-hover:text-accent-500"
-              : "text-neutral-500 group-hover:text-primary-500"
-          }`}
+        className={`relative flex w-16 flex-col items-center justify-center rounded-md transition-colors duration-200 ${
+          important
+            ? "text-accent-500/70 group-hover:text-accent-500"
+            : "text-neutral-500 group-hover:text-primary-500"
+        }`}
       >
         <motion.div animate={controls}>{icon}</motion.div>
         <AnimatePresence>
@@ -156,7 +155,7 @@ function DockItem({
                   ease: "easeInOut",
                 },
               }}
-              className="text-sm text-neutral-500 group-hover:text-neutral-600 dark:group-hover:text-neutral-400 transition-colors duration-200"
+              className="text-sm text-neutral-500 transition-colors duration-200 group-hover:text-neutral-600 dark:group-hover:text-neutral-400"
             >
               {label}
             </motion.span>
@@ -174,17 +173,17 @@ export default function Dock({ lang }: { lang: "en" | "es" | "cat" | "de" }) {
 
   const dockItems = [
     {
-      icon: <Home className="w-4 h-4" />,
+      icon: <Home className="h-4 w-4" />,
       label: t("nav.home"),
       href: translatePath("/"),
     },
     {
-      icon: <Info className="w-4 h-4" />,
+      icon: <Info className="h-4 w-4" />,
       label: t("nav.about"),
       href: translatePath("/about"),
     },
     {
-      icon: <Mail className="w-4 h-4" />,
+      icon: <Mail className="h-4 w-4" />,
       label: t("nav.contact"),
       href: translatePath("/contact"),
       important: true,
@@ -212,7 +211,7 @@ export default function Dock({ lang }: { lang: "en" | "es" | "cat" | "de" }) {
         whileInView="visible"
         viewport={{ once: true }}
         variants={listVariants}
-        className="mx-auto bg-zinc-200 dark:bg-zinc-900 w-fit rounded-md p-2 flex space-x-2"
+        className="mx-auto flex w-fit space-x-2 rounded-md bg-zinc-200 p-2 dark:bg-zinc-900"
         onMouseEnter={setHovered.bind(null, true)}
         onMouseLeave={setHovered.bind(null, false)}
       >

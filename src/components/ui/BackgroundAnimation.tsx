@@ -49,7 +49,7 @@ export default function BackgroundAnimation() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-hidden">
+    <div ref={containerRef} className="relative h-full w-full overflow-hidden">
       {flares.map((flare) => (
         <motion.div
           key={flare.id}

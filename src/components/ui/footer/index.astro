@@ -1,12 +1,10 @@
 ---
-import { getLangFromUrl } from '@/i18n/utils';
-import FooterDock from './FooterDock';
+import { getLangFromUrl } from "@/i18n/utils";
+import FooterDock from "./FooterDock";
 
 const activeLang = getLangFromUrl(Astro.url);
 ---
-<footer
-transition:animate="none"
-class="flex w-full items-center z-[999]"
->
+
+<footer transition:animate="none" class="z-[999] flex w-full items-center">
   <FooterDock client:load activeLang={activeLang} />
 </footer>
