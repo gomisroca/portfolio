@@ -1,0 +1,54 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  data: CollectionEntry<"blog">["data"];
+  timezone: string;
+  relatedPosts?: CollectionEntry<"blog">[];
+}
+const { data, timezone, relatedPosts }: Props = Astro.props;
+---
+
+<BaseLayout>
+  <div class="prose prose-zinc dark:prose-invert">
+    <div class="mb-4 border-b border-zinc-800 dark:border-zinc-200">
+      {
+        data.headerImage && (
+          <Image
+            src={data.headerImage.src}
+            alt={data.headerImage.alt}
+            width={1200}
+            height={630}
+            class="rounded-md"
+          />
+        )
+      }
+      <time class="prose-sm" datetime={data.date.toISOString()}>
+        {
+          data.date.toLocaleDateString(timezone, {
+            dateStyle: "medium",
+          })
+        }
+      </time>
+      <h1 class="mb-4">{data.title}</h1>
+    </div>
+    <slot />
+    {
+      relatedPosts && (
+        <div class="mt-10">
+          <h2 class="text-xl font-bold">Related Posts</h2>
+          {relatedPosts.map((post) => (
+            <div class="mb-4">
+              <a href={post.slug.split("/")[1]}>
+                <h3 class="text-lg font-bold">{post.data.title}</h3>
+                <p class="text-sm">{post.data.description}</p>
+              </a>
+            </div>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

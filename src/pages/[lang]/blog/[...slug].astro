@@ -1,0 +1,48 @@
+---
+import MarkdownWrapper from "@/components/MarkdownWrapper.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getEntries } from "astro:content";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("blog");
+
+  const paths = entries.map((entry) => {
+    const [lang, ...slug] = entry.slug.split("/");
+    return {
+      params: { lang, slug: slug.join("/") || undefined },
+      props: entry,
+    };
+  });
+
+  return paths;
+}
+const { lang } = Astro.params;
+const entry = Astro.props;
+const { Content } = await entry.render();
+
+const timeZoneMap = {
+  de: "de-DE",
+  es: "es-ES",
+  cat: "ca-ES",
+  default: "en-US",
+} as const;
+
+function isValidLang(lang: string): lang is keyof typeof timeZoneMap {
+  return lang in timeZoneMap;
+}
+
+const timezone = isValidLang(lang) ? timeZoneMap[lang] : timeZoneMap.default;
+
+const relatedPosts = entry.data.relatedPosts
+  ? await getEntries(entry.data.relatedPosts)
+  : [];
+---
+
+<MarkdownWrapper
+  data={entry.data}
+  timezone={timezone}
+  relatedPosts={relatedPosts}
+>
+  <Content />
+</MarkdownWrapper>
