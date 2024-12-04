@@ -1,0 +1,60 @@
+---
+import Section from "@/components/Section";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const lang = Astro.props.lang || "en";
+
+const langEntries = await getCollection(
+  "blog",
+  ({ slug, data }) => slug.startsWith(`${lang}/`) && data.date,
+);
+
+const latestEntries = langEntries
+  .sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+  )
+  .slice(0, 3);
+---
+
+<Section
+  client:visible
+  className="h-fit w-full pt-4 portrait:z-20 landscape:z-20"
+>
+  {
+    latestEntries.length > 0 ? (
+      <div class="grid items-center justify-center gap-2 portrait:grid-cols-1 landscape:tablet:grid-cols-3">
+        {latestEntries.map((entry) => (
+          <div class="flex flex-col items-center justify-center gap-2">
+            <h6 class="pb-4 text-center text-xl">Latest Blog</h6>
+            {entry.data.headerImage && (
+              <div class="relative mx-auto h-[200px] w-full items-center justify-center overflow-hidden rounded-md">
+                <Image
+                  src={entry.data.headerImage.src}
+                  alt={entry.data.headerImage.alt}
+                  width={1200}
+                  height={630}
+                  class="pointer-events-none absolute bottom-0 top-0 my-auto w-full rounded-md object-cover"
+                />
+              </div>
+            )}
+            <div class="my-4 flex flex-col items-center justify-center gap-1">
+              <time class="text-sm" datetime={entry.data.date.toISOString()}>
+                {entry.data.date.toLocaleDateString(undefined, {
+                  dateStyle: "medium",
+                  timeZone: "UTC",
+                })}
+              </time>
+              <h3 class="text-2xl font-semibold">{entry.data.title}</h3>
+            </div>
+            <p>{entry.data.description}</p>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="flex h-[200px]">
+        <h6 class="m-auto text-center text-xl">No blog entries found</h6>
+      </div>
+    )
+  }
+</Section>

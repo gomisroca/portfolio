@@ -1,20 +1,28 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import '@/styles/globals.css'
-import { getLangFromUrl } from '@/i18n/utils';
-import Landing from '@/components/ui/landing';
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import "@/styles/globals.css";
+import { getLangFromUrl } from "@/i18n/utils";
+import Landing from "@/components/ui/landing";
+import BlogSection from "@/components/ui/landing/BlogSection.astro";
+import ProjectSection from "@/components/ui/landing/ProjectSection.astro";
 
 export function getStaticPaths() {
   const paths = [
-		{ params: { lang: 'es' } },
-		{ params: { lang: 'cat' } },
-		{ params: { lang: 'de' } },
-	]
+    { params: { lang: "es" } },
+    { params: { lang: "cat" } },
+    { params: { lang: "de" } },
+  ];
   return paths;
 }
 const lang = getLangFromUrl(Astro.url);
 ---
 
 <BaseLayout>
-	<Landing client:load lang={lang} />
+  <div class="container flex flex-col">
+    <Landing client:load lang={lang} />
+    <div class="flex flex-col gap-4">
+      <ProjectSection lang={lang} />
+      <BlogSection lang={lang} />
+    </div>
+  </div>
 </BaseLayout>

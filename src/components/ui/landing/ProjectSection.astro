@@ -1,0 +1,51 @@
+---
+import Section from "@/components/Section";
+import { Picture } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const lang = Astro.props.lang || "en";
+
+const langProjects = await getCollection(
+  "projects",
+  ({ slug, data }) => slug.startsWith(`${lang}/`) && data.year,
+);
+
+const latestProjects = langProjects.sort(
+  (a, b) => new Date(b.data.year).getTime() - new Date(a.data.year).getTime(),
+);
+---
+
+<Section
+  client:visible
+  className="h-fit w-full pt-4 portrait:z-20 landscape:z-20"
+>
+  {
+    latestProjects.length > 0 ? (
+      <div class="grid items-center justify-center gap-2 portrait:grid-cols-1 landscape:tablet:grid-cols-3">
+        {latestProjects.map((entry) => (
+          <div class="flex flex-col items-center justify-center gap-2">
+            {entry.data.headerImage && (
+              <div class="relative mx-auto h-[200px] w-full items-center justify-center overflow-hidden rounded-md">
+                <Picture
+                  formats={["avif", "webp"]}
+                  src={entry.data.headerImage.src}
+                  alt={entry.data.headerImage.alt}
+                  inferSize
+                />
+              </div>
+            )}
+            <div class="my-4 flex flex-col items-center justify-center gap-1">
+              <span class="text-sm">{entry.data.year}</span>
+              <h3 class="text-2xl font-semibold">{entry.data.name}</h3>
+            </div>
+            <p>{entry.data.description}</p>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="flex h-[200px]">
+        <h6 class="m-auto text-center text-xl">No blog entries found</h6>
+      </div>
+    )
+  }
+</Section>

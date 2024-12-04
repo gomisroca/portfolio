@@ -1,9 +1,17 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import '@/styles/globals.css'
-import Landing from '@/components/ui/landing';
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import "@/styles/globals.css";
+import Landing from "@/components/ui/landing";
+import BlogSection from "@/components/ui/landing/BlogSection.astro";
+import ProjectSection from "@/components/ui/landing/ProjectSection.astro";
 ---
 
 <BaseLayout>
-	<Landing client:load />
+  <div class="container flex flex-col">
+    <Landing client:only="react" />
+    <div class="flex flex-col gap-4">
+      <ProjectSection />
+      <BlogSection />
+    </div>
+  </div>
 </BaseLayout>
