@@ -13,7 +13,10 @@ function Section({
       initial={{ opacity: 0, y: 100, scale: 0.5 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className={cn("rounded-md bg-zinc-200 p-8 dark:bg-zinc-900", className)}
+      className={cn(
+        "md:p-8 z-10 rounded-md bg-zinc-50 dark:bg-zinc-950",
+        className,
+      )}
     >
       {children}
     </motion.div>
