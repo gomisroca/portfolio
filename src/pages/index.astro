@@ -8,7 +8,7 @@ import ProjectSection from "@/components/ui/landing/ProjectSection.astro";
 
 <BaseLayout>
   <div class="container flex flex-col">
-    <Landing client:only="react" />
+    <Landing client:load />
     <div class="flex flex-col gap-4">
       <ProjectSection />
       <BlogSection />
