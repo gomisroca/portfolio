@@ -1,5 +1,4 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 interface CardProps {
@@ -11,24 +10,20 @@ function Card({ image, title, tilt = 0 }: CardProps) {
   const isMobile = useMediaQuery({ query: "(max-width: 540px)" });
   const { scrollY } = useScroll();
 
-  // Scale and translate based on scroll
-  const scale = useTransform(
-    scrollY,
-    [0, 500], // Adjust these values based on when you want the animation to start and end
-    [1, 0.7], // Scale from full size to 70%
-  );
+  const scale = useTransform(scrollY, [0, isMobile ? 400 : 500], [1, 0.7]);
 
-  const yTranslate = useTransform(
+  const yTranslate = useTransform(scrollY, [0, isMobile ? 400 : 500], [0, 700]);
+  const xTranslate = useTransform(
     scrollY,
-    [0, 500], // Same range as scale
-    [0, 700], // Move down 100 pixels
+    [0, isMobile ? 400 : 500],
+    [0, isMobile ? 300 : 0],
   );
   const rotateZ = useTransform(
     scrollY,
-    [0, 500],
+    [0, isMobile ? 400 : 500],
     [isMobile ? tilt + 45 : tilt, 0],
   );
-  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const opacity = useTransform(scrollY, [0, isMobile ? 400 : 500], [1, 0]);
 
   return (
     <motion.div
@@ -36,6 +31,7 @@ function Card({ image, title, tilt = 0 }: CardProps) {
         originY: "bottom",
         scale,
         y: yTranslate,
+        x: xTranslate,
         rotateZ,
         opacity,
       }}
@@ -45,6 +41,7 @@ function Card({ image, title, tilt = 0 }: CardProps) {
         x: 0,
         y: 0,
         opacity: 1,
+        zIndex: 0,
         transition: {
           duration: 1,
           times: [0, 0.2, 1],
@@ -58,7 +55,7 @@ function Card({ image, title, tilt = 0 }: CardProps) {
         rotateZ: 0,
         opacity: 1,
         scale: 1.2,
-        zIndex: 20,
+        zIndex: 30,
         transition: {
           duration: 1,
           times: [0, 0.2, 1],
