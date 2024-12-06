@@ -1,0 +1,55 @@
+---
+import { Picture } from "astro:assets";
+import Lightbox from "../Lightbox";
+import Link from "../Link";
+import type { CollectionEntry } from "astro:content";
+import TechnologyBadge from "./TechnologyBadge";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+---
+
+<div
+  class="my-2 flex h-full w-full flex-col items-center justify-start gap-2 rounded-md border-2 border-zinc-100/20 p-2 dark:border-zinc-900/20"
+>
+  {
+    project.data.headerImage && (
+      <div class="relative mx-auto h-[200px] w-full items-center justify-center overflow-hidden rounded-md transition-transform duration-200 ease-in-out hover:rotate-1 hover:scale-110">
+        <Lightbox client:load>
+          <Picture
+            formats={["avif", "webp"]}
+            src={project.data.headerImage.src}
+            alt={project.data.headerImage.alt}
+            width={1200}
+            height={630}
+            class="pointer-events-none my-auto rounded-md"
+          />
+        </Lightbox>
+      </div>
+    )
+  }
+  <div class="flex flex-1 flex-col items-center justify-between py-2">
+    <div class="flex flex-col items-center justify-center gap-1">
+      <span class="text-sm">{project.data.year}</span>
+      <div class="flex flex-wrap gap-2 text-sm text-zinc-500">
+        {
+          project.data.technologies.map((technology: Technology) => (
+            <TechnologyBadge client:load technology={technology} />
+          ))
+        }
+      </div>
+      <h3 class="text-2xl font-semibold">{project.data.name}</h3>
+    </div>
+    <p class="text-center">{project.data.description}</p>
+    <Link
+      client:load
+      href={`projects/${project.slug.split("/")[1]}`}
+      className="rounded-md p-2 text-xl uppercase"
+    >
+      Explore
+    </Link>
+  </div>
+</div>
