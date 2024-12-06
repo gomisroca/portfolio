@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -16,7 +16,8 @@ const { data, timezone, relatedPosts }: Props = Astro.props;
     <div class="mb-4 border-b border-zinc-800 dark:border-zinc-200">
       {
         data.headerImage && (
-          <Image
+          <Picture
+            formats={["avif", "webp"]}
             src={data.headerImage.src}
             alt={data.headerImage.alt}
             width={1200}
