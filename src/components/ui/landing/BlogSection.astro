@@ -1,6 +1,6 @@
 ---
 import Section from "@/components/Section";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import { getCollection } from "astro:content";
 
 const lang = Astro.props.lang || "en";
@@ -29,7 +29,8 @@ const latestEntries = langEntries
             <h6 class="pb-4 text-center text-xl">Latest Blog</h6>
             {entry.data.headerImage && (
               <div class="relative mx-auto h-[200px] w-full items-center justify-center overflow-hidden rounded-md">
-                <Image
+                <Picture
+                  formats={["avif", "webp"]}
                   src={entry.data.headerImage.src}
                   alt={entry.data.headerImage.alt}
                   width={1200}
