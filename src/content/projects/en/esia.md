@@ -2,6 +2,7 @@
 name: Esia
 year: 2023
 description: Art gallery site built using Next.js.
+technologies: ["Next.js", "React", "TailwindCSS", "TypeScript"]
 headerImage:
   src: "/portfolio/cards/esia.png"
   alt: "A descriptive alt text for the header image"

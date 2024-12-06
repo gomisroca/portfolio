@@ -2,6 +2,7 @@
 name: Oura
 year: 2023
 description: Sports clothing site built using Next.js.
+technologies: ["Next.js", "React", "TailwindCSS", "TypeScript"]
 headerImage:
   src: "/portfolio/cards/oura.png"
   alt: "A descriptive alt text for the header image"

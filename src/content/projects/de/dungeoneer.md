@@ -1,7 +1,8 @@
 ---
 name: Dungeoneer
 year: 2022
-description: Check what items a character is missing from a dungeon or raid in FFXIV. Built using Next.js.
+description: Überprüfe, welche Gegenstände einem Charakter in einem Dungeon oder Raid in FFXIV fehlen. Entwickelt mit Next.js.
+technologies: ["Next.js", "React", "TailwindCSS", "TypeScript"]
 headerImage:
   src: "/portfolio/cards/dungeoneer.png"
   alt: "A descriptive alt text for the header image"

@@ -35,6 +35,9 @@ const projectsCollection = defineCollection({
       .max(new Date().getFullYear(), {
         message: "Year must be before or equal to current year",
       }),
+    technologies: z
+      .array(z.string())
+      .min(1, { message: "Technologies are required" }),
     headerImage: z
       .object({
         src: z.string(),
