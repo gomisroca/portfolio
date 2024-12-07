@@ -1,8 +1,15 @@
 import { MousePointerClick } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "./dialog";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
-function Lightbox({ children }: { children: React.ReactNode }) {
+function Lightbox({
+  children,
+  dialogClass,
+}: {
+  children: React.ReactNode;
+  dialogClass?: string;
+}) {
   return (
     <Dialog>
       <DialogTrigger>
@@ -23,7 +30,9 @@ function Lightbox({ children }: { children: React.ReactNode }) {
         </motion.span>
         {children}
       </DialogTrigger>
-      <DialogContent className="rounded-md">{children}</DialogContent>
+      <DialogContent className={cn("rounded-md", dialogClass)}>
+        {children}
+      </DialogContent>
     </Dialog>
   );
 }
