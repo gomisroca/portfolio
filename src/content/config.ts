@@ -44,6 +44,12 @@ const projectsCollection = defineCollection({
         alt: z.string(),
       })
       .optional(),
+    cardImage: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
   }),
 });
 

@@ -4,8 +4,11 @@ year: 2024
 description: Writing blog site built using Astro.
 technologies: ["Next.js", "React", "TailwindCSS", "TypeScript"]
 headerImage:
-  src: "/portfolio/cards/echoes.png"
+  src: "/portfolio/projects/echoes.jpg"
   alt: "A descriptive alt text for the header image"
+cardImage:
+  src: "/portfolio/cards/echoes.png"
+  alt: "A descriptive alt text for the card image"
 ---
 
 <h1 class="text-2xl">HTML Ipsum Presents</h1>

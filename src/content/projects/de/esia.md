@@ -4,8 +4,11 @@ year: 2023
 description: Art gallery site built using Next.js.
 technologies: ["Next.js", "React", "TailwindCSS", "TypeScript"]
 headerImage:
-  src: "/portfolio/cards/esia.png"
+  src: "/portfolio/projects/esia.jpg"
   alt: "A descriptive alt text for the header image"
+cardImage:
+  src: "/portfolio/cards/esia.png"
+  alt: "A descriptive alt text for the card image"
 ---
 
 <h1 class="text-2xl">HTML Ipsum Presents</h1>
