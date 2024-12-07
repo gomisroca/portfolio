@@ -2,7 +2,7 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
-
+import mdx from "@astrojs/mdx";
 import icon from "astro-icon";
 
 // https://astro.build/config
@@ -14,6 +14,7 @@ export default defineConfig({
     locales: ["en", "es", "cat", "de"],
   },
   integrations: [
+    mdx(),
     react(),
     tailwind({
       applyBaseStyles: false,
