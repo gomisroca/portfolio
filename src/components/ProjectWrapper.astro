@@ -1,0 +1,42 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
+import { Picture } from "astro:assets";
+import Lightbox from "./ui/lightbox";
+
+interface Props {
+  project: CollectionEntry<"projects">["data"];
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout>
+  <div>
+    <div class="my-4 border-b border-zinc-800 dark:border-zinc-200">
+      {
+        project.headerImage && (
+          <div class="relative max-w-xl">
+            <Lightbox client:load dialogClass="max-w-fit">
+              <Picture
+                formats={["avif", "webp"]}
+                src={project.headerImage.src}
+                alt={project.headerImage.alt}
+                width={1920}
+                height={1080}
+                class="aspect-video rounded-md"
+              />
+            </Lightbox>
+          </div>
+        )
+      }
+      <div class="prose prose-zinc dark:prose-invert">
+        <span class="prose-sm">{project.year}</span>
+        <h1 class="mb-4">{project.name}</h1>
+      </div>
+    </div>
+    <div class="prose prose-zinc mx-auto dark:prose-invert">
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

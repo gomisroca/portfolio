@@ -1,0 +1,25 @@
+---
+import ProjectWrapper from "@/components/ProjectWrapper.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  const paths = projects.map((entry) => {
+    const [lang, ...slug] = entry.slug.split("/");
+    return {
+      params: { lang, slug: slug.join("/") || undefined },
+      props: entry,
+    };
+  });
+
+  return paths;
+}
+
+const project = Astro.props;
+const { Content } = await project.render();
+---
+
+<ProjectWrapper project={project.data}>
+  <Content />
+</ProjectWrapper>
