@@ -13,7 +13,7 @@ const { data, timezone, relatedPosts }: Props = Astro.props;
 
 <BaseLayout>
   <div class="prose prose-zinc dark:prose-invert">
-    <div class="mb-4 border-b border-zinc-800 dark:border-zinc-200">
+    <div class="my-4 border-b border-zinc-800 dark:border-zinc-200">
       {
         data.headerImage && (
           <Picture
@@ -22,7 +22,7 @@ const { data, timezone, relatedPosts }: Props = Astro.props;
             alt={data.headerImage.alt}
             width={1200}
             height={630}
-            class="rounded-md"
+            class="aspect-video rounded-md"
           />
         )
       }
