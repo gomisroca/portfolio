@@ -22,7 +22,7 @@ function FooterDock({
   };
   return (
     <motion.ul
-      className="md:my-4 mx-auto my-2 flex w-fit flex-row space-x-2 rounded-md bg-neutral-200 p-2 dark:bg-neutral-900"
+      className="md:my-4 mx-auto my-2 flex w-fit flex-row space-x-2 rounded-md bg-zinc-200 p-2 dark:bg-zinc-900"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -45,7 +45,7 @@ function FooterDock({
           />
         </motion.li>
       ))}
-      <span className="my-auto h-4 border border-neutral-300 dark:border-neutral-700" />
+      <span className="my-auto h-4 border border-zinc-300 dark:border-zinc-700" />
       <motion.li
         className="w-1/5 text-center"
         variants={{

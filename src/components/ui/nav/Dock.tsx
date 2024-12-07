@@ -124,7 +124,7 @@ function DockItem({
         className={`relative flex w-16 flex-col items-center justify-center rounded-md transition-colors duration-200 ${
           important
             ? "text-accent-500/70 group-hover:text-accent-500"
-            : "text-neutral-500 group-hover:text-primary-500"
+            : "text-zinc-500 group-hover:text-primary-500"
         }`}
       >
         <motion.div animate={controls}>{icon}</motion.div>
@@ -155,7 +155,7 @@ function DockItem({
                   ease: "easeInOut",
                 },
               }}
-              className="text-sm text-neutral-500 transition-colors duration-200 group-hover:text-neutral-600 dark:group-hover:text-neutral-400"
+              className="text-sm text-zinc-500 transition-colors duration-200 group-hover:text-zinc-600 dark:group-hover:text-zinc-400"
             >
               {label}
             </motion.span>
