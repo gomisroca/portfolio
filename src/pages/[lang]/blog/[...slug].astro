@@ -1,6 +1,5 @@
 ---
-import MarkdownWrapper from "@/components/MarkdownWrapper.astro";
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import BlogWrapper from "@/components/BlogWrapper.astro";
 import { getEntries } from "astro:content";
 import { getCollection } from "astro:content";
 
@@ -39,10 +38,6 @@ const relatedPosts = entry.data.relatedPosts
   : [];
 ---
 
-<MarkdownWrapper
-  data={entry.data}
-  timezone={timezone}
-  relatedPosts={relatedPosts}
->
+<BlogWrapper data={entry.data} timezone={timezone} relatedPosts={relatedPosts}>
   <Content />
-</MarkdownWrapper>
+</BlogWrapper>

@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import BlogWrapper from "@/components/BlogWrapper.astro";
 import { getEntries } from "astro:content";
 import { getCollection } from "astro:content";
 
@@ -22,38 +22,9 @@ const { Content } = await entry.render();
 
 const relatedPosts = entry.data.relatedPosts
   ? await getEntries(entry.data.relatedPosts)
-  : null;
+  : [];
 ---
 
-<BaseLayout>
-  <div class="prose prose-zinc dark:prose-invert">
-    <div>
-      <h1 class="text-3xl font-bold">{entry.data.title}</h1>
-      <p class="text-lg">{entry.data.description}</p>
-      <time class="text-sm" datetime={entry.data.date.toISOString()}>
-        {
-          entry.data.date.toLocaleDateString(undefined, {
-            dateStyle: "medium",
-            timeZone: "UTC",
-          })
-        }
-      </time>
-    </div>
-    <Content />
-  </div>
-  {
-    relatedPosts && (
-      <div class="mt-10">
-        <h2 class="text-xl font-bold">Related Posts</h2>
-        {relatedPosts.map((post) => (
-          <div class="mb-4">
-            <a href={post.slug.split("/")[1]}>
-              <h3 class="text-lg font-bold">{post.data.title}</h3>
-              <p class="text-sm">{post.data.description}</p>
-            </a>
-          </div>
-        ))}
-      </div>
-    )
-  }
-</BaseLayout>
+<BlogWrapper data={entry.data} relatedPosts={relatedPosts} timezone="en-US">
+  <Content />
+</BlogWrapper>
