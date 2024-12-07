@@ -9,12 +9,6 @@ import {
   SiDocker,
   SiKubernetes,
 } from "react-icons/si";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../tooltip";
 import { Popover, PopoverContent, PopoverTrigger } from "../popover";
 
 const technologyIcons = {

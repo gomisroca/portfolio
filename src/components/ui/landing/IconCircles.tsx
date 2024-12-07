@@ -36,7 +36,7 @@ import {
   SiDrizzle,
 } from "react-icons/si";
 import { cn } from "@/lib/utils";
-import { memo, useEffect, useMemo, useState } from "react";
+import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
