@@ -17,7 +17,7 @@ const { project } = Astro.props;
       {
         project.headerImage && (
           <div class="relative max-w-xl">
-            <Lightbox client:load dialogClass="max-w-fit">
+            <Lightbox client:load dialogClass="max-w-none">
               <Picture
                 formats={["avif", "webp"]}
                 src={project.headerImage.src}
