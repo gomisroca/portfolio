@@ -1,12 +1,16 @@
 /// <reference path="../.astro/types.d.ts" />
 
 type Technology =
+  | "Astro"
   | "Next.js"
   | "React"
-  | "TailwindCSS"
-  | "JavaScript"
-  | "TypeScript"
-  | "Node.js"
-  | "Python"
-  | "Docker"
-  | "Kubernetes";
+  | "Vue"
+  | "Sanity"
+  | "Stripe"
+  | "tRPC"
+  | "Express"
+  | "MongoDB"
+  | "PostgreSQL"
+  | "Supabase"
+  | "Vercel"
+  | "Docker";
