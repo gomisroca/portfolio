@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 
 function Section({
   children,
+  title,
   className,
 }: {
   children: React.ReactNode;
+  title: string;
   className?: string;
 }) {
   return (
@@ -18,6 +20,9 @@ function Section({
         className,
       )}
     >
+      <h2 className="mb-2 ml-[20%] mr-[20%] border-b-4 border-zinc-800 text-3xl font-semibold dark:border-zinc-200">
+        {title}
+      </h2>
       {children}
     </motion.div>
   );
