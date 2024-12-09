@@ -57,9 +57,12 @@ export default function TechnologyBadge({ technology }: Props) {
   if (!IconComponent) return null;
   return (
     <Popover>
-      <PopoverTrigger className="rounded-full border border-zinc-950/20 bg-zinc-50 p-1 transition duration-200 ease-in-out hover:scale-110 hover:border-zinc-950/50 active:scale-125 active:duration-100">
+      <PopoverTrigger className="group rounded-full border border-zinc-950/20 bg-zinc-50 p-1 transition duration-200 hover:scale-110 hover:border-zinc-950/30 active:scale-125 active:duration-100">
         <span className="sr-only">{technology}</span>
-        <IconComponent color={iconColor} className="h-5 w-5" />
+        <IconComponent
+          color={iconColor}
+          className="h-5 w-5 brightness-50 transition duration-200 active:duration-100 group-hover:brightness-100 group-active:brightness-110"
+        />
       </PopoverTrigger>
       <PopoverContent>{technology}</PopoverContent>
     </Popover>
