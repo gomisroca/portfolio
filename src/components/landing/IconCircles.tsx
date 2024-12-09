@@ -34,6 +34,7 @@ import {
   SiPrisma,
   SiMongoose,
   SiDrizzle,
+  SiTraefikproxy,
 } from "react-icons/si";
 import { cn } from "@/lib/utils";
 import { memo, useMemo } from "react";
@@ -205,6 +206,7 @@ export function IconCircles() {
           <SiKubernetes className="h-7 w-7 text-blue-500" />
           <SiAnsible className="h-7 w-7" />
           <SiNginx className="h-7 w-7 text-lime-500" />
+          <SiTraefikproxy className="h-7 w-7 text-sky-500" />
           <SiGit className="h-7 w-7" />
           <SiNodedotjs className="h-7 w-7 text-green-500" />
           <SiGraphql className="h-7 w-7 text-purple-500" />
