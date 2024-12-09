@@ -20,9 +20,16 @@ function Section({
         className,
       )}
     >
-      <h2 className="mb-2 ml-[20%] mr-[20%] border-b-4 border-zinc-800 text-3xl font-semibold dark:border-zinc-200">
-        {title}
-      </h2>
+      <div className="mb-2 ml-[20%] mr-[20%]">
+        <h2 className="text-3xl font-semibold">{title}</h2>
+        <motion.hr
+          initial={{ width: "25%" }}
+          whileInView={{ width: "100%" }}
+          exit={{ width: "25%" }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="border-b-4 border-zinc-800 dark:border-zinc-200"
+        />
+      </div>
       {children}
     </motion.div>
   );
