@@ -3,15 +3,11 @@ import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
-import icon from "astro-icon";
 import node from "@astrojs/node";
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  adapter: node({
-    mode: "standalone",
-  }),
   site: "https://gomisroca.github.io",
   base: "portfolio",
   i18n: {
@@ -28,4 +24,11 @@ export default defineConfig({
       include: { mdi: ["*"] },
     }),
   ],
+  // Conditional server-side configuration
+  ...(process.env.NODE_ENV === "production" && {
+    output: "server",
+    adapter: node({
+      mode: "standalone",
+    }),
+  }),
 });
