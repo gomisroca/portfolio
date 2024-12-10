@@ -26,7 +26,7 @@ export default defineConfig({
     }),
   ],
   // Conditional server-side configuration
-  ...(process.env.NODE_ENV === "production" && {
+  ...(process.env.NODE_ENV === "test" && {
     output: "server",
     adapter: node({
       mode: "standalone",
