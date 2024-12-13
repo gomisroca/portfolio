@@ -8,6 +8,12 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  image: {
+    experimentalLayout: "responsive",
+  },
+  experimental: {
+    responsiveImages: true,
+  },
   output: "static",
   site: "https://gomisroca.github.io",
   base: "portfolio",

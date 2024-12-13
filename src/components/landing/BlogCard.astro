@@ -3,7 +3,6 @@ import { Picture } from "astro:assets";
 import Link from "../ui/link";
 import Lightbox from "../ui/lightbox";
 import type { CollectionEntry } from "astro:content";
-import TechnologyBadge from "./TechnologyBadge";
 
 interface Props {
   entry: CollectionEntry<"blog">;
@@ -14,13 +13,14 @@ const { entry, lang } = Astro.props;
 ---
 
 <div
-  class="my-2 flex h-full w-full flex-col items-center justify-start gap-2 rounded-md border-2 border-zinc-100/20 p-2 dark:border-zinc-900/20"
+  class="my-2 flex h-full w-full flex-col items-center justify-start gap-2 rounded-md border-2 border-zinc-200/50 bg-zinc-50 p-2 dark:border-zinc-900 dark:bg-zinc-950"
 >
   {
     entry.data.headerImage && (
       <div class="relative mx-auto h-[200px] w-full items-center justify-center overflow-hidden rounded-md transition-transform duration-200 ease-in-out hover:rotate-1 hover:scale-110">
         <Lightbox client:load dialogClass="tablet:w-fit">
           <Picture
+            fit="cover"
             formats={["avif", "webp"]}
             src={entry.data.headerImage.src}
             alt={entry.data.headerImage.alt}
@@ -48,7 +48,7 @@ const { entry, lang } = Astro.props;
     <Link
       client:load
       lang={lang}
-      href={`/blog/${entry.slug.split("/")[1]}`}
+      href={`/blog/${entry.id.split("/")[1]}`}
       className="rounded-md p-2 text-xl uppercase"
     >
       Read

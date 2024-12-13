@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { getLangFromUrl } from "@/i18n/utils";
 import BaseHead from "@/components/BaseHead.astro";
 import Nav from "@/components/ui/nav/index.astro";
@@ -15,7 +15,7 @@ const lang = getLangFromUrl(Astro.url);
       title="Adria Gomis | Portfolio"
       description="A portfolio of my projects, work, and other things"
     />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body
     class="flex min-h-screen flex-col overflow-x-hidden bg-zinc-50 text-zinc-800 dark:bg-zinc-950 dark:text-zinc-200"

@@ -7,14 +7,14 @@ const lang = Astro.props.lang || "en";
 
 const langEntries = await getCollection(
   "blog",
-  ({ slug, data }) => slug.startsWith(`${lang}/`) && data.date,
+  ({ id, data }) => id.startsWith(`${lang}/`) && data.date,
 );
 
 const latestEntries = langEntries
   .sort(
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
   )
-  .slice(0, 3);
+  .slice(0, 6);
 ---
 
 <Section
@@ -24,7 +24,7 @@ const latestEntries = langEntries
 >
   {
     latestEntries.length > 0 ? (
-      <div class="grid items-center justify-center gap-2 portrait:grid-cols-1 landscape:tablet:grid-cols-3">
+      <div class="grid grid-cols-1 items-center justify-evenly gap-4 tablet:grid-cols-2 laptop:grid-cols-3">
         {latestEntries.map((entry) => (
           <BlogCard entry={entry} lang={lang} />
         ))}

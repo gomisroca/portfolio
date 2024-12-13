@@ -1,14 +1,14 @@
 ---
 import ProjectWrapper from "@/components/ProjectWrapper.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
 
   const paths = projects.map((entry) => {
-    const [lang, ...slug] = entry.slug.split("/");
+    const [lang, ...id] = entry.id.split("/");
     return {
-      params: { lang, slug: slug.join("/") || undefined },
+      params: { lang, id: id.join("/") || undefined },
       props: entry,
     };
   });
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 const project = Astro.props;
-const { Content } = await project.render();
+const { Content } = await render(project);
 ---
 
 <ProjectWrapper project={project.data}>

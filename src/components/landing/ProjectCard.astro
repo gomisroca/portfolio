@@ -14,13 +14,14 @@ const { project, lang } = Astro.props;
 ---
 
 <div
-  class="my-2 flex h-full w-full flex-col items-center justify-start gap-2 rounded-md border-2 border-zinc-100/20 p-2 dark:border-zinc-900/20"
+  class="my-2 flex h-full w-full flex-col items-center justify-start gap-2 rounded-md border-2 border-zinc-200 bg-zinc-50 p-2 dark:border-zinc-900 dark:bg-zinc-950"
 >
   {
     project.data.cardImage && (
       <div class="relative mx-auto h-[200px] w-full items-center justify-center overflow-hidden rounded-md transition-transform duration-200 ease-in-out hover:rotate-1 hover:scale-110">
         <Lightbox client:load dialogClass="tablet:w-fit">
           <Picture
+            fit="cover"
             formats={["avif", "webp"]}
             src={project.data.cardImage.src}
             alt={project.data.cardImage.alt}
@@ -51,7 +52,7 @@ const { project, lang } = Astro.props;
     <Link
       client:load
       lang={lang}
-      href={`/projects/${project.slug.split("/")[1]}`}
+      href={`/projects/${project.id.split("/")[1]}`}
       className="rounded-md p-2 text-xl uppercase"
     >
       Explore

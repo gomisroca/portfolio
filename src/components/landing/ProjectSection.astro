@@ -7,7 +7,7 @@ const lang = Astro.props.lang || "en";
 
 const langProjects = await getCollection(
   "projects",
-  ({ slug, data }) => slug.startsWith(`${lang}/`) && data.year,
+  ({ id, data }) => id.startsWith(`${lang}/`) && data.year,
 );
 
 const projects = langProjects.sort(
@@ -29,7 +29,7 @@ const projects = langProjects.sort(
       </div>
     ) : (
       <div class="flex h-[200px]">
-        <h6 class="m-auto text-center text-xl">No blog entries found</h6>
+        <h6 class="m-auto text-center text-xl">No projects found</h6>
       </div>
     )
   }

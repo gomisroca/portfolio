@@ -1,5 +1,6 @@
 ---
 import BlogWrapper from "@/components/BlogWrapper.astro";
+import { render } from "astro:content";
 import { getEntries } from "astro:content";
 import { getCollection } from "astro:content";
 
@@ -7,9 +8,9 @@ export async function getStaticPaths() {
   const entries = await getCollection("blog");
 
   const paths = entries.map((entry) => {
-    const [lang, ...slug] = entry.slug.split("/");
+    const [lang, ...id] = entry.id.split("/");
     return {
-      params: { lang, slug: slug.join("/") || undefined },
+      params: { lang, id: id.join("/") || undefined },
       props: entry,
     };
   });
@@ -18,7 +19,7 @@ export async function getStaticPaths() {
 }
 
 const entry = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 
 const relatedPosts = entry.data.relatedPosts
   ? await getEntries(entry.data.relatedPosts)
