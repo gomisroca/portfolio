@@ -3,6 +3,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { Picture } from "astro:assets";
 import Lightbox from "@/components/ui/lightbox";
+import Sidebar from "@/components/ui/project-layout/sidebar.astro";
+import { Icon } from "astro-icon/components";
+import { twMerge } from "tailwind-merge";
 
 interface Props {
   project: CollectionEntry<"projects">["data"];
@@ -12,13 +15,11 @@ const { project } = Astro.props;
 ---
 
 <BaseLayout>
-  <div>
-    // There should be a sidebar with the project's details, // Live Website,
-    Repository, Date, etc.
-    <div class="my-4 border-b border-zinc-800 dark:border-zinc-200">
+  <div class="relative mx-auto flex flex-col gap-2">
+    <div class="my-4 flex flex-col justify-center">
       {
         project.headerImage && (
-          <div class="relative max-w-xl">
+          <div class="relative mx-auto max-w-xl">
             <Lightbox client:load dialogClass="max-w-none">
               <Picture
                 layout="responsive"
@@ -27,19 +28,53 @@ const { project } = Astro.props;
                 alt={project.headerImage.alt}
                 width={1920}
                 height={1080}
-                class="aspect-video rounded-md"
+                class="aspect-video w-full rounded-md"
               />
             </Lightbox>
           </div>
         )
       }
-      <div class="prose prose-zinc dark:prose-invert">
-        <span class="prose-sm">{project.year}</span>
-        <h1 class="mb-4">{project.name}</h1>
+      <div
+        class="prose prose-zinc mx-auto block w-full border-b border-zinc-500 py-4 dark:prose-invert desktop:hidden"
+      >
+        <div
+          class={twMerge(
+            "flex flex-row justify-between px-4",
+            !(project.liveWebsite || project.repository) && "justify-center",
+          )}
+        >
+          <span class="prose-sm">
+            {project.year}
+          </span>
+          <div class="flex flex-row gap-2">
+            {
+              project.liveWebsite && (
+                <a href={project.liveWebsite} target="_blank">
+                  <Icon
+                    name="mdi:web"
+                    class="h-6 w-6 text-zinc-500 transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+                  />
+                </a>
+              )
+            }
+            {
+              project.repository && (
+                <a href={project.repository} target="_blank">
+                  <Icon
+                    name="mdi:github"
+                    class="h-6 w-6 text-zinc-500 transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+                  />
+                </a>
+              )
+            }
+          </div>
+        </div>
+        <h1 class="text-center uppercase">{project.name}</h1>
       </div>
     </div>
-    <div class="prose prose-zinc mx-auto dark:prose-invert">
+    <div class="prose prose-zinc mx-auto dark:prose-invert desktop:mx-auto">
       <slot />
     </div>
+    <Sidebar project={project} />
   </div>
 </BaseLayout>
