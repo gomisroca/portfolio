@@ -36,6 +36,9 @@ function Card({ image, title, tilt = 0 }: CardProps) {
         opacity,
       }}
       className="absolute flex flex-col items-center justify-center rounded-md p-4"
+      initial={{
+        rotateZ: 0,
+      }}
       animate={{
         rotateZ: isMobile ? tilt + 45 : tilt,
         x: 0,
@@ -98,7 +101,12 @@ const Projects = [
 
 function StackedCards() {
   return (
-    <div className="absolute z-10 h-[500px] w-[500px] portrait:-left-[12.5rem] portrait:top-[15rem] portrait:tablet:left-[7rem] portrait:tablet:top-[30rem] portrait:laptop:left-[10rem] portrait:laptop:top-[25rem] landscape:tablet:left-40 landscape:tablet:top-[14rem] landscape:laptop:left-40 landscape:laptop:top-[20rem] landscape:desktop:left-[15rem] landscape:desktop:top-[25rem] landscape:4k:left-[50rem]">
+    <motion.div
+      initial={{ opacity: 0, y: 500 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+      className="absolute z-10 h-[500px] w-[500px] portrait:-left-[12.5rem] portrait:top-[15rem] portrait:tablet:left-[7rem] portrait:tablet:top-[30rem] portrait:laptop:left-[10rem] portrait:laptop:top-[25rem] landscape:tablet:left-40 landscape:tablet:top-[14rem] landscape:laptop:left-40 landscape:laptop:top-[20rem] landscape:desktop:left-[15rem] landscape:desktop:top-[25rem] landscape:4k:left-[50rem]"
+    >
       {Projects.map((project) => (
         <Card
           key={project.title}
@@ -107,7 +115,7 @@ function StackedCards() {
           tilt={project.tilt}
         />
       ))}
-    </div>
+    </motion.div>
   );
 }
 
