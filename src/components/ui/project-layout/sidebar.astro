@@ -1,0 +1,35 @@
+---
+import SidebarItem from "./sidebar-item.astro";
+
+const { project } = Astro.props;
+---
+
+<div
+  class="absolute -right-[14.5rem] bottom-0 top-4 hidden h-fit w-[200px] flex-col gap-4 rounded-md bg-zinc-200 p-4 dark:bg-zinc-900 desktop:flex"
+>
+  <SidebarItem title="Project Name" description={project.name} />
+  <SidebarItem title="Year of Creation" description={project.year} />
+  {
+    (project.liveWebsite || project.repository) && (
+      <hr class="border-zinc-500" />
+    )
+  }
+  {
+    project.liveWebsite && (
+      <SidebarItem
+        title="Website"
+        description={project.liveWebsite}
+        type="link"
+      />
+    )
+  }
+  {
+    project.repository && (
+      <SidebarItem
+        title="Repository"
+        description={project.repository}
+        type="link"
+      />
+    )
+  }
+</div>

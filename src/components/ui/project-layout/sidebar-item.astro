@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  title: string;
+  description: string;
+  type?: "text" | "link";
+}
+const { title, description, type = "text" }: Props = Astro.props;
+---
+
+{
+  type === "link" ? (
+    <a
+      href={description}
+      class="group flex w-fit flex-row items-center gap-2 font-semibold uppercase transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+      target="_blank"
+    >
+      <Icon
+        name={title === "Website" ? "mdi:web" : "mdi:github"}
+        class="h-6 w-6 text-zinc-500 transition-colors duration-200 group-hover:text-primary-500"
+      />
+      <span>{title}</span>
+    </a>
+  ) : (
+    <div class="flex flex-col justify-start">
+      <p class="text-sm uppercase text-zinc-500">{title}</p>
+
+      <p class="text-lg font-semibold uppercase">{description}</p>
+    </div>
+  )
+}
