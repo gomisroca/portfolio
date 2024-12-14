@@ -51,6 +51,8 @@ const projects = defineCollection({
         alt: z.string(),
       })
       .optional(),
+    liveWebsite: z.string().optional(),
+    repository: z.string().optional(),
   }),
 });
 
