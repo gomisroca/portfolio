@@ -21,13 +21,13 @@ const { project, lang } = Astro.props;
       <div class="relative mx-auto h-[200px] w-full items-center justify-center overflow-hidden rounded-md transition-transform duration-200 ease-in-out hover:rotate-1 hover:scale-110">
         <Lightbox client:load dialogClass="tablet:w-fit">
           <Picture
-            fit="cover"
+            layout="responsive"
             formats={["avif", "webp"]}
             src={project.data.cardImage.src}
             alt={project.data.cardImage.alt}
             width={500}
             height={1000}
-            class="pointer-events-none rounded-md"
+            class="pointer-events-none aspect-video rounded-md"
           />
         </Lightbox>
       </div>

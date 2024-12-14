@@ -12,7 +12,7 @@ function Lightbox({
 }) {
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger className="w-full">
         <motion.span
           animate={{
             scale: 1.1,
