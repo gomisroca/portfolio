@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { Picture } from "astro:assets";
-import Lightbox from "./ui/lightbox";
+import Lightbox from "@/components/ui/lightbox";
 
 interface Props {
   project: CollectionEntry<"projects">["data"];
@@ -13,6 +13,8 @@ const { project } = Astro.props;
 
 <BaseLayout>
   <div>
+    // There should be a sidebar with the project's details, // Live Website,
+    Repository, Date, etc.
     <div class="my-4 border-b border-zinc-800 dark:border-zinc-200">
       {
         project.headerImage && (
