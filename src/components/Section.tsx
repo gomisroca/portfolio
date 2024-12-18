@@ -40,8 +40,8 @@ function Section({
   };
   return (
     <motion.div
-      initial={{ opacity: 0, y: 100, scale: 0.5 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 1, ease: "easeInOut" }}
       className={cn(
@@ -49,9 +49,9 @@ function Section({
         className,
       )}
     >
-      <div className="mb-2 ml-[20%] mr-[20%]">
+      <div className="mb-2 ml-[10%] mr-[10%] tablet:ml-[20%] tablet:mr-[20%]">
         <motion.h2
-          className="flex text-3xl font-semibold"
+          className="flex text-2xl font-semibold tablet:text-3xl"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
