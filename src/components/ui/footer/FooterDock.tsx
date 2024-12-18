@@ -1,4 +1,4 @@
-import { languages } from "@/i18n/ui";
+import { languages } from "@/i18n/utils";
 import { motion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 import LanguageLink from "./LanguageLink";

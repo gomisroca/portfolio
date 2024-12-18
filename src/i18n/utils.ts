@@ -1,6 +1,16 @@
-import ui, { defaultLang, showDefaultLang, languages } from "./ui";
+import translations from "./index";
 
-export function useTranslatedPath(lang: keyof typeof ui) {
+export const languages = {
+  en: "English",
+  es: "Español",
+  cat: "Català",
+  de: "Deutsch",
+};
+
+export const defaultLang = "en";
+export const showDefaultLang = false;
+
+export function useTranslatedPath(lang: keyof typeof translations) {
   const basePath = "/portfolio";
 
   return function translatePath(path: string, l: string = lang) {
@@ -15,13 +25,13 @@ export function getLangFromUrl(url: URL) {
   return defaultLang;
 }
 
-export function useTranslations(lang: keyof typeof ui) {
+export function useTranslations(lang: keyof typeof translations) {
   return function t(key: string) {
     const [namespace, subKey] = key.split(".");
 
     // Type-safe nested translation lookup
-    const languageTranslations = ui[lang];
-    const defaultTranslations = ui[defaultLang];
+    const languageTranslations = translations[lang];
+    const defaultTranslations = translations[defaultLang];
 
     return (
       // @ts-ignore

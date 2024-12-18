@@ -2,8 +2,9 @@
 import Section from "@/components/Section";
 import { getCollection } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
+import { useTranslations } from "@/i18n/utils";
 
-const lang = Astro.props.lang || "en";
+const lang: "en" | "es" | "cat" | "de" = Astro.props.lang || "en";
 
 const langProjects = await getCollection(
   "projects",
@@ -13,11 +14,12 @@ const langProjects = await getCollection(
 const projects = langProjects.sort(
   (a, b) => new Date(b.data.year).getTime() - new Date(a.data.year).getTime(),
 );
+const t = useTranslations(lang);
 ---
 
 <Section
-  title="Projects"
-  client:visible
+  title={t("sections.projects")}
+  client:load
   className="h-fit w-full space-y-4 pt-4 portrait:z-20 landscape:z-20"
 >
   {

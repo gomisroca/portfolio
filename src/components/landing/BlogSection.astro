@@ -2,6 +2,7 @@
 import Section from "@/components/Section";
 import { getCollection } from "astro:content";
 import BlogCard from "./BlogCard.astro";
+import { useTranslations } from "@/i18n/utils";
 
 const lang = Astro.props.lang || "en";
 
@@ -15,10 +16,12 @@ const latestEntries = langEntries
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
   )
   .slice(0, 6);
+
+const t = useTranslations(lang);
 ---
 
 <Section
-  title="Monthly Retrospective"
+  title={t("sections.retrospective")}
   client:visible
   className="h-fit w-full pt-4 portrait:z-20 landscape:z-20"
 >
