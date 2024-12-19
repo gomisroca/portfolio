@@ -98,7 +98,7 @@ const aboutTranslations = {
       "Curs intensiu que proporciona als alumnes un coneixement profund de l'orquestració de contenidors mitjançant Kubernetes, ensenyant-los a desplegar, gestionar i escalar aplicacions en contenidors en entorns distribuïts complexos.",
     "Test-Driven Development":
       "Exploració exhaustiva de les metodologies de desenvolupament de programari que posen èmfasi en l'escriptura de proves automatitzades abans d'implementar el codi real.",
-    "Cyber ​​Security Base":
+    "Cyber Security Base":
       "Un ampli programa de formació dissenyat per proporcionar coneixements exhaustius sobre principis, tècniques i millors pràctiques de ciberseguretat per protegir sistemes i xarxes digitals.",
   },
   de: {
