@@ -1,14 +1,16 @@
 ---
+import { useTranslations } from "@/i18n/utils";
 import SidebarItem from "./sidebar-item.astro";
 
-const { project } = Astro.props;
+const { project, lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <div
   class="absolute -right-[14.5rem] bottom-0 top-4 hidden h-fit w-[200px] flex-col gap-4 rounded-md bg-zinc-200 p-4 dark:bg-zinc-900 desktop:flex"
 >
-  <SidebarItem title="Project Name" description={project.name} />
-  <SidebarItem title="Year of Creation" description={project.year} />
+  <SidebarItem title={t("sidebar.name")} description={project.name} />
+  <SidebarItem title={t("sidebar.year")} description={project.year} />
   {
     (project.liveWebsite || project.repository) && (
       <hr class="border-zinc-500" />
@@ -17,7 +19,7 @@ const { project } = Astro.props;
   {
     project.liveWebsite && (
       <SidebarItem
-        title="Website"
+        title={t("sidebar.website")}
         description={project.liveWebsite}
         type="link"
       />
@@ -26,7 +28,7 @@ const { project } = Astro.props;
   {
     project.repository && (
       <SidebarItem
-        title="Repository"
+        title={t("sidebar.repository")}
         description={project.repository}
         type="link"
       />

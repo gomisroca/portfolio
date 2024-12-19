@@ -12,6 +12,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
+const lang = Astro.params.lang ?? "en";
 ---
 
 <BaseLayout>
@@ -75,6 +76,6 @@ const { project } = Astro.props;
     <div class="prose prose-zinc mx-auto dark:prose-invert desktop:mx-auto">
       <slot />
     </div>
-    <Sidebar project={project} />
+    <Sidebar project={project} lang={lang} />
   </div>
 </BaseLayout>
