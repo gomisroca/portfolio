@@ -1,0 +1,18 @@
+---
+import { useTranslations } from "@/i18n/utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+interface Props {
+  error: unknown;
+}
+
+const { error } = Astro.props;
+
+const lang = (Astro.params.lang as "es" | "cat" | "de") ?? "en";
+const t = useTranslations(lang);
+---
+
+<BaseLayout>
+  <p>{t("errors.500")}</p>
+  <p>{error instanceof Error ? error.message : "Unknown error"}</p>
+</BaseLayout>

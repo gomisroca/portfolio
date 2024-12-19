@@ -4,6 +4,7 @@ import sections from "./translations/sections";
 import about from "./translations/about";
 import contact from "./translations/contact";
 import sidebar from "./translations/sidebar";
+import errors from "./translations/errors";
 
 const translations = {
   en: {
@@ -13,6 +14,7 @@ const translations = {
     about: about().en,
     contact: contact().en,
     sidebar: sidebar().en,
+    errors: errors().en,
   },
   es: {
     welcome: welcome().es,
@@ -21,6 +23,7 @@ const translations = {
     about: about().es,
     contact: contact().es,
     sidebar: sidebar().es,
+    errors: errors().es,
   },
   cat: {
     welcome: welcome().cat,
@@ -29,6 +32,7 @@ const translations = {
     about: about().cat,
     contact: contact().cat,
     sidebar: sidebar().cat,
+    errors: errors().cat,
   },
   de: {
     welcome: welcome().de,
@@ -37,6 +41,7 @@ const translations = {
     about: about().de,
     contact: contact().de,
     sidebar: sidebar().de,
+    errors: errors().de,
   },
 };
 

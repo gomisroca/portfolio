@@ -1,0 +1,11 @@
+---
+import { useTranslations } from "@/i18n/utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const lang = (Astro.params.lang as "es" | "cat" | "de") ?? "en";
+const t = useTranslations(lang);
+---
+
+<BaseLayout>
+  <p>404 - {t("errors.404")}!</p>
+</BaseLayout>
