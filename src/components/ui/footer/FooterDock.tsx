@@ -5,8 +5,10 @@ import LanguageLink from "./LanguageLink";
 
 function FooterDock({
   activeLang,
+  path,
 }: {
   activeLang: "en" | "es" | "cat" | "de";
+  path: string;
 }) {
   const listVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -38,8 +40,8 @@ function FooterDock({
           }}
         >
           <LanguageLink
-            href={lang}
-            lang={activeLang}
+            href={path}
+            lang={lang as "en" | "es" | "cat" | "de"}
             className={`${lang === activeLang && "underline decoration-accent-500/70 decoration-4 underline-offset-2 hover:decoration-accent-500"}`}
             label={lang.toUpperCase()}
           />

@@ -14,8 +14,9 @@ export default function LanguageLink({
   className: string;
 }) {
   const translatePath = useTranslatedPath(lang);
+
   return (
-    <a href={translatePath("/", href)}>
+    <a href={translatePath(href, lang)}>
       <motion.div
         className={cn(
           "w-fit rounded-md px-1 text-sm font-semibold text-zinc-500 hover:text-primary-500",

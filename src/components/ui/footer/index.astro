@@ -3,8 +3,11 @@ import { getLangFromUrl } from "@/i18n/utils";
 import FooterDock from "./FooterDock";
 
 const activeLang = getLangFromUrl(Astro.url);
+const path = Astro.url.pathname;
+const cleanedPath = path.replace(/^\/portfolio/, "");
+const noLangPath = cleanedPath.replace(/^\/[a-z]{2,3}\//, "/");
 ---
 
 <footer transition:animate="none" class="z-[999] flex w-full items-center">
-  <FooterDock client:load activeLang={activeLang} />
+  <FooterDock client:load activeLang={activeLang} path={noLangPath} />
 </footer>
