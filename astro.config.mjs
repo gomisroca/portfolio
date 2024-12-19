@@ -28,7 +28,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     icon({
-      include: { mdi: ["*"] },
+      include: { mdi: ["*"], ri: ["twitter-x-fill"] },
     }),
   ],
   // Conditional server-side configuration
