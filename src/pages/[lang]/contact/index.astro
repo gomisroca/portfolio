@@ -1,0 +1,46 @@
+---
+import { useTranslations } from "@/i18n/utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+import DiscordIcon from "@/pages/contact/DiscordIcon";
+
+export function getStaticPaths() {
+  const paths = [
+    { params: { lang: "es" } },
+    { params: { lang: "cat" } },
+    { params: { lang: "de" } },
+  ];
+  return paths;
+}
+
+const lang = Astro.params.lang as "es" | "cat" | "de";
+const t = useTranslations(lang);
+---
+
+<BaseLayout>
+  <h3 class="text-center text-xl" set:html={t("contact.email")} />
+  <h3 class="mt-10 text-xl font-semibold">
+    {t("contact.others")}
+  </h3>
+  <div class="flex gap-8">
+    <a
+      href="https://x.com/AdriGomis1"
+      class="transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+    >
+      <Icon name="ri:twitter-x-fill" size="40" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/adri%C3%A0-gomis-292a67342"
+      class="transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+    >
+      <Icon name="mdi:linkedin" size="40" /></a
+    >
+    <a
+      href="https://github.com/gomisroca"
+      class="transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+    >
+      <Icon name="mdi:github" size="40" />
+    </a>
+    <DiscordIcon client:load />
+  </div>
+</BaseLayout>

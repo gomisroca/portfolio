@@ -1,23 +1,19 @@
 const contactTranslations = {
   en: {
-    title: `<h1 class="text-4xl font-bold">Hi, I'm Adrià 👋</h1>`,
-    subtitle: `<h3 class="text-2xl font-semibold">Full-stack web developer</h3>`,
-    body: `<p>Specialized in the React ecosystem, with a focus on building web applications that are <span class="font-semibold">powerful</span>, <span class="font-semibold">user-friendly</span>, and <span class="font-semibold">highly performant</span>.</p>`,
+    email: `You can contact me via email at <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-primary-500">gomisroca@gmail.com</a>.`,
+    others: `You will also find me in the following platforms:`,
   },
   es: {
-    title: `<h1 class="text-4xl font-bold">Hola, soy Adrià 👋</h1>`,
-    subtitle: `<h3 class="text-2xl font-semibold">Desarrollador web full-stack</h3>`,
-    body: `<p>Especializado en el ecosistema de React, enfocado en desarrollar aplicaciones web que sean <span class="font-semibold">potentes</span>, <span class="font-semibold">fáciles de usar</span> y <span class="font-semibold">altamente eficientes</span>.</p>`,
+    email: `Puedes contactar conmigo por correo electrónico en <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-primary-500">gomisroca@gmail.com</a>.`,
+    others: `También me encontrarás en las siguientes plataformas:`,
   },
   cat: {
-    title: `<h1 class="text-4xl font-bold">Hola, soc l'Adrià 👋</h1>`,
-    subtitle: `<h3 class="text-2xl font-semibold">Desenvolupador web full-stack</h3>`,
-    body: `<p>Especialitzat en l'ecosistema de React, centrat en desenvolpar aplicacions web que siguin <span class="font-semibold">potents</span>, <span class="font-semibold">fàcils d'utilitzar</span> i <span class="font-semibold">altament eficients</span>.</p>`,
+    email: `Pots contactar amb mi per correu electrònic a <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-primary-500">gomisroca@gmail.com</a>.`,
+    others: `També em trobaràs a les següents plataformes:`,
   },
   de: {
-    title: `<h1 class="text-4xl font-bold">Hallo, ich bin Adrià 👋</h1>`,
-    subtitle: `<h3 class="text-2xl font-semibold">Full-Stack-Webentwickler</h3>`,
-    body: `<p>Spezialisiert auf das React-Ökosystem, konzentriert auf die Entwicklung von Webanwendungen, die <span class="font-semibold">leistungsstark</span>, <span class="font-semibold">benutzerfreundlich</span> und <span class="font-semibold">hocheffizient</span> sind.</p>`,
+    email: `Sie können mich per E-Mail kontaktieren unter <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-primary-500">gomisroca@gmail.com</a>.`,
+    others: `Sie finden mich auch auf folgenden Plattformen:`,
   },
 };
 
