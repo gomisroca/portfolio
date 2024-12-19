@@ -1,0 +1,79 @@
+---
+import { useTranslations } from "@/i18n/utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+import { Image, Picture } from "astro:assets";
+import avatar from "public/about/avatar.jpg";
+import dog1 from "public/about/dog1.webp";
+import dog2 from "public/about/dog2.webp";
+import courses from "@/lib/courses";
+
+const t = useTranslations("en");
+---
+
+<BaseLayout>
+  <div class="prose prose-zinc flex flex-col items-center dark:prose-invert">
+    <Picture
+      src={avatar}
+      alt="My Picture"
+      formats={["avif", "webp"]}
+      width="200"
+      height="200"
+      class="rounded-full"
+    />
+    <p>{t("about.introduction")}</p>
+    <p>{t("about.personal")}</p>
+    <Image
+      src={dog1}
+      alt="Dog with a Ball"
+      width="600"
+      height="300"
+      fit="cover"
+      class="aspect-video rounded-md"
+    />
+    <Image
+      src={dog2}
+      alt="Dog Sleeping"
+      width="600"
+      height="300"
+      class="mt-0 rounded-md"
+    />
+    <p>{t("about.transition")}</p>
+    <p class="mb-10">{t("about.study")}</p>
+    <div class="grid grid-cols-1 gap-4 tablet:grid-cols-2">
+      {
+        courses.map((course) => (
+          <div class="flex w-full flex-col justify-between gap-2 rounded-md border border-zinc-800/20 p-4 dark:border-zinc-200/10">
+            <div class="flex flex-col gap-y-2">
+              <header class="flex flex-col">
+                <span class="text-sm">{course.date}</span>
+                <a
+                  target="_blank"
+                  href={course.url}
+                  class="w-fit text-lg font-semibold no-underline transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100 desktop:text-xl"
+                >
+                  {course.name}
+                </a>
+                <span>{course.school}</span>
+              </header>
+              <hr class="my-0" />
+              <p>{t("about." + course.name)}</p>
+            </div>
+            {course.certificates.length > 0 && (
+              <div class="flex flex-wrap gap-x-4 gap-y-2">
+                {course.certificates.map((cert) => (
+                  <a href={cert} target="_blank">
+                    <Icon
+                      name="mdi:diploma"
+                      class="h-6 w-6 transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+                    />
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
