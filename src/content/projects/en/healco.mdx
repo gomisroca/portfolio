@@ -1,50 +1,81 @@
 ---
 name: Healco
 year: 2021
-description: Website for a health-oriented company.
+description: Website for a company bringing health-oriented products and services to offices.
 technologies: ["Vue", "Express", "MongoDB", "Docker"]
 headerImage:
   src: "/portfolio/projects/healco.jpg"
-  alt: "A descriptive alt text for the header image"
+  alt: "A screenshot of the Healco website"
 cardImage:
   src: "/portfolio/cards/healco.png"
-  alt: "A descriptive alt text for the card image"
+  alt: "A screenshot of the Healco website on mobile"
+liveWebsite: "https://healco.de"
 ---
 
-<p>Brief description of the project.</p>
+<strong>Healco</strong> is a project meant to be the site for a company bringing
+health-oriented products and services to offices.
 
-<h1>Technologies and Tools</h1>
+<hr />
+
+<h1 class="text-2xl">Technologies and Tools</h1>
 <ul>
   <li>
-    <h6>Some Technology (React, Redis, PostgreSQL, etc.)</h6>
-    <p>Describe how the technology was used.</p>
+    <h6 className="text-lg font-semibold">Vue</h6>
+    <p>
+      We settled on Vue as the frontend framework for the project, as it offered
+      a flexible and easy-to-use solution for our needs. Vue's declarative
+      syntax and component-based architecture made it a great fit for our
+      project.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      Since this was a team project, and we needed to deploy the project to a
+      server, we decided to use Docker for the deployment. Docker allowed us to
+      create a containerized environment for the project, which made it easier
+      for us to maintain the same environment as we developed and on deployment.
+    </p>
   </li>
 </ul>
 
 <hr />
 
-<h1>Roles and Responsibilities</h1>
+<h1 class="text-2xl">Roles and Responsibilities</h1>
+Healco project was my first full-fledged project as a developer. I was part of a
+team and dealt mainly with the frontend, although I did some backend work as
+well.
 <ul>
   <li>
-    <h6>Role 1</h6>
-    <p>Responsibility 1</p>
+    <h6 className="text-lg font-semibold">Frontend Components and Views</h6>
+    <p>
+      Designed the frontend part of the project using Vue, including the UI
+      components, forms, and views. Also dealt with the styling and layout, and
+      dealt with the creation of the navigation system.
+    </p>
   </li>
   <li>
-    <h6>Role 2</h6>
-    <p>Responsibility 2</p>
+    <h6 className="text-lg font-semibold">System Health and Monitoring</h6>
+    <p>
+      Had a small part in building the system monitoring and alerting system, as
+      well as the pipeline for the deployment of the project and the creation of
+      the Docker image.
+    </p>
   </li>
 </ul>
 
 <hr />
 
-<h1>Challenges and Solutions</h1>
+<h1 class="text-2xl">Challenges and Solutions</h1>
 <ul>
   <li>
-    <h6>Challenge 1</h6>
-    <p>Solution 1</p>
-  </li>
-  <li>
-    <h6>Challenge 2</h6>
-    <p>Solution 2</p>
+    <h6 className="text-lg font-semibold">Project Automation and Monitoring</h6>
+    <p>
+      This project was my first time working with tools such as Sonarqube and
+      Ansible, and my first time handling CI/CD pipelines. This was a
+      challenging task, but with the help of my team and after reading a lot of
+      documentation, the project was successfully deployed, monitored, and
+      accessible.
+    </p>
   </li>
 </ul>

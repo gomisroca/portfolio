@@ -1,52 +1,108 @@
 ---
 name: Oura
 year: 2023
-description: Sports clothing site.
-technologies: ["Next.js", "tRPC", "Stripe", "PostgreSQL", "Vercel"]
+description: Storefront site for sports clothing.
+technologies: ["Next.js", "tRPC", "Stripe", "Supabase", "PostgreSQL", "Vercel"]
 headerImage:
   src: "/portfolio/projects/oura.jpg"
-  alt: "A descriptive alt text for the header image"
+  alt: "A screenshot of the Oura website"
 cardImage:
   src: "/portfolio/cards/oura.png"
-  alt: "A descriptive alt text for the card image"
+  alt: "A screenshot of the Oura website on mobile"
 liveWebsite: "https://oura-clothing.vercel.app"
 repository: "https://github.com/gomisroca/oura"
 ---
 
-<h1 class="text-2xl">HTML Ipsum Presents</h1>
+<strong>Oura</strong> is a project meant to allow the creation of a storefront
+site dedicated to clothing. It allows the creation of products, categories and
+sales with a great degree of customization.
 
-<p class="font-semibold">
-  <strong>Pellentesque habitant morbi tristique</strong> senectus et netus et
-  malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-  ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas
-  semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo.
-  Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi,
-  condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean
-  fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis
-  tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar
-  facilisis. Ut felis.
-</p>
+<hr />
 
-<h2>Header Level 2</h2>
-
-<ol>
-  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-  <li>Aliquam tincidunt mauris eu risus.</li>
-</ol>
-
-<blockquote>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras
-    in mi at felis aliquet congue. Ut a est eget ligula molestie gravida.
-    Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est
-    malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium
-    ornare est.
-  </p>
-</blockquote>
-
-<h3>Header Level 3</h3>
-
+<h1 class="text-2xl">Technologies and Tools</h1>
 <ul>
-  <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-  <li>Aliquam tincidunt mauris eu risus.</li>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js</h6>
+    <p>
+      Next.js was chosen as the framework for the project due to its simplicity
+      in developing server-side and client-side components, and its
+      industry-wide adoption. This project needed to display a lot of data, for
+      which server-side rendering was a great fit, and at the same time, it
+      needed to be highly interactive as the user clicked on the products or
+      categories. Due to this, Next.js was a great fit for this project.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Stripe</h6>
+    <p>
+      Naturally every storefront needs to have a payment system, and Stripe was
+      chosen as the payment provider due to its ease of use and security. This
+      project was the first time I used Stripe, and I was able to integrate it
+      with Next.js seamlessly.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">PostgreSQL</h6>
+    <p>
+      PostgreSQL was chosen as the database due to its reliability and
+      scalability. This project has many related pieces, and it was important to
+      have a database that could handle all of these relationships and
+      interactions.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Roles and Responsibilities</h1>
+This project was developed single-handedly by myself in 2023. I was responsible
+for every facet of it, from design to development. Of note are:
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Full-Stack Developer</h6>
+    <p>
+      Implemented the project's functionality and ensuring it was secure and
+      scalable. I used Next.js, tRPC, NextAuth.js, and Stripe amongst other
+      tools to build the project.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">UI/UX Designer</h6>
+    <p>
+      Designed the user interface and user experience of the project. The
+      project wanted to be different from other clothing stores, and I wanted to
+      create a unique experience for the user. I used Figma to create the
+      designs and implemented them in the project using TailwindCSS.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Challenges and Solutions</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Security</h6>
+    <p>
+      One of the biggest challenges when developing a storefront site is
+      security.
+    </p>
+    <p>
+      To help with this, I used NextAuth.js, which provides a simple and secure
+      way to handle user authentication and authorization. I also used Stripe to
+      handle payments, and Supabase security features to ensure the data was
+      safe.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Payment System Implementation</h6>
+    <p>
+      This was my first time working with any payment system, and I had to
+      figure out how to integrate it with the project. I used Stripe. It
+      required a bit of setup, but it was somewhat straightforward. I struggled
+      a bit more dealing with orders, how to tag them as they were created, how
+      to deal with deleted ones, refunds, failed payments, etc. This required a
+      lot of research and dealing with edge cases.
+    </p>
+  </li>
 </ul>

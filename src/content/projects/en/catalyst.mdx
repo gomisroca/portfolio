@@ -5,46 +5,114 @@ description: Share your ideas, collaborate with others and keep up with what's h
 technologies: ["React", "Express", "Nginx", "Docker"]
 headerImage:
   src: "/portfolio/projects/catalyst.jpg"
-  alt: "A descriptive alt text for the header image"
+  alt: "A screenshot of the Catalyst website"
 cardImage:
   src: "/portfolio/cards/catalyst.png"
-  alt: "A descriptive alt text for the card image"
+  alt: "A screenshot of the Catalyst website on mobile"
+liveWebsite: "https://be-catalyst.vercel.app"
+repository: "https://github.com/gomisroca/catalyst"
 ---
 
-<p>Brief description of the project.</p>
+<strong>Catalyst</strong> is a project meant to allow collaboritive efforts
+blossom into a greater whole. It is a platform where people can collaborate on
+projects, and where they can share their ideas and collaborate with others.
 
-<h1>Technologies and Tools</h1>
+<hr />
+
+<h1 class="text-2xl">Technologies and Tools</h1>
 <ul>
   <li>
-    <h6>Some Technology (React, Redis, PostgreSQL, etc.)</h6>
-    <p>Describe how the technology was used.</p>
+    <h6 className="text-lg font-semibold">React</h6>
+    <p>
+      React was chosen as the framework for the project due to its simplicity,
+      industry-wide adoption and strength. This project needed to be highly
+      interactive, with many state changes continually happening as the users
+      interacted with the site, which made React a great fit for this project.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Express</h6>
+    <p>
+      Express is the go-to framework for building APIs in Node.js. It is a
+      lightweight and fast framework that is easy to use and understand. Since
+      the backend of this project could become complex, using Express which is
+      largely unopinionated and allows for a lot of flexibility was a good fit.
+    </p>
   </li>
 </ul>
 
 <hr />
 
-<h1>Roles and Responsibilities</h1>
+<h1 class="text-2xl">Roles and Responsibilities</h1>
+This project was developed single-handedly by myself in 2023. I was responsible
+for every facet of it, from design to development. Of note are:
 <ul>
   <li>
-    <h6>Role 1</h6>
-    <p>Responsibility 1</p>
+    <h6 className="text-lg font-semibold">View Structure</h6>
+    <p>
+      Designed the way the displayed data would be structured. This was a
+      complex task, as the project uses many layers of content, from project, to
+      branches, to posts, so it was important to establish a clear hierarchy and
+      structure.
+    </p>
   </li>
   <li>
-    <h6>Role 2</h6>
-    <p>Responsibility 2</p>
+    <h6 className="text-lg font-semibold">Front - Back Communication</h6>
+    <p>
+      Implemented the project's API endpoints and ensured they were efficient
+      and secure. At the same time, I implemented fetch methods in the frontend
+      that ensured we only got the data we needed. I used Express, Passport and
+      PostgreSQL amongst other tools to achieve this.
+    </p>
   </li>
 </ul>
 
 <hr />
 
-<h1>Challenges and Solutions</h1>
+<h1 class="text-2xl">Challenges and Solutions</h1>
 <ul>
   <li>
-    <h6>Challenge 1</h6>
-    <p>Solution 1</p>
+    <h6 className="text-lg font-semibold">Scope Management</h6>
+    <p>
+      This was a very ambitious project, and maintaining a clear scope was a
+      difficult task. I had to decide which features to prioritize, and which
+      ones to drop. In many ocasions I had to stop and reflect on whether a
+      certain feature was helpful towards the project's goals, or if it was just
+      a distraction. For example, the idea of adding certain 'social media' such
+      as comments was dropped, but a timeline was maintained, as it helped with
+      the idea of people contribution to projects they were interested in.
+    </p>
+    <p>
+      In the end, I believe the initial scope of the project as a collaborative
+      site was preserved, and the development cycle was smooth and efficient
+      thanks to that.
+    </p>
   </li>
   <li>
-    <h6>Challenge 2</h6>
-    <p>Solution 2</p>
+    <h6 className="text-lg font-semibold">Dockerization</h6>
+    <p>
+      The project ran into many issues when dealing with dockerization. This was
+      one of my first experiences dealing with containers in a full-stack
+      project, and I had to troubleshoot and fix many issues. After much trial
+      and error and documentation reading, I was able to containerize the
+      project.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">API Design</h6>
+    <p>
+      Designing the API was a complex task, as the project had many
+      interconnected parts, and it was difficult to know how much information
+      each part needed, while also ensuring the API was secure and efficient. In
+      my first attempt at this, it was a mess, which worked, but was not very
+      scalable or efficient.
+    </p>
+    <p>
+      I restructured the API to be more flexible and scalable, with a focus on
+      clarity: each endpoint has a clear purpose, a clear input and output, and
+      there is no contamination of data between endpoints. This allowed for a
+      more efficient and scalable API, that should also be easier to maintain in
+      the future.
+    </p>
   </li>
 </ul>
