@@ -5,10 +5,8 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
   data: CollectionEntry<"blog">["data"];
-  timezone: string;
-  relatedPosts?: CollectionEntry<"blog">[];
 }
-const { data, timezone, relatedPosts }: Props = Astro.props;
+const { data }: Props = Astro.props;
 ---
 
 <BaseLayout>
@@ -21,36 +19,15 @@ const { data, timezone, relatedPosts }: Props = Astro.props;
             formats={["avif", "webp"]}
             src={data.headerImage.src}
             alt={data.headerImage.alt}
-            width={1200}
-            height={630}
+            width={600}
+            height={350}
             class="aspect-video rounded-md"
           />
         )
       }
-      <time class="prose-sm" datetime={data.date.toISOString()}>
-        {
-          data.date.toLocaleDateString(timezone, {
-            dateStyle: "medium",
-          })
-        }
-      </time>
-      <h1 class="mb-4">{data.title}</h1>
+      <h1 class="mb-0">{data.title}</h1>
+      <h2 class="mb-4 mt-0">{data.subtitle}</h2>
     </div>
     <slot />
-    {
-      relatedPosts && (
-        <div class="mt-10">
-          <h2 class="text-xl font-bold">Related Posts</h2>
-          {relatedPosts.map((post) => (
-            <div class="mb-4">
-              <a href={post.id.split("/")[1]}>
-                <h3 class="text-lg font-bold">{post.data.title}</h3>
-                <p class="text-sm">{post.data.description}</p>
-              </a>
-            </div>
-          ))}
-        </div>
-      )
-    }
   </div>
 </BaseLayout>

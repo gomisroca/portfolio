@@ -20,12 +20,8 @@ export async function getStaticPaths() {
 
 const entry = Astro.props;
 const { Content } = await render(entry);
-
-const relatedPosts = entry.data.relatedPosts
-  ? await getEntries(entry.data.relatedPosts)
-  : [];
 ---
 
-<BlogLayout data={entry.data} relatedPosts={relatedPosts} timezone="en-US">
+<BlogLayout data={entry.data}>
   <Content />
 </BlogLayout>

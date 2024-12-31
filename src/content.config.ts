@@ -1,5 +1,5 @@
 import { glob } from "astro/loaders";
-import { defineCollection, reference, z } from "astro:content";
+import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
@@ -7,6 +7,9 @@ const blog = defineCollection({
     title: z
       .string()
       .max(100, { message: "Title must be 100 characters or less" }),
+    subtitle: z
+      .string()
+      .max(100, { message: "Subtitle must be 100 characters or less" }),
     description: z
       .string()
       .max(200, { message: "Description must be 200 characters or less" }),
@@ -17,7 +20,6 @@ const blog = defineCollection({
         alt: z.string(),
       })
       .optional(),
-    relatedPosts: z.array(reference("blog")).optional(),
   }),
 });
 

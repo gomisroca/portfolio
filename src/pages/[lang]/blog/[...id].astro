@@ -17,28 +17,10 @@ export async function getStaticPaths() {
 
   return paths;
 }
-const { lang } = Astro.params;
 const entry = Astro.props;
 const { Content } = await render(entry);
-
-const timeZoneMap = {
-  de: "de-DE",
-  es: "es-ES",
-  cat: "ca-ES",
-  default: "en-US",
-} as const;
-
-function isValidLang(lang: string): lang is keyof typeof timeZoneMap {
-  return lang in timeZoneMap;
-}
-
-const timezone = isValidLang(lang) ? timeZoneMap[lang] : timeZoneMap.default;
-
-const relatedPosts = entry.data.relatedPosts
-  ? await getEntries(entry.data.relatedPosts)
-  : [];
 ---
 
-<BlogLayout data={entry.data} timezone={timezone} relatedPosts={relatedPosts}>
+<BlogLayout data={entry.data}>
   <Content />
 </BlogLayout>

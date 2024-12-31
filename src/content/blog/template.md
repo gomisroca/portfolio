@@ -1,8 +1,8 @@
 ---
 title: Title of the Blog Post
+subtitle: Subtitle of the Blog Post
 date: 2023-01-01
 description: Brief description of the blog post.
-relatedPosts: ["de/blog-2"]
 ---
 
 # Enim vultus mortis plebs temptat haec variusque
