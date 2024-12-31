@@ -8,6 +8,6 @@ const cleanedPath = path.replace(/^\/portfolio/, "");
 const noLangPath = cleanedPath.replace(/^\/[a-z]{2,3}\//, "/");
 ---
 
-<footer transition:animate="none" class="z-[999] flex w-full items-center">
+<footer transition:animate="none" class="z-[999]">
   <FooterDock client:load activeLang={activeLang} path={noLangPath} />
 </footer>
