@@ -4,6 +4,7 @@ import Link from "@/components/ui/link";
 import Lightbox from "@/components/ui/lightbox";
 import type { CollectionEntry } from "astro:content";
 import TechnologyBadge from "./TechnologyBadge";
+import { useTranslations } from "@/i18n/utils";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const { project, lang } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <div
@@ -55,7 +57,7 @@ const { project, lang } = Astro.props;
       href={`/projects/${project.id.split("/")[1]}`}
       className="rounded-md p-2 text-xl uppercase"
     >
-      Explore
+      {t("sections.read")}
     </Link>
   </div>
 </div>

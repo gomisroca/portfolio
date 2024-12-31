@@ -3,6 +3,7 @@ import { Picture } from "astro:assets";
 import Link from "@/components/ui/link";
 import Lightbox from "@/components/ui/lightbox";
 import type { CollectionEntry } from "astro:content";
+import { useTranslations } from "@/i18n/utils";
 
 interface Props {
   entry: CollectionEntry<"blog">;
@@ -10,6 +11,8 @@ interface Props {
 }
 
 const { entry, lang } = Astro.props;
+
+const t = useTranslations(lang);
 ---
 
 <div
@@ -24,8 +27,8 @@ const { entry, lang } = Astro.props;
             formats={["avif", "webp"]}
             src={entry.data.headerImage.src}
             alt={entry.data.headerImage.alt}
-            width={500}
-            height={1000}
+            width={600}
+            height={350}
             class="pointer-events-none rounded-md"
           />
         </Lightbox>
@@ -34,14 +37,6 @@ const { entry, lang } = Astro.props;
   }
   <div class="flex w-full flex-1 flex-col items-center justify-between py-2">
     <div class="flex flex-col items-center justify-center gap-1">
-      <time class="text-sm" datetime={entry.data.date.toISOString()}>
-        {
-          entry.data.date.toLocaleDateString(undefined, {
-            dateStyle: "medium",
-            timeZone: "UTC",
-          })
-        }
-      </time>
       <h3 class="text-2xl font-semibold">{entry.data.title}</h3>
     </div>
     <p class="w-3/4 text-center">{entry.data.description}</p>
@@ -51,7 +46,7 @@ const { entry, lang } = Astro.props;
       href={`/blog/${entry.id.split("/")[1]}`}
       className="rounded-md p-2 text-xl uppercase"
     >
-      Read
+      {t("sections.read")}
     </Link>
   </div>
 </div>
