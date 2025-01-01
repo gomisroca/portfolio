@@ -1,163 +1,169 @@
 ---
 name: Dungeoneer
 year: 2024
-description: Check what items a character is missing from a dungeon or raid in FFXIV.
+description: Comprueba qué objetos le faltan a un personaje en una mazmorra o incursión en FFXIV.
 technologies: ["Next.js", "tRPC", "Supabase", "PostgreSQL", "Vercel"]
 headerImage:
   src: "/portfolio/projects/dungeoneer.jpg"
-  alt: "A screenshot of the Dungeoneer website"
+  alt: "Captura de pantalla del sitio web de Dungeoneer"
 cardImage:
   src: "/portfolio/cards/dungeoneer.png"
-  alt: "A screenshot of the Dungeoneer website on mobile"
+  alt: "Captura de pantalla del sitio web de Dungeoneer en móvil"
 liveWebsite: "https://xiv-dungeoneer.vercel.app"
 repository: "https://github.com/gomisroca/dungeoneer"
 ---
 
-<strong>Dungeoneer</strong> is a project meant to keep track of what
-collectibles you are missing from dungeons, trials or raids in the game Final
-Fantasy XIV. You can either store your collection locally or log in and store it
-on your account.
+<strong>Dungeoneer</strong> es un proyecto que tiene como objetivo llevar un
+registro de los objetos coleccionables que te faltan en las mazmorras, pruebas o
+incursiones del juego Final Fantasy XIV. Puedes almacenar tu colección
+localmente o iniciar sesión y almacenarla en tu cuenta.
 
 <hr />
 
-<h1 class="text-2xl">Technologies and Tools</h1>
+<h1 class="text-2xl">Tecnologías y Herramientas</h1>
 <ul>
   <li>
     <h6 className="text-lg font-semibold">Next.js</h6>
     <p>
-      Next.js was chosen as the framework for the project due to its simplicity,
-      ease of use and industry-wide adoption. Furthermore, we knew large parts
-      of the project could benefit from server-side rendering, which Next.js
-      excels at.
+      Next.js fue elegido como el framework para el proyecto debido a su
+      simplicidad, facilidad de uso y adopción en toda la industria. Además,
+      sabíamos que gran parte del proyecto podría beneficiarse de la
+      renderización server-side, en la que Next.js se destaca.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">tRPC</h6>
     <p>
-      We expected the project to have a lot of API calls and complex types of
-      data, so we decided to use tRPC to handle the communication between the
-      client and the server to ensure typesafety and a faster, safer
-      development.
+      Esperábamos que el proyecto tuviera muchas llamadas API y tipos de datos
+      complejos, por lo que decidimos usar tRPC para manejar la comunicación
+      entre el cliente y el servidor para garantizar la seguridad de tipos y un
+      desarrollo más rápido y seguro.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">NextAuth.js</h6>
     <p>
-      One of the main features of the project is the ability to log in and store
-      your collection on your account. To achieve this, we used NextAuth.js,
-      which provides a simple and secure way to handle user authentication and
-      authorization.
+      Una de las principales características del proyecto es la capacidad de
+      iniciar sesión y almacenar tu colección en tu cuenta. Para lograrlo,
+      usamos NextAuth.js, que proporciona una forma simple y segura de manejar
+      la autenticación y autorización de usuarios.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">TailwindCSS + Motion</h6>
     <p>
-      Tailwind provided us with a fast and reliable way to style the project.
-      However, we wanted to add some animations to certain elements, and we used
-      Motion (formerly Framer Motion) to achieve this.
+      Tailwind nos proporcionó una forma rápida y confiable de diseñar el
+      proyecto. Sin embargo, queríamos agregar algunas animaciones a ciertos
+      elementos y usamos Motion (anteriormente Framer Motion) para lograrlo.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">Supabase</h6>
     <p>
-      Supabase is a cloud-based database that provides a robust and scalable
-      solution for storing and retrieving data. We used it to store the in-game
-      data, the user's collection and information, and to handle user
-      authentication. Furthermore, we use Supabase Buckets to store the images
-      of the items.
+      Supabase es una base de datos en la nube que proporciona una solución
+      sólida y escalable para almacenar y recuperar datos. La usamos para
+      almacenar los datos del juego, la colección y la información del usuario,
+      y para gestionar la autenticación del usuario. Además, usamos Supabase
+      Buckets para almacenar las imágenes de los elementos.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">Vercel</h6>
     <p>
-      Since we decided on using Next.js, deploying to Vercel seemed like the
-      best, most efficient option. We utilized Vercel's Analytics and Speed
-      Insights to ensure the project was running smoothly.
+      Dado que decidimos usar Next.js, implementar en Vercel parecía la mejor
+      opción y la más eficiente. Utilizamos Analytics y Speed Insights de Vercel
+      para asegurarnos de que el proyecto se desarrollara sin problemas.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Roles and Responsibilities</h1>
-This project was first developed by a team of three developers in 2022. However,
-it was eventually abandoned and I took over the project in 2024 as its sole
-developer.
+<h1 class="text-2xl">Roles y Responsabilidades</h1>
+Este proyecto fue desarrollado por primera vez por un equipo de tres
+desarrolladores en 2022. Sin embargo, finalmente se abandonó y me hice cargo del
+proyecto en 2024 como su único desarrollador.
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">UI/UX Designer</h6>
+    <h6 className="text-lg font-semibold">Diseñador UI/UX</h6>
     <p>
-      Designed the user interface and user experience of the project. I used
-      Figma to create the designs and implemented them in the project using
-      TailwindCSS and Motion.
+      Diseñé la interfaz de usuario y la experiencia de usuario del proyecto.
+      Usé Figma para crear los diseños y los implementé en el proyecto usando
+      TailwindCSS y Motion.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Full-Stack Developer</h6>
+    <h6 className="text-lg font-semibold">Desarrollador full-stack</h6>
     <p>
-      Implemented the project's functionality and ensuring it was secure and
-      scalable. I used Next.js, tRPC, NextAuth.js, and Supabase amongst other
-      tools to build the project.
+      Implementé la funcionalidad del proyecto y me aseguré de que fuera seguro
+      y escalable. Usé Next.js, tRPC, NextAuth.js y Supabase, entre otras
+      herramientas, para desarrollar el proyecto.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Project Manager</h6>
+    <h6 className="text-lg font-semibold">Gerente de proyecto</h6>
     <p>
-      As the sole developer, I was responsible for its overall management and
-      maintenance. I ensured the project stayed on track, with a focus on core
-      features and bug fixes, without letting feature-creep distort the
-      project's direction.
+      Como desarrollador único, fui responsable de su administración y
+      mantenimiento general. Me aseguré de que el proyecto se mantuviera
+      encaminado, con un enfoque en las características principales y las
+      correcciones de errores, sin permitir que la acumulación de
+      características distorsionara la dirección del proyecto.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Challenges and Solutions</h1>
+<h1 class="text-2xl">Desafíos y Soluciones</h1>
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">Project Overhaul</h6>
+    <h6 className="text-lg font-semibold">Revisión del proyecto</h6>
     <p>
-      Once I took over as the sole developer, I knew two things: the project was
-      unfinished, and the technologies used were outdated. In this initial
-      state, it used a simple Angular + MongoDB stack. I decided to use Next.js
-      and switch to PostgreSQL, as they seemed to be a better fit for the
-      project's requirements.
+      Una vez que asumí el proyecto como desarrollador único, sabía dos cosas:
+      el proyecto no estaba terminado y las tecnologías utilizadas estaban
+      desactualizadas. En este estado inicial, se usaba un stack simple de
+      Angular + MongoDB. Decidí usar Next.js y cambiar a PostgreSQL, ya que
+      parecían ser más adecuados para los requisitos del proyecto.
     </p>
     <p>
-      In regard to the frontend, the switch was relatively smooth. The initial
-      frontend was not complex, and replicating it in Next.js was somewhat
-      straightforward. However, I had to rewrite the entire backend from
-      scratch. The database was completely different, as was the API and the
-      authentication system.
+      En cuanto al frontend, el cambio fue relativamente sencillo. El frontend
+      inicial no era complejo y replicarlo en Next.js fue bastante sencillo. Sin
+      embargo, tuve que reescribir todo el backend desde cero. La base de datos
+      era completamente diferente, al igual que la API y el sistema de
+      autenticación.
     </p>
     <p>
-      In the end, I think this complete overhaul was a good decision that has
-      led to a more robust and scalable project, with a faster development
-      cycle.
+      Al final, creo que esta revisión completa fue una buena decisión que ha
+      dado lugar a un proyecto más sólido y escalable, con un ciclo de
+      desarrollo más rápido.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">UI Clutter</h6>
+    <h6 className="text-lg font-semibold">
+      Desorden en la interfaz de usuario
+    </h6>
     <p>
-      One issue I faced while building the UI was clutter. There were too many
-      elements on the page, and the layout was not intuitive. At the same time,
-      I wanted to keep a clear navigation structure, so users could easily find
-      what they were looking for.
+      Un problema al que me enfrenté al crear la interfaz de usuario fue el
+      desorden. Había demasiados elementos en la página y el diseño no era
+      intuitivo. Al mismo tiempo, quería mantener una estructura de navegación
+      clara, para que los usuarios pudieran encontrar fácilmente lo que
+      buscaban.
     </p>
     <p>
-      I decided to simplify the UI: the navigation menu would consist of a few
-      buttons linking to the main sections, and a dropdown for other sections
-      and options such as login and theme switching.
+      Decidí simplificar la interfaz de usuario: el menú de navegación constaría
+      de algunos botones que enlazaran a las secciones principales y un menú
+      desplegable para otras secciones y opciones como el inicio de sesión y el
+      cambio de tema.
     </p>
     <p>
-      Similarly, item cards were also simplified. Instead of the text writing
-      out what type of item it was, or where it came from, I decided to use
-      icons to represent this, and use dropdowns to show the item's details.
+      De manera similar, las tarjetas de elementos también se simplificaron. En
+      lugar de que el texto indique qué tipo de artículo es o de dónde proviene,
+      decidí usar íconos para representarlo y menús desplegables para mostrar
+      los detalles del artículo.
     </p>
     <p>
-      Overall, while there is room for improvement, I believe the current design
-      is a good balance between functionality and visual clarity.
+      En general, si bien hay margen de mejora, creo que el diseño actual es un
+      buen equilibrio entre funcionalidad y claridad visual.
     </p>
   </li>
 </ul>
