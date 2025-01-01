@@ -55,7 +55,7 @@ const courses = [
   },
   {
     name: "Test-Driven Development",
-    date: "2024-",
+    date: "2024-2024",
     school: "University of Helsinki",
     certificates: [],
     url: "https://tdd.mooc.fi/",
