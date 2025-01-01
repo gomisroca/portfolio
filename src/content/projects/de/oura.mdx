@@ -1,108 +1,115 @@
 ---
 name: Oura
 year: 2023
-description: Storefront site for sports clothing.
+description: Storefront-Website für Sportbekleidung.
 technologies: ["Next.js", "tRPC", "Stripe", "Supabase", "PostgreSQL", "Vercel"]
 headerImage:
   src: "/portfolio/projects/oura.jpg"
-  alt: "A screenshot of the Oura website"
+  alt: "Screenshot der Oura-Website"
 cardImage:
   src: "/portfolio/cards/oura.png"
-  alt: "A screenshot of the Oura website on mobile"
+  alt: "Screenshot der Oura-Website auf Mobilgeräten"
 liveWebsite: "https://oura-clothing.vercel.app"
 repository: "https://github.com/gomisroca/oura"
 ---
 
-<strong>Oura</strong> is a project meant to allow the creation of a storefront
-site dedicated to clothing. It allows the creation of products, categories and
-sales with a great degree of customization.
+<strong>Oura</strong> ist ein Projekt, das die Erstellung einer Storefront-Site
+für Kleidung ermöglichen soll. Es ermöglicht die Erstellung von Produkten,
+Kategorien und Verkäufen mit einem hohen Grad an Personalisierung.
 
 <hr />
 
-<h1 class="text-2xl">Technologies and Tools</h1>
+<h1 class="text-2xl">Technologien und Tools</h1>
 <ul>
   <li>
     <h6 className="text-lg font-semibold">Next.js</h6>
     <p>
-      Next.js was chosen as the framework for the project due to its simplicity
-      in developing server-side and client-side components, and its
-      industry-wide adoption. This project needed to display a lot of data, for
-      which server-side rendering was a great fit, and at the same time, it
-      needed to be highly interactive as the user clicked on the products or
-      categories. Due to this, Next.js was a great fit for this project.
+      Next.js wurde als Framework für das Projekt ausgewählt, da es sich einfach
+      für die Entwicklung server-side und client-side Komponenten eignet und
+      branchenweit eingesetzt wird. Dieses Projekt musste viele Daten anzeigen,
+      wofür sich server-side Rendering hervorragend eignete. Gleichzeitig musste
+      es hochgradig interaktiv sein, wenn der Benutzer auf die Produkte oder
+      Kategorien klickte. Aus diesem Grund war Next.js für dieses Projekt
+      hervorragend geeignet.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">Stripe</h6>
     <p>
-      Naturally every storefront needs to have a payment system, and Stripe was
-      chosen as the payment provider due to its ease of use and security. This
-      project was the first time I used Stripe, and I was able to integrate it
-      with Next.js seamlessly.
+      Natürlich muss jeder Shop über ein Zahlungssystem verfügen, und Stripe
+      wurde aufgrund seiner Benutzerfreundlichkeit und Sicherheit als
+      Zahlungsanbieter ausgewählt. Bei diesem Projekt habe ich Stripe zum ersten
+      Mal verwendet und konnte es nahtlos in Next.js integrieren.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">PostgreSQL</h6>
     <p>
-      PostgreSQL was chosen as the database due to its reliability and
-      scalability. This project has many related pieces, and it was important to
-      have a database that could handle all of these relationships and
-      interactions.
+      Aufgrund seiner Zuverlässigkeit und Skalierbarkeit wurde PostgreSQL als
+      Datenbank ausgewählt. Dieses Projekt hat viele miteinander verknüpfte
+      Teile und es war wichtig, eine Datenbank zu haben, die alle diese
+      Beziehungen und Interaktionen verarbeiten konnte.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Roles and Responsibilities</h1>
-This project was developed single-handedly by myself in 2023. I was responsible
-for every facet of it, from design to development. Of note are:
+<h1 class="text-2xl">Rollen und Verantwortlichkeiten</h1>
+Dieses Projekt wurde 2023 von mir selbst entwickelt. Ich war für jeden Aspekt
+verantwortlich, vom Design bis zur Entwicklung. Besonders hervorzuheben sind:
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">Full-Stack Developer</h6>
+    <h6 className="text-lg font-semibold">Full-Stack-Entwickler</h6>
     <p>
-      Implemented the project's functionality and ensuring it was secure and
-      scalable. I used Next.js, tRPC, NextAuth.js, and Stripe amongst other
-      tools to build the project.
+      Implementierung der Funktionalität des Projekts und Sicherstellung seiner
+      Sicherheit und Skalierbarkeit. Ich habe neben anderen Tools Next.js, tRPC,
+      NextAuth.js und Stripe verwendet, um das Projekt zu erstellen.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">UI/UX Designer</h6>
+    <h6 className="text-lg font-semibold">UI/UX-Designer</h6>
     <p>
-      Designed the user interface and user experience of the project. The
-      project wanted to be different from other clothing stores, and I wanted to
-      create a unique experience for the user. I used Figma to create the
-      designs and implemented them in the project using TailwindCSS.
+      Gestaltung der Benutzeroberfläche und des Benutzererlebnisses des
+      Projekts. Das Projekt sollte sich von anderen Bekleidungsgeschäften
+      unterscheiden und ich wollte ein einzigartiges Erlebnis für den Benutzer
+      schaffen. Ich habe Figma verwendet, um die Designs zu erstellen und sie
+      mit TailwindCSS im Projekt implementiert.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Challenges and Solutions</h1>
+<h1 class="text-2xl">Herausforderungen und Lösungen</h1>
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">Security</h6>
+    <h6 className="text-lg font-semibold">Sicherheit</h6>
     <p>
-      One of the biggest challenges when developing a storefront site is
-      security.
+      Eine der größten Herausforderungen bei der Entwicklung einer
+      Storefront-Site ist die Sicherheit.
     </p>
     <p>
-      To help with this, I used NextAuth.js, which provides a simple and secure
-      way to handle user authentication and authorization. I also used Stripe to
-      handle payments, and Supabase security features to ensure the data was
-      safe.
+      Um dies zu unterstützen, habe ich NextAuth.js verwendet, das eine einfache
+      und sichere Möglichkeit zur Handhabung der Benutzerauthentifizierung und
+      -autorisierung bietet. Ich habe auch Stripe zur Abwicklung von Zahlungen
+      und Supabase-Sicherheitsfunktionen verwendet, um die Sicherheit der Daten
+      zu gewährleisten.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Payment System Implementation</h6>
+    <h6 className="text-lg font-semibold">
+      Implementierung des Zahlungssystems
+    </h6>
     <p>
-      This was my first time working with any payment system, and I had to
-      figure out how to integrate it with the project. I used Stripe. It
-      required a bit of setup, but it was somewhat straightforward. I struggled
-      a bit more dealing with orders, how to tag them as they were created, how
-      to deal with deleted ones, refunds, failed payments, etc. This required a
-      lot of research and dealing with edge cases.
+      Dies war mein erstes Mal, dass ich mit einem Zahlungssystem gearbeitet
+      habe, und ich musste herausfinden, wie ich es in das Projekt integrieren
+      konnte. Ich habe Stripe verwendet. Es erforderte ein wenig Einrichtung,
+      war aber einigermaßen unkompliziert. Ich hatte etwas mehr Probleme mit der
+      Bearbeitung von Bestellungen, wie man sie bei ihrer Erstellung markiert,
+      wie man mit gelöschten Bestellungen, Rückerstattungen, fehlgeschlagenen
+      Zahlungen usw. umgeht. Dies erforderte viel Recherche und die Bearbeitung
+      von Randfällen.
     </p>
   </li>
 </ul>
