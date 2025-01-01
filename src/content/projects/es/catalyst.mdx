@@ -1,118 +1,123 @@
 ---
 name: Catalyst
 year: 2023
-description: Share your ideas, collaborate with others and keep up with what's happening.
+description: Comparte tus ideas, colabora con otros y mantente al día con lo que sucede.
 technologies: ["React", "Express", "Nginx", "Docker"]
 headerImage:
   src: "/portfolio/projects/catalyst.jpg"
-  alt: "A screenshot of the Catalyst website"
+  alt: "Captura de pantalla del sitio web de Catalyst"
 cardImage:
   src: "/portfolio/cards/catalyst.png"
-  alt: "A screenshot of the Catalyst website on mobile"
+  alt: "Captura de pantalla del sitio web de Catalyst en móvil"
 liveWebsite: "https://be-catalyst.vercel.app"
 repository: "https://github.com/gomisroca/catalyst"
 ---
 
-<strong>Catalyst</strong> is a project meant to allow collaboritive efforts
-blossom into a greater whole. It is a platform where people can collaborate on
-projects, and where they can share their ideas and collaborate with others.
+<strong>Catalyst</strong> es un proyecto destinado a permitir que los esfuerzos
+colaborativos florezcan en un todo mayor. Es una plataforma donde las personas
+pueden colaborar en proyectos y donde pueden compartir sus ideas y colaborar con
+otros.
 
 <hr />
 
-<h1 class="text-2xl">Technologies and Tools</h1>
+<h1 class="text-2xl">Tecnologías y Herramientas</h1>
 <ul>
   <li>
     <h6 className="text-lg font-semibold">React</h6>
     <p>
-      React was chosen as the framework for the project due to its simplicity,
-      industry-wide adoption and strength. This project needed to be highly
-      interactive, with many state changes continually happening as the users
-      interacted with the site, which made React a great fit for this project.
+      Se eligió React como framework para el proyecto debido a su simplicidad,
+      adopción en toda la industria y solidez. Este proyecto debía ser altamente
+      interactivo, con muchos cambios de estado que sucedían continuamente a
+      medida que los usuarios interactuaban con el sitio, lo que hizo que React
+      fuera una gran opción para este proyecto.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">Express</h6>
     <p>
-      Express is the go-to framework for building APIs in Node.js. It is a
-      lightweight and fast framework that is easy to use and understand. Since
-      the backend of this project could become complex, using Express which is
-      largely unopinionated and allows for a lot of flexibility was a good fit.
+      Express es el framework de referencia para crear API en Node.js. Es un
+      framework liviano y rápido que es fácil de usar y comprender. Dado que el
+      backend de este proyecto podría volverse complejo, el uso de Express, que
+      es en gran parte sin opiniones y permite mucha flexibilidad, fue una buena
+      opción.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Roles and Responsibilities</h1>
-This project was developed single-handedly by myself in 2023. I was responsible
-for every facet of it, from design to development. Of note are:
+<h1 class="text-2xl">Roles y Responsabilidades</h1>
+Este proyecto lo desarrollé yo solo en 2023. Fui responsable de cada faceta del
+mismo, desde el diseño hasta el desarrollo. Cabe destacar:
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">View Structure</h6>
+    <h6 className="text-lg font-semibold">Estructure de las vistas</h6>
     <p>
-      Designed the way the displayed data would be structured. This was a
-      complex task, as the project uses many layers of content, from project, to
-      branches, to posts, so it was important to establish a clear hierarchy and
-      structure.
+      Diseñé la forma en que se estructurarían los datos mostrados. Esta fue una
+      tarea compleja, ya que el proyecto utiliza muchas capas de contenido,
+      desde proyectos hasta las ramas y las publicaciones, por lo que era
+      importante establecer una jerarquía y una estructura claras.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Front - Back Communication</h6>
+    <h6 className="text-lg font-semibold">Comunicación front-back</h6>
     <p>
-      Implemented the project's API endpoints and ensured they were efficient
-      and secure. At the same time, I implemented fetch methods in the frontend
-      that ensured we only got the data we needed. I used Express, Passport and
-      PostgreSQL amongst other tools to achieve this.
+      Implementé los endpoint de la API del proyecto y me aseguré de que fueran
+      eficientes y seguros. Al mismo tiempo, implementé métodos de query en el
+      frontend que garantizaron que solo obtuviéramos los datos que
+      necesitábamos. Utilicé Express, Passport y PostgreSQL, entre otras
+      herramientas, para lograrlo.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Challenges and Solutions</h1>
+<h1 class="text-2xl">Desafíos y Soluciones</h1>
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">Scope Management</h6>
+    <h6 className="text-lg font-semibold">Gestión del objetivo</h6>
     <p>
-      This was a very ambitious project, and maintaining a clear scope was a
-      difficult task. I had to decide which features to prioritize, and which
-      ones to drop. In many ocasions I had to stop and reflect on whether a
-      certain feature was helpful towards the project's goals, or if it was just
-      a distraction. For example, the idea of adding certain 'social media' such
-      as comments was dropped, but a timeline was maintained, as it helped with
-      the idea of people contribution to projects they were interested in.
+      Este fue un proyecto muy ambicioso y mantener un objetivo claro fue una
+      tarea difícil. Tuve que decidir qué características priorizar y cuáles
+      descartar. En muchas ocasiones, tuve que detenerme y reflexionar sobre si
+      una determinada característica era útil para los objetivos del proyecto o
+      si era solo una distracción. Por ejemplo, se descartó la idea de agregar
+      ciertas "redes sociales", como los comentarios, pero se mantuvo un
+      cronograma, ya que ayudaba con la idea de que las personas contribuyeran a
+      los proyectos que les interesaban.
     </p>
     <p>
-      In the end, I believe the initial scope of the project as a collaborative
-      site was preserved, and the development cycle was smooth and efficient
-      thanks to that.
-    </p>
-  </li>
-  <li>
-    <h6 className="text-lg font-semibold">Dockerization</h6>
-    <p>
-      The project ran into many issues when dealing with dockerization. This was
-      one of my first experiences dealing with containers in a full-stack
-      project, and I had to troubleshoot and fix many issues. After much trial
-      and error and documentation reading, I was able to containerize the
-      project.
+      Al final, creo que se conservó el objetivo inicial del proyecto como un
+      sitio colaborativo, y el ciclo de desarrollo fue fluido y eficiente
+      gracias a eso.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">API Design</h6>
+    <h6 className="text-lg font-semibold">Dockerización</h6>
     <p>
-      Designing the API was a complex task, as the project had many
-      interconnected parts, and it was difficult to know how much information
-      each part needed, while also ensuring the API was secure and efficient. In
-      my first attempt at this, it was a mess, which worked, but was not very
-      scalable or efficient.
+      El proyecto tuvo muchos problemas al lidiar con la dockerización. Esta fue
+      una de mis primeras experiencias al lidiar con contenedores en un proyecto
+      full-stack, y tuve que solucionar y corregir muchos problemas. Después de
+      mucho ensayo y error y lectura de documentación, pude contenerizar el
+      proyecto.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Diseño de API</h6>
+    <p>
+      Diseñar la API fue una tarea compleja, ya que el proyecto tenía muchas
+      partes interconectadas y era difícil saber cuánta información necesitaba
+      cada parte, al mismo tiempo que se aseguraba que la API fuera segura y
+      eficiente. En mi primer intento, fue un desastre, lo cual funcionó, pero
+      no fue muy escalable ni eficiente.
     </p>
     <p>
-      I restructured the API to be more flexible and scalable, with a focus on
-      clarity: each endpoint has a clear purpose, a clear input and output, and
-      there is no contamination of data between endpoints. This allowed for a
-      more efficient and scalable API, that should also be easier to maintain in
-      the future.
+      Reestructuré la API para que sea más flexible y escalable, con un enfoque
+      en la claridad: cada punto final tiene un propósito claro, una entrada y
+      una salida claras, y no hay contaminación de datos entre puntos finales.
+      Esto permitió una API más eficiente y escalable, que también debería ser
+      más fácil de mantener en el futuro.
     </p>
   </li>
 </ul>
