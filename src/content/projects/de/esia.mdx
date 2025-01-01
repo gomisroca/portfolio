@@ -1,106 +1,114 @@
 ---
 name: Esia
 year: 2023
-description: Visitors can view artworks and see what exhibitions and events are happening in the gallery.
+description: Besucher können Kunstwerke betrachten und sehen, welche Ausstellungen und Veranstaltungen in der Galerie stattfinden.
 technologies: ["Next.js", "tRPC", "Supabase", "PostgreSQL", "Vercel"]
 headerImage:
   src: "/portfolio/projects/esia.jpg"
-  alt: "A screenshot of the Esia website"
+  alt: "Screenshot der Esia-Website"
 cardImage:
   src: "/portfolio/cards/esia.png"
-  alt: "A screenshot of the Esia website on mobile"
+  alt: "Screenshot der Esia-Website auf Mobilgeräten"
 liveWebsite: "https://esia.vercel.app"
 repository: "https://github.com/gomisroca/esia"
 ---
 
-<strong>Esia</strong> is a project meant to be an online art gallery, where
-visitors can view artworks and see what exhibitions and events are happening in
-the gallery.
+<strong>Esia</strong> ist ein Projekt, das als Online-Kunstgalerie konzipiert
+ist, in der Besucher Kunstwerke betrachten und sehen können, welche
+Ausstellungen und Veranstaltungen in der Galerie stattfinden.
 
 <hr />
 
-<h1 class="text-2xl">Technologies and Tools</h1>
+<h1 class="text-2xl">Technologien und Tools</h1>
 <ul>
   <li>
     <h6 className="text-lg font-semibold">Next.js</h6>
     <p>
-      Knowing there would be plenty of artworks to display, it was decided to
-      use Next.js to build the project. Next.js is a framework that allows for
-      server-side rendering, which is ideal for this project as it would allow
-      for faster loading times and better performance.
+      Da wir wussten, dass es viele Kunstwerke zu zeigen geben würde, wurde
+      entschieden, Next.js für das Projekt zu verwenden. Next.js ist ein
+      Framework, das serverseitiges Rendering ermöglicht, was für dieses Projekt
+      ideal ist, da es schnellere Ladezeiten und eine bessere Leistung
+      ermöglicht.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">tRPC</h6>
     <p>
-      We opted to use tRPC to handle the communication between the client and
-      the server, ensuring typesafety and a faster, safer development. This
-      decision was based on the fact that we expected to deal with many complex
-      types of data, and tRPC was a good fit for this.
+      Wir entschieden uns, tRPC für die Kommunikation zwischen Client und Server
+      zu verwenden, um Typensicherheit und eine schnellere, sicherere
+      Entwicklung zu gewährleisten. Diese Entscheidung basierte auf der
+      Tatsache, dass wir mit vielen komplexen Datentypen zu tun hatten, und tRPC
+      war dafür gut geeignet.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">Supabase</h6>
     <p>
-      Supabase is a cloud-based database that provides a robust and scalable
-      solution for storing and retrieving data. With it we stored all of the
-      data we need and used its storage features to store the images for the
-      many artworks and exhibitions.
+      Supabase ist eine Cloud-basierte Datenbank, die eine robuste und
+      skalierbare Lösung zum Speichern und Abrufen von Daten bietet. Damit haben
+      wir alle benötigten Daten gespeichert und seine Speicherfunktionen
+      verwendet, um die Bilder für die vielen Kunstwerke und Ausstellungen zu
+      speichern.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">Vercel</h6>
     <p>
-      Since we decided on using Next.js, deploying to Vercel seemed like the
-      best, most efficient option. We utilized Vercel's Analytics and Speed
-      Insights to ensure the project was running smoothly.
+      Da wir uns für Next.js entschieden haben, schien die Bereitstellung auf
+      Vercel die beste und effizienteste Option zu sein. Wir nutzten Vercels
+      Analytics und Speed Insights, um einen reibungslosen Projektablauf
+      sicherzustellen.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Roles and Responsibilities</h1>
-This project was developed single-handedly by myself in 2023. I was responsible
-for every facet of it, from design to development. Of note are:
+<h1 class="text-2xl">Rollen und Verantwortlichkeiten</h1>
+Dieses Projekt wurde 2023 von mir selbst entwickelt. Ich war für jeden Aspekt
+verantwortlich, vom Design bis zur Entwicklung. Besonders hervorzuheben sind:
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">UI/UX Designer</h6>
+    <h6 className="text-lg font-semibold">UI/UX-Designer</h6>
     <p>
-      Designed a minimalistic and intuitive interface that would allow for easy
-      navigation without distracting away from the artworks. Being an art
-      gallery, I wanted art to be the main focus when visiting the site. At the
-      same time, I used hover and click animations to display the artworks'
-      data, which led to bigger, more attractive images.
+      Ich habe eine minimalistische und intuitive Benutzeroberfläche entworfen,
+      die eine einfache Navigation ermöglicht, ohne von den Kunstwerken
+      abzulenken. Da es sich um eine Kunstgalerie handelt, wollte ich, dass die
+      Kunst beim Besuch der Website im Mittelpunkt steht. Gleichzeitig habe ich
+      Hover- und Klickanimationen verwendet, um die Daten der Kunstwerke
+      anzuzeigen, was zu größeren, attraktiveren Bildern führte.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Full-Stack Developer</h6>
+    <h6 className="text-lg font-semibold">Full-Stack-Entwickler</h6>
     <p>
-      Built the project using Next.js and tRPC, connecting to a PostgreSQL
-      database via Prisma. I developed methods to upload images to Supabase
-      buckets, to optimize said images for display. Furthermore, I employed
-      methods such as pagination to ensure the site was fast and responsive
-      despite the large amount of images.
+      Ich habe das Projekt mit Next.js und tRPC erstellt und über Prisma eine
+      Verbindung zu einer PostgreSQL-Datenbank hergestellt. Ich habe Methoden
+      zum Hochladen von Bildern in Supabase-Buckets entwickelt, um diese Bilder
+      für die Anzeige zu optimieren. Darüber hinaus habe ich Methoden wie
+      Paginierung eingesetzt, um sicherzustellen, dass die Site trotz der großen
+      Anzahl an Bildern schnell und reaktionsfähig ist.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Challenges and Solutions</h1>
+<h1 class="text-2xl">Herausforderungen und Lösungen</h1>
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">Image Optimization</h6>
+    <h6 className="text-lg font-semibold">Bildoptimierung</h6>
     <p>
-      One of the biggest issues I faced during this project was optimizing the
-      images for display. With the amount of images the project had, it was
-      important to avoid slow loading times.
+      Eines der größten Probleme, mit denen ich während dieses Projekts
+      konfrontiert war, war die Optimierung der Bilder für die Anzeige.
+      Angesichts der Menge an Bildern, die das Projekt umfasste, war es wichtig,
+      langsame Ladezeiten zu vermeiden.
     </p>
     <p>
-      To help with this, I used skeletons while the image was loading,
-      pagination to avoid loading too many images at once, and lazy loading to
-      only load the images when they are in view.
+      Um dies zu unterstützen, habe ich Skelette verwendet, während das Bild
+      geladen wurde, Paginierung, um zu vermeiden, dass zu viele Bilder auf
+      einmal geladen werden, und Lazy Loading, um die Bilder nur zu laden, wenn
+      sie angezeigt werden.
     </p>
   </li>
 </ul>
