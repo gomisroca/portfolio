@@ -1,104 +1,106 @@
 ---
 name: Echoes
 year: 2024
-description: One-stop collection of writings.
+description: Col·lecció central d'escrits one-shot i sèries.
 technologies: ["Astro", "Sanity", "Vercel"]
 headerImage:
   src: "/portfolio/projects/echoes.jpg"
-  alt: "A screenshot of the Echoes website"
+  alt: "Captura de pantalla del lloc web d'Echoes"
 cardImage:
   src: "/portfolio/cards/echoes.png"
-  alt: "A screenshot of the Echoes website on mobile"
+  alt: "Captura de pantalla del lloc web d'Echoes al mòbil"
 liveWebsite: "https://echoes-writing.vercel.app"
 repository: "https://github.com/gomisroca/echoes"
 ---
 
-<strong>Echoes</strong> is a project meant to be a one-stop collection of
-writings. I've always envisioned a different way of finding and financing
-writing that fits the online era, and I believe a site where the main parts of a
-story are available for free, and the readers can pay for the extras, would be a
-great idea.
+<strong>Echoes</strong> és un projecte destinat a ser una col·lecció d'escrits
+únic. Sempre he imaginat una manera diferent de trobar i finançar l'escriptura
+que s'adapti a l'era en línia, i crec que un lloc on les parts principals d'una
+història estiguin disponibles de forma gratuïta i els lectors puguin pagar els
+extres seria una gran idea.
 
 <hr />
 
-<h1 class="text-2xl">Technologies and Tools</h1>
+<h1 class="text-2xl">Tecnologies i Eines</h1>
 <ul>
   <li>
     <h6 className="text-lg font-semibold">Astro</h6>
     <p>
-      This is a project focused on content, so Astro seemed like the best fit
-      for it. Astro has many features that made the creation of a content-first
-      site very simple.
+      Aquest és un projecte centrat en el contingut, per la qual cosa Astro
+      semblava el més adequat per a ell. Astro té moltes característiques que
+      fan que la creació d'un lloc de contingut primer sigui molt senzilla.
     </p>
   </li>
   <li>
     <h6 className="text-lg font-semibold">Sanity</h6>
     <p>
-      As the idea was to publish new writings regularly, I decided to use a CMS
-      (Content Management System) to store the content which would then be
-      fetched, instead of a regular database or storing it in the project
-      itself. Sanity is an easy to use CMS that integrates perfectly with Astro
-      thanks to its official plugin.
+      Com que la idea era publicar nous escrits amb regularitat, vaig decidir
+      utilitzar un CMS (Sistema de Gestió de Continguts) per emmagatzemar el
+      contingut que després s'obria, en lloc d'una base de dades normal o
+      emmagatzemar-lo al mateix projecte. Sanity és un CMS fàcil d'utilitzar que
+      s'integra perfectament amb Astro gràcies al seu plugin oficial.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Roles and Responsibilities</h1>
-This project was developed single-handedly by myself in 2024. I was responsible
-for every facet of it, from design to development. Of note are:
+<h1 class="text-2xl">Rols i Responsabilitats</h1>
+Aquest projecte el vaig desenvolupar jo sol el 2024. Vaig ser responsable de
+cada faceta del mateix, des del disseny fins al desenvolupament. Cal destacar:
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">Content Management</h6>
+    <h6 className="text-lg font-semibold">Gestió de continguts</h6>
     <p>
-      Designed a system to store and fetch content using Sanity, a CMS. Using
-      Sanity's client, I used GraphQL queries to fetch the content, and created
-      schemas for the different kinds of data, such as authors and writing
-      pieces.
+      Dissenyat un sistema per emmagatzemar i obtenir contingut mitjançant
+      Sanity, un CMS. Utilitzant el client de Sanity, vaig utilitzar queries
+      GraphQL per obtenir el contingut i vaig crear esquemes per als diferents
+      tipus de dades, com ara autors i peces d'escriptura.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Routing System</h6>
+    <h6 className="text-lg font-semibold">Sistema d'encaminament</h6>
     <p>
-      Built the project using Astro and amongst other tasks, developed a routing
-      system that would be intuitive and clear for the user, where every piece
-      of content was properly categorized, and pieces related to it were easily
-      accessible.
+      Vaig construir el projecte amb Astro i, entre altres tasques, vaig
+      desenvolupar un sistema d'encaminament que fos intuïtiu i clar per a
+      l'usuari, on cada contingut es categoritzava correctament i les peces
+      relacionades amb ell fossin fàcilment accessibles.
     </p>
   </li>
 </ul>
 
 <hr />
 
-<h1 class="text-2xl">Challenges and Solutions</h1>
+<h1 class="text-2xl">Reptes i Solucions</h1>
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">Astro Implementation</h6>
+    <h6 className="text-lg font-semibold">Implementació Astro</h6>
     <p>
-      While I was already somewhat familiar with Astro, it was my first time
-      using it in a full-fledged project. I had to deal with the fact that
-      Astro's syntax is rather different from other frameworks, and I had to
-      learn how to use it effectively.
+      Tot i que ja estava una mica familiaritzat amb Astro, era la primera
+      vegada que l'utilitzava en un projecte complet. Vaig haver de fer front al
+      fet que la sintaxi d'Astro és bastant diferent d'altres frameworks, i vaig
+      haver d'aprendre a utilitzar-la de manera eficaç.
     </p>
     <p>
-      At the same time, I had to deal with integrating Sanity, as I found using
-      Astro's Content Collections would not be optimal for our use case.
+      Al mateix temps, vaig haver de fer front a la integració de Sanity, ja que
+      vaig trobar que utilitzar les col·leccions de contingut d'Astro no seria
+      òptim per al nostre cas.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Sanity Implementation</h6>
+    <h6 className="text-lg font-semibold">Implementació Sanity</h6>
     <p>
-      Sanity is a somewhat easy to use CMS, and it has good integrations with
-      Astro thanks to its official plugin. However, I faced some issues with the
-      implementation of the CMS, as it was my first time dealing with one. I had
-      to deal with the fact that Sanity's client was not very intuitive, the
-      queries were verbose and the data was not always easy to fetch.
+      Sanity és un CMS una mica fàcil d'utilitzar i té bones integracions amb
+      Astro gràcies al seu plugin oficial. No obstant això, em vaig enfrontar a
+      alguns problemes amb la implementació del CMS, ja que era la primera
+      vegada que tractava amb un. Vaig haver de fer front al fet que el client
+      de Sanity no era molt intuïtiu, les queries eren molt detallades i les
+      dades no sempre eren fàcils d'aconseguir.
     </p>
     <p>
-      To help with this, I read through the documentation carefully, and
-      experimented with different queries to find the best way to fetch the data
-      I needed.
+      Per ajudar amb això, vaig llegir atentament la documentació i vaig
+      experimentar amb diferents queries per trobar la millor manera d'obtenir
+      les dades que necessitava.
     </p>
   </li>
 </ul>
