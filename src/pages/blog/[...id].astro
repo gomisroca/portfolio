@@ -3,12 +3,14 @@ import BlogLayout from "@/layouts/BlogLayout.astro";
 import { render, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("blog");
+  const entries = await getCollection("blog", ({ id }) => {
+    return id.startsWith("en/");
+  });
 
   const paths = entries.map((entry) => {
-    const [lang, ...id] = entry.id.split("/");
+    const [_, ...id] = entry.id.split("/");
     return {
-      params: { lang, id: id.join("/") || undefined },
+      params: { id: id.join("/") || undefined },
       props: entry,
     };
   });
