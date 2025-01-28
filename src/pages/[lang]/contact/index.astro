@@ -1,4 +1,5 @@
 ---
+import ContactForm from "@/components/ContactForm";
 import { useTranslations } from "@/i18n/utils";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
@@ -14,6 +15,10 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as "es" | "cat" | "de";
 const t = useTranslations(lang);
+
+const serviceId = import.meta.env.EMAILJS_SERVICE_ID;
+const templateId = import.meta.env.EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.EMAILJS_PUBLIC_KEY;
 ---
 
 <BaseLayout>
@@ -21,7 +26,20 @@ const t = useTranslations(lang);
     class="mt-4 flex flex-col items-center justify-center rounded-md border-2 border-zinc-300 bg-zinc-200 px-8 py-4 dark:border-zinc-800 dark:bg-zinc-900"
   >
     <h3 class="text-center text-xl" set:html={t("contact.email")} />
-    <h3 class="mt-10 text-xl">
+    <ContactForm
+      client:load
+      serviceId={serviceId}
+      templateId={templateId}
+      publicKey={publicKey}
+      nameField={t("contact.nameField")}
+      emailField={t("contact.emailField")}
+      messageField={t("contact.messageField")}
+      sendButton={t("contact.sendButton")}
+      sending={t("contact.sending")}
+      successMessage={t("contact.success")}
+      errorMessage={t("contact.error")}
+    />
+    <h3 class="text-xl">
       {t("contact.others")}
     </h3>
     <div class="flex gap-8">
