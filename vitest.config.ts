@@ -6,6 +6,9 @@ import path from "path";
 export default getViteConfig({
   plugins: [react()],
   test: {
+    onConsoleLog(log) {
+      if (log.includes("Not implemented: navigation")) return false;
+    },
     exclude: ["e2e", "node_modules"],
     environment: "jsdom",
     globals: true,
