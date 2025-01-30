@@ -1,11 +1,5 @@
 import FooterDock from "@/components/ui/footer/FooterDock";
-import {
-  render,
-  screen,
-  fireEvent,
-  act,
-  waitFor,
-} from "@testing-library/react";
+import { render, screen, fireEvent, act } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 // Mock the framer-motion to avoid animation-related issues in tests
