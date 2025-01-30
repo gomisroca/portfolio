@@ -75,10 +75,11 @@ export default function ThemeToggle() {
       }}
     >
       {theme === "light" ? (
-        <Sun className="h-4 w-4" />
+        <Sun data-testid="sun-icon" className="h-4 w-4" />
       ) : (
-        <Moon className="h-4 w-4" />
+        <Moon data-testid="moon-icon" className="h-4 w-4" />
       )}
+      <span className="sr-only">Toggle theme</span>
     </motion.button>
   );
 }
