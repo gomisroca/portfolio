@@ -94,7 +94,7 @@ const Projects = [
   },
   {
     image: "/portfolio/cards/esia.png",
-    title: "Esia Gallery",
+    title: "Esia",
     tilt: 15,
   },
 ];
