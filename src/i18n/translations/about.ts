@@ -61,7 +61,7 @@ const aboutTranslations = {
     "DevOps with Docker":
       "Programa de formación práctica que enseña las habilidades esenciales de la contenedorización y las prácticas modernas de desarrollo de software utilizando la tecnología Docker.",
     "DevOps with Kubernetes":
-      "Curso intensivo que proporciona a los alumnos un conocimiento profundo de la orquestación de contenedores mediante Kubernetes, enseñándoles a desplegar, gestionar y escalar aplicaciones en contenedores en entornos distribuidos complejos.",
+      "Curso intensivo que proporciona a los alumnos un conocimiento profundo de la orquestración de contenedores mediante Kubernetes, enseñándoles a desplegar, gestionar y escalar aplicaciones en contenedores en entornos distribuidos complejos.",
     "Test-Driven Development":
       "Exploración exhaustiva de las metodologías de desarrollo de software que hacen hincapié en la escritura de pruebas automatizadas antes de implementar el código real.",
     "Cyber Security Base":
@@ -70,14 +70,14 @@ const aboutTranslations = {
   cat: {
     introduction: `
       Em dic Adrià i sóc un desenvolupador web full-stack localitzat a Barcelona, ​​Espanya.
-      Sóc un apassionat de la creació d'aplicacions web fàcils dusar i dalt rendiment.
+      Soc un apassionat de la creació d'aplicacions web fàcils d'usar i dalt rendiment.
       Tinc experiència treballant amb una gran varietat de tecnologies, centrant-me en alguns dels frameworks i llibreries més provats de la indústria.`,
     personal: `
       Al meu temps lliure m'agrada fer esport, sobretot córrer i fer senderisme, i relaxar-me meditant o practicant ioga.
-      També tinc un Border Collie anomenat Son (de la paraula catalana per «dormir»), a la foto de baix, que s'assegura que sempre estigui actiu i amb què passo la major part del meu temps lliure.`,
+      També tinc un Border Collie anomenat Son (de la paraula catalana), a la foto de baix, que s'assegura que sempre estigui actiu i amb qui passo la major part del meu temps lliure.`,
     transition: `
       La creativitat sempre ha format part de la meva vida.
-      Vaig estudiar música i vaig treballar com a baixista, escric històries en el meu temps lliure i sóc un fuster poc perfecte, havent creat algunes taules i cadires.
+      Vaig estudiar música i vaig treballar com a baixista, escric històries en el meu temps lliure i soc un fuster menys que perfecte, havent creat algunes taules i cadires.
       No obstant això, al món de la programació vaig trobar un equilibri perfecte entre el meu costat creatiu i el meu costat més tècnic.
       M'encanta crear i construir, i m'encanta trobar solucions creatives als problemes.`,
     study: `
