@@ -61,7 +61,7 @@ const aboutTranslations = {
     "DevOps with Docker":
       "Programa de formación práctica que enseña las habilidades esenciales de la contenedorización y las prácticas modernas de desarrollo de software utilizando la tecnología Docker.",
     "DevOps with Kubernetes":
-      "Curso intensivo que proporciona a los alumnos un conocimiento profundo de la orquestación de contenedores mediante Kubernetes, enseñándoles a desplegar, gestionar y escalar aplicaciones en contenedores en entornos distribuidos complejos.",
+      "Curso intensivo que proporciona a los alumnos un conocimiento profundo de la orquestración de contenedores mediante Kubernetes, enseñándoles a desplegar, gestionar y escalar aplicaciones en contenedores en entornos distribuidos complejos.",
     "Test-Driven Development":
       "Exploración exhaustiva de las metodologías de desarrollo de software que hacen hincapié en la escritura de pruebas automatizadas antes de implementar el código real.",
     "Cyber Security Base":
