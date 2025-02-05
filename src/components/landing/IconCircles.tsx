@@ -199,11 +199,17 @@ export function IconCircles() {
           duration={60}
           radius={330}
         >
-          <SiSonar className="h-7 w-7" />
-          <SiGitlab className="h-7 w-7 text-orange-500" />
+          <SiSonar data-testid="SiSonar" className="h-7 w-7" />
+          <SiGitlab
+            data-testid="SiGitlab"
+            className="h-7 w-7 text-orange-500"
+          />
           <SiGithubactions className="h-7 w-7" />
-          <SiDocker className="h-7 w-7 text-blue-500" />
-          <SiKubernetes className="h-7 w-7 text-blue-500" />
+          <SiDocker data-testid="SiDocker" className="h-7 w-7 text-blue-500" />
+          <SiKubernetes
+            data-testid="SiKubernetes"
+            className="h-7 w-7 text-blue-500"
+          />
           <SiAnsible className="h-7 w-7" />
           <SiNginx className="h-7 w-7 text-lime-500" />
           <SiTraefikproxy className="h-7 w-7 text-sky-500" />
