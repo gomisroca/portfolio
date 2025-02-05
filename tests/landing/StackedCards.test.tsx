@@ -1,7 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it, vi, type Mock } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import * as framerMotion from "framer-motion";
-import * as reactResponsive from "react-responsive";
 import StackedCards from "@/components/landing/StackedCards";
 
 vi.mock("framer-motion", () => ({
