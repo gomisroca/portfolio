@@ -10,12 +10,11 @@ const { data }: Props = Astro.props;
 ---
 
 <BaseLayout>
-  <div class="prose prose-zinc mb-8 dark:prose-invert">
+  <div class="prose prose-zinc dark:prose-invert mb-8">
     <div class="my-4 border-b border-zinc-800 dark:border-zinc-200">
       {
         data.headerImage && (
           <Picture
-            layout="responsive"
             formats={["avif", "webp"]}
             src={data.headerImage.src}
             alt={data.headerImage.alt}
@@ -26,7 +25,7 @@ const { data }: Props = Astro.props;
         )
       }
       <h1 class="mb-0">{data.title}</h1>
-      <h2 class="mb-4 mt-0">{data.subtitle}</h2>
+      <h2 class="mt-0 mb-4">{data.subtitle}</h2>
     </div>
     <slot />
   </div>

@@ -23,7 +23,6 @@ const lang = Astro.params.lang ?? "en";
           <div class="relative mx-auto max-w-xl">
             <Lightbox client:load dialogClass="max-w-none">
               <Picture
-                layout="responsive"
                 formats={["avif", "webp"]}
                 src={project.headerImage.src}
                 alt={project.headerImage.alt}
@@ -36,7 +35,7 @@ const lang = Astro.params.lang ?? "en";
         )
       }
       <div
-        class="prose prose-zinc mx-auto block w-full border-b border-zinc-500 py-4 dark:prose-invert desktop:hidden"
+        class="prose prose-zinc dark:prose-invert desktop:hidden mx-auto block w-full border-b border-zinc-500 py-4"
       >
         <div
           class={twMerge(
@@ -53,7 +52,7 @@ const lang = Astro.params.lang ?? "en";
                 <a href={project.liveWebsite} target="_blank">
                   <Icon
                     name="mdi:web"
-                    class="h-6 w-6 text-zinc-500 transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+                    class="hover:text-primary-500 h-6 w-6 text-zinc-500 transition duration-200 hover:scale-105 active:scale-110 active:duration-100"
                   />
                 </a>
               )
@@ -63,7 +62,7 @@ const lang = Astro.params.lang ?? "en";
                 <a href={project.repository} target="_blank">
                   <Icon
                     name="mdi:github"
-                    class="h-6 w-6 text-zinc-500 transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+                    class="hover:text-primary-500 h-6 w-6 text-zinc-500 transition duration-200 hover:scale-105 active:scale-110 active:duration-100"
                   />
                 </a>
               )
@@ -73,7 +72,7 @@ const lang = Astro.params.lang ?? "en";
         <h1 class="text-center uppercase">{project.name}</h1>
       </div>
     </div>
-    <div class="prose prose-zinc mx-auto dark:prose-invert desktop:mx-auto">
+    <div class="prose prose-zinc dark:prose-invert desktop:mx-auto mx-auto">
       <slot />
     </div>
     <Sidebar project={project} lang={lang} />
