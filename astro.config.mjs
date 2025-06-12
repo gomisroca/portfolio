@@ -1,18 +1,15 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import node from "@astrojs/node";
 import icon from "astro-icon";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  image: {
-    experimentalLayout: "responsive",
-  },
-  experimental: {
-    responsiveImages: true,
+  vite: {
+    plugins: [tailwindcss()],
   },
   output: "static",
   site: "https://gomisroca.github.io",
@@ -24,9 +21,6 @@ export default defineConfig({
   integrations: [
     mdx(),
     react(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
     icon({
       include: { mdi: ["*"], ri: ["twitter-x-fill"] },
     }),
