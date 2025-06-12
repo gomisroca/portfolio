@@ -45,13 +45,13 @@ function Section({
       viewport={{ once: true }}
       transition={{ duration: 1, ease: "easeInOut" }}
       className={cn(
-        "md:p-8 z-10 rounded-md bg-zinc-50 dark:bg-zinc-950",
+        "z-10 rounded-md bg-zinc-50 md:p-8 dark:bg-zinc-950",
         className,
       )}
     >
-      <div className="mb-2 ml-[10%] mr-[10%] tablet:ml-[20%] tablet:mr-[20%]">
+      <div className="tablet:ml-[20%] tablet:mr-[20%] mr-[10%] mb-2 ml-[10%]">
         <motion.h2
-          className="flex text-2xl font-semibold tablet:text-3xl"
+          className="tablet:text-3xl flex text-2xl font-semibold"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -75,7 +75,7 @@ function Section({
           whileInView={{ width: "100%" }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="rounded-md border-b-4 border-zinc-800 dark:border-zinc-200"
+          className="h-1 border-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 transition duration-200 ease-in-out dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
         />
       </div>
       {children}
