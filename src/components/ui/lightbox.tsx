@@ -12,7 +12,7 @@ function Lightbox({
 }) {
   return (
     <Dialog>
-      <DialogTrigger className="w-full">
+      <DialogTrigger className="w-full cursor-pointer">
         <motion.span
           animate={{
             scale: 1.1,
@@ -24,7 +24,7 @@ function Lightbox({
               repeatType: "mirror",
             },
           }}
-          className="absolute right-2 top-2 rounded-full bg-zinc-200 p-1 shadow-md dark:bg-zinc-800"
+          className="absolute top-2 right-2 rounded-full bg-zinc-200 p-1 shadow-md dark:bg-zinc-800"
         >
           <MousePointerClick className="h-6 w-6 text-zinc-800 dark:text-zinc-200" />
         </motion.span>

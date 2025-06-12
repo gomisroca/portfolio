@@ -17,29 +17,14 @@ export default function LanguageLink({
 
   return (
     <a href={translatePath(href, lang)}>
-      <motion.div
+      <div
         className={cn(
-          "w-fit rounded-md px-1 text-sm font-semibold text-zinc-500 hover:text-primary-500",
+          "hover:text-primary-500 w-fit rounded-md px-1 text-sm font-semibold text-zinc-500 transition duration-200 ease-in-out hover:scale-110 active:scale-90",
           className,
         )}
-        whileHover={{
-          scale: 1.25,
-          rotate: 0,
-          transition: {
-            duration: 0.2,
-          },
-        }}
-        whileTap={{
-          scale: 1.5,
-          zIndex: 10,
-          rotate: 0,
-          transition: {
-            duration: 0.1,
-          },
-        }}
       >
         {label}
-      </motion.div>
+      </div>
     </a>
   );
 }
