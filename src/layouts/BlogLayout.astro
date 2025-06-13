@@ -10,18 +10,22 @@ const { data }: Props = Astro.props;
 ---
 
 <BaseLayout>
-  <div class="prose prose-zinc dark:prose-invert mb-8">
+  <div
+    class="prose prose-zinc dark:prose-invert mb-8 flex flex-col items-start justify-center"
+  >
     <div class="relative my-4 pb-4">
       {
         data.headerImage && (
-          <Picture
-            formats={["avif", "webp"]}
-            src={data.headerImage.src}
-            alt={data.headerImage.alt}
-            width={600}
-            height={350}
-            class="aspect-video"
-          />
+          <div class="not-prose mb-4">
+            <Picture
+              formats={["avif", "webp"]}
+              src={data.headerImage.src}
+              alt={data.headerImage.alt}
+              width={600}
+              height={350}
+              class="aspect-video"
+            />
+          </div>
         )
       }
       <h1 class="mb-0">{data.title}</h1>

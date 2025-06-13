@@ -17,10 +17,10 @@ const lang = Astro.params.lang ?? "en";
 
 <BaseLayout>
   <div class="relative mx-auto flex flex-col gap-2">
-    <div class="my-4 flex flex-col justify-center">
+    <div class="relative my-4 pb-4">
       {
         project.headerImage && (
-          <div class="relative mx-auto max-w-xl">
+          <div class="not-prose relative mx-auto max-w-xl">
             <Lightbox client:load dialogClass="max-w-none">
               <Picture
                 formats={["avif", "webp"]}
@@ -46,7 +46,7 @@ const lang = Astro.params.lang ?? "en";
           <span class="prose-sm">
             {project.year}
           </span>
-          <div class="flex flex-row gap-2">
+          <div class="flex flex-row gap-4">
             {
               project.liveWebsite && (
                 <a href={project.liveWebsite} target="_blank">
@@ -69,7 +69,7 @@ const lang = Astro.params.lang ?? "en";
             }
           </div>
         </div>
-        <h1 class="text-center uppercase">{project.name}</h1>
+        <h1 class="text-center leading-8 uppercase">{project.name}</h1>
         <span
           class="absolute bottom-0 h-[2px] w-full bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
         ></span>
