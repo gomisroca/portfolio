@@ -14,7 +14,7 @@ function Landing({ lang = "en" }: { lang?: "en" | "es" | "cat" | "de" }) {
             initial={{ scaleY: 1 }}
             animate={{ scaleY: [1, 0.9, 1] }}
             transition={{
-              duration: 5,
+              duration: 10,
               ease: "easeInOut",
               repeat: Infinity,
               repeatType: "loop",
@@ -48,7 +48,7 @@ function Landing({ lang = "en" }: { lang?: "en" | "es" | "cat" | "de" }) {
             initial={{ scaleX: 0.9 }}
             animate={{ scaleX: [0.9, 1, 0.9] }}
             transition={{
-              duration: 5,
+              duration: 10,
               ease: "easeInOut",
               repeat: Infinity,
               repeatType: "loop",
