@@ -44,10 +44,7 @@ function Section({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className={cn(
-        "z-10 rounded-md bg-zinc-50 md:p-8 dark:bg-zinc-950",
-        className,
-      )}
+      className={cn("z-10 bg-zinc-50 md:p-8 dark:bg-zinc-950", className)}
     >
       <div className="tablet:ml-[20%] tablet:mr-[20%] mr-[10%] mb-2 ml-[10%]">
         <motion.h2

@@ -12,10 +12,11 @@ const t = useTranslations("en");
 ---
 
 <BaseLayout>
-  <div class="prose prose-zinc flex flex-col items-center dark:prose-invert">
+  <div class="prose prose-zinc dark:prose-invert flex flex-col items-center">
     <Picture
       src={avatar}
       alt="My Picture"
+      layout="constrained"
       formats={["avif", "webp"]}
       width="200"
       height="200"
@@ -25,47 +26,47 @@ const t = useTranslations("en");
     <p>{t("about.personal")}</p>
     <Image
       src={dog1}
+      layout="constrained"
       alt="Dog with a Ball"
       width="600"
       height="300"
       fit="cover"
-      class="aspect-video rounded-md"
+      class="aspect-video"
     />
     <Image
       src={dog2}
+      layout="constrained"
       alt="Dog Sleeping"
       width="600"
       height="300"
-      class="mt-0 rounded-md"
+      class="mt-0 aspect-video"
     />
     <p>{t("about.transition")}</p>
     <p class="mb-10">{t("about.study")}</p>
-    <div class="grid grid-cols-1 gap-4 tablet:grid-cols-2">
+    <div class="tablet:grid-cols-2 grid grid-cols-1 gap-4">
       {
         courses.map((course) => (
-          <div class="flex w-full flex-col justify-between gap-2 rounded-md border border-zinc-800/20 p-4 dark:border-zinc-200/10">
-            <div class="flex flex-col gap-y-2">
-              <header class="flex flex-col">
-                <span class="text-sm">{course.date}</span>
-                <a
-                  target="_blank"
-                  href={course.url}
-                  class="w-fit text-lg font-semibold no-underline transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100 desktop:text-xl"
-                >
-                  {course.name}
-                </a>
-                <span>{course.school}</span>
-              </header>
-              <hr class="my-0" />
-              <p>{t("about." + course.name)}</p>
-            </div>
+          <div class="flex w-full flex-col justify-between gap-2 border-r border-b border-zinc-800/20 bg-zinc-50 p-4 shadow-md transition duration-200 ease-in-out hover:z-10 hover:scale-110 hover:shadow-lg dark:border-zinc-900/20 dark:bg-zinc-950 dark:shadow-white/10">
+            <header class="flex min-h-[105px] flex-col justify-start">
+              <span class="text-sm">{course.date}</span>
+              <a
+                target="_blank"
+                href={course.url}
+                class="hover:text-primary-500 desktop:text-lg w-fit text-base font-semibold no-underline transition duration-200 ease-in-out hover:scale-110 active:scale-90"
+              >
+                {course.name}
+              </a>
+              <span>{course.school}</span>
+            </header>
+            <span class="h-[1px] w-full bg-zinc-800/20 dark:bg-zinc-200/10" />
+            <p class="flex-1">{t("about." + course.name)}</p>
             {course.certificates.length > 0 && (
               <div class="flex flex-wrap gap-x-4 gap-y-2">
                 {course.certificates.map((cert) => (
                   <a href={cert} target="_blank">
                     <Icon
                       name="mdi:diploma"
-                      class="h-6 w-6 transition duration-200 hover:scale-105 hover:text-primary-500 active:scale-110 active:duration-100"
+                      class="hover:text-primary-500 h-6 w-6 transition duration-200 ease-in-out hover:scale-110 active:scale-90"
                     />
                   </a>
                 ))}

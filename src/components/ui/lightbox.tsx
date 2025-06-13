@@ -30,9 +30,7 @@ function Lightbox({
         </motion.span>
         {children}
       </DialogTrigger>
-      <DialogContent className={cn("rounded-md", dialogClass)}>
-        {children}
-      </DialogContent>
+      <DialogContent className={dialogClass}>{children}</DialogContent>
     </Dialog>
   );
 }
