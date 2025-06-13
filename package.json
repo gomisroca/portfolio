@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:host": "astro dev --host",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
@@ -20,7 +21,6 @@
     "@iconify-json/mdi": "^1.2.1",
     "@iconify-json/ri": "^1.2.5",
     "@radix-ui/react-dialog": "^1.1.2",
-    "@radix-ui/react-popover": "^1.1.2",
     "@radix-ui/react-tooltip": "^1.1.4",
     "@tailwindcss/vite": "^4.1.10",
     "@types/react": "^18.3.12",
