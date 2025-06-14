@@ -12,6 +12,10 @@ import {
   SiVuedotjs,
   SiExpress,
   SiMongodb,
+  SiStorybook,
+  SiZod,
+  SiCheerio,
+  SiRedis,
 } from "react-icons/si";
 
 const technologyColors: Record<Technology, string> = {
@@ -28,6 +32,10 @@ const technologyColors: Record<Technology, string> = {
   Vercel: "#000000",
   Supabase: "#3ECF8E",
   Docker: "#2496ED",
+  Storybook: "#FF748C",
+  Zod: "#001FFF",
+  Cheerio: "#F5C547",
+  Redis: "#D82C20",
 };
 
 const technologyIcons = {
@@ -44,6 +52,10 @@ const technologyIcons = {
   Vercel: SiVercel,
   Supabase: SiSupabase,
   Docker: SiDocker,
+  Storybook: SiStorybook,
+  Zod: SiZod,
+  Cheerio: SiCheerio,
+  Redis: SiRedis,
 };
 
 interface Props {
@@ -56,10 +68,7 @@ export default function TechnologyBadge({ technology }: Props) {
   if (!IconComponent) return null;
   return (
     <div className="rounded-full border border-zinc-300 bg-zinc-50 p-1 dark:border-transparent">
-      <IconComponent
-        color={iconColor}
-        className="h-5 w-5 brightness-50 transition duration-200 ease-in-out active:duration-100"
-      />
+      <IconComponent color={iconColor} className="h-5 w-5" />
     </div>
   );
 }
