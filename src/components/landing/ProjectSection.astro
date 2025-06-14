@@ -24,10 +24,16 @@ const t = useTranslations(lang);
 >
   {
     projects.length > 0 ? (
-      <div class="grid grid-cols-1 items-center justify-evenly gap-4 tablet:grid-cols-2 laptop:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard project={project} lang={lang} />
-        ))}
+      <div class="tablet:grid-cols-2 laptop:grid-cols-3 grid grid-cols-1 items-center justify-evenly gap-4">
+        {projects
+          .sort((a, b) => {
+            const yearDiff = b.data.year - a.data.year;
+            if (yearDiff !== 0) return yearDiff;
+            return a.data.name.localeCompare(b.data.name);
+          })
+          .map((project) => (
+            <ProjectCard project={project} lang={lang} />
+          ))}
       </div>
     ) : (
       <div class="flex h-[200px]">
