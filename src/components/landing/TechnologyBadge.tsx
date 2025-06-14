@@ -16,6 +16,7 @@ import {
   SiZod,
   SiCheerio,
   SiRedis,
+  SiNginx,
 } from "react-icons/si";
 
 const technologyColors: Record<Technology, string> = {
@@ -36,6 +37,7 @@ const technologyColors: Record<Technology, string> = {
   Zod: "#001FFF",
   Cheerio: "#F5C547",
   Redis: "#D82C20",
+  Nginx: "#009639",
 };
 
 const technologyIcons = {
@@ -56,6 +58,7 @@ const technologyIcons = {
   Zod: SiZod,
   Cheerio: SiCheerio,
   Redis: SiRedis,
+  Nginx: SiNginx,
 };
 
 interface Props {

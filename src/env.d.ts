@@ -17,4 +17,5 @@ type Technology =
   | "Storybook"
   | "Zod"
   | "Cheerio"
-  | "Redis";
+  | "Redis"
+  | "Nginx";
