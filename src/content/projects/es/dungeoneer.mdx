@@ -1,8 +1,9 @@
 ---
 name: Dungeoneer
 year: 2024
-description: Comprueba qué objetos le faltan a un personaje en una 'dungeon' o 'raid' en FFXIV.
-technologies: ["Next.js", "tRPC", "Supabase", "PostgreSQL", "Vercel"]
+description: Comprueba qué objetos le faltan a un personaje en Final Fantasy XIV.
+technologies:
+  ["Next.js", "Cheerio", "Supabase", "Redis", "PostgreSQL", "Vercel"]
 headerImage:
   src: "/portfolio/projects/dungeoneer.jpg"
   alt: "Captura de pantalla del sitio web de Dungeoneer"
@@ -25,28 +26,44 @@ localmente o iniciar sesión y almacenarla en tu cuenta.
   <li>
     <h6 className="text-lg font-semibold">Next.js</h6>
     <p>
-      Next.js fue elegido como el framework para el proyecto debido a su
-      simplicidad, facilidad de uso y adopción en toda la industria. Además,
-      sabíamos que gran parte del proyecto podría beneficiarse de la
-      renderización server-side, en la que Next.js se destaca.
+      Se eligió Next.js como framework para el proyecto debido a su simplicidad,
+      facilidad de uso y adopción en toda la industria. Además, sabíamos que
+      gran parte del proyecto podría beneficiarse de la renderización del lado
+      del servidor, en la que Next.js destaca.
     </p>
-  </li>
-  <li>
-    <h6 className="text-lg font-semibold">tRPC</h6>
     <p>
-      Esperábamos que el proyecto tuviera muchas llamadas API y tipos de datos
-      complejos, por lo que decidimos usar tRPC para manejar la comunicación
-      entre el cliente y el servidor para garantizar la seguridad de tipos y un
-      desarrollo más rápido y seguro.
+      Optamos por usar el moderno Next.js App Router, y en 2025 cambiamos de
+      tRPC a una combinación de acciones del servidor y rutas API.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">NextAuth.js</h6>
+    <h6 className="text-lg font-semibold">Redis</h6>
+    <p>
+      El proyecto contiene grandes conjuntos de datos a los que se accede con
+      frecuencia, como listas de objetos o instancias. Por lo tanto, integramos
+      Redis para optimizar el rendimiento almacenándolos en caché. Esto redujo
+      la carga de la base de datos y mejoró significativamente los tiempos de
+      respuesta para operaciones de lectura intensiva.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Auth.js</h6>
     <p>
       Una de las principales características del proyecto es la capacidad de
       iniciar sesión y almacenar tu colección en tu cuenta. Para lograrlo,
-      usamos NextAuth.js, que proporciona una forma simple y segura de manejar
-      la autenticación y autorización de usuarios.
+      usamos Auth.js, que proporciona una forma simple y segura de manejar la
+      autenticación y autorización de usuarios.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Cheerio</h6>
+    <p>
+      Recopilar información de "The Lodestone", el sitio web de Final Fantasy
+      XIV, es una tarea muy común en el proyecto. A menudo necesitamos buscar
+      personajes o información específica sobre la colección de objetos de un
+      personaje. Para lograrlo, usamos Cheerio, una biblioteca de análisis HTML
+      rápida y flexible, que nos permitió extraer información del sitio web
+      fácilmente.
     </p>
   </li>
   <li>
@@ -75,6 +92,23 @@ localmente o iniciar sesión y almacenarla en tu cuenta.
       para asegurarnos de que el proyecto se desarrollara sin problemas.
     </p>
   </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      tRPC <span className="text-sm text-zinc-500 uppercase">Obsoleto</span>
+    </h6>
+    <p>
+      Esperábamos que el proyecto tuviera muchas llamadas a la API y tipos de
+      datos complejos, por lo que decidimos usar tRPC para gestionar la
+      comunicación entre el cliente y el servidor y garantizar la seguridad de
+      tipos y un desarrollo más rápido y seguro.
+    </p>
+    <p>
+      En 2025, dimos por obsoleto tRPC en favor de una combinación de acciones
+      de servidor y rutas de API, aprovechando las características nativas de
+      Next.js, las edge functions y el almacenamiento en caché basado en Redis
+      para mejorar el rendimiento y la facilidad de mantenimiento.
+    </p>
+  </li>
 </ul>
 
 <hr />
@@ -96,12 +130,15 @@ proyecto en 2024 como su único desarrollador.
     <h6 className="text-lg font-semibold">Desarrollador full-stack</h6>
     <p>
       Implementé la funcionalidad del proyecto y me aseguré de que fuera seguro
-      y escalable. Usé Next.js, tRPC, NextAuth.js y Supabase, entre otras
-      herramientas, para desarrollar el proyecto.
+      y escalable. Usé Next.js, tRPC, Auth.js y Supabase, entre otras
+      herramientas, para desarrollar el proyecto. Posteriormente, también
+      utilicé Redis para optimizar el proceso de obtención de datos, las
+      acciones del servidor para gestionar las mutaciones y Cheerio para extraer
+      información de Lodestone.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Gerente de proyecto</h6>
+    <h6 className="text-lg font-semibold">Mánager del proyecto</h6>
     <p>
       Como desarrollador único, fui responsable de su administración y
       mantenimiento general. Me aseguré de que el proyecto se mantuviera
@@ -164,6 +201,53 @@ proyecto en 2024 como su único desarrollador.
     <p>
       En general, si bien hay margen de mejora, creo que el diseño actual es un
       buen equilibrio entre funcionalidad y claridad visual.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Obtención de datos y virtualización
+    </h6>
+    <p>
+      Como mencioné anteriormente, el proyecto contiene grandes conjuntos de
+      datos a los que se accede con frecuencia, como listas de objetos o
+      instancias. Esto, si no se gestiona correctamente, podría provocar
+      problemas de rendimiento y tiempos de respuesta lentos.
+    </p>
+    <p>
+      Para solucionar esto, inicialmente implementé una estrategia de búsqueda
+      basada en desplazamiento, donde el usuario se desplazaba por la lista de
+      elementos y estos se obtenían por lotes. Esto funcionó bien y los datos se
+      obtenían y cargaban rápidamente. Sin embargo, el rendimiento se degradaba
+      considerablemente a medida que el usuario se desplazaba hacia abajo en la
+      lista.
+    </p>
+    <p>
+      Para mejorar el rendimiento, implementé un componente de lista
+      virtualizada que solo representaba los elementos visibles. Esto permitió
+      una experiencia de usuario más fluida, ya que el usuario solo veía los
+      elementos visibles en la pantalla y los datos se recuperaban solo cuando
+      eran necesarios.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Adquisición de datos</h6>
+    <p>
+      Inicialmente, el proyecto dependía de las funciones Lodestone de XIVAPI
+      para buscar personajes y sus colecciones. Sin embargo, quedaron obsoletas
+      después de XIVAPI v2, y las API y bibliotecas alternativas no eran tan
+      adecuadas para las necesidades del proyecto.
+    </p>
+    <p>
+      Lodestone es un sitio web notoriamente difícil de hacer scraping, y esta
+      fue mi primera vez intentando un scraping tan amplio. Sin embargo, gracias
+      a la ayuda de la comunidad, logré implementar Cheerio para scrapear el
+      sitio web y extraer los datos necesarios. Con esto, realicé una revisión
+      completa de las funciones relacionadas con Lodestone, como la búsqueda de
+      personajes y la obtención de colecciones.
+    </p>
+    <p>
+      El resultado final es un sistema más robusto y confiable, sin
+      intermediarios innecesarios ni dependencias externas.
     </p>
   </li>
 </ul>

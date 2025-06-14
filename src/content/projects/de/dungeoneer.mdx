@@ -1,8 +1,9 @@
 ---
 name: Dungeoneer
 year: 2024
-description: Überprüfen Sie, welche Gegenstände einem Charakter in einem Dungeon oder Raid in FFXIV fehlen.
-technologies: ["Next.js", "tRPC", "Supabase", "PostgreSQL", "Vercel"]
+description: Überprüfe, welche Gegenstände einem Charakter in Final Fantasy XIV fehlen.
+technologies:
+  ["Next.js", "Cheerio", "Supabase", "Redis", "PostgreSQL", "Vercel"]
 headerImage:
   src: "/portfolio/projects/dungeoneer.jpg"
   alt: "Screenshot der Dungeoneer-Website"
@@ -13,10 +14,10 @@ liveWebsite: "https://xiv-dungeoneer.vercel.app"
 repository: "https://github.com/gomisroca/dungeoneer"
 ---
 
-<strong>Dungeoneer</strong> ist ein Projekt, mit dem Sie verfolgen können,
-welche Sammlerstücke Ihnen in Dungeons, Prüfungen oder Raids im Spiel Final
-Fantasy XIV fehlen. Sie können Ihre Sammlung entweder lokal speichern oder sich
-anmelden und sie auf Ihrem Konto speichern.
+<strong>Dungeoneer</strong> ist ein Projekt, das dir dabei hilft, zu verfolgen,
+welche Sammelobjekte dir in Dungeons, Prüfungen oder Raids in Final Fantasy XIV
+fehlen. Sie können Ihre Sammlung entweder lokal speichern oder sich anmelden und
+sie in Ihrem Konto speichern.
 
 <hr />
 
@@ -28,25 +29,41 @@ anmelden und sie auf Ihrem Konto speichern.
       Next.js wurde aufgrund seiner Einfachheit, Benutzerfreundlichkeit und
       branchenweiten Akzeptanz als Framework für das Projekt ausgewählt. Darüber
       hinaus wussten wir, dass große Teile des Projekts von serverseitigem
-      Rendering profitieren könnten, bei dem Next.js hervorragend ist.
+      Rendering profitieren könnten, was Next.js hervorragend beherrscht.
+    </p>
+    <p>
+      Wir entschieden uns für den moderneren Next.js App Router und wechselten
+      2025 von tRPC zu einer Kombination aus Serveraktionen und API-Routen.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">tRPC</h6>
+    <h6 className="text-lg font-semibold">Redis</h6>
     <p>
-      Wir erwarteten, dass das Projekt viele API-Aufrufe und komplexe Datentypen
-      enthalten würde, daher entschieden wir uns, tRPC für die Kommunikation
-      zwischen Client und Server zu verwenden, um Typensicherheit und eine
-      schnellere, sicherere Entwicklung zu gewährleisten.
+      Das Projekt enthält große, häufig abgerufene Datensätze, wie z. B.
+      Artikel- oder Instanzlisten. Daher haben wir Redis integriert, um die
+      Leistung durch Zwischenspeichern zu optimieren. Dies reduzierte die
+      Datenbanklast und verbesserte die Antwortzeiten bei leseintensiven
+      Vorgängen deutlich.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">NextAuth.js</h6>
+    <h6 className="text-lg font-semibold">Auth.js</h6>
     <p>
-      Eines der Hauptmerkmale des Projekts ist die Möglichkeit, sich anzumelden
-      und Ihre Sammlung auf Ihrem Konto zu speichern. Um dies zu erreichen,
-      verwendeten wir NextAuth.js, das eine einfache und sichere Möglichkeit zur
-      Handhabung der Benutzerauthentifizierung und -autorisierung bietet.
+      Eine der Hauptfunktionen des Projekts ist die Möglichkeit, sich anzumelden
+      und die Sammlung in Ihrem Konto zu speichern. Dafür haben wir Auth.js
+      verwendet, das eine einfache und sichere Methode zur
+      Benutzerauthentifizierung und -autorisierung bietet.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Cheerio</h6>
+    <p>
+      Das Scrappen von „The Lodestone“, der Website von Final Fantasy XIV, nach
+      Informationen ist eine häufige Aufgabe im Projekt. Wir müssen oft nach
+      Charakteren oder nach spezifischen Informationen zu deren Sammlung suchen.
+      Dafür haben wir Cheerio verwendet, eine schnelle und flexible
+      HTML-Parsing-Bibliothek, mit der wir die Website problemlos scrapen
+      konnten.
     </p>
   </li>
   <li>
@@ -77,6 +94,23 @@ anmelden und sie auf Ihrem Konto speichern.
       sicherzustellen.
     </p>
   </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      tRPC <span className="text-sm text-zinc-500 uppercase">Veraltet</span>
+    </h6>
+    <p>
+      Wir erwarteten für das Projekt viele API-Aufrufe und komplexe Datentypen.
+      Daher entschieden wir uns für tRPC für die Kommunikation zwischen Client
+      und Server, um Typsicherheit und eine schnellere, sicherere Entwicklung zu
+      gewährleisten.
+    </p>
+    <p>
+      Im Jahr 2025 haben wir tRPC zugunsten einer Kombination aus Serveraktionen
+      und API-Routen abgeschafft. Dabei nutzen wir native Next.js-Funktionen,
+      Edge-Funktionen und Redis-basiertes Caching für verbesserte Leistung und
+      Wartbarkeit.
+    </p>
+  </li>
 </ul>
 
 <hr />
@@ -97,9 +131,11 @@ entwickelt. Es wurde jedoch schließlich aufgegeben und ich übernahm das Projek
   <li>
     <h6 className="text-lg font-semibold">Full-Stack-Entwickler</h6>
     <p>
-      Implementierte die Funktionalität des Projekts und stellte sicher, dass es
-      sicher und skalierbar war. Ich verwendete Next.js, tRPC, NextAuth.js und
-      Supabase sowie andere Tools, um das Projekt zu erstellen.
+      Ich implementierte die Funktionalität des Projekts und stellte sicher,
+      dass es sicher und skalierbar war. Ich verwendete unter anderem Next.js,
+      tRPC, Auth.js und Supabase, um das Projekt zu entwickeln. Später nutzte
+      ich Redis zur Optimierung des Datenabrufprozesses, Serveraktionen zur
+      Handhabung von Mutationen und Cheerio zum Scrapen des Lodestone.
     </p>
   </li>
   <li>
@@ -164,6 +200,51 @@ entwickelt. Es wurde jedoch schließlich aufgegeben und ich übernahm das Projek
       Obwohl es insgesamt noch Raum für Verbesserungen gibt, bin ich der
       Meinung, dass das aktuelle Design eine gute Balance zwischen
       Funktionalität und visueller Klarheit bietet.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Datenabruf und Virtualisierung</h6>
+    <p>
+      Wie bereits erwähnt, enthält das Projekt große Datensätze, auf die häufig
+      zugegriffen wird, wie z. B. Artikel- oder Instanzlisten. Dies kann bei
+      unsachgemäßer Handhabung zu Leistungsproblemen und langsamen
+      Reaktionszeiten führen.
+    </p>
+    <p>
+      Um dies zu beheben, habe ich zunächst eine scrollbasierte Abrufstrategie
+      implementiert, bei der der Benutzer durch die Artikelliste scrollt und die
+      Artikel stapelweise abgerufen werden. Dies funktionierte gut, und die
+      Daten wurden schnell abgerufen und geladen. Die Leistung verschlechterte
+      sich jedoch erheblich, je weiter der Benutzer in der Liste nach unten
+      scrollte.
+    </p>
+    <p>
+      Um die Leistung zu verbessern, implementierte ich eine virtualisierte
+      Listenkomponente, die nur die sichtbaren Elemente renderte. Dies
+      ermöglichte ein reibungsloseres Benutzererlebnis, da der Benutzer nur die
+      auf dem Bildschirm sichtbaren Elemente sah und die Daten nur bei Bedarf
+      abgerufen wurden.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Datenerfassung</h6>
+    <p>
+      Anfangs war das Projekt auf die Lodestone-Funktionen von XIVAPI
+      angewiesen, um nach Charakteren und deren Sammlungen zu suchen. Diese
+      wurden jedoch nach XIVAPI v2 veraltet, und die alternativen APIs und
+      Bibliotheken waren für die Anforderungen des Projekts nicht mehr geeignet.
+    </p>
+    <p>
+      Der Lodestone ist eine bekanntermaßen schwierig zu scrapende Website. Dies
+      war mein erster Versuch, ein so umfangreiches Scraping durchzuführen. Dank
+      der Hilfe der Community gelang es mir jedoch, Cheerio zu implementieren,
+      um die Website zu scrapen und die benötigten Daten zu extrahieren. Dabei
+      habe ich die Lodestone-bezogenen Funktionen, wie die Charaktersuche und
+      den Sammlungsabruf, komplett überarbeitet.
+    </p>
+    <p>
+      Das Ergebnis ist ein robusteres und zuverlässigeres System ohne unnötige
+      Zwischenhändler oder externe Abhängigkeiten.
     </p>
   </li>
 </ul>
