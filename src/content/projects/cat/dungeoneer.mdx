@@ -1,8 +1,9 @@
 ---
 name: Dungeoneer
 year: 2024
-description: Comproveu quins elements li falten a un personatge en una 'dungeon' o 'raid' a FFXIV.
-technologies: ["Next.js", "tRPC", "Supabase", "PostgreSQL", "Vercel"]
+description: Comprova quins objectes falten a un personatge a Final Fantasy XIV.
+technologies:
+  ["Next.js", "Cheerio", "Supabase", "Redis", "PostgreSQL", "Vercel"]
 headerImage:
   src: "/portfolio/projects/dungeoneer.jpg"
   alt: "Captura de pantalla del lloc web de Dungeoneer"
@@ -25,29 +26,44 @@ iniciar sessió i desar-la al vostre compte.
   <li>
     <h6 className="text-lg font-semibold">Next.js</h6>
     <p>
-      Next.js va ser escollit com a framework per al projecte a causa de la seva
-      senzillesa, facilitat d'ús i adopció a tot el sector. A més, sabíem que
-      grans parts del projecte podrien beneficiar-se de la renderització
-      server-side, en què destaca Next.js.
+      Es va triar Next.js com framework per al projecte degut a la seva
+      simplicitat, facilitat d'ús i adopció en tota la indústria. A més, sabíem
+      que gran part del projecte podria beneficiar-se de la renderització del
+      costat del servidor, en la qual Next.js destaca.
+    </p>
+    <p>
+      Optem per usar el modern Next.js App Router, i en 2025 canviem de tRPC a
+      una combinació d'accions del servidor i rutes API.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">tRPC</h6>
+    <h6 className="text-lg font-semibold">Redis</h6>
     <p>
-      Esperàvem que el projecte tingués moltes interaccions amb l'API i tipus
-      complexos de dades, així que vam decidir utilitzar tRPC per gestionar la
-      comunicació entre el client i el servidor per garantir la seguretat dels
-      tipus i un desenvolupament més ràpid i segur.
+      El projecte conté grans conjunts de dades als quals s'accedeix amb
+      freqüència, com a llistes d'objectes o instàncies. Per tant, integrem
+      Redis per a optimitzar el rendiment emmagatzemant-los en cache. Això va
+      reduir la càrrega de la base de dades i va millorar significativament els
+      temps de resposta per a operacions de lectura intensiva.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">NextAuth.js</h6>
+    <h6 className="text-lg font-semibold">Auth.js</h6>
     <p>
-      Una de les característiques principals del projecte és la possibilitat
-      d'iniciar sessió i emmagatzemar la vostra col·lecció al vostre compte. Per
-      aconseguir-ho, hem utilitzat NextAuth.js, que proporciona una manera
-      senzilla i segura de gestionar l'autenticació i l'autorització dels
-      usuaris.
+      Una de les principals característiques del projecte és la capacitat
+      d'iniciar sessió i emmagatzemar la teva col·lecció en el teu compte. Per a
+      aconseguir-ho, usem Auth.js, que proporciona una forma simple i segura de
+      manejar l'autenticació i autorització d'usuaris.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Cheerio</h6>
+    <p>
+      Recopilar informació de "The Lodestone", el lloc web de Final Fantasy XIV,
+      és una tasca molt comuna en el projecte. Sovint necessitem buscar
+      personatges o informació específica sobre la col·lecció d'objectes d'un
+      personatge. Per a aconseguir-ho, usem Cheerio, una biblioteca d'anàlisi
+      HTML ràpida i flexible, que ens va permetre extreure informació del lloc
+      web fàcilment.
     </p>
   </li>
   <li>
@@ -77,6 +93,23 @@ iniciar sessió i desar-la al vostre compte.
       de Vercel per garantir que el projecte funcionés correctament.
     </p>
   </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      tRPC <span className="text-sm text-zinc-500 uppercase">Obsolet</span>
+    </h6>
+    <p>
+      Esperàvem que el projecte tingués moltes interaccions amb l'API i tipus de
+      dades complexes, per la qual cosa decidim usar tRPC per a gestionar la
+      comunicació entre el client i el servidor i garantir la seguretat de tipus
+      i un desenvolupament més ràpid i segur.
+    </p>
+    <p>
+      En 2025, vam donar per obsolet tRPC en favor d'una combinació d'accions de
+      servidor i rutes de API, aprofitant les característiques natives de
+      Next.js, les edge functions i l'emmagatzematge en cache basat en Redis per
+      a millorar el rendiment i la facilitat de manteniment.
+    </p>
+  </li>
 </ul>
 
 <hr />
@@ -103,13 +136,13 @@ càrrec del projecte l'any 2024 com a únic desenvolupador.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Gestor del projecte</h6>
+    <h6 className="text-lg font-semibold">Mánager del projecte</h6>
     <p>
-      Com a únic desenvolupador, vaig ser responsable de la seva gestió i
-      manteniment. Em vaig assegurar que el projecte es mantingués en el bon
-      camí, centrant-me en les funcions bàsiques i en les correccions d'errors,
-      sense deixar que l'acumulació funcions distorsiones la direcció del
-      projecte.
+      Com a desenvolupador únic, vaig ser responsable de la seva administració i
+      manteniment general. Em vaig assegurar que el projecte es mantingués
+      encaminat, amb un enfocament en les característiques principals i les
+      correccions d'errors, sense permetre que l'acumulació de característiques
+      distorsionés la direcció del projecte.
     </p>
   </li>
 </ul>
@@ -164,6 +197,53 @@ càrrec del projecte l'any 2024 com a únic desenvolupador.
     <p>
       En general, tot i que hi ha marge de millora, crec que el disseny actual
       és un bon equilibri entre funcionalitat i claredat visual.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Obtenció de dades i virtualització
+    </h6>
+    <p>
+      Com vaig esmentar anteriorment, el projecte conté grans conjunts de dades
+      als quals s'accedeix amb freqüència, com a llistes d'objectes o
+      instàncies. Això, si no es gestiona correctament, podria provocar
+      problemes de rendiment i temps de resposta lents.
+    </p>
+    <p>
+      Per a solucionar això, inicialment vaig implementar una estratègia de
+      cerca basada en desplaçament, on l'usuari es desplaçava per la llista
+      d'elements i aquests s'obtenien per lots. Això va funcionar bé i les dades
+      s'obtenien i carregaven ràpidament. No obstant això, el rendiment es
+      degradava considerablement a mesura que l'usuari es desplaçava cap avall
+      en la llista.
+    </p>
+    <p>
+      Per a millorar el rendiment, vaig implementar un component de llista
+      virtualizada que només representava els elements visibles. Això va
+      permetre una experiència d'usuari més fluida, ja que l'usuari només veia
+      els elements visibles en la pantalla i les dades es recuperaven només quan
+      eren necessaris.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Adquisició de dades</h6>
+    <p>
+      Inicialment, el projecte depenia de les funcions Lodestone de XIVAPI per a
+      buscar personatges i les seves col·leccions. No obstant això, van quedar
+      obsoletes després de XIVAPI v2, i les API i biblioteques alternatives no
+      eren tan adequades per a les necessitats del projecte.
+    </p>
+    <p>
+      Lodestone és un lloc web notòriament difícil de fer scraping, i aquesta va
+      ser la meva primera vegada intentant un scraping tan ampli. No obstant
+      això, gràcies a l'ajuda de la comunitat, vaig aconseguir implementar
+      Cheerio per a scrapear el lloc web i extreure les dades necessàries. Amb
+      això, vaig realitzar una revisió completa de les funcions relacionades amb
+      Lodestone, com la cerca de personatges i l'obtenció de col·leccions.
+    </p>
+    <p>
+      El resultat final és un sistema més robust i de confiança, sense
+      intermediaris innecessaris ni dependències externes.
     </p>
   </li>
 </ul>

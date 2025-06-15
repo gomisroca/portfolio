@@ -1,10 +1,9 @@
 ---
-import { Picture } from "astro:assets";
 import Link from "@/components/ui/link";
-import Lightbox from "@/components/ui/lightbox";
+import Card from "@/components/ui/card";
 import type { CollectionEntry } from "astro:content";
 import TechnologyBadge from "./TechnologyBadge";
-import { useTranslations } from "@/i18n/utils";
+import { Picture } from "astro:assets";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -12,52 +11,46 @@ interface Props {
 }
 
 const { project, lang } = Astro.props;
-const t = useTranslations(lang);
 ---
 
-<div
-  class="my-2 flex h-full w-full flex-col items-center justify-start gap-2 rounded-md border-2 border-zinc-200 bg-zinc-50 p-2 dark:border-zinc-900 dark:bg-zinc-950"
+<Link
+  client:load
+  lang={lang}
+  href={`/projects/${project.id.split("/")[1]}`}
+  ignoreClass={true}
 >
-  {
-    project.data.cardImage && (
-      <div class="relative mx-auto h-[200px] w-full items-center justify-center overflow-hidden rounded-md transition-transform duration-200 ease-in-out hover:rotate-1 hover:scale-110">
-        <Lightbox client:load dialogClass="tablet:w-fit">
+  <Card className="h-[350px] md:h-[375px]">
+    {
+      project.data.headerImage && (
+        <div class="relative mx-auto h-[180px] w-full items-center justify-center overflow-hidden md:h-[150px] xl:h-[180px]">
           <Picture
-            layout="responsive"
+            fit="cover"
             formats={["avif", "webp"]}
-            src={project.data.cardImage.src}
-            alt={project.data.cardImage.alt}
-            width={500}
-            height={1000}
-            class="pointer-events-none aspect-video rounded-md"
+            src={project.data.headerImage.src}
+            alt={project.data.headerImage.alt}
+            width={600}
+            height={350}
+            class="pointer-events-none transition-transform duration-200 ease-in-out group-hover:scale-110 group-active:scale-110 xl:group-active:scale-125"
           />
-        </Lightbox>
+        </div>
+      )
+    }
+    <div class="flex w-full flex-1 flex-col items-center justify-start py-2">
+      <div class="flex flex-col items-center justify-center gap-1">
+        <span class="text-sm">{project.data.year}</span>
+        <div class="flex flex-wrap gap-2 text-sm text-zinc-500">
+          {
+            project.data.technologies.map((technology) => (
+              <TechnologyBadge
+                client:load
+                technology={technology as Technology}
+              />
+            ))
+          }
+        </div>
+        <h3 class="text-2xl font-semibold">{project.data.name}</h3>
       </div>
-    )
-  }
-  <div class="flex w-full flex-1 flex-col items-center justify-between py-2">
-    <div class="flex flex-col items-center justify-center gap-1">
-      <span class="text-sm">{project.data.year}</span>
-      <div class="flex flex-wrap gap-2 text-sm text-zinc-500">
-        {
-          project.data.technologies.map((technology) => (
-            <TechnologyBadge
-              client:load
-              technology={technology as Technology}
-            />
-          ))
-        }
-      </div>
-      <h3 class="text-2xl font-semibold">{project.data.name}</h3>
+      <p class="w-3/4 text-center">{project.data.description}</p>
     </div>
-    <p class="w-3/4 text-center">{project.data.description}</p>
-    <Link
-      client:load
-      lang={lang}
-      href={`/projects/${project.id.split("/")[1]}`}
-      className="rounded-md p-2 text-xl uppercase"
-    >
-      {t("sections.read")}
-    </Link>
-  </div>
-</div>
+  </Card>
+</Link>

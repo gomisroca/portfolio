@@ -1,8 +1,8 @@
 ---
 name: Catalyst
 year: 2023
-description: Teilen Sie Ihre Ideen, arbeiten Sie mit anderen zusammen und bleiben Sie auf dem Laufenden.
-technologies: ["React", "Express", "Nginx", "Docker"]
+description: Teile deine Ideen, arbeite mit anderen zusammen und bleibe auf dem Laufenden.
+technologies: ["Next.js", "Storybook", "Zod", "Nginx", "Docker"]
 headerImage:
   src: "/portfolio/projects/catalyst.jpg"
   alt: "Screenshot der Catalyst-Website"
@@ -14,8 +14,8 @@ repository: "https://github.com/gomisroca/catalyst"
 ---
 
 <strong>Catalyst</strong> ist ein Projekt, das gemeinsame Anstrengungen zu einem
-größeren Ganzen werden lassen soll. Es ist eine Plattform, auf der Menschen an
-Projekten zusammenarbeiten und ihre Ideen austauschen und mit anderen
+größeren Ganzen zusammenwachsen lässt. Es ist eine Plattform, auf der Menschen
+an Projekten zusammenarbeiten, Ideen austauschen und mit anderen
 zusammenarbeiten können.
 
 <hr />
@@ -23,23 +23,102 @@ zusammenarbeiten können.
 <h1 class="text-2xl">Technologien und Tools</h1>
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">React</h6>
+    <h6 className="text-lg font-semibold">Next.js</h6>
     <p>
-      React wurde aufgrund seiner Einfachheit, branchenweiten Akzeptanz und
-      Stärke als Framework für das Projekt ausgewählt. Dieses Projekt musste
-      hochgradig interaktiv sein, wobei viele Statusänderungen ständig
-      stattfanden, während die Benutzer mit der Site interagierten, was React
-      für dieses Projekt hervorragend geeignet machte.
+      Next.js wurde als Framework gewählt, da wir wussten, dass große Teile des
+      Projekts von serverseitigem Rendering und den Serveraktionen des App
+      Routers profitieren würden.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Express</h6>
+    <h6 className="text-lg font-semibold">Docker</h6>
     <p>
-      Express ist das Framework der Wahl zum Erstellen von APIs in Node.js. Es
-      ist ein leichtes und schnelles Framework, das einfach zu verwenden und zu
+      Docker wurde zur Containerisierung der Anwendung verwendet, um die
+      Konsistenz zwischen Entwicklungs-, Staging- und Produktionsumgebungen
+      sicherzustellen. Durch die Verpackung der App und ihrer Abhängigkeiten in
+      einem einzigen Container reduzierten wir umgebungsspezifische Fehler und
+      machten die Bereitstellung planbarer. Dies erleichterte auch die
+      Zusammenarbeit mit anderen Entwicklern, da ich mit zunehmender Komplexität
+      des Projekts Unterstützung benötigen würde.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Storybook</h6>
+    <p>
+      Um ein hohes Maß an Qualität und Konsistenz zu gewährleisten, habe ich
+      mich für die Erstellung einer UI-Bibliothek für das Projekt mit Storybook
+      entschieden. Dadurch konnte ich eine Reihe von Komponenten erstellen, die
+      im gesamten Projekt verwendet werden und stabil, benutzerfreundlich und
+      wartungsfreundlich sind.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Auth.js</h6>
+    <p>
+      Wir wussten, dass wir für das Projekt Benutzerauthentifizierung und
+      -autorisierung implementieren mussten. Daher entschied ich mich für
+      Auth.js, das eine einfache und sichere Methode zur
+      Benutzerauthentifizierung und -autorisierung bietet. Insbesondere nutzten
+      wir Magic Links, um eine passwortlose Anmeldung zu ermöglichen.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">UploadThing</h6>
+    <p>
+      Das Hochladen von Bildern ist eine häufige Aufgabe im Projekt. Dafür
+      implementierten wir UploadThing, eine kompakte und schnelle Bibliothek zum
+      Hochladen von Bildern, die perfekt zu unseren Anforderungen passte.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      React <span className="text-sm text-zinc-500 uppercase">Veraltet</span>
+    </h6>
+    <p>
+      React wurde aufgrund seiner Einfachheit, branchenweiten Akzeptanz und
+      Stärke als Framework für das Projekt ausgewählt. Das Projekt musste
+      hochgradig interaktiv sein, da sich durch die Interaktion der Nutzer mit
+      der Website kontinuierlich viele Statusänderungen ergeben. Daher war React
+      für dieses Projekt ideal geeignet.
+    </p>
+    <p>
+      Im Jahr 2025 entschied ich mich für einen moderneren Ansatz und entschied
+      mich für den Next.js App Router.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Express
+      <span className="text-sm text-zinc-500 uppercase">Veraltet</span>
+    </h6>
+    <p>
+      Express ist das Standard-Framework für die API-Entwicklung in Node.js. Es
+      ist ein schlankes und schnelles Framework, das einfach zu bedienen und zu
       verstehen ist. Da das Backend dieses Projekts komplex werden könnte, war
       die Verwendung von Express, das weitgehend unvoreingenommen ist und viel
       Flexibilität bietet, eine gute Wahl.
+    </p>
+    <p>
+      Im Jahr 2025 wurde Express nach der Implementierung des Next.js App
+      Routers durch eine Kombination aus Serveraktionen und API-Routen ersetzt.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Nginx <span className="text-sm text-zinc-500 uppercase">Veraltet</span>
+    </h6>
+    <p>
+      Nginx wurde in diesem Projekt ursprünglich als Reverse-Proxy und
+      statischer Asset-Server eingesetzt. Es trug dazu bei, die Leistung zu
+      verbessern, die HTTPS-Terminierung zu verwalten und den Lastausgleich in
+      frühen Implementierungsphasen zu gewährleisten. Dieses Setup gab uns mehr
+      Kontrolle über Caching-Strategien und ermöglichte uns, die Anwendung
+      effizient in einer Produktionsumgebung bereitzustellen.
+    </p>
+    <p>
+      Im Jahr 2025 wurde Nginx veraltet, da das Projekt auf eine serverlose
+      Architektur migrierte. Dabei wurde der Next.js App Router verwendet, der
+      Routing- und Serverfunktionen intern verwaltete.
     </p>
   </li>
 </ul>
@@ -47,8 +126,10 @@ zusammenarbeiten können.
 <hr />
 
 <h1 class="text-2xl">Rollen und Verantwortlichkeiten</h1>
-Dieses Projekt wurde 2023 von mir selbst entwickelt. Ich war für jeden Aspekt
-verantwortlich, vom Design bis zur Entwicklung. Besonders hervorzuheben sind:
+Dieses Projekt wurde 2023 von mir allein entwickelt. 2025 wurde es nahezu
+vollständig überarbeitet, wobei der Schwerpunkt auf Leistung und Skalierbarkeit
+lag. Ich war für alle Aspekte verantwortlich, vom Design bis zur Entwicklung.
+Besonders hervorzuheben sind:
 <ul>
   <li>
     <h6 className="text-lg font-semibold">Ansichtsstruktur</h6>
@@ -120,6 +201,28 @@ verantwortlich, vom Design bis zur Entwicklung. Besonders hervorzuheben sind:
       keine Datenverunreinigung zwischen den Endpunkten. Dies ermöglichte eine
       effizientere und skalierbarere API, die in Zukunft auch einfacher zu
       warten sein sollte.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Überarbeitung 2025</h6>
+    <p>
+      Im Jahr 2025 hatte ich deutlich mehr Erfahrung auf diesem Gebiet gesammelt
+      und beschloss, das Projekt noch einmal zu überdenken. Schnell wurde mir
+      jedoch klar, dass es schneller wäre, es komplett neu zu starten, als Teile
+      davon neu zu schreiben. Ich entschied mich für einen moderneren Ansatz mit
+      Fokus auf Performance und Skalierbarkeit.
+    </p>
+    <p>
+      Next.js wurde als Framework gewählt. Ich implementierte Serveraktionen und
+      API-Endpunkte. All dies erforderte einen hohen Übersetzungsaufwand
+      zwischen der alten und der neuen Version. Oft konnte ich nur die Idee von
+      der alten Version übernehmen und musste die Implementierung komplett neu
+      schreiben.
+    </p>
+    <p>
+      Das Ergebnis ist ein deutlich robusteres und skalierbareres Projekt, in
+      dem ich als Entwickler deutlich effizienter und sicherer arbeiten kann und
+      die Nutzer ein deutlich besseres Erlebnis haben.
     </p>
   </li>
 </ul>

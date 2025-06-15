@@ -124,7 +124,7 @@ function DockItem({
         className={`relative flex w-16 flex-col items-center justify-center rounded-md transition-colors duration-200 ${
           important
             ? "text-accent-500/70 group-hover:text-accent-500"
-            : "text-zinc-500 group-hover:text-primary-500"
+            : "group-hover:text-primary-500 text-zinc-500"
         }`}
       >
         <motion.div animate={controls}>{icon}</motion.div>
@@ -205,34 +205,44 @@ export default function Dock({ lang }: { lang: "en" | "es" | "cat" | "de" }) {
 
   return (
     <LayoutGroup>
-      <motion.div
-        layout
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={listVariants}
-        className="mx-auto flex w-fit space-x-2 rounded-md bg-zinc-200 p-2 dark:bg-zinc-900"
-        onMouseEnter={setHovered.bind(null, true)}
-        onMouseLeave={setHovered.bind(null, false)}
-      >
-        {dockItems.map((item) => (
-          <motion.div
-            key={item.label}
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-          >
-            <DockItem
-              icon={item.icon}
-              label={item.label}
-              href={item.href}
-              important={item.important}
-              hovered={hovered}
-            />
-          </motion.div>
-        ))}
-      </motion.div>
+      <div className="fixed right-0 left-0 mx-auto w-fit">
+        <div className="h-[2px] w-full bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500" />
+        <motion.div
+          layout
+          initial="hidden"
+          whileInView="visible"
+          whileHover="hovered"
+          viewport={{ once: true }}
+          variants={listVariants}
+          className="group flex w-fit space-x-2 bg-zinc-50 p-2 dark:bg-zinc-950"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          {dockItems.map((item) => (
+            <motion.div
+              key={item.label}
+              variants={{
+                hidden: { opacity: 0, y: -20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <DockItem
+                icon={item.icon}
+                label={item.label}
+                href={item.href}
+                important={item.important}
+                hovered={hovered}
+              />
+            </motion.div>
+          ))}
+          <motion.hr
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: hovered ? 1 : 0 }}
+            transition={{ duration: hovered ? 0.5 : 0.2, ease: "linear" }}
+            className="absolute right-0 bottom-0 left-0 h-[2px] border-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 transition duration-200 ease-in-out dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+          />
+        </motion.div>
+      </div>
     </LayoutGroup>
   );
 }

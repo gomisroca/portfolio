@@ -35,7 +35,7 @@ function Card({ image, title, tilt = 0 }: CardProps) {
         rotateZ,
         opacity,
       }}
-      className="absolute flex flex-col items-center justify-center rounded-md p-4"
+      className="absolute flex cursor-pointer flex-col items-center justify-center p-4 active:z-30"
       initial={{
         rotateZ: 0,
       }}
@@ -44,7 +44,7 @@ function Card({ image, title, tilt = 0 }: CardProps) {
         x: 0,
         y: 0,
         opacity: 1,
-        zIndex: 0,
+        scale: 1,
         transition: {
           duration: 1,
           times: [0, 0.2, 1],
@@ -58,7 +58,6 @@ function Card({ image, title, tilt = 0 }: CardProps) {
         rotateZ: 0,
         opacity: 1,
         scale: 1.2,
-        zIndex: 30,
         transition: {
           duration: 1,
           times: [0, 0.2, 1],
@@ -67,11 +66,7 @@ function Card({ image, title, tilt = 0 }: CardProps) {
         },
       }}
     >
-      <img
-        src={image}
-        alt={title}
-        className="pointer-events-none h-[25rem] rounded-md"
-      />
+      <img src={image} alt={title} className="pointer-events-none h-[25rem]" />
     </motion.div>
   );
 }
@@ -105,7 +100,7 @@ function StackedCards() {
       initial={{ opacity: 0, y: 500 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="absolute z-10 h-[500px] w-[500px] portrait:-left-[12.5rem] portrait:top-[15rem] portrait:tablet:left-[7rem] portrait:tablet:top-[30rem] portrait:laptop:left-[10rem] portrait:laptop:top-[25rem] landscape:tablet:left-40 landscape:tablet:top-[14rem] landscape:laptop:left-40 landscape:laptop:top-[20rem] landscape:desktop:left-[15rem] landscape:desktop:top-[25rem] landscape:4k:left-[50rem]"
+      className="portrait:tablet:left-[7rem] portrait:tablet:top-[30rem] portrait:laptop:left-[10rem] portrait:laptop:top-[25rem] landscape:tablet:left-40 landscape:tablet:top-[14rem] landscape:laptop:left-40 landscape:laptop:top-[20rem] landscape:desktop:left-[15rem] landscape:desktop:top-[25rem] landscape:4k:left-[50rem] absolute z-10 h-[500px] w-[500px] portrait:top-[15rem] portrait:-left-[12.5rem]"
     >
       {Projects.map((project) => (
         <Card

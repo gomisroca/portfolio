@@ -12,8 +12,12 @@ import {
   SiVuedotjs,
   SiExpress,
   SiMongodb,
+  SiStorybook,
+  SiZod,
+  SiCheerio,
+  SiRedis,
+  SiNginx,
 } from "react-icons/si";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 
 const technologyColors: Record<Technology, string> = {
   Astro: "#000000",
@@ -29,6 +33,11 @@ const technologyColors: Record<Technology, string> = {
   Vercel: "#000000",
   Supabase: "#3ECF8E",
   Docker: "#2496ED",
+  Storybook: "#FF748C",
+  Zod: "#001FFF",
+  Cheerio: "#F5C547",
+  Redis: "#D82C20",
+  Nginx: "#009639",
 };
 
 const technologyIcons = {
@@ -45,6 +54,11 @@ const technologyIcons = {
   Vercel: SiVercel,
   Supabase: SiSupabase,
   Docker: SiDocker,
+  Storybook: SiStorybook,
+  Zod: SiZod,
+  Cheerio: SiCheerio,
+  Redis: SiRedis,
+  Nginx: SiNginx,
 };
 
 interface Props {
@@ -56,15 +70,8 @@ export default function TechnologyBadge({ technology }: Props) {
   const iconColor = technologyColors[technology];
   if (!IconComponent) return null;
   return (
-    <Popover>
-      <PopoverTrigger className="group rounded-full border border-zinc-950/20 bg-zinc-50 p-1 transition duration-200 hover:scale-110 hover:border-zinc-950/30 active:scale-125 active:duration-100">
-        <span className="sr-only">{technology}</span>
-        <IconComponent
-          color={iconColor}
-          className="h-5 w-5 brightness-50 transition duration-200 active:duration-100 group-hover:brightness-100 group-active:brightness-110"
-        />
-      </PopoverTrigger>
-      <PopoverContent>{technology}</PopoverContent>
-    </Popover>
+    <div className="rounded-full border border-zinc-300 bg-zinc-50 p-1 dark:border-transparent">
+      <IconComponent color={iconColor} className="h-5 w-5" />
+    </div>
   );
 }

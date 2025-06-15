@@ -2,7 +2,7 @@
 name: Catalyst
 year: 2023
 description: Comparteix les teves idees, col·labora amb altres i segueix el que està passant.
-technologies: ["React", "Express", "Nginx", "Docker"]
+technologies: ["Next.js", "Storybook", "Zod", "Nginx", "Docker"]
 headerImage:
   src: "/portfolio/projects/catalyst.jpg"
   alt: "Captura de pantalla del lloc web de Catalyst"
@@ -13,33 +13,110 @@ liveWebsite: "https://be-catalyst.vercel.app"
 repository: "https://github.com/gomisroca/catalyst"
 ---
 
-<strong>Catalyst</strong> és un projecte destinat a permetre que els esforços
-col·laboratius floreixin en un tot més gran. És una plataforma on les persones
-poden col·laborar en projectes, i on poden compartir les seves idees i
-col·laborar amb altres.
+<strong>Catalyst</strong> és un projecte que busca que els esforços
+col·laboratius floreixin en un tot major. És una plataforma on les persones
+poden col·laborar en projectes, compartir idees i col·laborar amb uns altres.
 
 <hr />
 
 <h1 class="text-2xl">Tecnologies i Eines</h1>
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">React</h6>
+    <h6 className="text-lg font-semibold">Next.js</h6>
     <p>
-      React va ser escollit com a framework per al projecte a causa de la seva
-      senzillesa, adopció a tota la indústria i força. Aquest projecte havia de
-      ser altament interactiu, amb molts canvis d'estat contínuament a mesura
-      que els usuaris interactuaven amb el lloc, cosa que va fer que React
-      s'adapti perfectament a aquest projecte.
+      Es va triar Next.js com framework perquè sabíem que gran part del projecte
+      podria beneficiar-se de la renderització del costat del servidor i de les
+      accions de servidor que ofereix l'App Router.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Express</h6>
+    <h6 className="text-lg font-semibold">Docker</h6>
     <p>
-      Express és el marc de framework per crear API a Node.js. És un framework
-      lleuger i ràpid que és fàcil d'utilitzar i d'entendre. Atès que el backend
-      d'aquest projecte podria arribar a ser complex, l'ús d'Express, que en
-      gran part no té opinions i permet una gran flexibilitat, era una bona
-      opció.
+      Docker es va utilitzar per contenidoritzar l'aplicació, garantint la
+      coherència en els entorns de desenvolupament, staging, i producció. En
+      empaquetar l'aplicació i les seves dependències en un sol contenidor, vam
+      reduir els errors específics de l'entorn i vam fer que el desplegament fos
+      més predictible. També va facilitar la col·laboració amb altres
+      desenvolupadors, ja que esperava que necessitaria ajuda a mesura que el
+      projecte creixés en complexitat.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Storybook</h6>
+    <p>
+      Per a intentar mantenir un alt nivell de qualitat i consistència, vaig
+      decidir usar Storybook per a crear una biblioteca d'interfície d'usuari
+      per al projecte. Això em va permetre crear un conjunt de components que
+      s'utilitzarien en tot el projecte i que serien estables, fàcils d'usar i
+      mantenir.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Auth.js</h6>
+    <p>
+      Sabíem que necessitaríem implementar l'autenticació i autorització
+      d'usuaris per al projecte, així que vaig decidir usar Auth.js, que ofereix
+      una forma senzilla i segura de gestionar l'autenticació i autorització
+      d'usuaris. En particular, usem enllaços màgics per a permetre un inici de
+      sessió sense contrasenya.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">UploadThing</h6>
+    <p>
+      Pujar imatges és una tasca comuna en el projecte. Per a això, implementem
+      UploadThing, una biblioteca de pujada d'imatges lleugera i ràpida, que es
+      va adaptar perfectament a les nostres necessitats.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      React <span className="text-sm text-zinc-500 uppercase">Obsolet</span>
+    </h6>
+    <p>
+      Es va triar React com framework per al projecte degut a la seva
+      simplicitat, la seva adopció en tota la indústria i la seva solidesa.
+      Aquest projecte havia de ser altament interactiu, amb nombrosos canvis
+      d'estat continus a mesura que els usuaris interactuaven amb el lloc, la
+      qual cosa va fer de React una excel·lent opció.
+    </p>
+    <p>
+      En 2025, vaig decidir adoptar un enfocament més modern per al projecte i
+      vaig optar per utilitzar Next.js App Router.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Express
+      <span className="text-sm text-zinc-500 uppercase">Obsolet</span>
+    </h6>
+    <p>
+      Express és el framework de referència per a crear API en Node.js. És un
+      framework lleuger i ràpid, fàcil d'usar i comprendre. Atès que el backend
+      d'aquest projecte podria tornar-se complex, usar Express, que és poc
+      convencional i permet molta flexibilitat, va ser una bona opció.
+    </p>
+    <p>
+      En 2025, Express va ser reemplaçat per una combinació d'accions de
+      servidor i rutes de API després de la implementació de Next.js App Router.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Nginx <span className="text-sm text-zinc-500 uppercase">Obsolet</span>
+    </h6>
+    <p>
+      Nginx es va utilitzar originalment en aquest projecte com proxy invers i
+      servidor de recursos estàtics. Va ajudar a millorar el rendiment,
+      gestionar la terminació HTTPS i gestionar l'equilibri de càrrega durant
+      les primeres implementacions. Aquesta configuració ens va proporcionar
+      major control sobre les estratègies d'emmagatzematge en caixet i ens va
+      permetre servir l'aplicació eficientment en un entorn de producció.
+    </p>
+    <p>
+      En 2025, vam donar per obsolet Nginx quan el projecte va migrar a una
+      arquitectura sense servidor utilitzant Next.js App Encaminador, que
+      gestionava l'encaminament i les funcions del servidor internament.
     </p>
   </li>
 </ul>
@@ -47,8 +124,10 @@ col·laborar amb altres.
 <hr />
 
 <h1 class="text-2xl">Rols i Responsabilitats</h1>
-Aquest projecte el vaig desenvolupar jo sol el 2023. Vaig ser responsable de
-cada faceta del mateix, des del disseny fins al desenvolupament. Cal destacar:
+Aquest projecte va ser desenvolupat per mi només en 2023. En 2025, va rebre una
+revisió gairebé completa, amb un enfocament en el rendiment i l'escalabilitat.
+Vaig ser responsable de cada faceta, des del disseny fins al desenvolupament.
+Cal destacar:
 <ul>
   <li>
     <h6 className="text-lg font-semibold">Estructura de les vistes</h6>
@@ -118,6 +197,27 @@ cada faceta del mateix, des del disseny fins al desenvolupament. Cal destacar:
       sortida clares i no hi ha contaminació de dades entre els endpoints. Això
       va permetre una API més eficient i escalable, que també hauria de ser més
       fàcil de mantenir en el futur.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Revisió de 2025</h6>
+    <p>
+      Per a 2025, ja tenia molta més experiència en el camp i vaig decidir
+      revisar el projecte. No obstant això, aviat em vaig adonar que seria més
+      ràpid reiniciar-ho per complet que intentar reescriure parts. Vaig decidir
+      adoptar un enfocament més modern per al projecte, centrant-me en el
+      rendiment i l'escalabilitat.
+    </p>
+    <p>
+      Es va triar Next.js com framework. Vaig implementar accions de servidor i
+      endpoints de API. Tot això va implicar una gran quantitat de "traduccions"
+      entre la versió anterior i la nova. Sovint, només podia copiar la idea de
+      la versió anterior i havia de reescriure completament la implementació.
+    </p>
+    <p>
+      El resultat és un projecte molt més robust i escalable, en el qual, com a
+      desenvolupador, puc treballar amb molta més eficiència i confiança, i els
+      usuaris tindran una experiència molt millor.
     </p>
   </li>
 </ul>

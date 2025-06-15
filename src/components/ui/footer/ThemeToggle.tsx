@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
@@ -54,25 +53,10 @@ export default function ThemeToggle() {
   };
 
   return (
-    <motion.button
+    <button
       id="themeToggle"
-      className="w-fit rounded-md px-2 font-semibold text-zinc-500 hover:text-primary-500"
+      className="hover:text-primary-500 w-fit cursor-pointer rounded-md px-2 font-semibold text-zinc-500 transition duration-200 ease-in-out hover:scale-110 active:scale-90"
       onClick={toggleTheme}
-      whileHover={{
-        scale: 1.25,
-        rotate: 0,
-        transition: {
-          duration: 0.2,
-        },
-      }}
-      whileTap={{
-        scale: 1.5,
-        zIndex: 10,
-        rotate: 180,
-        transition: {
-          duration: 0.1,
-        },
-      }}
     >
       {theme === "light" ? (
         <Sun data-testid="sun-icon" className="h-4 w-4" />
@@ -80,6 +64,6 @@ export default function ThemeToggle() {
         <Moon data-testid="moon-icon" className="h-4 w-4" />
       )}
       <span className="sr-only">Toggle theme</span>
-    </motion.button>
+    </button>
   );
 }

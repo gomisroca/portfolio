@@ -2,7 +2,7 @@
 name: Catalyst
 year: 2023
 description: Comparte tus ideas, colabora con otros y mantente al día con lo que sucede.
-technologies: ["React", "Express", "Nginx", "Docker"]
+technologies: ["Next.js", "Storybook", "Zod", "Nginx", "Docker"]
 headerImage:
   src: "/portfolio/projects/catalyst.jpg"
   alt: "Captura de pantalla del sitio web de Catalyst"
@@ -13,33 +13,110 @@ liveWebsite: "https://be-catalyst.vercel.app"
 repository: "https://github.com/gomisroca/catalyst"
 ---
 
-<strong>Catalyst</strong> es un proyecto destinado a permitir que los esfuerzos
+<strong>Catalyst</strong> es un proyecto que busca que los esfuerzos
 colaborativos florezcan en un todo mayor. Es una plataforma donde las personas
-pueden colaborar en proyectos y donde pueden compartir sus ideas y colaborar con
-otros.
+pueden colaborar en proyectos, compartir ideas y colaborar con otros.
 
 <hr />
 
 <h1 class="text-2xl">Tecnologías y Herramientas</h1>
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">React</h6>
+    <h6 className="text-lg font-semibold">Next.js</h6>
     <p>
-      Se eligió React como framework para el proyecto debido a su simplicidad,
-      adopción en toda la industria y solidez. Este proyecto debía ser altamente
-      interactivo, con muchos cambios de estado que sucedían continuamente a
-      medida que los usuarios interactuaban con el sitio, lo que hizo que React
-      fuera una gran opción para este proyecto.
+      Se eligió Next.js como framework porque sabíamos que gran parte del
+      proyecto podría beneficiarse de la renderización del lado del servidor y
+      de las acciones de servidor que ofrece App Router.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Express</h6>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      Se usó Docker para contenerizar la aplicación, garantizando la
+      consistencia entre los entornos de desarrollo, staging y producción. Al
+      empaquetar la aplicación y sus dependencias en un solo contenedor,
+      redujimos los errores específicos del entorno y mejoramos la
+      previsibilidad de la implementación. También facilitó la colaboración con
+      otros desarrolladores, ya que preví que necesitaría ayuda a medida que el
+      proyecto fuera más complejo.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Storybook</h6>
+    <p>
+      Para intentar mantener un alto nivel de calidad y consistencia, decidí
+      usar Storybook para crear una biblioteca de interfaz de usuario para el
+      proyecto. Esto me permitió crear un conjunto de componentes que se
+      utilizarían en todo el proyecto y que serían estables, fáciles de usar y
+      mantener.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Auth.js</h6>
+    <p>
+      Sabíamos que necesitaríamos implementar la autenticación y autorización de
+      usuarios para el proyecto, así que decidí usar Auth.js, que ofrece una
+      forma sencilla y segura de gestionar la autenticación y autorización de
+      usuarios. En particular, usamos enlaces mágicos para permitir un inicio de
+      sesión sin contraseña.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">UploadThing</h6>
+    <p>
+      Subir imágenes es una tarea común en el proyecto. Para ello, implementamos
+      UploadThing, una biblioteca de subida de imágenes ligera y rápida, que se
+      adaptó perfectamente a nuestras necesidades.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      React <span className="text-sm text-zinc-500 uppercase">Obsoleto</span>
+    </h6>
+    <p>
+      Se eligió React como framework para el proyecto debido a su simplicidad,
+      su adopción en toda la industria y su solidez. Este proyecto debía ser
+      altamente interactivo, con numerosos cambios de estado continuos a medida
+      que los usuarios interactuaban con el sitio, lo que hizo de React una
+      excelente opción.
+    </p>
+    <p>
+      En 2025, decidí adoptar un enfoque más moderno para el proyecto y opté por
+      utilizar Next.js App Router.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Express
+      <span className="text-sm text-zinc-500 uppercase">Obsoleto</span>
+    </h6>
     <p>
       Express es el framework de referencia para crear API en Node.js. Es un
-      framework liviano y rápido que es fácil de usar y comprender. Dado que el
-      backend de este proyecto podría volverse complejo, el uso de Express, que
-      es en gran parte sin opiniones y permite mucha flexibilidad, fue una buena
-      opción.
+      framework ligero y rápido, fácil de usar y comprender. Dado que el backend
+      de este proyecto podría volverse complejo, usar Express, que es poco
+      convencional y permite mucha flexibilidad, fue una buena opción.
+    </p>
+    <p>
+      En 2025, Express fue reemplazado por una combinación de acciones de
+      servidor y rutas de API tras la implementación de Next.js App Router.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Nginx <span className="text-sm text-zinc-500 uppercase">Obsoleto</span>
+    </h6>
+    <p>
+      Nginx se utilizó originalmente en este proyecto como proxy inverso y
+      servidor de recursos estáticos. Ayudó a mejorar el rendimiento, gestionar
+      la terminación HTTPS y gestionar el equilibrio de carga durante las
+      primeras implementaciones. Esta configuración nos proporcionó mayor
+      control sobre las estrategias de almacenamiento en caché y nos permitió
+      servir la aplicación eficientemente en un entorno de producción.
+    </p>
+    <p>
+      En 2025, dimos por obsoleto Nginx cuando el proyecto migró a una
+      arquitectura sin servidor utilizando Next.js App Router, que gestionaba el
+      enrutamiento y las funciones del servidor internamente.
     </p>
   </li>
 </ul>
@@ -47,8 +124,9 @@ otros.
 <hr />
 
 <h1 class="text-2xl">Roles y Responsabilidades</h1>
-Este proyecto lo desarrollé yo solo en 2023. Fui responsable de cada faceta del
-mismo, desde el diseño hasta el desarrollo. Cabe destacar:
+Este proyecto fue desarrollado por mí solo en 2023. En 2025, recibió una
+revisión casi completa, con un enfoque en el rendimiento y la escalabilidad. Fui
+responsable de cada faceta, desde el diseño hasta el desarrollo. Cabe destacar:
 <ul>
   <li>
     <h6 className="text-lg font-semibold">Estructure de las vistas</h6>
@@ -118,6 +196,28 @@ mismo, desde el diseño hasta el desarrollo. Cabe destacar:
       una salida claras, y no hay contaminación de datos entre puntos finales.
       Esto permitió una API más eficiente y escalable, que también debería ser
       más fácil de mantener en el futuro.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Revisión de 2025</h6>
+    <p>
+      Para 2025, ya tenía mucha más experiencia en el campo y decidí revisar el
+      proyecto. Sin embargo, pronto me di cuenta de que sería más rápido
+      reiniciarlo por completo que intentar reescribir partes. Decidí adoptar un
+      enfoque más moderno para el proyecto, centrándome en el rendimiento y la
+      escalabilidad.
+    </p>
+    <p>
+      Se eligió Next.js como framework. Implementé acciones de servidor y
+      endpoints de API. Todo esto implicó una gran cantidad de "traducciones"
+      entre la versión anterior y la nueva. A menudo, solo podía copiar la idea
+      de la versión anterior y tenía que reescribir completamente la
+      implementación.
+    </p>
+    <p>
+      El resultado es un proyecto mucho más robusto y escalable, en el que, como
+      desarrollador, puedo trabajar con mucha más eficiencia y confianza, y los
+      usuarios tendrán una experiencia mucho mejor.
     </p>
   </li>
 </ul>

@@ -2,7 +2,7 @@
 name: Catalyst
 year: 2023
 description: Share your ideas, collaborate with others and keep up with what's happening.
-technologies: ["React", "Express", "Nginx", "Docker"]
+technologies: ["Next.js", "Storybook", "Zod", "Nginx", "Docker"]
 headerImage:
   src: "/portfolio/projects/catalyst.jpg"
   alt: "A screenshot of the Catalyst website"
@@ -22,21 +22,96 @@ projects, and where they can share their ideas and collaborate with others.
 <h1 class="text-2xl">Technologies and Tools</h1>
 <ul>
   <li>
-    <h6 className="text-lg font-semibold">React</h6>
+    <h6 className="text-lg font-semibold">Next.js</h6>
+    <p>
+      Next.js was chosen as the framework as we knew large parts of the project
+      could benefit from server-side rendering and the server actions the App
+      Router provides.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      Docker was used to containerize the application, ensuring consistency
+      across development, staging, and production environments. By packaging the
+      app and its dependencies into a single container, we reduced
+      environment-specific bugs and made deployment more predictable. It also
+      made it easier to collaborate with other developers, as I expected I would
+      need help as the project grew in complexity.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Storybook</h6>
+    <p>
+      In order to try and mantain a high level of quality and consistency, I
+      decided to use Storybook to create a UI library for the project. This
+      allowed me to create a set of components that would be used throughout the
+      project, and would be stable, easy to use and maintain.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Auth.js</h6>
+    <p>
+      We knew we would need to implement user authentication and authorization
+      for the project, so I decided to use Auth.js, which provides a simple and
+      secure way to handle user authentication and authorization. In particular,
+      we used magic links to allow a passwordless login experience.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">UploadThing</h6>
+    <p>
+      Uploading images is a common task in the project. To handle this, we
+      implemented UploadThing, a lightweight and fast image uploading library,
+      which fit our needs perfectly.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      React <span className="text-sm text-zinc-500 uppercase">Deprecated</span>
+    </h6>
     <p>
       React was chosen as the framework for the project due to its simplicity,
       industry-wide adoption and strength. This project needed to be highly
       interactive, with many state changes continually happening as the users
       interacted with the site, which made React a great fit for this project.
     </p>
+    <p>
+      In 2025, I decided to take a more modern approach to the project, and
+      opted to use Next.js App Router.
+    </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">Express</h6>
+    <h6 className="text-lg font-semibold">
+      Express
+      <span className="text-sm text-zinc-500 uppercase">Deprecated</span>
+    </h6>
     <p>
       Express is the go-to framework for building APIs in Node.js. It is a
       lightweight and fast framework that is easy to use and understand. Since
       the backend of this project could become complex, using Express which is
       largely unopinionated and allows for a lot of flexibility was a good fit.
+    </p>
+    <p>
+      In 2025, Express was replaced by a combination of server actions and API
+      routes after the implementation of Next.js App Router.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Nginx <span className="text-sm text-zinc-500 uppercase">Deprecated</span>
+    </h6>
+    <p>
+      Nginx was originally used in this project as a reverse proxy and static
+      asset server. It helped improve performance, manage HTTPS termination, and
+      handle load balancing during early deployments. This setup gave us more
+      control over caching strategies and allowed us to serve the application
+      efficiently in a production environment.
+    </p>
+    <p>
+      In 2025, Nginx was deprecated as the project migrated to a serverless
+      architecture using the Next.js App Router, which handled routing and
+      server functions internally.
     </p>
   </li>
 </ul>
@@ -44,8 +119,10 @@ projects, and where they can share their ideas and collaborate with others.
 <hr />
 
 <h1 class="text-2xl">Roles and Responsibilities</h1>
-This project was developed single-handedly by myself in 2023. I was responsible
-for every facet of it, from design to development. Of note are:
+This project was developed single-handedly by myself in 2023. In 2025 it
+received a near-complete overhaul, with a focus on performance and scalability.
+I was responsible for every facet of it, from design to development. Of note
+are:
 <ul>
   <li>
     <h6 className="text-lg font-semibold">View Structure</h6>
@@ -113,6 +190,27 @@ for every facet of it, from design to development. Of note are:
       there is no contamination of data between endpoints. This allowed for a
       more efficient and scalable API, that should also be easier to maintain in
       the future.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">2025 Overhaul</h6>
+    <p>
+      By 2025, I had become much more experienced in the field, and I decided to
+      take a look at the project again. However, it quickly became clear it
+      would be faster for me to completely restart it, rather than try to
+      rewrite parts of it. I decided to take a more modern approach to the
+      project, with a focus on performance and scalability.
+    </p>
+    <p>
+      Next.js was chosen as the framework. I implemented server actions, API
+      endpoints. All of this meant a great deal of 'translating' between the old
+      version and the new one. Often, all I could copy from the old version was
+      the idea, and had to completely rewrite the implementation.
+    </p>
+    <p>
+      The result is a much more robust and scalable project, in which I as the
+      developer can work with much more efficiency and confidence, and the users
+      will have a much better experience.
     </p>
   </li>
 </ul>

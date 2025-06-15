@@ -32,39 +32,20 @@ const LanguageDropdown = ({
 
   return (
     <div ref={dropdownRef}>
-      <motion.li
-        className="flex w-8 cursor-pointer items-center justify-center text-center text-sm font-semibold text-zinc-500 hover:text-primary-500"
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        whileHover={{
-          scale: 1.25,
-          rotate: 0,
-          transition: {
-            duration: 0.2,
-          },
-        }}
-        whileTap={{
-          scale: 1.5,
-          zIndex: 10,
-          rotate: 0,
-          transition: {
-            duration: 0.1,
-          },
-        }}
+      <li
+        className="hover:text-primary-500 flex w-8 cursor-pointer items-center justify-center text-center text-sm font-semibold text-zinc-500 transition duration-200 ease-in-out hover:scale-110 active:scale-90"
         onClick={() => setOpen(!open)}
       >
         {activeLang.toUpperCase()}
-      </motion.li>
+      </li>
       {open && (
-        <ul className="absolute bottom-9 left-0 mx-auto flex w-fit flex-col items-start justify-start rounded-md bg-zinc-200 p-1 dark:bg-zinc-900">
+        <ul className="absolute bottom-8 left-0 mx-auto flex w-fit flex-col items-start justify-start bg-zinc-50 p-1 dark:bg-zinc-950">
           {Object.entries(languages).map(([lang]) => (
             <li key={lang} className="px-2 py-1">
               <LanguageLink
                 href={path}
                 lang={lang as "en" | "es" | "cat" | "de"}
-                className={`${lang === activeLang && "underline decoration-accent-500/70 decoration-4 underline-offset-2 hover:decoration-accent-500"}`}
+                className={`${lang === activeLang && "decoration-accent-500/70 hover:decoration-accent-500 underline decoration-4 underline-offset-2"}`}
                 label={lang.toUpperCase()}
               />
             </li>
@@ -94,25 +75,37 @@ function FooterDock({
       },
     },
   };
+  const [hovered, setHovered] = useState(false);
   return (
     <motion.ul
-      className="md:py-2 fixed bottom-0 right-0 mx-auto flex w-fit flex-row space-x-2 rounded-tl-md bg-zinc-200 px-2 py-1 dark:bg-zinc-900"
+      className="group fixed right-0 bottom-0 left-0 m-2 mx-auto h-fit w-fit bg-zinc-50 dark:bg-zinc-950"
       initial="hidden"
       whileInView="visible"
+      whileHover="hovered"
       viewport={{ once: true }}
       variants={listVariants}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
     >
-      <LanguageDropdown activeLang={activeLang} path={path} />
-      <span className="m-auto h-4 border border-zinc-300 dark:border-zinc-700" />
-      <motion.li
-        className="w-8 text-center"
-        variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0 },
-        }}
-      >
-        <ThemeToggle />
-      </motion.li>
+      <motion.hr
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: hovered ? 1 : 0 }}
+        transition={{ duration: hovered ? 0.5 : 0.2, ease: "linear" }}
+        className="absolute top-0 right-0 left-0 h-[2px] origin-bottom border-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 transition duration-200 ease-in-out dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+      />
+      <div className="flex flex-row space-x-2 bg-zinc-50 px-2 py-1 dark:bg-zinc-950">
+        <LanguageDropdown activeLang={activeLang} path={path} />
+        <motion.li
+          className="w-8 text-center"
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
+          <ThemeToggle />
+        </motion.li>
+      </div>
+      <div className="absolute bottom-0 h-[2px] w-full origin-left bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500" />
     </motion.ul>
   );
 }

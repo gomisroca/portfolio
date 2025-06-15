@@ -7,8 +7,16 @@ const t = useTranslations(lang);
 ---
 
 <div
-  class="absolute -right-[14.5rem] bottom-0 top-4 hidden h-fit w-[200px] flex-col gap-4 rounded-md bg-zinc-200 p-4 dark:bg-zinc-900 desktop:flex"
+  class="desktop:flex absolute top-4 -right-[14.5rem] bottom-0 hidden h-fit w-[200px] flex-col gap-4 bg-zinc-50 p-4 dark:bg-zinc-950"
 >
+  <div
+    class="absolute bottom-0 left-0 h-2/3 w-[2px] origin-bottom bg-gradient-to-t from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 left-0 h-[2px] w-5/6 origin-left bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+  >
+  </div>
   <SidebarItem title={t("sidebar.name")} description={project.name} />
   <SidebarItem title={t("sidebar.year")} description={project.year} />
   {

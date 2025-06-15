@@ -13,4 +13,9 @@ type Technology =
   | "PostgreSQL"
   | "Supabase"
   | "Vercel"
-  | "Docker";
+  | "Docker"
+  | "Storybook"
+  | "Zod"
+  | "Cheerio"
+  | "Redis"
+  | "Nginx";

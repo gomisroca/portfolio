@@ -1,8 +1,9 @@
 ---
 name: Dungeoneer
 year: 2024
-description: Check what items a character is missing from a dungeon or raid in FFXIV.
-technologies: ["Next.js", "tRPC", "Supabase", "PostgreSQL", "Vercel"]
+description: Check what items a character is missing in Final Fantasy XIV.
+technologies:
+  ["Next.js", "Cheerio", "Supabase", "Redis", "PostgreSQL", "Vercel"]
 headerImage:
   src: "/portfolio/projects/dungeoneer.jpg"
   alt: "A screenshot of the Dungeoneer website"
@@ -30,23 +31,37 @@ on your account.
       of the project could benefit from server-side rendering, which Next.js
       excels at.
     </p>
-  </li>
-  <li>
-    <h6 className="text-lg font-semibold">tRPC</h6>
     <p>
-      We expected the project to have a lot of API calls and complex types of
-      data, so we decided to use tRPC to handle the communication between the
-      client and the server to ensure typesafety and a faster, safer
-      development.
+      We opted for using the more modern Next.js App Router, and in 2025 we
+      switched from tRPC to a mix of Server Actions and API Routes.
     </p>
   </li>
   <li>
-    <h6 className="text-lg font-semibold">NextAuth.js</h6>
+    <h6 className="text-lg font-semibold">Redis</h6>
+    <p>
+      The project contains large datasets that are accessed frequently, such as
+      item or instance lists, therefore we integrated Redis to optimize
+      performance by caching them. This reduced database load and significantly
+      improved response times for read-heavy operations.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Auth.js</h6>
     <p>
       One of the main features of the project is the ability to log in and store
-      your collection on your account. To achieve this, we used NextAuth.js,
-      which provides a simple and secure way to handle user authentication and
+      your collection on your account. To achieve this, we used Auth.js, which
+      provides a simple and secure way to handle user authentication and
       authorization.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Cheerio</h6>
+    <p>
+      Scrapping "The Lodestone", Final Fantasy XIV's website, for information is
+      a very common task in the project. We often need to search for characters,
+      or for the specific information about a character's collection of items.
+      To achieve this, we used Cheerio, a fast and flexible HTML parsing
+      library, which allowed us to easily scrape the website.
     </p>
   </li>
   <li>
@@ -75,6 +90,22 @@ on your account.
       Insights to ensure the project was running smoothly.
     </p>
   </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      tRPC <span className="text-sm text-zinc-500 uppercase">Deprecated</span>
+    </h6>
+    <p>
+      We expected the project to have a lot of API calls and complex types of
+      data, so we decided to use tRPC to handle the communication between the
+      client and the server to ensure typesafety and a faster, safer
+      development.
+    </p>
+    <p>
+      In 2025, we deprecated tRPC in favor of a combination of Server Actions
+      and API Routes, leveraging native Next.js features, edge functions, and
+      Redis-based caching for improved performance and maintainability.
+    </p>
+  </li>
 </ul>
 
 <hr />
@@ -96,8 +127,10 @@ developer.
     <h6 className="text-lg font-semibold">Full-Stack Developer</h6>
     <p>
       Implemented the project's functionality and ensuring it was secure and
-      scalable. I used Next.js, tRPC, NextAuth.js, and Supabase amongst other
-      tools to build the project.
+      scalable. I used Next.js, tRPC, Auth.js, and Supabase amongst other tools
+      to build the project. Later on, I also used Redis to optimize the data
+      fetching process, server actions to handle mutations, and Cheerio to
+      scrape the Lodestone.
     </p>
   </li>
   <li>
@@ -158,6 +191,48 @@ developer.
     <p>
       Overall, while there is room for improvement, I believe the current design
       is a good balance between functionality and visual clarity.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Data Fetching & Virtualization</h6>
+    <p>
+      As mentioned earlier, the project contains large datasets that are
+      accessed frequently, such as item or instance lists. This, if not handled
+      correctly, could lead to performance issues and slow response times.
+    </p>
+    <p>
+      To address this, initially I implemented a scroll-based fetching strategy,
+      where the user would scroll through the list of items, and the items would
+      be fetched in batches. This worked well and the data was fetched and
+      loaded quickly. However, the performance greatly degraded as the user
+      scrolled further down the list.
+    </p>
+    <p>
+      To improve performance, I implemented a virtualized list component that
+      rendered only the visible items. This allowed for a smoother user
+      experience, as the user would only see the items that were visible on the
+      screen, and the data would be fetched only when needed.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Data Acquisition</h6>
+    <p>
+      Initially, the project was dependent on XIVAPI's Lodestone functions to
+      search for characters and their collections. However, they became
+      deprecated after XIVAPI v2, and the alternative APIs and libraries were
+      not as well-suited for the project's needs.
+    </p>
+    <p>
+      The Lodestone is a notoriously difficult website to scrape, and this was
+      my first time attempting such a large scope of scraping, but thanks to the
+      community's help, I managed to implement Cheerio to scrape the website and
+      extract the necessary data. With that, I did a complete overhaul of the
+      Lodestone-related functions, such as character search and collection
+      retrieval.
+    </p>
+    <p>
+      The end result is a more robust and reliable system, without unnecessary
+      middlemen or external dependencies.
     </p>
   </li>
 </ul>
