@@ -62,7 +62,7 @@ const courses = [
   },
   {
     name: "Cyber Security Base",
-    date: "2024-",
+    date: "2024-2025",
     school: "University of Helsinki",
     certificates: [],
     url: "https://cybersecuritybase.mooc.fi/",
