@@ -1,0 +1,36 @@
+---
+import Section from "@/components/Section";
+import { getCollection } from "astro:content";
+import BlogCard from "@/components/landing/BlogCard.astro";
+import { useTranslations } from "@/i18n/utils";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const lang = Astro.props.lang || "en";
+
+const langEntries = await getCollection(
+  "blog",
+  ({ id, data }) => id.startsWith(`${lang}/`) && data.date,
+);
+
+const latestEntries = langEntries.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+);
+
+const t = useTranslations(lang);
+---
+
+<BaseLayout>
+  {
+    latestEntries.length > 0 ? (
+      <div class="tablet:grid-cols-2 grid grid-cols-1 items-center justify-evenly gap-4">
+        {latestEntries.map((entry) => (
+          <BlogCard entry={entry} lang={lang} />
+        ))}
+      </div>
+    ) : (
+      <div class="flex h-[200px]">
+        <h6 class="m-auto text-center text-xl">{t("errors.blog")}</h6>
+      </div>
+    )
+  }
+</BaseLayout>

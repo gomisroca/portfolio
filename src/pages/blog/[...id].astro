@@ -7,13 +7,21 @@ export async function getStaticPaths() {
     return id.startsWith("en/");
   });
 
-  const paths = entries.map((entry) => {
-    const [_, ...id] = entry.id.split("/");
-    return {
-      params: { id: id.join("/") || undefined },
-      props: entry,
-    };
-  });
+  const paths = entries
+    .map((entry) => {
+      const [_, ...id] = entry.id.split("/");
+
+      if (id.length === 0 || id[0] === "") {
+        return null;
+      }
+
+      return {
+        params: { id: id.join("/") },
+        props: entry,
+      };
+    })
+    .filter(Boolean);
+
   return paths;
 }
 

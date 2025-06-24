@@ -6,13 +6,20 @@ import { getCollection } from "astro:content";
 export async function getStaticPaths() {
   const entries = await getCollection("blog");
 
-  const paths = entries.map((entry) => {
-    const [lang, ...id] = entry.id.split("/");
-    return {
-      params: { lang, id: id.join("/") || undefined },
-      props: entry,
-    };
-  });
+  const paths = entries
+    .map((entry) => {
+      const [lang, ...id] = entry.id.split("/");
+
+      if (id.length === 0 || id[0] === "") {
+        return null;
+      }
+
+      return {
+        params: { lang, id: id.join("/") },
+        props: entry,
+      };
+    })
+    .filter(Boolean);
 
   return paths;
 }
