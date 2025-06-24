@@ -1,8 +1,10 @@
 ---
 import Section from "@/components/Section";
+import Link from "@/components/ui/link";
 import { getCollection } from "astro:content";
 import BlogCard from "./BlogCard.astro";
 import { useTranslations } from "@/i18n/utils";
+import { CgMoreO } from "react-icons/cg";
 
 const lang = Astro.props.lang || "en";
 
@@ -23,14 +25,26 @@ const t = useTranslations(lang);
 <Section
   title={t("sections.retrospective")}
   client:visible
-  className="h-fit w-full pt-4 portrait:z-20 landscape:z-20"
+  className="mb-8 h-fit w-full pt-4 md:mb-0 portrait:z-20 landscape:z-20"
 >
   {
     latestEntries.length > 0 ? (
-      <div class="grid grid-cols-1 items-center justify-evenly gap-4 tablet:grid-cols-2 laptop:grid-cols-3">
-        {latestEntries.map((entry) => (
-          <BlogCard entry={entry} lang={lang} />
-        ))}
+      <div class="flex flex-col items-center justify-center gap-2">
+        <div class="tablet:grid-cols-2 laptop:grid-cols-3 grid grid-cols-1 items-center justify-evenly gap-4">
+          {latestEntries.map((entry) => (
+            <BlogCard entry={entry} lang={lang} />
+          ))}
+        </div>
+        <Link
+          client:load
+          lang={lang}
+          href="/blog"
+          ignoreClass
+          className="flex items-center justify-center gap-2 bg-zinc-100 px-2 py-1 text-lg transition duration-200 ease-in-out hover:scale-110 hover:bg-zinc-200 active:scale-90 dark:bg-[#0e0e0f] dark:hover:bg-zinc-900"
+        >
+          <CgMoreO />
+          {t("sections.retrospectiveSeeMore")}
+        </Link>
       </div>
     ) : (
       <div class="flex h-[200px]">

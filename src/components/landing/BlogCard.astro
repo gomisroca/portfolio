@@ -16,7 +16,7 @@ const { entry, lang } = Astro.props;
   client:load
   lang={lang}
   href={`/blog/${entry.id.split("/")[1]}`}
-  ignoreClass={true}
+  ignoreClass
 >
   <Card className="h-[275px]">
     {

@@ -3,6 +3,7 @@ import Section from "@/components/Section";
 import { getCollection } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
 import { useTranslations } from "@/i18n/utils";
+import { SiGithub } from "react-icons/si";
 
 const lang: "en" | "es" | "cat" | "de" = Astro.props.lang || "en";
 
@@ -24,16 +25,26 @@ const t = useTranslations(lang);
 >
   {
     projects.length > 0 ? (
-      <div class="tablet:grid-cols-2 laptop:grid-cols-3 grid grid-cols-1 items-center justify-evenly gap-4">
-        {projects
-          .sort((a, b) => {
-            const yearDiff = b.data.year - a.data.year;
-            if (yearDiff !== 0) return yearDiff;
-            return a.data.name.localeCompare(b.data.name);
-          })
-          .map((project) => (
-            <ProjectCard project={project} lang={lang} />
-          ))}
+      <div class="flex flex-col items-center justify-center gap-2">
+        <div class="tablet:grid-cols-2 laptop:grid-cols-3 grid grid-cols-1 items-center justify-evenly gap-4">
+          {projects
+            .sort((a, b) => {
+              const yearDiff = b.data.year - a.data.year;
+              if (yearDiff !== 0) return yearDiff;
+              return a.data.name.localeCompare(b.data.name);
+            })
+            .map((project) => (
+              <ProjectCard project={project} lang={lang} />
+            ))}
+        </div>
+        <a
+          href="https://github.com/gomisroca"
+          target="_blank"
+          class="flex items-center justify-center gap-2 bg-zinc-100 px-2 py-1 text-lg transition duration-200 ease-in-out hover:scale-110 hover:bg-zinc-200 active:scale-90 dark:bg-[#0e0e0f] dark:hover:bg-zinc-900"
+        >
+          <SiGithub />
+          {t("sections.projectsSeeMore")}
+        </a>
       </div>
     ) : (
       <div class="flex h-[200px]">

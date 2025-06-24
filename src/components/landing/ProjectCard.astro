@@ -17,7 +17,7 @@ const { project, lang } = Astro.props;
   client:load
   lang={lang}
   href={`/projects/${project.id.split("/")[1]}`}
-  ignoreClass={true}
+  ignoreClass
 >
   <Card className="h-[350px] md:h-[375px]">
     {
