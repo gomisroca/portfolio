@@ -35,6 +35,10 @@ import {
   SiMongoose,
   SiDrizzle,
   SiTraefikproxy,
+  SiJavascript,
+  SiPython,
+  SiGo,
+  SiTypescript,
 } from "react-icons/si";
 import { cn } from "@/lib/utils";
 import { memo, useMemo } from "react";
@@ -92,7 +96,7 @@ const OrbitingIcon = memo(
           } as React.CSSProperties
         }
         className={cn(
-          "absolute size-full transform-gpu animate-orbit items-center justify-center rounded-full border bg-zinc-700/10 dark:bg-zinc-300/10",
+          "animate-orbit absolute size-full transform-gpu items-center justify-center rounded-full border bg-zinc-700/10 dark:bg-zinc-300/10",
           { "[animation-direction:reverse]": reverse },
           className,
         )}
@@ -183,7 +187,7 @@ export function IconCircles() {
     },
   };
   return (
-    <div className="pointer-events-none absolute h-[800px] w-[800px] opacity-50 portrait:-right-[25rem] portrait:top-0 portrait:tablet:-right-40 portrait:tablet:top-20 landscape:tablet:-right-[30rem] landscape:tablet:-top-[30rem] landscape:laptop:-right-40 landscape:laptop:top-4 landscape:desktop:right-0 landscape:desktop:top-28 landscape:4k:right-60 landscape:4k:top-20">
+    <div className="portrait:tablet:-right-40 portrait:tablet:top-20 landscape:tablet:-right-[30rem] landscape:tablet:-top-[30rem] landscape:laptop:-right-40 landscape:laptop:top-4 landscape:desktop:right-0 landscape:desktop:top-14 landscape:4k:right-60 landscape:4k:top-20 pointer-events-none absolute h-[800px] w-[800px] opacity-50 portrait:top-0 portrait:-right-[25rem]">
       <motion.div
         style={{ willChange: "transform, opacity" }}
         className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg"
@@ -193,11 +197,21 @@ export function IconCircles() {
         variants={parentVariants}
         layout
       >
+        <OrbitingCircles
+          className="z-10 size-10 border-none bg-transparent dark:bg-transparent"
+          duration={100}
+          radius={350}
+        >
+          <SiJavascript className="h-10 w-10 text-yellow-500" />
+          <SiTypescript className="h-10 w-10 text-blue-500" />
+          <SiPython className="h-10 w-10 text-lime-500" />
+          <SiGo className="h-14 w-14 text-cyan-500" />
+        </OrbitingCircles>
         {/* Infrastructure - Medium (Size 7) */}
         <OrbitingCircles
           className="z-10 size-7 border-none bg-transparent dark:bg-transparent"
           duration={60}
-          radius={330}
+          radius={300}
         >
           <SiSonar data-testid="SiSonar" className="h-7 w-7" />
           <SiGitlab
