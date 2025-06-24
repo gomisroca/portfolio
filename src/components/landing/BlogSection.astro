@@ -1,10 +1,10 @@
 ---
 import Section from "@/components/Section";
+import Link from "@/components/ui/link";
 import { getCollection } from "astro:content";
 import BlogCard from "./BlogCard.astro";
 import { useTranslations } from "@/i18n/utils";
 import { CgMoreO } from "react-icons/cg";
-import Link from "../ui/link";
 
 const lang = Astro.props.lang || "en";
 
@@ -40,7 +40,7 @@ const t = useTranslations(lang);
           lang={lang}
           href="/blog"
           ignoreClass
-          className="flex items-center justify-center gap-2 bg-zinc-100 px-2 py-1 text-lg transition duration-200 ease-in-out hover:scale-110 hover:bg-zinc-200 active:scale-90 dark:bg-zinc-900 dark:hover:bg-zinc-800"
+          className="flex items-center justify-center gap-2 bg-zinc-100 px-2 py-1 text-lg transition duration-200 ease-in-out hover:scale-110 hover:bg-zinc-200 active:scale-90 dark:bg-[#0e0e0f] dark:hover:bg-zinc-900"
         >
           <CgMoreO />
           {t("sections.retrospectiveSeeMore")}
