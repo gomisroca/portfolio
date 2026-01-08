@@ -1,7 +1,6 @@
 import { MousePointerClick } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "./dialog";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
 
 function Lightbox({
   children,
