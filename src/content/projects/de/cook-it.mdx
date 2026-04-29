@@ -1,0 +1,192 @@
+---
+name: Cook It!
+year: 2026
+description: Entdecke, erstelle und teile Rezepte mit der Welt. Like, speichere und sammle deine Favoriten.
+technologies: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Docker"]
+headerImage:
+  src: "/portfolio/projects/cook-it.jpg"
+  alt: "Screenshot der Cook It!-Website"
+cardImage:
+  src: "/portfolio/cards/cook-it.png"
+  alt: "Screenshot der Cook It!-Website auf Mobilgeräten"
+liveWebsite: "https://cook-it-demo.vercel.app"
+repository: "https://github.com/gomisroca/cook-it"
+---
+
+<strong>Cook It!</strong> ist eine Full-Stack-Rezeptplattform, auf der Nutzer
+Rezepte aus aller Welt erstellen, teilen und entdecken können. Die Plattform
+bietet umfangreiche Social-Features wie Likes, Favoriten, Follows, Kommentare
+und Sammlungen sowie ein leistungsfähiges Filter- und Suchsystem, um gezielt
+Rezepte zu finden.
+
+<hr />
+
+<h1 class="text-2xl">Technologien und Tools</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js</h6>
+    <p>
+      Next.js wurde als Frontend-Framework gewählt. Server Components im App
+      Router ermöglichen das Laden von Daten auf dem Server und deren Übergabe
+      an den Client, wodurch weniger clientseitiges JavaScript benötigt wird und
+      die Performance steigt. Parallel Routes und Intercepting Routes wurden
+      genutzt, um modale Interaktionen wie Login, Registrierung, Likes und
+      Favoriten umzusetzen.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">NestJS</h6>
+    <p>
+      NestJS wurde als Backend-Framework gewählt, da es eine klare Struktur und
+      starke TypeScript-Unterstützung bietet. Module, Controller, Services und
+      Guards ermöglichen eine skalierbare und gut strukturierte Architektur.
+      Passport.js wurde für JWT- sowie Google-OAuth-Authentifizierung
+      integriert.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Prisma</h6>
+    <p>
+      Prisma wurde als ORM eingesetzt und bietet eine hervorragende Integration
+      mit TypeScript. Der schema-first Ansatz erleichtert die Modellierung
+      komplexer Beziehungen zwischen Nutzern, Rezepten, Sammlungen und
+      Social-Features. Der generierte Client sorgt für durchgehende
+      Typsicherheit.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">PostgreSQL</h6>
+    <p>
+      PostgreSQL wurde als Datenbank gewählt und auf Supabase gehostet. Die
+      Plattform bietet eine verwaltete Instanz mit Connection-Pooling und einer
+      übersichtlichen Oberfläche zur Verwaltung der Datenbank.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">UploadThing</h6>
+    <p>
+      UploadThing wurde für Bild-Uploads verwendet, etwa für Rezeptbilder,
+      Schrittbilder und Benutzer-Avatare. Die Integration mit Next.js und NestJS
+      ermöglicht eine einfache Verwaltung sowie automatische Bereinigung nicht
+      mehr verwendeter Dateien.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      Docker wurde eingesetzt, um Frontend und Backend zu containerisieren und
+      konsistente Umgebungen sicherzustellen. Multi-Stage-Builds halten die
+      Produktionsimages schlank. Ein eigenes Entrypoint-Skript führt Prisma-
+      Migrationen automatisch vor dem Start aus.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Fly.io & Vercel</h6>
+    <p>
+      Das Backend wurde auf Fly.io deployt, das Frontend auf Vercel. Da beide
+      auf unterschiedlichen Domains laufen, wurde ein Next.js Rewrite-Proxy
+      implementiert, um API-Anfragen über die Frontend-Domain zu leiten und
+      Cookie-Einschränkungen zu vermeiden.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Rollen und Verantwortlichkeiten</h1>
+Das Projekt wurde 2026 vollständig von mir entwickelt. Ich war für alle Aspekte
+verantwortlich – von Design über Entwicklung bis Deployment. Hervorzuheben sind:
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Full-Stack-Architektur</h6>
+    <p>
+      Entwicklung des gesamten Systems, inklusive Datenbankschema, REST-API,
+      Authentifizierung und Frontend. Besonderer Fokus lag auf Struktur,
+      Wartbarkeit und Skalierbarkeit.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">API-Design</h6>
+    <p>
+      Entwicklung einer konsistenten REST-API mit wiederverwendbaren Utilities
+      wie Cursor-basierter Pagination und Serialisierung. Alle Endpunkte wurden
+      sowohl für authentifizierte als auch nicht-authentifizierte Nutzung
+      konzipiert.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Authentifizierung</h6>
+    <p>
+      Umsetzung eines vollständigen Auth-Systems mit E-Mail/Passwort und Google
+      OAuth. Sessions werden über HTTP-only Cookies verwaltet. Ergänzt durch
+      JWT-Guards, optionale Guards sowie einen vollständigen Password-Reset-
+      Flow per E-Mail.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Deployment</h6>
+    <p>
+      Aufbau der Deployment-Pipeline mit Docker, automatischen Migrationen,
+      Health Checks und konsistenter Verwaltung von Umgebungsvariablen.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Herausforderungen und Lösungen</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Cross-Domain-Authentifizierung</h6>
+    <p>
+      Eine der hartnäckigsten Herausforderungen bestand darin, die
+      cookie-basierte Authentifizierung in der Produktionsumgebung zuverlässig
+      zwischen dem Vercel-Frontend und dem Fly.io-Backend zum Laufen zu bringen.
+      Moderne Browser schränken Third-Party-Cookies zunehmend ein, sodass selbst
+      mit <code>SameSite: none</code> und <code>Secure: true</code> die vom
+      Backend gesetzten Cookies nicht immer vom Browser akzeptiert wurden.
+    </p>
+    <p>
+      Die Lösung bestand darin, einen Next.js Rewrite-Proxy zu implementieren,
+      der clientseitige API-Anfragen über die Frontend-Domain leitet. Dadurch
+      wurde das Cookie stets auf derselben Domain wie das Frontend gesetzt,
+      sodass der Browser keinen Grund mehr hatte, es abzulehnen.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Server- vs. Client-Datenabruf</h6>
+    <p>
+      Die Unterscheidung zwischen Server- und Client-Komponenten im App Router
+      erforderte eine sorgfältige Abwägung, wo Daten geladen werden sollten.
+      Dafür wurde eine gemeinsame API-Utility mit zwei Varianten entwickelt —
+      eine für Server-Komponenten, die Cookies aus der eingehenden Anfrage
+      weiterleitet, und eine für Client-Komponenten, die Anmeldeinformationen
+      automatisch mitsendet. So blieb das Fetching-Muster im gesamten Code
+      konsistent, ohne die Trennung zwischen Server und Client zu verletzen.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Prisma in Docker</h6>
+    <p>
+      Die Bereitstellung von Prisma innerhalb eines Docker-Containers brachte
+      mehrere Herausforderungen mit sich, insbesondere bei der Konfiguration und
+      den Migrationspfaden. Die Datei <code>prisma.config.ts</code> verwendet
+      unterschiedliche Schema- und Migrationspfade, je nachdem, ob der Code zur
+      Build-Zeit oder zur Laufzeit ausgeführt wird, da sich die Quellstruktur
+      von der kompilierten Struktur unterscheidet. Nach umfangreichem
+      Ausprobieren wurde eine zuverlässige Lösung gefunden, die mithilfe von
+      Umgebungsvariablen automatisch zwischen den Pfaden wechselt.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Feature-Umfang</h6>
+    <p>
+      Mit wachsendem Projekt wurde es immer wichtiger, bewusst zu entscheiden,
+      welche Features umgesetzt und welche zurückgestellt werden. Funktionen wie
+      Benachrichtigungen oder ein Admin-Panel wurden zugunsten einer
+      hochwertigen Umsetzung der Kernfunktionalität rund um Rezepte und
+      Sammlungen vorerst ausgeklammert. Dadurch blieb das Projekt fokussiert und
+      umsetzbar, ohne an Funktionsumfang einzubüßen.
+    </p>
+  </li>
+</ul>

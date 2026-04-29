@@ -1,0 +1,204 @@
+---
+name: Archivist
+year: 2026
+description: Ein Alternate-Reality-Game im Kalten Krieg. Finde Hinweise, löse Rätsel und decke die Wahrheit auf.
+technologies: ["Next.js", "Redis", "Docker"]
+headerImage:
+  src: "/portfolio/projects/archivist.jpg"
+  alt: "Screenshot der Archivist-Startseite"
+cardImage:
+  src: "/portfolio/cards/archivist.png"
+  alt: "Screenshot der Archivist-Website"
+liveWebsite: "https://archivist-arg.vercel.app"
+repository: "https://github.com/gomisroca/archivist"
+---
+
+<strong>Archivist</strong> ist ein Alternate-Reality-Game, das im Kalten Krieg
+angesiedelt ist. Spieler schlüpfen in die Rolle eines Analysten, der auf ein
+Leak geheimer CIA-Dokumente stößt. Entlang einer Spur aus Chiffren, versteckten
+Fragmenten, manipuliertem Browser-Zustand und abgefangenem Netzwerkverkehr
+setzen sie das Schicksal eines verschwundenen Agenten und die Operation, die mit
+ihm verschwand, Stück für Stück zusammen.
+
+Das Projekt wurde als Full-Stack-Portfolioarbeit mit Fokus auf progressive Schwierigkeit
+konzipiert — jedes Rätsel vermittelt eine neue Ebene von Webtechnologie, vom Lesen des
+Seitenquelltexts bis zum direkten Ansprechen von API-Endpunkten.
+
+<hr />
+
+<h1 class="text-2xl">Technologien und Tools</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js</h6>
+    <p>
+      Next.js war die naheliegende Wahl für dieses Projekt. Das filebasierte
+      Routing ermöglicht tief verschachtelte und bewusst obskure URLs — ein Pfad
+      wie
+      <code>/static/files/declassified</code> ist technisch nur ein Ordner,
+      wirkt aber wie ein vergessener Behördenpfad. Die Kombination aus
+      statischen Seiten, Server Components und API-Routen erlaubt es, für jedes
+      Rätsel genau die passende Rendering-Strategie zu wählen, ohne einen
+      separaten Backend-Service zu benötigen.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js Middleware</h6>
+    <p>
+      Die Middleware bildet das Kernstück des Fortschrittssystems. Sie wird bei
+      jeder Anfrage vor dem Rendering ausgeführt, prüft JWT-Cookies, um den
+      Fortschritt der Spieler zu bestimmen, erzwingt benutzerdefinierte
+      Clearance-Werte und setzt Tracking-Cookies, um Redis-Zähler vor
+      künstlicher Erhöhung durch Reloads zu schützen. Die Bündelung dieser Logik
+      in einer zentralen Middleware hält die Rätselseiten selbst klar und
+      fokussiert.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Upstash Redis</h6>
+    <p>
+      Redis treibt zwei zentrale Funktionen an: Rate Limiting für
+      Antwort-Validierungs-Endpunkte sowie Besucherzähler pro Seite, die in die
+      Spielwelt eingebettet sind — Spieler sehen etwa Hinweise wie „Zugriff
+      durch 47 autorisierte Personen“. Upstash wurde aufgrund seines serverlosen
+      Ansatzes gewählt, wodurch keine zusätzliche Infrastruktur erforderlich
+      ist.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Jose</h6>
+    <p>
+      Der Spielfortschritt wird über signierte JWTs in HTTP-only Cookies
+      gespeichert. Jose wurde anstelle von <code>jsonwebtoken</code> gewählt, da
+      es vollständig edge-kompatibel ist — eine Voraussetzung für die Nutzung in
+      Next.js Middleware. Das JWT speichert den Fortschritt und steuert den
+      Zugriff auf spätere Routen. Passend zum ARG-Thema ist das Cookie wie ein
+      System-Token benannt und enthält zusätzlich einen versteckten
+      Lore-Hinweis.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">React Hook Form und Zod</h6>
+    <p>
+      Für Rätsel mit Formulareingaben übernimmt React Hook Form den Zustand im
+      Client, während Zod die Eingaben serverseitig validiert. Dadurch bleibt
+      die Validierung konsistent und fehlerhafte oder zu große Eingaben werden
+      abgefangen, bevor sie Redis oder die Antwortlogik erreichen.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Tailwind CSS</h6>
+    <p>
+      Jede Rätselseite besitzt eine eigene visuelle Identität — gealterte
+      Regierungsdokumente, grün-schwarze Terminalansichten oder Dossiers aus der
+      Zeit des Kalten Krieges — umgesetzt mit Tailwind-Utilities. Der bewusste
+      Verzicht auf eine Komponentenbibliothek war entscheidend, um die
+      Atmosphäre zu erhalten und visuelle Gleichförmigkeit zu vermeiden.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      Die Anwendung ist über ein Multi-Stage-Dockerfile auf Basis des Next.js
+      Standalone-Outputs containerisiert. Eine <code>docker-compose.yml</code>
+      steuert die Produktionskonfiguration, wobei sensible Daten wie
+      Upstash-Zugangsdaten und JWT-Keys zur Laufzeit injiziert werden. Dadurch
+      bleiben Secrets außerhalb der Versionskontrolle und Deployments
+      reproduzierbar.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Rollen und Verantwortlichkeiten</h1>
+Dieses Projekt wurde 2025 vollständig von mir konzipiert und umgesetzt. Ich war
+für alle Ebenen verantwortlich — vom Rätseldesign und der narrativen
+Ausarbeitung bis hin zur Backend-Architektur und Deployment-Konfiguration.
+Hervorzuheben sind:
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Rätseldesign und Schwierigkeitskurve
+    </h6>
+    <p>
+      Jedes Rätsel vermittelt gezielt eine neue Fähigkeit im Umgang mit Web-
+      Technologien. Die Progression reicht vom Lesen und Entschlüsseln über das
+      Kombinieren von Fragmenten bis hin zur Manipulation von Cookies, Analyse
+      von Netzwerkrequests und Interaktion mit versteckten APIs. Entscheidend
+      war, dass jeder Schritt logisch nachvollziehbar wirkt und sich verdient
+      anfühlt.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Narratives Design</h6>
+    <p>
+      Die Texte mussten gleichzeitig als glaubwürdige Dokumente aus dem Kalten
+      Krieg funktionieren und versteckte Hinweise transportieren. Jeder Absatz,
+      jede Schwärzung und jede Fußnote wurde so gestaltet, dass Hinweise offen
+      sichtbar sind — die Herausforderung liegt darin, sie überhaupt als solche
+      zu erkennen.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Backend und Fortschrittssystem</h6>
+    <p>
+      Umsetzung der vollständigen serverseitigen Logik: JWT-Handling,
+      Middleware-basierte Zugriffskontrolle, Redis-gestütztes Rate Limiting,
+      Besuchstracking und Antwortvalidierung. Rätsellösungen befinden sich nie
+      im Client — alle Prüfungen erfolgen serverseitig, und der Client erhält
+      ausschließlich Erfolg oder Fehler.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Herausforderungen und Lösungen</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Immersion vs. Usability</h6>
+    <p>
+      Eine frühe Version enthielt ein Passwortformular innerhalb eines
+      CIA-Dokuments. Technisch funktional, aber atmosphärisch unpassend — nach
+      dem Entschlüsseln eines Codes wirkte ein klassisches Login-Formular wie
+      ein Bruch mit der Spielwelt.
+    </p>
+    <p>
+      Die Lösung war ein grundlegendes Umdenken: Antworten sind keine
+      Formulareingaben mehr, sondern selbst die nächste URL. Der Fortschritt
+      erfolgt durch Navigation, was deutlich immersiver ist. Formulare werden
+      nur dort eingesetzt, wo sie auch narrativ Sinn ergeben.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Backend ohne Overengineering</h6>
+    <p>
+      Ohne Accounts besteht die Gefahr, dass ein ARG wie statische Seiten wirkt.
+      Die Herausforderung lag darin, sinnvolle Backend-Logik einzubauen, ohne
+      das System unnötig zu verkomplizieren. Features wie Rate Limiting,
+      Live-Besucherzahlen und JWT-basierter Fortschritt liefern echten Mehrwert
+      und sind direkt in die Spielerfahrung integriert.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Platzierung von Hinweisen</h6>
+    <p>
+      Hinweise richtig zu platzieren ist schwierig: zu offensichtlich und das
+      Rätsel ist trivial, zu versteckt und Spieler geben auf. Der effektivste
+      Ansatz war, Texte zunächst rein narrativ zu schreiben und Hinweise danach
+      organisch einzubauen — etwa Zahlen, Pfade oder Namen, die zunächst wie
+      Kontext wirken, aber bei genauer Betrachtung Bedeutung gewinnen.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Visuelle Konsistenz</h6>
+    <p>
+      Jede Seite soll wie ein eigenes Artefakt wirken — Terminal, Dossier oder
+      Netzwerkansicht — und dennoch Teil eines Ganzen sein. Ohne gemeinsame
+      Komponentenbibliothek wurde Konsistenz über wiederkehrende visuelle Muster
+      erreicht: Klassifizierungsleisten, Schwärzungen, Layoutstrukturen und
+      typografische Regeln bilden den roten Faden zwischen bewusst
+      unterschiedlichen Seiten.
+    </p>
+  </li>
+</ul>

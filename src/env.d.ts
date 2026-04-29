@@ -3,6 +3,9 @@
 type Technology =
   | "Astro"
   | "Next.js"
+  | "Angular"
+  | "Go"
+  | "NestJS"
   | "React"
   | "Vue"
   | "Sanity"

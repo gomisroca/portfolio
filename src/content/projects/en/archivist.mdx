@@ -1,0 +1,226 @@
+---
+name: Archivist
+year: 2026
+description: An alternate reality game set in the Cold War. Find the clues, solve the puzzles, uncover the truth.
+technologies: ["Next.js", "Redis", "Docker"]
+headerImage:
+  src: "/portfolio/projects/archivist.jpg"
+  alt: "A screenshot of the Archivist landing page"
+cardImage:
+  src: "/portfolio/cards/archivist.png"
+  alt: "A screenshot of the Archivist website"
+liveWebsite: "https://archivist-arg.vercel.app"
+repository: "https://github.com/gomisroca/archivist"
+---
+
+<strong>Archivist</strong> is an alternate reality game set in the Cold War.
+Players assume the role of an analyst who has stumbled onto a leak of classified
+CIA documents. Following a trail of ciphers, hidden fragments, manipulated
+browser state and intercepted network traffic, they piece together the fate of a
+missing operative and the operation that vanished with him.
+
+The project was designed as a full-stack portfolio piece with an emphasis on progressive difficulty —
+each puzzle teaches the player a new layer of web technology, from reading page source to probing
+API endpoints directly.
+
+<hr />
+
+<h1 class="text-2xl">Technologies and Tools</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js</h6>
+    <p>
+      Next.js was the natural choice for this project. The file-based router
+      allowed puzzle URLs to be deeply nested and deliberately obscure — a route
+      like <code>/static/files/declassified</code>
+      is just a folder, but it reads as a forgotten government file path. The
+      mix of static pages, server components and API routes meant each puzzle
+      could use exactly the rendering strategy it needed, without reaching for a
+      separate backend service.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js Middleware</h6>
+    <p>
+      Middleware sits at the core of the game's progression system. It runs on
+      every request before the page renders, checking JWT cookies to verify
+      which puzzles a player has solved, enforcing custom clearance cookie
+      values, and issuing visit-tracking cookies to prevent Redis counters from
+      being inflated by refreshes. Keeping all of this logic in a single
+      middleware file meant the puzzle pages themselves stayed clean and focused
+      on content.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Upstash Redis</h6>
+    <p>
+      Redis powers two features: rate limiting on answer validation endpoints,
+      and per-page visitor counters that are woven into the lore of each
+      document — players see lines like "accessed by 47 cleared personnel",
+      which is a live count. Upstash was chosen over a self-hosted Redis
+      instance because it is serverless and requires no additional
+      infrastructure, keeping the deployment simple.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Jose</h6>
+    <p>
+      Player progress is tracked using signed JWTs stored in HTTP-only cookies.
+      Jose was chosen over the more common <code>jsonwebtoken</code> package
+      because it is fully edge-compatible, which is a requirement for running
+      inside Next.js Middleware. The JWT payload tracks which puzzles a player
+      has solved, and is used by middleware to gate access to later routes. In
+      keeping with the ARG theme, the cookie itself is named to look like a
+      system token, and its payload contains a hidden lore clue for players who
+      think to inspect it.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">React Hook Form and Zod</h6>
+    <p>
+      For puzzles that require a form submission, React Hook Form handles the
+      client-side state and Zod validates the submission on the server before it
+      reaches any business logic. This pairing keeps validation consistent
+      between the client and the API route, and ensures that malformed or
+      oversized inputs are rejected before they touch Redis or the puzzle answer
+      store.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Tailwind CSS</h6>
+    <p>
+      Each puzzle page has a distinct visual identity — aged government
+      documents, green-on-black terminal screens, a Cold War-era dossier — all
+      built with Tailwind utility classes. The constraint of not using a
+      component library was intentional: ARGs live or die by atmosphere, and a
+      generic component library would have homogenised the aesthetic across
+      pages that are supposed to feel like different artefacts from different
+      eras.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      The application is containerised using a multi-stage Dockerfile based on
+      the official Next.js standalone output. A <code>docker-compose.yml</code>{" "}
+      handles the production configuration, with environment variables for the
+      Upstash credentials and JWT secret injected at runtime rather than baked
+      into the image. This keeps secrets out of version control and makes the
+      deployment reproducible across environments.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Roles and Responsibilities</h1>
+This project was designed and developed entirely by myself in 2025. I was
+responsible for every layer of it, from the puzzle design and narrative writing
+to the backend architecture and deployment configuration. Of note are:
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Puzzle Design and Difficulty Curve
+    </h6>
+    <p>
+      Each puzzle was designed to teach the player a different browser or web
+      skill, escalating in technical depth as the game progresses. The sequence
+      moves from reading carefully and decoding a cipher, to assembling
+      fragments across text and images, to manipulating a cookie in DevTools, to
+      intercepting a network request and probing an undocumented API endpoint,
+      to invoking a hidden JavaScript object from the browser console. Ensuring
+      each step felt earned and logically motivated — rather than arbitrary —
+      required as much design work as the technical implementation.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Narrative Writing</h6>
+    <p>
+      The lore had to do double duty: it needed to be believable as a Cold War
+      document and simultaneously carry puzzle clues that players could find on
+      a second reading. Every piece of body text, redacted field and footnote
+      was written with both goals in mind. The clues are always present in plain
+      sight — the challenge is recognising them as clues at all.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Backend and Progression System</h6>
+    <p>
+      Designed and implemented the full server-side progression stack: JWT
+      issuance and verification, middleware-based route protection, Redis-backed
+      rate limiting, visit tracking, and the answer validation API. The system
+      was designed so that puzzle answers never appear in client-side code — all
+      validation happens server-side, and the only thing the client ever
+      receives is a success or failure response.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Challenges and Solutions</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Immersion vs. Usability</h6>
+    <p>
+      The earliest version of the first puzzle page included a password input
+      form at the bottom of a classified CIA document. It was technically
+      functional, but it broke the illusion entirely — you had just found a
+      secret URL and decoded a cipher, and then you were presented with what
+      looked like a website login form. The friction between the fiction and the
+      interface was impossible to ignore.
+    </p>
+    <p>
+      The solution was to rethink the answer mechanic from scratch. Rather than
+      submitting answers through forms, the decoded answer becomes the next URL
+      itself. The "correct answer" moment is a new page loading — which is a far
+      more satisfying payoff and keeps the browser as the primary interface
+      throughout. Forms were reserved for puzzles where a form is itself part of
+      the fiction.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Keeping the Backend Meaningful Without Over-Engineering
+    </h6>
+    <p>
+      An ARG without user accounts or persistent sessions risks feeling like a
+      collection of static pages with a thin backend veneer. The challenge was
+      justifying real server-side work without introducing unnecessary
+      complexity. The solution was to find features where the backend genuinely
+      adds value: rate limiting prevents answer brute-forcing, Redis counters
+      produce live visitor numbers that are woven into the lore, and JWT cookies
+      carry both progression state and a hidden clue for players who inspect
+      their own session data. Each piece of backend work earns its place in the
+      player experience.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Clue Placement</h6>
+    <p>
+      Hiding a clue effectively is harder than it sounds. Too obvious and the
+      puzzle collapses immediately; too obscure and players abandon the game in
+      frustration. The calibration challenge was constant throughout
+      development. The approach that worked best was writing the lore text first
+      as pure fiction, then finding natural places within it where a number, a
+      path, or a name could sit without drawing attention to itself. A statute
+      reference of "78-C" reads as bureaucratic flavour until you realise 78 is
+      the year you are looking for. A FOIA document path reads as administrative
+      detail until you try typing it as a URL.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Visual Consistency Across Deliberately Distinct Pages
+    </h6>
+    <p>
+      Each page needs to feel like a different artefact — a terminal, a dossier,
+      a network node — while still belonging to the same game. Without a shared
+      component library, maintaining typographic and spatial consistency
+      required building a small set of reusable patterns by hand: the
+      classification bars, the redaction spans, the field note styling, the top
+      bar layout. These became the visual thread that connects pages that are
+      otherwise intentionally different from one another.
+    </p>
+  </li>
+</ul>

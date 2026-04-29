@@ -1,0 +1,135 @@
+---
+name: Cook It!
+year: 2026
+description: Explora, crea i comparteix receptes amb el món. Dona like, desa i organitza les teves preferides.
+technologies: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Docker"]
+headerImage:
+  src: "/portfolio/projects/cook-it.jpg"
+  alt: "Captura de pantalla del web de Cook It!"
+cardImage:
+  src: "/portfolio/cards/cook-it.png"
+  alt: "Captura de pantalla del web de Cook It! en mòbil"
+liveWebsite: "https://cook-it-demo.vercel.app"
+repository: "https://github.com/gomisroca/cook-it"
+---
+
+<strong>Cook It!</strong> és una plataforma de receptes full-stack on els
+usuaris poden crear, compartir i descobrir receptes d’arreu del món. Inclou una
+capa social completa amb likes, favorits, follows, comentaris i col·leccions,
+així com un sistema potent de cerca i filtratge.
+
+<hr />
+
+<h1 class="text-2xl">Tecnologies i eines</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js</h6>
+    <p>
+      Next.js es va escollir com a framework frontend. Els Server Components de
+      l’App Router permeten obtenir dades al servidor i passar-les al client,
+      reduint el JavaScript client i millorant el rendiment. Es van utilitzar
+      Parallel Routes i Intercepting Routes per implementar patrons modals.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">NestJS</h6>
+    <p>
+      NestJS es va escollir com a framework backend per la seva estructura clara
+      i suport per TypeScript. Proporciona una arquitectura escalable basada en
+      mòduls, controladors i serveis. Passport.js es va integrar per a JWT i
+      Google OAuth.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Prisma</h6>
+    <p>
+      Prisma es va utilitzar com a ORM per la seva integració amb TypeScript i
+      facilitat per modelar relacions complexes. El client generat garanteix
+      tipat complet a tota la capa de dades.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">PostgreSQL</h6>
+    <p>
+      PostgreSQL es va utilitzar com a base de dades principal i es va allotjar
+      a Supabase, que ofereix una instància gestionada amb una interfície
+      senzilla.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">UploadThing</h6>
+    <p>
+      UploadThing es va utilitzar per gestionar la pujada d’imatges. Permet una
+      integració senzilla i neteja automàtica de fitxers no utilitzats.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      Docker es va utilitzar per containeritzar frontend i backend, amb builds
+      multi-stage i execució automàtica de migracions abans d’iniciar.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Fly.io & Vercel</h6>
+    <p>
+      Backend a Fly.io i frontend a Vercel. Es va implementar un proxy per
+      evitar problemes de cookies entre dominis.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Reptes i solucions</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Autenticació entre dominis</h6>
+    <p>
+      Un dels reptes més persistents va ser aconseguir que l’autenticació basada
+      en cookies funcionés de manera fiable entre el frontend a Vercel i el
+      backend a Fly.io en producció. Els navegadors moderns restringeixen cada
+      vegada més les cookies de tercers, fet que provocava que, fins i tot amb
+      <code>SameSite: none</code> i <code>Secure: true</code>, les cookies
+      definides pel backend no sempre fossin acceptades.
+    </p>
+    <p>
+      La solució va ser implementar un proxy de reescriptura a Next.js que
+      redirigeix les peticions API del client a través del domini del frontend.
+      Això assegura que la cookie es defineixi sempre al mateix domini, evitant
+      que el navegador la rebutgi.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Fetching en servidor vs client</h6>
+    <p>
+      La distinció entre components de servidor i de client a l’App Router va
+      requerir decidir amb cura on fer el data fetching. Es va crear una
+      utilitat compartida amb dues variants: una per a components de servidor
+      que reenvia les cookies de la petició, i una altra per a components de
+      client que envia credencials automàticament. Això va mantenir un patró
+      coherent respectant la separació entre entorns.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Prisma en Docker</h6>
+    <p>
+      Desplegar Prisma dins d’un contenidor Docker va presentar diversos reptes,
+      especialment pel que fa a configuració i rutes de migració. El fitxer
+      <code>prisma.config.ts</code> utilitza rutes diferents segons si el codi
+      s’executa en build o en runtime, ja que l’estructura font difereix de la
+      compilada. Després de diverses proves, es va trobar una solució fiable
+      basada en variables d’entorn per gestionar-ho automàticament.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Abast de funcionalitats</h6>
+    <p>
+      A mesura que el projecte creixia, va ser clau decidir quines
+      funcionalitats implementar i quines posposar. Funcions com notificacions o
+      un panell d’administració es van deixar fora per prioritzar una
+      experiència sòlida en receptes i col·leccions. Això va permetre mantenir
+      el focus sense renunciar a una plataforma rica en funcionalitats.
+    </p>
+  </li>
+</ul>

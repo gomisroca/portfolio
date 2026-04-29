@@ -73,8 +73,8 @@ function Card({ image, title, tilt = 0 }: CardProps) {
 
 const Projects = [
   {
-    image: "/portfolio/cards/oura.png",
-    title: "Oura",
+    image: "/portfolio/cards/gasthaus.png",
+    title: "Gasthaus",
     tilt: -30,
   },
   {
@@ -83,13 +83,13 @@ const Projects = [
     tilt: -15,
   },
   {
-    image: "/portfolio/cards/echoes.png",
-    title: "Echoes",
+    image: "/portfolio/cards/archivist.png",
+    title: "Archivist",
     tilt: 0,
   },
   {
-    image: "/portfolio/cards/esia.png",
-    title: "Esia",
+    image: "/portfolio/cards/cook-it.png",
+    title: "Cook It",
     tilt: 15,
   },
 ];

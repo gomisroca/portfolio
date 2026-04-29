@@ -1,0 +1,195 @@
+---
+name: Archivist
+year: 2026
+description: Un joc de realitat alternativa ambientat a la Guerra Freda. Troba les pistes, resol els enigmes i descobreix la veritat.
+technologies: ["Next.js", "Redis", "Docker"]
+headerImage:
+  src: "/portfolio/projects/archivist.jpg"
+  alt: "Captura de pantalla de la pàgina principal d’Archivist"
+cardImage:
+  src: "/portfolio/cards/archivist.png"
+  alt: "Captura de pantalla del web d’Archivist"
+liveWebsite: "https://archivist-arg.vercel.app"
+repository: "https://github.com/gomisroca/archivist"
+---
+
+<strong>Archivist</strong> és un joc de realitat alternativa ambientat a la
+Guerra Freda. Els jugadors assumeixen el paper d’un analista que es troba amb
+una filtració de documents classificats de la CIA. Seguint un rastre de xifrats,
+fragments ocults, estat del navegador manipulat i trànsit de xarxa interceptat,
+reconstrueixen el destí d’un agent desaparegut i l’operació que va desaparèixer
+amb ell.
+
+El projecte es va concebre com una peça de portfolio full-stack amb èmfasi en
+una dificultat progressiva — cada enigma introdueix una nova capa de tecnologia
+web, des de llegir el codi font d’una pàgina fins a interactuar directament amb
+endpoints d’API.
+
+<hr />
+
+<h1 class="text-2xl">Tecnologies i eines</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js</h6>
+    <p>
+      Next.js va ser l’elecció natural per a aquest projecte. El sistema de
+      routing basat en fitxers permet crear URLs profundament anidades i
+      deliberadament críptiques — una ruta com
+      <code>/static/files/declassified</code> és només una carpeta, però es
+      percep com un camí oblidat d’arxius governamentals. La combinació de
+      pàgines estàtiques, Server Components i rutes API permet que cada enigma
+      utilitzi l’estratègia de renderització més adequada sense necessitat d’un
+      backend separat.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js Middleware</h6>
+    <p>
+      El middleware constitueix el nucli del sistema de progressió. S’executa en
+      cada petició abans del renderitzat, verificant cookies JWT per determinar
+      quins enigmes ha resolt el jugador, aplicant nivells d’accés
+      personalitzats i establint cookies de seguiment per evitar que els
+      comptadors de Redis s’inflin amb recàrregues. Centralitzar aquesta lògica
+      en un únic middleware manté les pàgines netes i centrades en el contingut.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Upstash Redis</h6>
+    <p>
+      Redis impulsa dues funcionalitats clau: limitació de taxa als endpoints de
+      validació de respostes i comptadors de visitants per pàgina integrats en
+      la narrativa — els jugadors veuen línies com “accedit per 47 personal
+      autoritzat”, que reflecteixen un valor en temps real. Upstash es va
+      escollir pel seu enfocament serverless, evitant infraestructura
+      addicional.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Jose</h6>
+    <p>
+      El progrés del jugador es gestiona mitjançant JWT signats emmagatzemats en
+      cookies HTTP-only. Jose es va escollir en lloc de
+      <code>jsonwebtoken</code> perquè és totalment compatible amb entorns edge,
+      requisit per a Next.js Middleware. El JWT emmagatzema el progrés i
+      controla l’accés a rutes posteriors. Seguint la temàtica de l’ARG, la
+      cookie té nom de token de sistema i inclou una pista oculta.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">React Hook Form i Zod</h6>
+    <p>
+      En els enigmes que requereixen formularis, React Hook Form gestiona
+      l’estat al client i Zod valida les dades al servidor abans d’arribar a la
+      lògica principal. Això garanteix coherència en la validació i evita que
+      dades incorrectes arribin a Redis o al sistema de respostes.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Tailwind CSS</h6>
+    <p>
+      Cada pàgina té una identitat visual pròpia — documents envellits,
+      terminals en verd sobre negre o dossiers de la Guerra Freda — construïts
+      amb utilitats de Tailwind. L’absència intencionada d’una llibreria de
+      components evita una estètica homogènia i reforça l’atmosfera del joc.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      L’aplicació està containeritzada amb un Dockerfile multi-stage basat en la
+      sortida standalone de Next.js. Un <code>docker-compose.yml</code> gestiona
+      la configuració en producció, injectant variables d’entorn com credencials
+      d’Upstash i claus JWT en temps d’execució. Això evita exposar secrets i
+      garanteix desplegaments reproduïbles.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Rols i responsabilitats</h1>
+Aquest projecte va ser dissenyat i desenvolupat íntegrament per mi el 2025. Vaig
+ser responsable de totes les capes — des del disseny dels enigmes i la narrativa
+fins a l’arquitectura backend i el desplegament. Destaquen:
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Disseny d’enigmes i corba de dificultat
+    </h6>
+    <p>
+      Cada enigma introdueix una habilitat diferent relacionada amb el navegador
+      o la web, augmentant progressivament en complexitat tècnica. La progressió
+      va des de la lectura i descodificació fins a la manipulació de cookies,
+      anàlisi de trànsit de xarxa i interacció amb APIs ocultes. L’objectiu era
+      que cada pas resultés coherent i satisfactori.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Narrativa</h6>
+    <p>
+      El contingut havia de funcionar com un document creïble de la Guerra Freda
+      i alhora contenir pistes ocultes. Cada text, censura i anotació es va
+      dissenyar amb aquest doble objectiu. Les pistes sempre hi són — el repte
+      és reconèixer-les.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Backend i sistema de progressió</h6>
+    <p>
+      Implementació completa de la lògica del servidor: gestió de JWT, protecció
+      de rutes amb middleware, rate limiting amb Redis, seguiment de visites i
+      validació de respostes. Les solucions mai apareixen al client — tota la
+      validació es fa al servidor.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Reptes i solucions</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Immersió vs. usabilitat</h6>
+    <p>
+      Una versió inicial incloïa un formulari de contrasenya dins d’un document
+      de la CIA. Tot i ser funcional, trencava la immersió — després de
+      desxifrar un codi, trobar-se amb un formulari típic de login resultava
+      incoherent amb la narrativa.
+    </p>
+    <p>
+      La solució va ser replantejar el mecanisme: la resposta correcta passa a
+      ser la següent URL. El progrés es produeix navegant, cosa que reforça la
+      immersió. Els formularis es reserven només quan tenen sentit dins de la
+      ficció.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Backend sense sobreenginyeria</h6>
+    <p>
+      Sense comptes d’usuari, el risc era semblar un conjunt de pàgines
+      estàtiques. El repte va ser justificar el backend sense afegir complexitat
+      innecessària. Funcions com el rate limiting, comptadors en temps real i
+      JWT amb estat de progrés aporten valor directe a l’experiència.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Col·locació de pistes</h6>
+    <p>
+      Amagar pistes correctament és difícil: massa evidents i l’enigma es resol
+      massa ràpid; massa ocultes i generen frustració. L’enfocament va ser
+      escriure primer el text narratiu i després integrar pistes de manera
+      orgànica — números, rutes o noms que semblen context fins que revelen el
+      seu significat.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Consistència visual</h6>
+    <p>
+      Cada pàgina ha de semblar un artefacte diferent — un terminal, un dossier
+      o un node de xarxa — però formar part del mateix conjunt. Sense una
+      llibreria de components, la coherència es va aconseguir amb patrons
+      visuals reutilitzables: barres de classificació, censures, layouts i
+      tipografia.
+    </p>
+  </li>
+</ul>

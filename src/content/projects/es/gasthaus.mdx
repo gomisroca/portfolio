@@ -1,0 +1,147 @@
+---
+name: Gasthaus
+year: 2025
+description: Una web de restaurante full-stack con una carta pública y un panel de administración protegido para la gestión de contenidos.
+technologies: ["Angular", "Go", "PostgreSQL"]
+headerImage:
+  src: "/portfolio/projects/gasthaus.jpg"
+  alt: "Captura de pantalla de la web de Gasthaus"
+cardImage:
+  src: "/portfolio/cards/gasthaus.png"
+  alt: "Captura de pantalla de la web de Gasthaus en móvil"
+liveWebsite: "https://gasthaus.vercel.app"
+repository: "https://github.com/gomisroca/gasthaus"
+---
+
+<strong>Gasthaus</strong> es una web de restaurante full-stack desarrollada para
+un cliente real. Incluye una carta pública donde los visitantes pueden explorar
+los platos por categorías y consultar ingredientes, alérgenos y precios, junto
+con una sección de contacto y reservas. Un panel de administración protegido
+mediante JWT permite gestionar los elementos del menú, incluyendo la subida de
+imágenes.
+
+<hr />
+
+<h1 class="text-2xl">Tecnologías y herramientas</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Angular</h6>
+    <p>
+      Angular 19 fue elegido para el frontend por su estructura clara y su
+      excelente soporte para renderizado del lado del servidor mediante Angular
+      SSR. El proyecto utiliza patrones modernos como signals, formularios
+      reactivos tipados, guards funcionales y la nueva sintaxis de control de
+      flujo. La carta pública se beneficia de SSR con tiempos de carga rápidos,
+      mientras que el panel de administración está protegido con JWT.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Go</h6>
+    <p>
+      El backend está desarrollado en Go utilizando el paquete estándar
+      <code>net/http</code> junto con Gorilla Mux para el enrutado. Go se eligió
+      por su rendimiento, simplicidad y bajo coste de despliegue. La API
+      gestiona autenticación, administración del menú y subida de imágenes, con
+      manejo de errores estructurado, apagado controlado y propagación de
+      contexto por petición.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">PostgreSQL</h6>
+    <p>
+      PostgreSQL se utiliza como base de datos principal, accedida mediante el
+      driver <code>pgx</code> y pooling de conexiones. Las migraciones se
+      gestionan con <code>golang-migrate</code>, manteniendo el esquema
+      versionado y reproducible.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Supabase</h6>
+    <p>
+      Supabase Storage se utiliza para alojar las imágenes del menú. Las subidas
+      se validan en el backend (tipo y tamaño) y luego se envían directamente a
+      un bucket, devolviendo una URL pública que se guarda junto al elemento en
+      la base de datos.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Fly.io</h6>
+    <p>
+      El backend se despliega en Fly.io mediante un build Docker multi-stage,
+      generando una imagen mínima basada en Alpine. Se eligió por su simplicidad
+      y soporte para variables de entorno seguras, usadas para credenciales de
+      base de datos, claves JWT y tokens de Supabase.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Roles y responsabilidades</h1>
+El proyecto fue diseñado y desarrollado íntegramente por mí. Fui responsable de
+todas las capas del stack, desde el diseño del esquema de base de datos hasta el
+despliegue. Destacan:
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Diseño e implementación de la API</h6>
+    <p>
+      Desarrollo de la API REST en Go con autenticación, operaciones CRUD y
+      gestión de subidas. Se priorizó la seguridad: validación de JWT mediante
+      middleware, validación de archivos en el servidor y manejo de errores sin
+      exponer detalles internos.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Arquitectura frontend</h6>
+    <p>
+      Estructuración de la aplicación Angular con patrones modernos, separación
+      de responsabilidades y lazy loading. Incluye interceptor JWT, guards de
+      autenticación y una capa de servicios que separa la lógica HTTP de la UI.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Pipeline de despliegue</h6>
+    <p>
+      Configuración completa del despliegue: frontend en Vercel con SSR y
+      backend en Fly.io. Variables de entorno, CORS y migraciones gestionadas de
+      forma consistente.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Retos y soluciones</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">SSR y llamadas HTTP</h6>
+    <p>
+      El prerenderizado causaba errores al ejecutar llamadas HTTP sin backend
+      disponible. Se solucionó usando <code>isPlatformBrowser</code> y
+      desactivando prerender en rutas dinámicas.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">CORS</h6>
+    <p>
+      La separación entre frontend (Vercel) y backend (Fly.io) requirió una
+      configuración cuidadosa de CORS, validando la origin en tiempo de
+      ejecución.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Tipado en todo el stack</h6>
+    <p>
+      El cambio de precios (float → céntimos) implicó modificaciones en todo el
+      sistema, reforzando la importancia de cambios coordinados.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Seguridad en subidas de imágenes</h6>
+    <p>
+      Se reforzó la validación con control de MIME, límites de tamaño y
+      procesamiento seguro. Las URLs existentes se obtienen de la base de datos
+      en lugar de confiar en el cliente.
+    </p>
+  </li>
+</ul>

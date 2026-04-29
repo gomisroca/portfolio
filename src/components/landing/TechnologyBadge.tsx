@@ -17,11 +17,17 @@ import {
   SiCheerio,
   SiRedis,
   SiNginx,
+  SiAngular,
+  SiGo,
+  SiNestjs,
 } from "react-icons/si";
 
 const technologyColors: Record<Technology, string> = {
   Astro: "#000000",
   "Next.js": "#000000",
+  Angular: "#DD0031",
+  NestJS: "#E0234E",
+  Go: "#00ADD8",
   React: "#61DAFB",
   Vue: "#4FC08D",
   Sanity: "#F03E2F",
@@ -43,6 +49,8 @@ const technologyColors: Record<Technology, string> = {
 const technologyIcons = {
   Astro: SiAstro,
   "Next.js": SiNextdotjs,
+  Angular: SiAngular,
+  Go: SiGo,
   React: SiReact,
   Vue: SiVuedotjs,
   Sanity: SiSanity,
@@ -59,6 +67,7 @@ const technologyIcons = {
   Cheerio: SiCheerio,
   Redis: SiRedis,
   Nginx: SiNginx,
+  NestJS: SiNestjs,
 };
 
 interface Props {

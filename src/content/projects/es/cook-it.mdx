@@ -1,0 +1,151 @@
+---
+name: Cook It!
+year: 2026
+description: Explora, crea y comparte recetas con el mundo. Da like, guarda y organiza tus favoritas.
+technologies: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Docker"]
+headerImage:
+  src: "/portfolio/projects/cook-it.jpg"
+  alt: "Captura de pantalla de la web de Cook It!"
+cardImage:
+  src: "/portfolio/cards/cook-it.png"
+  alt: "Captura de pantalla de la web de Cook It! en móvil"
+liveWebsite: "https://cook-it-demo.vercel.app"
+repository: "https://github.com/gomisroca/cook-it"
+---
+
+<strong>Cook It!</strong> es una plataforma de recetas full-stack donde los
+usuarios pueden crear, compartir y descubrir recetas de todo el mundo. La
+plataforma incluye una capa social completa con likes, favoritos, follows,
+comentarios y colecciones, así como un potente sistema de búsqueda y filtrado
+para encontrar exactamente lo que se busca.
+
+<hr />
+
+<h1 class="text-2xl">Tecnologías y herramientas</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js</h6>
+    <p>
+      Next.js fue elegido como framework frontend. Los Server Components del App
+      Router permiten obtener datos en el servidor y pasarlos al cliente,
+      reduciendo la cantidad de JavaScript en el cliente y mejorando el
+      rendimiento. Se utilizaron Parallel Routes e Intercepting Routes para
+      implementar patrones modales como login, registro, likes y favoritos.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">NestJS</h6>
+    <p>
+      NestJS fue elegido como framework backend por su estructura bien definida
+      y su fuerte soporte para TypeScript. Proporciona una arquitectura limpia y
+      escalable basada en módulos, controladores, servicios y guards, lo que
+      facilita la evolución del proyecto. Passport.js se integró para
+      autenticación tanto con JWT como con Google OAuth.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Prisma</h6>
+    <p>
+      Prisma se utilizó como ORM por su excelente integración con TypeScript y
+      su gran experiencia de desarrollo. Su enfoque schema-first facilita la
+      modelización de relaciones complejas entre usuarios, recetas, colecciones
+      y funcionalidades sociales. El cliente generado proporciona tipado
+      completo en toda la capa de datos.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">PostgreSQL</h6>
+    <p>
+      PostgreSQL se eligió como base de datos por su robustez y su capacidad
+      para manejar consultas relacionales complejas. Se alojó en Supabase, que
+      proporciona una instancia gestionada con conexión eficiente y una interfaz
+      sencilla para la gestión de datos.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">UploadThing</h6>
+    <p>
+      UploadThing se utilizó para gestionar la subida de imágenes de recetas,
+      pasos y avatares de usuario. Se integra fácilmente con Next.js y NestJS, y
+      proporciona una API sencilla junto con limpieza automática de archivos no
+      utilizados.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      Docker se utilizó para containerizar frontend y backend, asegurando
+      consistencia entre entornos. Se emplearon builds multi-stage para generar
+      imágenes ligeras en producción, junto con un script de arranque que
+      ejecuta automáticamente las migraciones de Prisma antes de iniciar el
+      servidor.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Fly.io & Vercel</h6>
+    <p>
+      El backend en NestJS se desplegó en Fly.io por su soporte sencillo para
+      Docker. El frontend en Next.js se desplegó en Vercel por su integración
+      nativa. Para evitar problemas con cookies entre dominios, se implementó un
+      proxy de reescritura en Next.js que enruta las peticiones API a través del
+      dominio del frontend.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Retos y soluciones</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Autenticación entre dominios</h6>
+    <p>
+      Uno de los retos más persistentes fue conseguir que la autenticación
+      basada en cookies funcionara de forma fiable entre el frontend en Vercel y
+      el backend en Fly.io en producción. Los navegadores modernos restringen
+      cada vez más las cookies de terceros, lo que hacía que incluso con
+      <code>SameSite: none</code> y <code>Secure: true</code>, las cookies
+      establecidas por el backend no siempre fueran aceptadas.
+    </p>
+    <p>
+      La solución fue implementar un proxy de reescritura en Next.js que enruta
+      las peticiones API del cliente a través del dominio del frontend. De este
+      modo, la cookie se establece siempre en el mismo dominio, evitando que el
+      navegador la rechace.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Fetching en servidor vs cliente</h6>
+    <p>
+      La distinción entre componentes de servidor y de cliente en el App Router
+      requirió decidir cuidadosamente dónde realizar las peticiones de datos.
+      Para ello se creó una utilidad compartida con dos variantes: una para
+      componentes de servidor que reenvía las cookies de la petición entrante, y
+      otra para componentes de cliente que envía credenciales automáticamente.
+      Esto permitió mantener un patrón consistente en todo el código respetando
+      la separación entre servidor y cliente.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Prisma en Docker</h6>
+    <p>
+      Desplegar Prisma dentro de un contenedor Docker presentó varios retos,
+      especialmente en la configuración y las rutas de migración. El archivo
+      <code>prisma.config.ts</code> utiliza rutas distintas según si el código
+      se ejecuta en build o en runtime, ya que la estructura fuente difiere de
+      la compilada. Tras varias iteraciones, se encontró una solución fiable
+      basada en variables de entorno para cambiar automáticamente entre rutas.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Alcance de funcionalidades</h6>
+    <p>
+      A medida que el proyecto crecía, se volvió esencial decidir con criterio
+      qué funcionalidades implementar y cuáles posponer. Funciones como
+      notificaciones o un panel de administración se dejaron fuera para
+      priorizar una experiencia sólida en recetas y colecciones. Esto permitió
+      mantener el enfoque sin renunciar a una plataforma rica en
+      funcionalidades.
+    </p>
+  </li>
+</ul>

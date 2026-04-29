@@ -1,0 +1,196 @@
+---
+name: Archivist
+year: 2026
+description: Un juego de realidad alternativa ambientado en la Guerra Fría. Encuentra las pistas, resuelve los acertijos y descubre la verdad.
+technologies: ["Next.js", "Redis", "Docker"]
+headerImage:
+  src: "/portfolio/projects/archivist.jpg"
+  alt: "Captura de pantalla de la página principal de Archivist"
+cardImage:
+  src: "/portfolio/cards/archivist.png"
+  alt: "Captura de pantalla de la web de Archivist"
+liveWebsite: "https://archivist-arg.vercel.app"
+repository: "https://github.com/gomisroca/archivist"
+---
+
+<strong>Archivist</strong> es un juego de realidad alternativa ambientado en la
+Guerra Fría. Los jugadores asumen el papel de un analista que se topa con una
+filtración de documentos clasificados de la CIA. Siguiendo un rastro de
+cifrados, fragmentos ocultos, estados del navegador manipulados y tráfico de red
+interceptado, reconstruyen el destino de un agente desaparecido y la operación
+que desapareció con él.
+
+El proyecto fue concebido como una pieza de portfolio full-stack con énfasis en una
+dificultad progresiva — cada acertijo introduce una nueva capa de tecnología web, desde
+leer el código fuente de una página hasta interactuar directamente con endpoints de API.
+
+<hr />
+
+<h1 class="text-2xl">Tecnologías y herramientas</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js</h6>
+    <p>
+      Next.js fue la elección natural para este proyecto. El sistema de routing
+      basado en archivos permite crear URLs profundamente anidadas y
+      deliberadamente crípticas — una ruta como{" "}
+      <code>/static/files/declassified</code> es solo una carpeta, pero se
+      percibe como una ruta olvidada de archivos gubernamentales. La combinación
+      de páginas estáticas, Server Components y rutas API permite que cada
+      acertijo utilice la estrategia de renderizado más adecuada sin necesidad
+      de un backend separado.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Next.js Middleware</h6>
+    <p>
+      El middleware constituye el núcleo del sistema de progresión. Se ejecuta
+      en cada petición antes del renderizado, verificando cookies JWT para
+      determinar qué acertijos ha resuelto el jugador, aplicando niveles de
+      acceso personalizados y estableciendo cookies de seguimiento para evitar
+      que los contadores en Redis se inflen con recargas. Centralizar esta
+      lógica en un único middleware mantiene las páginas limpias y centradas en
+      el contenido.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Upstash Redis</h6>
+    <p>
+      Redis impulsa dos funcionalidades clave: limitación de tasa en los
+      endpoints de validación de respuestas y contadores de visitantes por
+      página integrados en la narrativa — los jugadores ven líneas como
+      “accedido por 47 personal autorizado”, que reflejan un valor en tiempo
+      real. Upstash se eligió por su enfoque serverless, evitando la necesidad
+      de infraestructura adicional.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Jose</h6>
+    <p>
+      El progreso del jugador se gestiona mediante JWT firmados almacenados en
+      cookies HTTP-only. Jose se eligió frente a <code>jsonwebtoken</code> por
+      ser completamente compatible con entornos edge, requisito para Next.js
+      Middleware. El JWT almacena el progreso y controla el acceso a rutas
+      posteriores. En línea con el tema del ARG, la cookie tiene nombre de token
+      de sistema e incluye una pista oculta en su contenido.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">React Hook Form y Zod</h6>
+    <p>
+      En los acertijos que requieren formularios, React Hook Form gestiona el
+      estado en el cliente y Zod valida los datos en el servidor antes de llegar
+      a la lógica principal. Esto mantiene la validación consistente y evita que
+      entradas inválidas o excesivas lleguen a Redis o al sistema de respuestas.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Tailwind CSS</h6>
+    <p>
+      Cada página tiene una identidad visual propia — documentos envejecidos,
+      terminales en verde sobre negro o dosieres de la Guerra Fría — construida
+      con utilidades de Tailwind. La ausencia intencionada de una librería de
+      componentes evita una estética homogénea y refuerza la atmósfera del
+      juego.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Docker</h6>
+    <p>
+      La aplicación está containerizada mediante un Dockerfile multi-stage
+      basado en la salida standalone de Next.js. Un{" "}
+      <code>docker-compose.yml</code>
+      gestiona la configuración en producción, inyectando variables de entorno
+      como credenciales de Upstash y claves JWT en tiempo de ejecución. Esto
+      evita exponer secretos y garantiza despliegues reproducibles.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Roles y responsabilidades</h1>
+Este proyecto fue diseñado y desarrollado íntegramente por mí en 2025. Fui
+responsable de todas sus capas — desde el diseño de acertijos y la narrativa
+hasta la arquitectura backend y el despliegue. Destacan:
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">
+      Diseño de acertijos y curva de dificultad
+    </h6>
+    <p>
+      Cada acertijo introduce una habilidad distinta relacionada con el
+      navegador o la web, aumentando progresivamente en complejidad técnica. La
+      progresión va desde la lectura y descifrado hasta la manipulación de
+      cookies, análisis de tráfico de red e interacción con APIs ocultas. El
+      objetivo era que cada paso resultara lógico y satisfactorio.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Narrativa</h6>
+    <p>
+      El contenido debía funcionar como documento creíble de la Guerra Fría y al
+      mismo tiempo contener pistas ocultas. Cada texto, tachado y anotación fue
+      diseñado con ambos objetivos. Las pistas siempre están a la vista — el
+      reto es reconocerlas como tales.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Backend y sistema de progresión</h6>
+    <p>
+      Implementación completa de la lógica del servidor: gestión de JWT,
+      protección de rutas mediante middleware, rate limiting con Redis,
+      seguimiento de visitas y validación de respuestas. Las soluciones nunca
+      aparecen en el cliente — toda validación ocurre en el servidor.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Retos y soluciones</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Inmersión vs. usabilidad</h6>
+    <p>
+      Una versión inicial incluía un formulario de contraseña dentro de un
+      documento de la CIA. Aunque funcional, rompía la inmersión — tras
+      descifrar un código, encontrarse con un formulario típico de login
+      resultaba incoherente con la narrativa.
+    </p>
+    <p>
+      La solución fue replantear el mecanismo: la respuesta correcta pasa a ser
+      la siguiente URL. El progreso ocurre navegando, lo que refuerza la
+      experiencia. Los formularios se reservan solo cuando tienen sentido dentro
+      de la ficción.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Backend sin sobreingeniería</h6>
+    <p>
+      Sin cuentas de usuario, el riesgo era parecer un conjunto de páginas
+      estáticas. El reto fue justificar el backend sin añadir complejidad
+      innecesaria. Funciones como rate limiting, contadores en tiempo real y JWT
+      con estado de progreso aportan valor directo a la experiencia.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Colocación de pistas</h6>
+    <p>
+      Ocultar pistas correctamente es complejo: demasiado visibles trivializan
+      el acertijo, demasiado ocultas generan frustración. El enfoque fue
+      escribir primero el texto narrativo y después integrar pistas de forma
+      orgánica — números, rutas o nombres que parecen contexto hasta que revelan
+      su significado.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Consistencia visual</h6>
+    <p>
+      Cada página debe sentirse como un artefacto distinto — terminal, dosier o
+      nodo de red — pero pertenecer al mismo sistema. Sin una librería de
+      componentes, la coherencia se logró mediante patrones visuales
+      reutilizables: barras de clasificación, tachados, layouts y tipografía.
+    </p>
+  </li>
+</ul>

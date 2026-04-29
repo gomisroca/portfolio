@@ -1,0 +1,138 @@
+---
+name: Gasthaus
+year: 2025
+description: Una web de restaurant full-stack amb una carta pública i un panell d’administració protegit per a la gestió de continguts.
+technologies: ["Angular", "Go", "PostgreSQL"]
+headerImage:
+  src: "/portfolio/projects/gasthaus.jpg"
+  alt: "Captura de pantalla del web de Gasthaus"
+cardImage:
+  src: "/portfolio/cards/gasthaus.png"
+  alt: "Captura de pantalla del web de Gasthaus en mòbil"
+liveWebsite: "https://gasthaus.vercel.app"
+repository: "https://github.com/gomisroca/gasthaus"
+---
+
+<strong>Gasthaus</strong> és una web de restaurant full-stack desenvolupada per
+a un client real. Inclou una carta pública on els visitants poden explorar els
+plats per categories i consultar ingredients, al·lèrgens i preus, així com una
+secció de contacte i reserves. Un panell d’administració protegit amb JWT permet
+gestionar els elements del menú, incloent-hi la pujada d’imatges.
+
+<hr />
+
+<h1 class="text-2xl">Tecnologies i eines</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Angular</h6>
+    <p>
+      Angular 19 es va escollir per al frontend per la seva estructura clara i
+      el suport excel·lent per al renderitzat al servidor mitjançant Angular
+      SSR. El projecte utilitza patrons moderns com signals, formularis reactius
+      tipats, guards funcionals i la nova sintaxi de control de flux. La carta
+      pública es beneficia de SSR amb temps de càrrega ràpids, mentre que el
+      panell d’administració està protegit amb JWT.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Go</h6>
+    <p>
+      El backend està desenvolupat en Go utilitzant el paquet estàndard
+      <code>net/http</code> juntament amb Gorilla Mux per al routing. Go es va
+      triar per la seva eficiència, simplicitat i desplegament lleuger. L’API
+      gestiona autenticació, menú i pujada d’imatges amb gestió d’errors
+      estructurada, apagada controlada i propagació de context per petició.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">PostgreSQL</h6>
+    <p>
+      PostgreSQL s’utilitza com a base de dades principal mitjançant el driver
+      <code>pgx</code> i pooling de connexions. Les migracions es gestionen amb
+      <code>golang-migrate</code>, mantenint l’esquema versionat i reproduïble.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Supabase</h6>
+    <p>
+      Supabase Storage s’utilitza per allotjar les imatges del menú. Les pujades
+      es validen al backend (tipus i mida) i després s’envien directament a un
+      bucket, retornant una URL pública que es desa amb l’element.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Fly.io</h6>
+    <p>
+      El backend es desplega a Fly.io amb un build Docker multi-stage que genera
+      una imatge mínima basada en Alpine. Es va escollir per la seva simplicitat
+      i el suport per a variables d’entorn segures.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Rols i responsabilitats</h1>
+El projecte va ser dissenyat i desenvolupat íntegrament per mi. Vaig ser
+responsable de totes les capes del stack, des de l’esquema de base de dades fins
+al desplegament. Destaquen:
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">Disseny i implementació de l’API</h6>
+    <p>
+      Desenvolupament de l’API REST en Go amb autenticació, operacions CRUD i
+      gestió de pujades. Es va prioritzar la seguretat amb validació de JWT,
+      validació de fitxers i gestió d’errors segura.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Arquitectura frontend</h6>
+    <p>
+      Estructuració de l’aplicació Angular amb patrons moderns, lazy loading i
+      separació de responsabilitats. Inclou interceptor JWT, guards i capa de
+      serveis.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Pipeline de desplegament</h6>
+    <p>
+      Configuració del desplegament amb Vercel (frontend) i Fly.io (backend),
+      gestionant variables d’entorn, CORS i migracions de manera consistent.
+    </p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 class="text-2xl">Reptes i solucions</h1>
+<ul>
+  <li>
+    <h6 className="text-lg font-semibold">SSR i crides HTTP</h6>
+    <p>
+      El prerendering causava errors en executar peticions HTTP sense backend.
+      Es va solucionar amb <code>isPlatformBrowser</code> i desactivant-lo en
+      rutes dinàmiques.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">CORS</h6>
+    <p>
+      La separació entre frontend i backend va requerir una configuració acurada
+      de CORS amb validació en temps d’execució.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Tipat al llarg del stack</h6>
+    <p>
+      El canvi en la representació dels preus va afectar tot el sistema,
+      destacant la importància de canvis coordinats.
+    </p>
+  </li>
+  <li>
+    <h6 className="text-lg font-semibold">Seguretat en pujades d’imatges</h6>
+    <p>
+      Es va reforçar la validació amb control de MIME, límits de mida i
+      processament segur, evitant confiar en dades del client.
+    </p>
+  </li>
+</ul>
