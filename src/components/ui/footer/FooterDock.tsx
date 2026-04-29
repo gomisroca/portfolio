@@ -33,7 +33,7 @@ const LanguageDropdown = ({
   return (
     <div ref={dropdownRef}>
       <li
-        className="hover:text-primary-500 flex w-8 cursor-pointer items-center justify-center text-center text-sm font-semibold text-zinc-500 transition duration-200 ease-in-out hover:scale-110 active:scale-90"
+        className="flex w-8 cursor-pointer items-center justify-center text-center text-sm font-semibold text-zinc-500 transition duration-200 ease-in-out hover:scale-110 hover:text-blue-400/80 active:scale-90 dark:text-zinc-400 dark:hover:text-blue-400/60"
         onClick={() => setOpen(!open)}
       >
         {activeLang.toUpperCase()}
@@ -45,7 +45,7 @@ const LanguageDropdown = ({
               <LanguageLink
                 href={path}
                 lang={lang as "en" | "es" | "cat" | "de"}
-                className={`${lang === activeLang && "decoration-accent-500/70 hover:decoration-accent-500 underline decoration-4 underline-offset-2"}`}
+                className={`${lang === activeLang && "underline decoration-blue-400/50 decoration-4 underline-offset-2 hover:decoration-blue-400/80 dark:decoration-blue-400/40 dark:hover:decoration-blue-400/60"}`}
                 label={lang.toUpperCase()}
               />
             </li>
@@ -91,7 +91,7 @@ function FooterDock({
         initial={{ scaleX: 0 }}
         animate={{ scaleX: hovered ? 1 : 0 }}
         transition={{ duration: hovered ? 0.5 : 0.2, ease: "linear" }}
-        className="absolute top-0 right-0 left-0 h-[2px] origin-bottom border-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 transition duration-200 ease-in-out dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+        className="absolute top-0 right-0 left-0 h-[2px] origin-bottom border-0 bg-gradient-to-r from-zinc-300 via-blue-300/70 to-zinc-300 transition duration-200 ease-in-out dark:from-zinc-700 dark:via-blue-400/50 dark:to-zinc-700"
       />
       <div className="flex flex-row space-x-2 bg-zinc-50 px-2 py-1 dark:bg-zinc-950">
         <LanguageDropdown activeLang={activeLang} path={path} />
@@ -105,7 +105,7 @@ function FooterDock({
           <ThemeToggle />
         </motion.li>
       </div>
-      <div className="absolute bottom-0 h-[2px] w-full origin-left bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500" />
+      <div className="absolute bottom-0 h-[2px] w-full origin-left bg-gradient-to-r from-zinc-300 via-blue-300/70 to-zinc-300 dark:from-zinc-700 dark:via-blue-400/50 dark:to-zinc-700" />
     </motion.ul>
   );
 }

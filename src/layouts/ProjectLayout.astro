@@ -52,7 +52,7 @@ const lang = Astro.params.lang ?? "en";
                 <a href={project.liveWebsite} target="_blank">
                   <Icon
                     name="mdi:web"
-                    class="hover:text-primary-500 h-6 w-6 text-zinc-500 transition duration-200 ease-in-out hover:scale-110 active:scale-90 active:duration-100"
+                    class="h-6 w-6 text-zinc-500 transition duration-200 ease-in-out hover:scale-110 hover:text-blue-400/80 active:scale-90 active:duration-100 dark:text-zinc-400 dark:hover:text-blue-400/60"
                   />
                 </a>
               )
@@ -62,7 +62,7 @@ const lang = Astro.params.lang ?? "en";
                 <a href={project.repository} target="_blank">
                   <Icon
                     name="mdi:github"
-                    class="hover:text-primary-500 h-6 w-6 text-zinc-500 transition duration-200 ease-in-out hover:scale-110 active:scale-90 active:duration-100"
+                    class="h-6 w-6 text-zinc-500 transition duration-200 ease-in-out hover:scale-110 hover:text-blue-400/80 active:scale-90 active:duration-100 dark:text-zinc-400 dark:hover:text-blue-400/60"
                   />
                 </a>
               )
@@ -71,7 +71,7 @@ const lang = Astro.params.lang ?? "en";
         </div>
         <h1 class="text-center leading-8 uppercase">{project.name}</h1>
         <span
-          class="absolute bottom-0 h-[2px] w-full bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+          class="absolute bottom-0 h-[2px] w-full bg-gradient-to-r from-zinc-300 via-blue-300/70 to-zinc-300 dark:from-zinc-700 dark:via-blue-400/50 dark:to-zinc-700"
         ></span>
       </div>
     </div>

@@ -1,6 +1,6 @@
 const contactTranslations = {
   en: {
-    email: `You can contact me via email at <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-primary-500">gomisroca@gmail.com</a><p class="mt-2">Or simply filling out the following form:</p>`,
+    email: `You can contact me via email at <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-blue-400/80 dark:hover:text-blue-400/60">gomisroca@gmail.com</a><p class="mt-2">Or simply filling out the following form:</p>`,
     others: `You will also find me in the following platforms:`,
     nameField: `Name`,
     emailField: `Email`,
@@ -11,7 +11,7 @@ const contactTranslations = {
     error: `Something went wrong, please try again.`,
   },
   es: {
-    email: `Puedes contactar conmigo por correo electrónico en <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-primary-500">gomisroca@gmail.com</a><p class="mt-2">O simplemente completando el siguiente formulario:</p>`,
+    email: `Puedes contactar conmigo por correo electrónico en <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-blue-400/80 dark:hover:text-blue-400/60">gomisroca@gmail.com</a><p class="mt-2">O simplemente completando el siguiente formulario:</p>`,
     others: `También me encontrarás en las siguientes plataformas:`,
     nameField: `Nombre`,
     emailField: `Correo Electrónico`,
@@ -22,7 +22,7 @@ const contactTranslations = {
     error: `Algo ha salido mal, por favor inténtalo de nuevo.`,
   },
   cat: {
-    email: `Pots contactar amb mi per correu electrònic a <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-primary-500">gomisroca@gmail.com</a><p class="mt-2">O simplement omplint el següent formulari:</p>`,
+    email: `Pots contactar amb mi per correu electrònic a <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-blue-400/80 dark:hover:text-blue-400/60">gomisroca@gmail.com</a><p class="mt-2">O simplement omplint el següent formulari:</p>`,
     others: `També em trobaràs a les següents plataformes:`,
     nameField: `Nom`,
     emailField: `Correu Electrònic`,
@@ -33,7 +33,7 @@ const contactTranslations = {
     error: `Alguna cosa ha sortit malament, si us plau, torna-ho a provar.`,
   },
   de: {
-    email: `Sie können mich per E-Mail kontaktieren unter <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-primary-500">gomisroca@gmail.com</a><p class="mt-2">Oder einfach das folgende Formular ausfüllen:</p>`,
+    email: `Sie können mich per E-Mail kontaktieren unter <br/><a href="mailto:gomisroca@gmail.com" class="text-2xl font-semibold transition-colors duration-200 hover:text-blue-400/80 dark:hover:text-blue-400/60">gomisroca@gmail.com</a><p class="mt-2">Oder einfach das folgende Formular ausfüllen:</p>`,
     others: `Sie finden mich auch auf folgenden Plattformen:`,
     nameField: `Name`,
     emailField: `E-Mail`,

@@ -14,7 +14,7 @@ function Button({
     <motion.button
       onClick={onClick}
       className={cn(
-        "hover:text-primary-500 w-fit px-1 text-sm font-semibold text-zinc-500",
+        "w-fit px-1 text-sm font-semibold text-zinc-500 transition duration-200 ease-in-out hover:text-blue-400/80 dark:text-zinc-400 dark:hover:text-blue-400/60",
         className,
       )}
       whileHover={{

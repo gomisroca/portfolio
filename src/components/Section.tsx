@@ -72,7 +72,7 @@ function Section({
           whileInView={{ width: "100%" }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="h-1 border-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 transition duration-200 ease-in-out dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+          className="h-1 border-0 bg-gradient-to-r from-zinc-300 via-blue-300/70 to-zinc-300 transition duration-200 ease-in-out dark:from-zinc-700 dark:via-blue-400/50 dark:to-zinc-700"
         />
       </div>
       {children}

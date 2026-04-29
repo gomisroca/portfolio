@@ -19,7 +19,7 @@ function Landing({ lang = "en" }: { lang?: "en" | "es" | "cat" | "de" }) {
               repeat: Infinity,
               repeatType: "loop",
             }}
-            className="absolute right-0 bottom-0 h-2/3 w-[2px] origin-bottom bg-gradient-to-b from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+            className="absolute right-0 bottom-0 h-2/3 w-[2px] origin-bottom bg-gradient-to-b from-zinc-300 via-blue-300/70 to-zinc-300 dark:from-zinc-700 dark:via-blue-400/50 dark:to-zinc-700"
           />
           <div className="bg-zinc-50 px-2 py-4 dark:bg-zinc-950">
             <motion.div
@@ -53,7 +53,7 @@ function Landing({ lang = "en" }: { lang?: "en" | "es" | "cat" | "de" }) {
               repeat: Infinity,
               repeatType: "loop",
             }}
-            className="absolute right-0 bottom-0 h-[2px] w-2/3 origin-right bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+            className="absolute right-0 bottom-0 h-[2px] w-2/3 origin-right bg-gradient-to-r from-zinc-300 via-blue-300/70 to-zinc-300 dark:from-zinc-700 dark:via-blue-400/50 dark:to-zinc-700"
           />
         </div>
       </FadeInText>

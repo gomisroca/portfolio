@@ -57,7 +57,7 @@ export default function ContactForm({
             id="user_name"
             name="user_name"
             required
-            className="focus:ring-primary-500 w-full border px-3 py-2 focus:ring-2 focus:outline-none"
+            className="w-full border border-zinc-200 bg-zinc-50 px-3 py-2 focus:ring-2 focus:ring-blue-400/50 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:focus:ring-blue-400/40"
           />
         </div>
 
@@ -73,7 +73,7 @@ export default function ContactForm({
             id="user_email"
             name="user_email"
             required
-            className="focus:ring-primary-500 w-full border px-3 py-2 focus:ring-2 focus:outline-none"
+            className="w-full border border-zinc-200 bg-zinc-50 px-3 py-2 focus:ring-2 focus:ring-blue-400/50 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:focus:ring-blue-400/40"
           />
         </div>
 
@@ -86,14 +86,14 @@ export default function ContactForm({
             name="message"
             required
             rows={4}
-            className="focus:ring-primary-500 w-full border px-3 py-2 focus:ring-2 focus:outline-none"
+            className="w-full border border-zinc-200 bg-zinc-50 px-3 py-2 focus:ring-2 focus:ring-blue-400/50 focus:outline-none dark:border-zinc-800 dark:bg-zinc-950 dark:focus:ring-blue-400/40"
           />
         </div>
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className="border-primary-500 hover:bg-primary-500 focus:ring-primary-500 flex w-full cursor-pointer items-center justify-center gap-2 border-2 px-4 py-2 font-semibold transition duration-200 ease-in-out hover:scale-110 focus:ring-2 focus:ring-offset-2 focus:outline-none active:scale-90 active:duration-100 disabled:opacity-50"
+          className="flex w-full cursor-pointer items-center justify-center gap-2 border-2 border-zinc-300 px-4 py-2 font-semibold transition duration-200 ease-in-out hover:scale-110 hover:border-blue-400/60 hover:text-blue-400/80 focus:ring-2 focus:ring-blue-400/50 focus:ring-offset-2 focus:outline-none active:scale-90 active:duration-100 disabled:opacity-50 dark:border-zinc-700 dark:hover:border-blue-400/40 dark:hover:text-blue-400/60"
         >
           {isSubmitting ? (
             sending

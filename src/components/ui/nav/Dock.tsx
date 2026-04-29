@@ -123,8 +123,8 @@ function DockItem({
         }}
         className={`relative flex w-16 flex-col items-center justify-center rounded-md transition-colors duration-200 ${
           important
-            ? "text-accent-500/70 group-hover:text-accent-500"
-            : "group-hover:text-primary-500 text-zinc-500"
+            ? "text-blue-400/50 group-hover:text-blue-400/80 dark:text-blue-400/40 dark:group-hover:text-blue-400/60"
+            : "text-zinc-500 group-hover:text-blue-400/80 dark:text-zinc-400 dark:group-hover:text-blue-400/60"
         }`}
       >
         <motion.div animate={controls}>{icon}</motion.div>
@@ -206,7 +206,7 @@ export default function Dock({ lang }: { lang: "en" | "es" | "cat" | "de" }) {
   return (
     <LayoutGroup>
       <div className="fixed right-0 left-0 mx-auto w-fit">
-        <div className="h-[2px] w-full bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 dark:from-blue-500 dark:via-purple-500 dark:to-pink-500" />
+        <div className="h-[2px] w-full bg-gradient-to-r from-zinc-300 via-blue-300/70 to-zinc-300 dark:from-zinc-700 dark:via-blue-400/50 dark:to-zinc-700" />
         <motion.div
           layout
           initial="hidden"
@@ -239,7 +239,7 @@ export default function Dock({ lang }: { lang: "en" | "es" | "cat" | "de" }) {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: hovered ? 1 : 0 }}
             transition={{ duration: hovered ? 0.5 : 0.2, ease: "linear" }}
-            className="absolute right-0 bottom-0 left-0 h-[2px] border-0 bg-gradient-to-r from-blue-400 via-emerald-400 to-lime-400 transition duration-200 ease-in-out dark:from-blue-500 dark:via-purple-500 dark:to-pink-500"
+            className="absolute right-0 bottom-0 left-0 h-[2px] border-0 bg-gradient-to-r from-zinc-300 via-blue-300/70 to-zinc-300 transition duration-200 ease-in-out dark:from-zinc-700 dark:via-blue-400/50 dark:to-zinc-700"
           />
         </motion.div>
       </div>

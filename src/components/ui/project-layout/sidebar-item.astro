@@ -12,12 +12,12 @@ const { title, description, type = "text" }: Props = Astro.props;
   type === "link" ? (
     <a
       href={description}
-      class="group hover:text-primary-500 flex w-fit flex-row items-center gap-2 font-semibold uppercase transition duration-200 ease-in-out hover:scale-110 active:scale-90 active:duration-100"
+      class="group flex w-fit flex-row items-center gap-2 font-semibold text-zinc-500 uppercase transition duration-200 ease-in-out hover:scale-110 hover:text-blue-400/80 active:scale-90 active:duration-100 dark:text-zinc-400 dark:hover:text-blue-400/60"
       target="_blank"
     >
       <Icon
         name={title.includes("Repo") ? "mdi:github" : "mdi:web"}
-        class="group-hover:text-primary-500 h-6 w-6 text-zinc-500 transition-colors duration-200"
+        class="h-6 w-6 text-zinc-500 transition-colors duration-200 group-hover:text-blue-400/80 dark:text-zinc-400 dark:group-hover:text-blue-400/60"
       />
       <span>{title}</span>
     </a>
