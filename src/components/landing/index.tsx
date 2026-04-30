@@ -22,13 +22,28 @@ function Landing({ lang = "en" }: { lang?: "en" | "es" | "cat" | "de" }) {
             className="absolute right-0 bottom-0 h-2/3 w-[2px] origin-bottom bg-gradient-to-b from-zinc-300 via-blue-300/70 to-zinc-300 dark:from-zinc-700 dark:via-blue-400/50 dark:to-zinc-700"
           />
           <div className="bg-zinc-50 px-2 py-4 dark:bg-zinc-950">
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              dangerouslySetInnerHTML={{ __html: t("welcome.title") }}
-            />
+            <div className="flex items-center gap-2">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                dangerouslySetInnerHTML={{ __html: t("welcome.title") }}
+              />
+              <motion.span
+                animate={{ rotate: [0, 20, -10, 20, 0] }}
+                transition={{
+                  duration: 1.5,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatDelay: 3,
+                }}
+                style={{ transformOrigin: "70% 70%", display: "inline-block" }}
+                className="text-4xl font-bold"
+              >
+                👋
+              </motion.span>
+            </div>
             <motion.div
               variants={{
                 hidden: { opacity: 0, y: 20 },
