@@ -8,7 +8,7 @@ function Landing({ lang = "en" }: { lang?: "en" | "es" | "cat" | "de" }) {
   const t = useTranslations(lang);
   return (
     <div className="portrait:tablet:min-h-screen landscape:4k:min-h-[60rem] relative portrait:min-h-[50rem] landscape:min-h-screen">
-      <FadeInText className="portrait:tablet:left-10 portrait:tablet:top-10 portrait:laptop:left-20 portrait:laptop:top-20 landscape:laptop:left-28 landscape:laptop:top-14 landscape:desktop:left-52 landscape:desktop:top-28 landscape:4k:left-[40rem] relative z-10 mt-10 flex max-w-[25rem] flex-col space-y-2">
+      <FadeInText className="portrait:tablet:left-10 portrait:tablet:top-10 portrait:laptop:left-20 portrait:laptop:top-20 landscape:laptop:left-28 landscape:laptop:top-14 landscape:desktop:left-52 landscape:desktop:top-28 landscape:4k:left-[20rem] relative z-10 mt-10 flex max-w-[25rem] flex-col space-y-2">
         <div className="relative w-fit">
           <motion.div
             initial={{ scaleY: 1 }}
