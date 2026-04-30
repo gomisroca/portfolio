@@ -33,7 +33,7 @@ const LanguageDropdown = ({
   return (
     <div ref={dropdownRef}>
       <li
-        className="flex w-8 cursor-pointer items-center justify-center text-center text-sm font-semibold text-zinc-500 transition duration-200 ease-in-out hover:scale-110 hover:text-blue-400/80 active:scale-90 dark:text-zinc-400 dark:hover:text-blue-400/60"
+        className="flex w-8 cursor-pointer items-center justify-center text-center text-sm font-semibold text-zinc-500 transition ease-in-out hover:scale-110 hover:text-blue-400/80 active:scale-90 dark:text-zinc-400 dark:hover:text-blue-400/60"
         onClick={() => setOpen(!open)}
       >
         {activeLang.toUpperCase()}

@@ -55,7 +55,7 @@ export default function ThemeToggle() {
   return (
     <button
       id="themeToggle"
-      className="w-fit cursor-pointer rounded-md px-2 font-semibold text-zinc-500 transition duration-200 ease-in-out hover:scale-110 hover:text-blue-400/80 active:scale-90 dark:text-zinc-400 dark:hover:text-blue-400/60"
+      className="w-fit cursor-pointer rounded-md px-2 font-semibold text-zinc-500 transition ease-in-out hover:scale-110 hover:text-blue-400/80 active:scale-90 dark:text-zinc-400 dark:hover:text-blue-400/60"
       onClick={toggleTheme}
     >
       {theme === "light" ? (
